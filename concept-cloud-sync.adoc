@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: concept-cloud-sync.html 
+keywords: cloud sync, overview, conceptual, how, data broker, service, cloudsync 
+summary: NetApp Cloud Sync 서비스는 데이터를 클라우드 또는 온프레미스의 모든 타겟으로 간단하고 안전하며 자동화된 방법으로 마이그레이션합니다. 
+---
+= Cloud Sync 개요
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Sync 서비스는 데이터를 클라우드 또는 온프레미스의 모든 타겟으로 간단하고 안전하며 자동화된 방법으로 마이그레이션합니다. StorageGRID는 파일 기반 NAS 데이터 세트(NFS 또는 SMB), Amazon S3(Simple Storage Service) 오브젝트 형식, NetApp Cloud Sync ® 어플라이언스 또는 기타 클라우드 공급자 오브젝트 저장소 등 그 어떤 형태이든 변환 및 이동할 수 있습니다.
+
+
+
+== 피처
+
+Cloud Sync에 대한 개요는 다음 비디오에서 확인할 수 있습니다.
+
+video::oZNJtLvgNfQ[youtube, width=848,height=480]
+
+
+== Cloud Sync의 작동 방식
+
+Cloud Sync는 데이터 브로커 그룹, Cloud Manager를 통해 사용 가능한 클라우드 기반 인터페이스, 소스 및 타겟으로 구성된 서비스형 소프트웨어(SaaS) 플랫폼입니다.
+
+다음 이미지는 Cloud Sync 구성 요소 간의 관계를 보여줍니다.
+
+image:diagram_cloud_sync_overview.gif["소스에서 타겟으로 데이터가 흐르는 개념적 이미지. 데이터 브로커 소프트웨어는 중재자의 역할을 수행하고 작업을 위해 Cloud Sync 서비스를 폴링합니다."]
+
+NetApp 데이터 브로커 소프트웨어는 소스에서 타겟으로 데이터를 동기화합니다(일명 A_SYNC Relationship _). AWS, Azure, Google Cloud Platform 또는 온프레미스에서 데이터 브로커를 실행할 수 있습니다. 하나 이상의 데이터 브로커로 구성된 데이터 브로커 그룹은 포트 443을 통한 아웃바운드 인터넷 연결이 있어야 Cloud Sync 서비스와 통신하고 몇 가지 다른 서비스 및 리포지토리에 연결할 수 있습니다. link:reference-networking.html["끝점 목록을 봅니다"].
+
+초기 복사 후 서비스는 사용자가 설정한 일정에 따라 변경된 데이터를 동기화합니다.
+
+
+
+== 지원되는 스토리지 유형입니다
+
+Cloud Sync는 다음과 같은 스토리지 유형을 지원합니다.
+
+* 모든 NFS 서버
+* 모든 SMB 서버
+* Amazon EFS
+* ONTAP용 Amazon FSx
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* 상자(미리 보기로 사용 가능)
+* Cloud Volumes Service
+* Cloud Volumes ONTAP
+* Google 클라우드 스토리지
+* IBM 클라우드 오브젝트 스토리지
+* 사내 ONTAP 클러스터
+* ONTAP S3 스토리지
+* SFTP(API만 사용)
+* StorageGRID
+
+
+link:reference-supported-relationships.html["지원되는 동기화 관계를 봅니다"].
+
+
+
+== 비용
+
+Cloud Sync 사용과 관련된 비용에는 리소스 비용 및 서비스 비용이라는 두 가지 유형이 있습니다.
+
+리소스 비용:: 리소스 요금은 클라우드에서 하나 이상의 데이터 브로커를 실행하는 데 필요한 컴퓨팅 및 스토리지 비용과 관련이 있습니다.
+서비스 요금:: 14일 무료 평가판이 종료된 후 동기화 관계에 대한 비용을 지불할 수 있는 두 가지 방법이 있습니다. 첫 번째 옵션은 AWS 또는 Azure에서 가입하는 것입니다. 가입 서비스를 이용하면 시간 또는 연간 요금을 지불할 수 있습니다. 두 번째 옵션은 NetApp에서 직접 라이센스를 구매하는 것입니다.
+
+
+link:concept-licensing.html["라이선스 작동 방식에 대해 알아보십시오"].

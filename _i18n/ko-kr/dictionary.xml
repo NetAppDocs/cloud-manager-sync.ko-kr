@@ -1,0 +1,1385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="fbaae2c51a88c361540d75265f1ae460" category="summary">Cloud Sync 서비스를 시작하는 데 몇 가지 단계가 포함되어 있습니다.</block>
+  <block id="7552e2b54a17a33019d48e352cbe77a4" category="doc">Cloud Sync를 빠르게 시작합니다</block>
+  <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">자세한 정보</block>
+  <block id="bf349214a0fe6c8f9cbe1621ce56039d" category="paragraph">소스와 타겟이 지원되는지 확인하고 설정합니다. 가장 중요한 요구사항은 데이터 브로커 그룹과 소스 및 타겟 위치 간의 접속을 확인하는 것입니다. <block ref="1c8be3bb7fda7c53b33120f4b5b235ed" category="inline-link-macro-rx"></block>.</block>
+  <block id="bd8631de46e31a195212435f5704f717" category="inline-link-macro">끝점 목록을 봅니다</block>
+  <block id="0bfdab96c119413ba592a2c670007760" category="paragraph">NetApp 데이터 브로커 소프트웨어는 소스에서 타겟으로 데이터를 동기화합니다(일명 A_SYNC Relationship _). AWS, Azure, Google Cloud Platform 또는 온프레미스에서 데이터 브로커를 실행할 수 있습니다. 하나 이상의 데이터 브로커로 구성된 데이터 브로커 그룹은 포트 443을 통한 아웃바운드 인터넷 연결이 있어야 Cloud Sync 서비스와 통신하고 몇 가지 다른 서비스 및 리포지토리에 연결할 수 있습니다. <block ref="12ea03dce1417efcc10375bae5440131" category="inline-link-macro-rx"></block>.</block>
+  <block id="1cfc3a8fedd4f8bdee2a6bbcc9a6379c" category="paragraph">Cloud Sync는 동기화 관계를 생성할 때 설치 프로세스를 안내하며, 이 때 클라우드에 데이터 브로커를 구축하거나 자체 Linux 호스트에 대한 설치 스크립트를 다운로드할 수 있습니다.</block>
+  <block id="3527130aba33365e846e31c7ab7f9ce7" category="inline-link-macro">AWS 설치를 검토합니다</block>
+  <block id="a1752db5d0ba16820e780a12e5211ad6" category="list-text"><block ref="a1752db5d0ba16820e780a12e5211ad6" category="inline-link-macro-rx"></block></block>
+  <block id="b53ff35a005623cf90696822f0bd4c81" category="inline-link-macro">Azure 설치를 검토합니다</block>
+  <block id="a927d47e29a9217f37853db7a6098db8" category="list-text"><block ref="a927d47e29a9217f37853db7a6098db8" category="inline-link-macro-rx"></block></block>
+  <block id="6d05f35d0c105dcbebd58b4dd15a1fb1" category="inline-link-macro">Google Cloud 설치를 검토합니다</block>
+  <block id="32e0b4c2ae59de83cde3bafc88e8bb24" category="list-text"><block ref="32e0b4c2ae59de83cde3bafc88e8bb24" category="inline-link-macro-rx"></block></block>
+  <block id="50dc73861ebb76e68387af6e286227e2" category="inline-link-macro">Linux 호스트 설치를 검토합니다</block>
+  <block id="3543e99477c1442fbb915931461a4166" category="list-text"><block ref="3543e99477c1442fbb915931461a4166" category="inline-link-macro-rx"></block></block>
+  <block id="315474a8ef79b74899073fc979f12da4" category="inline-link">클라우드 관리자</block>
+  <block id="a95a30ea972f4d64b4d09553d0281684" category="paragraph">에 로그인합니다<block ref="be757cbeb024c9da5b8b367da3bb80a9" category="inline-link-rx"></block>를 클릭하고 * 동기화 * 를 클릭한 다음 선택한 소스 및 대상을 끌어서 놓습니다. 화면의 지시에 따라 설치를 완료합니다. <block ref="484d4f19cf4f8d33cb3a1a91aa23f363" category="inline-link-macro-rx"></block>.</block>
+  <block id="1f49b87cd49b58f3b9afa1f411cb454d" category="paragraph">AWS 또는 Azure에서 가입하여 용량제 또는 연간 지불 가능합니다. 또는 NetApp에서 직접 라이센스를 구입합니다. Cloud Sync의 라이센스 설정 페이지로 이동하여 설정하기만 하면 됩니다. <block ref="3cd689475b04fdbdf7fafd004b01a742" category="inline-link-macro-rx"></block>.</block>
+  <block id="4e475c34f329c78e3aa3ab2a63cb63db" category="summary">데이터 브로커는 소스 위치에서 타겟 위치로 데이터를 동기화합니다. 생성하는 각 동기화 관계에는 데이터 브로커가 필요합니다. 그룹에 새 데이터 브로커를 추가하고, 데이터 브로커에 대한 정보를 확인하는 등 데이터 브로커를 관리할 수 있습니다.</block>
+  <block id="efdd49f1066bc795a31111d98cfa5ddf" category="doc">데이터 브로커 그룹을 관리합니다</block>
+  <block id="e1191d25bbec84b8a1ba37471b41611f" category="paragraph">데이터 브로커 그룹은 소스 위치의 데이터를 타겟 위치로 동기화합니다. 생성하는 각 동기화 관계에 대해 그룹에 하나 이상의 데이터 브로커가 필요합니다. 그룹에 새 데이터 브로커를 추가하거나, 그룹에 대한 정보를 보는 등 데이터 브로커 그룹을 관리할 수 있습니다.</block>
+  <block id="46a5597bf1d0bb6131699943c8eb538a" category="section-title">데이터 브로커 그룹</block>
+  <block id="0e1c5ff9805bc11c4b7d6e87af0fa93e" category="paragraph">데이터 브로커를 함께 그룹화하면 동기화 관계의 성능을 향상시킬 수 있습니다.</block>
+  <block id="ca1c342e097dd2b8e437080a7f458f9f" category="section-title">그룹에 있는 데이터 브로커 수 결정</block>
+  <block id="31361c8d27e70295df2bfa32fdeeb659" category="inline-link-macro">여러 데이터 브로커가 필요한 시기를 결정하는 방법에 대해 자세히 알아보십시오</block>
+  <block id="0a134fa70f4699a5c8408ed138b7162b" category="paragraph">대부분의 경우 단일 데이터 브로커가 동기화 관계에 대한 성능 요구사항을 충족할 수 있습니다. 그렇지 않으면 그룹에 추가 데이터 브로커를 추가하여 동기화 성능을 가속화할 수 있습니다. 하지만 먼저 동기화 성능에 영향을 줄 수 있는 다른 요소를 확인해야 합니다. <block ref="871c8177954bc9fc0961cd3c58102f39" category="inline-link-macro-rx"></block>.</block>
+  <block id="0a7fa5ebd880718dbd4c644fda59fb38" category="section-title">그룹은 여러 관계를 관리할 수 있습니다</block>
+  <block id="5724e69362e6baa1a8fac790e6db1ee9" category="paragraph">데이터 브로커 그룹은 한 번에 하나 이상의 동기화 관계를 관리할 수 있습니다.</block>
+  <block id="84a191eeaa6e9761d09576e3ce8e7757" category="paragraph">예를 들어, 다음과 같은 세 가지 관계가 있다고 가정해 보겠습니다.</block>
+  <block id="6bb48cc1bf076f5b41775376ea7c1a41" category="list-text">관계 1은 데이터 브로커 그룹 A에서 관리합니다</block>
+  <block id="2da4190bfc656abd88eb058d61341d99" category="list-text">관계 2는 데이터 브로커 그룹 B에 의해 관리됩니다</block>
+  <block id="1204be74d45a4ac703dc67fd6864e991" category="list-text">관계 3은 데이터 브로커 그룹 A에서 관리합니다</block>
+  <block id="2002e7315a54bdc5f69ae33f895b3361" category="paragraph">관계 1의 성능을 가속화하여 데이터 브로커 그룹 A에 새로운 데이터 브로커를 추가하고 싶을 것입니다 그룹 A도 동기화 관계 3 을 관리하므로 관계의 동기화 성능도 자동으로 빨라집니다.</block>
+  <block id="4d1b0dd2ac6040283149ee4593c99dda" category="section-title">새로운 데이터 브로커만 해당</block>
+  <block id="6f94d3194bf6ce158093332092d916d9" category="paragraph">그룹에 새 데이터 브로커만 추가할 수 있습니다. 그룹에 기존 데이터 브로커를 추가할 수 없습니다.</block>
+  <block id="ecc57856a780d684b0fe0d4f158af18e" category="section-title">새 데이터 브로커를 추가합니다</block>
+  <block id="8b0de93ef762269210bc193874b3d679" category="paragraph">다음과 같은 여러 가지 방법으로 새 데이터 브로커를 생성할 수 있습니다.</block>
+  <block id="3a3d1b7e5044442dcfbd5cd464cc3e74" category="list-text">새 동기화 관계를 생성할 때</block>
+  <block id="d55c5ae4dbd0da4961b63d579f9712fd" category="inline-link-macro">동기화 관계를 생성할 때 새 데이터 브로커를 생성하는 방법에 대해 알아봅니다</block>
+  <block id="c7b4e71c7182550e433faac117c2ecfb" category="paragraph"><block ref="331eae664c6d6049ca8cf9db41aef0e1" category="inline-link-macro-rx"></block>.</block>
+  <block id="6dac2c23bc94d633506738bd36101caa" category="list-text">새 그룹에서 데이터 브로커를 만드는 * 새 데이터 브로커 추가 * 를 클릭하여 * 데이터 브로커 관리 * 페이지에서</block>
+  <block id="33356a7534e9c58e7ebf9c0a2a815a6a" category="list-text">기존 그룹에 새 데이터 브로커를 생성하여 * 데이터 브로커 관리 * 페이지에서</block>
+  <block id="3eabf8e614efa513058a3d3dbb1a59e1" category="list-title">알아야 할 사항</block>
+  <block id="035ddc07f088acce2ce7b9f5f3adbf75" category="list-text">암호화된 동기화 관계를 관리하는 그룹에 데이터 브로커를 추가할 수 없습니다.</block>
+  <block id="bd7c77e0797aa0ace4fe53476f5bd1eb" category="list-text">기존 그룹에서 데이터 브로커를 생성하려면 데이터 브로커가 사내 데이터 브로커이거나 동일한 유형의 데이터 브로커가 되어야 합니다.</block>
+  <block id="cdb42fff9480ae666d8bc83254c6669c" category="paragraph">예를 들어, 그룹에 AWS 데이터 브로커가 포함된 경우 해당 그룹에 AWS 데이터 브로커나 온프레미스 데이터 브로커를 생성할 수 있습니다. 동일한 데이터 브로커 유형이 아니므로 Azure 데이터 브로커 또는 Google Cloud 데이터 브로커를 생성할 수 없습니다.</block>
+  <block id="df41669b003a060e8aaf939d172dabdc" category="list-title">새 그룹에서 데이터 브로커를 생성하는 단계입니다</block>
+  <block id="01139d234037ac0c0218e33f45274355" category="list-text">동기화 &gt; 데이터 브로커 관리 * 를 클릭합니다.</block>
+  <block id="ce4433b25c45524977fc8fe7cbdf459c" category="list-text">새 데이터 브로커 추가 * 를 클릭합니다.</block>
+  <block id="802f803fcc1e47690eb3743e68b82a33" category="list-text">프롬프트에 따라 데이터 브로커를 생성합니다.</block>
+  <block id="8eb912b10c5a70a32cb5864415b764bb" category="paragraph">자세한 내용은 다음 페이지를 참조하십시오.</block>
+  <block id="0b217f05323b361308650155f01a7091" category="inline-link-macro">AWS에서 데이터 브로커를 생성합니다</block>
+  <block id="781093493261a4d1a371f877f657d45f" category="list-text"><block ref="781093493261a4d1a371f877f657d45f" category="inline-link-macro-rx"></block></block>
+  <block id="549b50b917fd17e0dffcfb7b96334b48" category="inline-link-macro">Azure에서 데이터 브로커를 생성합니다</block>
+  <block id="79379d409873c3b6cf152d55ee0e39d9" category="list-text"><block ref="79379d409873c3b6cf152d55ee0e39d9" category="inline-link-macro-rx"></block></block>
+  <block id="abff10792f822b8fa92b36564ebae831" category="inline-link-macro">Google Cloud에서 데이터 브로커를 생성합니다</block>
+  <block id="0b5ebe6e7ba2362051c090a3dcc223bc" category="list-text"><block ref="0b5ebe6e7ba2362051c090a3dcc223bc" category="inline-link-macro-rx"></block></block>
+  <block id="85e5ddcb30088cd6cfefc0e824599627" category="inline-link-macro">Linux 호스트에 데이터 브로커 설치</block>
+  <block id="5fc5be02ef143289af0e6a031decff5d" category="list-text"><block ref="5fc5be02ef143289af0e6a031decff5d" category="inline-link-macro-rx"></block></block>
+  <block id="b20c8730a010d433fedb7241d0a0335a" category="list-title">기존 그룹에서 데이터 브로커를 생성하는 단계</block>
+  <block id="9c129f9a970d427b507541a4c3a7e53a" category="list-text">작업 메뉴를 클릭하고 * 데이터 브로커 추가 * 를 선택합니다.</block>
+  <block id="b65b4c1a581a43f257ad99ae84281816" category="inline-image-macro">그룹의 각 개별 데이터 브로커에 사용할 수 있는 작업 메뉴 스크린샷</block>
+  <block id="849e308ca762ea472ddd09c38adfbd1d" category="paragraph"><block ref="849e308ca762ea472ddd09c38adfbd1d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b86abc18838bbcc96f4aba5f9e7400b2" category="list-text">프롬프트에 따라 그룹에 데이터 브로커를 생성합니다.</block>
+  <block id="301ebdf8067a213d5a55c65fbb488290" category="section-title">보안 권장 사항</block>
+  <block id="cbf7ac8dbbee47678fd563919556b802" category="paragraph">데이터 브로커 시스템의 보안을 유지하려면 다음 사항을 따르는 것이 좋습니다.</block>
+  <block id="e55d32d29f143f215d415eb6175f7da2" category="list-text">SSH는 X11 전달을 허용하지 않아야 합니다</block>
+  <block id="db09b1be959d23ab50bb4433e7bced01" category="list-text">SSH는 TCP 연결 전달을 허용하지 않아야 합니다</block>
+  <block id="6bd308c902f8d543a732d9bf38a64e8a" category="list-text">SSH는 터널을 허용하지 않아야 합니다</block>
+  <block id="ca8fc8fcd76604a346d1a3fd6d719699" category="list-text">SSH는 클라이언트 환경 변수를 수용해서는 안 됩니다</block>
+  <block id="13f13b9a93a0627cafed957d1ab49177" category="paragraph">이러한 보안 권장 사항은 데이터 브로커 시스템에 대한 무단 연결을 방지하는 데 도움이 될 수 있습니다.</block>
+  <block id="79ae5916046b02eba9d5157314117b8e" category="section-title">데이터 브로커의 구성을 봅니다</block>
+  <block id="8113db3adc828428b3180d7dd38311d0" category="paragraph">데이터 브로커에 대한 세부 정보를 보고 호스트 이름, IP 주소, 사용 가능한 CPU 및 RAM 등을 식별할 수 있습니다.</block>
+  <block id="92224edb34597455e48af97d6e4d76ee" category="paragraph">Cloud Sync에서는 데이터 브로커에 대해 다음과 같은 세부 정보를 제공합니다.</block>
+  <block id="3befe2b2c4ef318e03d79b36ca8de404" category="list-text">기본 정보: 인스턴스 ID, 호스트 이름 등</block>
+  <block id="875bceffa72cf978fcc97a21a5208076" category="list-text">네트워크: 지역, 네트워크, 서브넷, 사설 IP 등</block>
+  <block id="b9ecc2520674febda2fe086de0165490" category="list-text">소프트웨어: Linux 배포, 데이터 브로커 버전 등</block>
+  <block id="120a8d078ff893eaa74563fdfaddc4bc" category="list-text">하드웨어: CPU 및 RAM</block>
+  <block id="594a0b982812cc261e0948d091016333" category="list-text">구성: 데이터 브로커의 두 가지 주요 프로세스(스캐너 및 전송기)에 대한 세부 정보입니다</block>
+  <block id="11a83e6b96c9efdc97f63abd9c00ad55" category="admonition">스캐너가 소스와 대상을 스캔하고 복사할 대상을 결정합니다. 전송자는 실제 복사를 수행합니다. NetApp 직원은 이러한 구성 세부 정보를 사용하여 성능을 최적화할 수 있는 조치를 제안할 수 있습니다.</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">단계</block>
+  <block id="40c73a255636bb999d6831cf4ac7e7a1" category="inline-image-macro">그룹의 데이터 브로커 목록을 확장할 수 있는 단추 스크린샷</block>
+  <block id="447de7a1cac78a70d6df20a5b1ee66aa" category="list-text">을 클릭합니다 <block ref="787db84ec9404328cdc4a6264b9959c1" category="inline-image-macro-rx" type="image"></block> 그룹의 데이터 브로커 목록을 확장합니다.</block>
+  <block id="4e2a058312f76a6733fa5f04b09d0b12" category="inline-image-macro">데이터 브로커에 대한 세부 정보를 확장할 수 있는 단추 스크린샷</block>
+  <block id="d9428db3891df0c6837599d9004dc84b" category="list-text">을 클릭합니다 <block ref="470bfce73839324984be8a7b9dbc97eb" category="inline-image-macro-rx" type="image"></block> 데이터 브로커에 대한 세부 정보를 봅니다.</block>
+  <block id="b3f5b024c925d18f1fad38e34f6adeb7" category="inline-image-macro">데이터 브로커에 대한 정보 스크린샷</block>
+  <block id="2aca713208ede5e338187d8acfc59e45" category="paragraph"><block ref="2aca713208ede5e338187d8acfc59e45" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cd001e84be2b1eb58fae93119764a424" category="section-title">그룹에서 데이터 브로커를 제거합니다</block>
+  <block id="5865c83a2c462bf736e19018ff098075" category="paragraph">더 이상 필요하지 않거나 초기 구축에 실패한 경우 그룹에서 데이터 브로커를 제거할 수 있습니다. 이 작업을 수행하면 Cloud Sync의 레코드에서 데이터 브로커만 삭제됩니다. 데이터 브로커와 추가 클라우드 리소스를 수동으로 삭제해야 합니다.</block>
+  <block id="e4fb16049f2f57772ee4c5d012066a89" category="list-text">Cloud Sync 그룹에서 마지막 데이터 브로커를 제거하면 그룹이 삭제됩니다.</block>
+  <block id="86809a552db6628d8c5fdff212824259" category="list-text">해당 그룹을 사용하는 관계가 있는 경우 그룹에서 마지막 데이터 브로커를 제거할 수 없습니다.</block>
+  <block id="9b1ed3beff3574463addd20120a54d9d" category="list-text">데이터 브로커에 대한 작업 메뉴를 클릭하고 * 데이터 브로커 * 를 선택합니다.</block>
+  <block id="fa09436a4bdfebc03ee36943e6a1b450" category="inline-image-macro">각 개별 데이터 브로커 그룹에 사용할 수 있는 작업 메뉴의 스크린샷</block>
+  <block id="72d8c1c0fb68d009ccb1cae8adc51597" category="paragraph"><block ref="72d8c1c0fb68d009ccb1cae8adc51597" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c3bab48341baf2f6368e3f474352dfef" category="list-text">데이터 브로커 * 제거 를 클릭합니다.</block>
+  <block id="1c280c77bba8fc2f3f4a79803d836503" category="paragraph">Cloud Sync는 그룹에서 데이터 브로커를 제거합니다.</block>
+  <block id="34ef5bc1636de46dfba50eaa25763db3" category="section-title">그룹 이름을 편집합니다</block>
+  <block id="d673b528f864db55fcb67876966355b2" category="paragraph">언제든지 데이터 브로커 그룹의 이름을 변경합니다.</block>
+  <block id="6101d898adb1b689572ae10844666fb9" category="list-text">작업 메뉴를 클릭하고 * 그룹 이름 편집 * 을 선택합니다.</block>
+  <block id="81a916358892fc8fbd08a770c2e50715" category="paragraph"><block ref="81a916358892fc8fbd08a770c2e50715" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="155ba6c2c0d0fdfa0760ba73549d665c" category="list-text">새 이름을 입력하고 * 저장 * 을 클릭합니다.</block>
+  <block id="92c690fecfd453e5d9b535d6971bd448" category="paragraph">Cloud Sync가 데이터 브로커 그룹의 이름을 업데이트합니다.</block>
+  <block id="d84b9ff2a26165aea44e08c53ac24735" category="section-title">데이터 브로커로 문제를 해결합니다</block>
+  <block id="1fdbc560a67348af4e76fd59fe5ba957" category="paragraph">Cloud Sync에서는 문제를 해결하는 데 도움이 되는 각 데이터 브로커의 상태를 표시합니다.</block>
+  <block id="417555a2380aa45dc52608834062b293" category="list-text">"알 수 없음" 또는 "실패" 상태의 데이터 브로커를 식별합니다.</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-image-macro"></block>
+  <block id="fb735d46258c860500df045bd72f563f" category="paragraph"><block ref="fb735d46258c860500df045bd72f563f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7bab02d802b38084f68f9bb810f1ca53" category="list-text">에 마우스를 올려 놓습니다 <block ref="a74720392297d66ac1ab9a90296912c9" category="inline-image-macro-rx" type="image"></block> 아이콘을 클릭하여 실패 원인을 확인합니다.</block>
+  <block id="cb1293ddc33121613d8b44ddf7bddebc" category="list-text">문제를 해결하십시오.</block>
+  <block id="4c23f2743e95cade04a6991678e7c813" category="paragraph">예를 들어, 데이터 브로커가 오프라인인 경우 다시 시작하기만 하면 되고, 초기 구축에 실패한 경우 데이터 브로커를 제거해야 할 수 있습니다.</block>
+  <block id="637cba6455e9f6fc12a3c205c16f44fc" category="section-title">데이터 브로커 그룹에 대한 통합 구성을 정의합니다</block>
+  <block id="b913043c4767c72e8bbb3ed88c33dd15" category="paragraph">동기화 프로세스 중에 동기화 관계에 오류가 발생하면 데이터 브로커 그룹의 동시성을 통합하면 동기화 오류 수를 줄일 수 있습니다. 그룹 구성을 변경하면 전송 속도가 느려져 성능에 영향을 줄 수 있습니다.</block>
+  <block id="e0341128a5853714165581951816b70b" category="paragraph">직접 구성을 변경하지 않는 것이 좋습니다. 구성을 변경할 시기와 변경 방법을 알아보려면 NetApp에 문의해야 합니다.</block>
+  <block id="6fea4f8d81c041ddb786f1edf604f6b0" category="list-text">데이터 브로커 관리 * 를 클릭합니다.</block>
+  <block id="947dda123a9676ba06895d96ee598405" category="list-text">데이터 브로커 그룹의 설정 아이콘을 클릭합니다.</block>
+  <block id="270f82e457e8fa76d7c5a3cc51be200a" category="inline-image-macro">데이터 브로커 그룹의 설정 아이콘을 보여 주는 스크린샷</block>
+  <block id="e7670e4280933a11f42bb2080cc42f84" category="paragraph"><block ref="e7670e4280933a11f42bb2080cc42f84" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="28d40eeab8fd28bbdf5b092f4784b274" category="list-text">필요에 따라 설정을 변경한 다음 * 구성 취소 * 를 클릭합니다.</block>
+  <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="paragraph">다음 사항에 유의하십시오.</block>
+  <block id="63c7b65895eb2fbd662e3ab0e4de3d12" category="list-text">변경할 설정을 선택하고 선택할 수 있습니다. 한 번에 네 가지 설정을 모두 변경할 필요는 없습니다.</block>
+  <block id="ee04adf201931e953bab143cd61c5e34" category="list-text">새 구성을 데이터 브로커로 보낸 후 데이터 브로커가 자동으로 다시 시작하고 새 구성을 사용합니다.</block>
+  <block id="07369bbb3439b320167a206f6646868f" category="list-text">이 변경 사항이 발생할 때까지 1분 정도 걸릴 수 있으며 Cloud Sync 인터페이스에 표시될 수 있습니다.</block>
+  <block id="a2d47547ac44d81a10f2213ed27209e2" category="list-text">데이터 브로커가 실행되고 있지 않으면 Cloud Sync에서 데이터 브로커와 통신할 수 없기 때문에 구성이 변경되지 않습니다. 데이터 브로커가 다시 시작되면 구성이 변경됩니다.</block>
+  <block id="5a9a104c07412a4762c5c9f6a499a905" category="list-text">통합 구성을 설정하면 새 데이터 브로커가 자동으로 새 구성을 사용합니다.</block>
+  <block id="3fea8d091148f89efaad03bb59aa8560" category="summary">웹 UI를 통해 제공되는 Cloud Sync 기능은 RESTful API를 통해서도 사용할 수 있습니다.</block>
+  <block id="b3eb62944a1e4390f18328a67cb57d2f" category="doc">Cloud Sync API</block>
+  <block id="8d2efdb682b9548549aab7f4ed1d58d8" category="paragraph">웹 UI를 통해 사용할 수 있는 Cloud Sync 기능은 RESTful API를 통해서도 사용할 수 있습니다.</block>
+  <block id="cb59b87e00d11222bfd9159d0d23836f" category="section-title">시작하기</block>
+  <block id="c47bcce50efbf894d31bb36bd5239155" category="paragraph">Cloud Sync API를 시작하려면 사용자 토큰과 Cloud Central 계정 ID를 얻어야 합니다. API 호출을 할 때 인증 헤더에 토큰과 계정 ID를 추가해야 합니다.</block>
+  <block id="6f1f68c4600a11c04b4d3eaa5313820c" category="list-text">NetApp Cloud Central에서 사용자 토큰을 얻습니다.</block>
+  <block id="22681efa5ce4060b2d5ee0b4f42807aa" category="list-text">Cloud Central 계정 ID를 받습니다.</block>
+  <block id="eda59d7eb3739f93f444f0e8c16f18e5" category="paragraph">이 API는 다음과 같은 응답을 반환합니다.</block>
+  <block id="b4d5fd65d29290d42a4161d3362d1326" category="list-text">각 API 호출의 Authorization 헤더에 사용자 토큰 및 계정 ID를 추가합니다.</block>
+  <block id="938f1047c15f00fdd0cbfc8e4cfa15e1" category="paragraph">* 예 *</block>
+  <block id="b55b4937f8ff2471222d040f06b7807e" category="paragraph">다음 예제는 Microsoft Azure에서 데이터 브로커를 생성하기 위한 API 호출을 보여줍니다. user_token&gt; 및 &lt;accountId&gt;를 이전 단계에서 얻은 토큰 및 ID 로 바꾸기만 하면 됩니다.</block>
+  <block id="d6f4f4fada8d5c3952a90492c3138e97" category="sidebar-title">토큰이 만료되면 어떻게 해야 합니까?</block>
+  <block id="1539598d4e260b03b9265b87976a6ab0" category="paragraph">NetApp Cloud Central의 사용자 토큰에 만료일이 있습니다. 토큰을 새로 고치려면 1단계에서 API를 다시 호출해야 합니다.</block>
+  <block id="5c5cd253b66501facf455779c806ee88" category="paragraph">API 응답에는 토큰이 만료되는 시점을 나타내는 "expires_in" 필드가 포함됩니다.</block>
+  <block id="19ec08da81a826d919d64ab860845c04" category="section-title">API 참조입니다</block>
+  <block id="8fc827acaef16ddd42dd21aeb46ac657" category="paragraph">각 Cloud Sync API에 대한 설명서는 에서 확인할 수 있습니다<block ref="692cab94d93982d3f8e96928c3c0e2c6" category="inline-link-rx"></block>.</block>
+  <block id="92e2b06a1709caf91e74da4a3fb021fe" category="section-title">목록 API 사용</block>
+  <block id="89b39aae22e72765b6582ae0db1ba186" category="paragraph">목록 API는 비동기 API로, 결과가 즉시 반환되지 않습니다(예: ``get/data-브로커/{id}/list-nfs-export-folders' 및 ' get/data-d브로커/{id}/list-s3-vket'). 서버의 유일한 응답은 HTTP 상태 202입니다. 실제 결과를 얻으려면 Get/Messages/client API를 사용해야 한다.</block>
+  <block id="6d89cb53dacaf941bbf56d09d3dc21de" category="list-text">사용할 목록 API를 호출합니다.</block>
+  <block id="50879b5593dd20bf23b085383f4beb91" category="list-text">Get/Messages/client API를 이용하여 작업 결과를 조회한다.</block>
+  <block id="9952ac35583e5e81bfe2d72fb4019296" category="list-text">방금 받은 ID에 동일한 API를 추가하여 'get\http://api.cloudsync.netapp.com/api/messages/client?last=&lt;id_from_step_2&gt;` 사용합니다</block>
+  <block id="10fcd765212c3e22da8bd95da8867ae0" category="paragraph">ID는 'get/messages/client' API를 호출할 때마다 변경됩니다.</block>
+  <block id="6009470f64ddbc7012ab00d385e3dbfc" category="paragraph">list-s3-Bucket API를 호출하면 결과가 즉시 반환되지 않습니다.</block>
+  <block id="ef97837c306a9708f607b36ff881df19" category="paragraph">결과는 HTTP 상태 코드 202입니다. 이는 메시지가 수락되었지만 아직 처리되지 않았음을 의미합니다.</block>
+  <block id="f7ed81665bd68ead3a06c33949c69fe0" category="paragraph">작업 결과를 얻으려면 다음 API를 사용해야 합니다.</block>
+  <block id="09b6ce185bd7dbaa6f1d5bc2b8b1bee9" category="paragraph">결과는 ID 필드가 포함된 객체 하나가 포함된 배열입니다. ID 필드는 서버가 보낸 마지막 메시지를 나타냅니다. 예를 들면 다음과 같습니다.</block>
+  <block id="f8a2ecf8345558b466ceccc14eacda35" category="paragraph">이제 방금 수신한 ID를 사용하여 다음 API 호출을 수행합니다.</block>
+  <block id="96668657e720ec8076c214c271eb7ea4" category="paragraph">그 결과 일련의 메시지가 나타납니다. 각 메시지 안에는 작업 이름(키)과 그 결과(값)로 구성된 페이로드 객체가 있습니다. 예를 들면 다음과 같습니다.</block>
+  <block id="f460053eaa67e236eea5c02ada4c032d" category="summary">동기화 관계를 생성하면 Cloud Sync 서비스는 소스에서 타겟으로 파일을 복사합니다. 초기 복사 후, 서비스는 24시간마다 변경된 데이터를 동기화합니다.</block>
+  <block id="1e0539ed84cecdd095f5fbe996a378b8" category="doc">동기화 관계를 생성합니다</block>
+  <block id="1c47f6d1a3cd6b28e311fe1fe215ce1d" category="paragraph">동기화 관계의 일부 유형을 생성하려면 먼저 Cloud Manager에서 작업 환경을 생성해야 합니다.</block>
+  <block id="2a9fded45db2f5a953150ba9bbef7f7a" category="section-title">특정 유형의 작업 환경에 대한 동기화 관계를 생성합니다</block>
+  <block id="753934f4df464e33f855d1ebb1cf78c4" category="paragraph">다음 중 하나를 위한 동기화 관계를 생성하려면 먼저 작업 환경을 생성하거나 검색해야 합니다.</block>
+  <block id="18cf072964a583150dd247485ba75b92" category="list-text">ONTAP용 Amazon FSx</block>
+  <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="list-text">Azure NetApp Files</block>
+  <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
+  <block id="d0f1687c68ee0f0d9bac765716d18923" category="list-text">온프레미스 ONTAP 클러스터</block>
+  <block id="47cc50f1917c802fe0b945a2e3e68960" category="list-text">작업 환경을 만들거나 검색합니다.</block>
+  <block id="64c9a9d3cd7c3ca76cf19b78a96c9b79" category="inline-link">ONTAP 작업 환경을 위한 Amazon FSx를 생성합니다</block>
+  <block id="f903e0b8e0f1e5d10c61be1c83633ca0" category="list-text"><block ref="f903e0b8e0f1e5d10c61be1c83633ca0" category="inline-link-rx"></block></block>
+  <block id="173d8ca39ff0874de6e21496394efa69" category="inline-link">Azure NetApp Files 설정 및 검색</block>
+  <block id="07ae18071ed805c67e137b2bbaced471" category="list-text"><block ref="07ae18071ed805c67e137b2bbaced471" category="inline-link-rx"></block></block>
+  <block id="6602afb860a6cca23c3b75bf601365eb" category="inline-link">AWS에서 Cloud Volumes ONTAP 실행</block>
+  <block id="3e33b81f05bb640dee79c5aa4e351c91" category="list-text"><block ref="3e33b81f05bb640dee79c5aa4e351c91" category="inline-link-rx"></block></block>
+  <block id="7ca1af679f0ba86814f2ad58a578cb7c" category="inline-link">Azure에서 Cloud Volumes ONTAP 실행</block>
+  <block id="0be0836bc69799b792b188dfc8c7fe7e" category="list-text"><block ref="0be0836bc69799b792b188dfc8c7fe7e" category="inline-link-rx"></block></block>
+  <block id="254d5c87d5ab437395f866390ea49cd0" category="inline-link">Google Cloud에서 Cloud Volumes ONTAP 실행</block>
+  <block id="22113986c035dbadc96db01d006caa97" category="list-text"><block ref="22113986c035dbadc96db01d006caa97" category="inline-link-rx"></block></block>
+  <block id="366f7e58814bef5e88fbb6881239ff46" category="inline-link">기존 Cloud Volumes ONTAP 시스템 추가</block>
+  <block id="706ad6686a3515c8f86d104e92c0f00b" category="list-text"><block ref="706ad6686a3515c8f86d104e92c0f00b" category="inline-link-rx"></block></block>
+  <block id="e845620e391b62ad3163cdb0e100a862" category="inline-link">ONTAP 클러스터 검색</block>
+  <block id="46816df637a2079d76bf65c2b90e42d2" category="list-text"><block ref="46816df637a2079d76bf65c2b90e42d2" category="inline-link-rx"></block></block>
+  <block id="e17d9d52c8208dfce3fde1af20447264" category="list-text">Canvas * 를 클릭합니다.</block>
+  <block id="b5f4d0a91c515f4bd54cae36d52f1af7" category="list-text">위에 나열된 유형과 일치하는 작업 환경을 선택합니다.</block>
+  <block id="1cffa027f06c83c15096bfe069d63282" category="list-text">동기화 옆에 있는 작업 메뉴를 선택합니다.</block>
+  <block id="ab116a076c96e5657e8e3c778ee684b2" category="inline-image-macro">작업 환경을 선택한 후 동기화 메뉴에서 사용할 수 있는 작업을 보여 주는 스크린샷</block>
+  <block id="19704804e074b1bed3bde0782113227b" category="paragraph"><block ref="19704804e074b1bed3bde0782113227b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="710868057fb37c917b26175735e419f5" category="list-text">이 위치에서 데이터 동기화 * 또는 * 이 위치로 데이터 동기화 * 를 선택하고 프롬프트에 따라 동기화 관계를 설정합니다.</block>
+  <block id="42fb01b3b779aa7e6922ba7286f27d90" category="section-title">다른 유형의 동기화 관계를 생성합니다</block>
+  <block id="04c2658f3d0148a82630128082746ff3" category="paragraph">다음 단계를 수행하여 ONTAP, Azure NetApp Files, Cloud Volumes ONTAP 또는 온프레미스 ONTAP 클러스터에 대해 Amazon FSx 이외의 지원되는 스토리지 유형과 데이터를 동기화할 수 있습니다. 아래 단계에서는 NFS 서버에서 S3 버킷으로 동기화 관계를 설정하는 방법을 보여 주는 예를 제공합니다.</block>
+  <block id="61d88e0d7b41b1cc909ee38fd639f3d0" category="list-text">Cloud Manager에서 * Sync * 를 클릭합니다.</block>
+  <block id="5c9e2eb8a0b6e7b55897a6605105e10a" category="list-text">동기화 관계 정의 * 페이지에서 소스 및 대상을 선택합니다.</block>
+  <block id="ec4f668b0fb93e0352d369b9536e8835" category="paragraph">다음 단계에서는 NFS 서버에서 S3 버킷으로 동기화 관계를 생성하는 방법의 예를 제공합니다.</block>
+  <block id="abd3c3afefe991ee73c5762fa2129b96" category="inline-image-macro">NFS를 소스로, S3를 새로운 동기화 관계의 타겟으로 표시하는 스크린샷</block>
+  <block id="459042f0918aa3b4f541567ad70cbee2" category="paragraph"><block ref="459042f0918aa3b4f541567ad70cbee2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f40f1d9dc0b9fe761c1fae85c5642f2b" category="list-text">NFS 서버 * 페이지에서 AWS에 동기화할 NFS 서버의 IP 주소 또는 정규화된 도메인 이름을 입력합니다.</block>
+  <block id="a31f37dcd17877cea841776e751a5c03" category="list-text">Data Broker Group * 페이지에서 프롬프트에 따라 AWS, Azure 또는 Google Cloud Platform에서 데이터 브로커 가상 컴퓨터를 만들거나 기존 Linux 호스트에 데이터 브로커 소프트웨어를 설치합니다.</block>
+  <block id="598b1711dd67bf120b85d858cb7087c3" category="paragraph">자세한 내용은 다음 페이지를 참조하십시오.</block>
+  <block id="8ee76d81cd3bca0a06766cada54e9900" category="list-text">데이터 브로커를 설치한 후 * 계속 * 을 클릭합니다.</block>
+  <block id="78f8e06b33ffb5e1a53c6685b329afd5" category="inline-image-macro">이 스크린샷은 성공적으로 배포된 인스턴스를 보여 줍니다. 인터페이스에는 AWS 네트워킹을 포함한 인스턴스에 대한 세부 정보가 표시됩니다.</block>
+  <block id="460dd7003c9711e5459ed0a96f7c8281" category="paragraph"><block ref="460dd7003c9711e5459ed0a96f7c8281" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a271de5321e2a04796460ebc14e59eb4" category="list-text">[[FILTER](* 디렉터리*) 페이지에서 최상위 디렉터리나 하위 디렉터리를 선택합니다.</block>
+  <block id="93f7bb360c276621c6af686453f670e4" category="paragraph">Cloud Sync에서 내보내기를 검색할 수 없는 경우 * 내보내기 수동 추가 * 를 클릭하고 NFS 내보내기 이름을 입력합니다.</block>
+  <block id="af796f24d59aefad2851f40d2e201331" category="admonition">NFS 서버에 둘 이상의 디렉토리를 동기화하려는 경우 작업을 완료한 후 동기화 관계를 추가로 생성해야 합니다.</block>
+  <block id="daae3c3e845ae4c3697e01616f4f7b93" category="list-text">AWS S3 버킷 * 페이지에서 버킷을 선택합니다.</block>
+  <block id="8e32410b962702f10a4b3b0600f973c1" category="list-text">드릴다운하여 버킷 내의 기존 폴더를 선택하거나 버킷 내에서 생성한 새 폴더를 선택합니다.</block>
+  <block id="c0e557736b1b4c22df8edfd8d06214ca" category="inline-link-macro">S3 버킷에 특정 권한을 적용해야 합니다</block>
+  <block id="2ad4a0a772b07953e8d882b7fe21cf11" category="list-text">목록에 추가 * 를 클릭하여 AWS 계정과 연결되지 않은 S3 버킷을 선택합니다. <block ref="772fe08f8ccc4de2babce33261957aed" category="inline-link-macro-rx"></block>.</block>
+  <block id="c04f4488434ced226bcb0be4d5ecf0e6" category="list-text">Bucket 설정 * 페이지에서 Bucket을 설정합니다.</block>
+  <block id="d0108dd861797c657c5b430a731cd0d9" category="list-text">S3 버킷 암호화를 사용하도록 설정한 다음 AWS KMS 키를 선택하고 KMS 키의 ARN을 입력하거나 AES-256 암호화를 선택합니다.</block>
+  <block id="90970afda72d4e681afa2bb416cbd684" category="inline-link-macro">지원되는 스토리지 클래스를 봅니다</block>
+  <block id="e570b0205def3432d6414b80b064fd93" category="list-text">S3 스토리지 클래스를 선택합니다. <block ref="f8865192424f8cbb3e819f63c6fba6a0" category="inline-link-macro-rx"></block>.</block>
+  <block id="8f1e572048af281c3d6bc069daeb0edb" category="inline-image-macro">이 스크린샷은 암호화에 대해 예 또는 아니요 를 선택하고 동기화된 데이터에 대해 특정 S3 저장소 클래스를 선택할 수 있는 Bucket 설정 페이지를 보여 줍니다.</block>
+  <block id="881cb6b58f9fdb2bde0b3c90f7cbfce8" category="paragraph"><block ref="881cb6b58f9fdb2bde0b3c90f7cbfce8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6a7470fea96bed8b75bf17e5f07e01a4" category="list-text">[[설정] * 설정 * 페이지에서 소스 파일 및 폴더가 대상 위치에서 동기화 및 유지되는 방식을 정의합니다.</block>
+  <block id="25f7347236b51a5eae4ba01a7862cb55" category="list-text">스케줄</block>
+  <block id="3e8e8a2afdd515355f098433677b9baa" category="list-text">향후 동기화를 위한 반복 일정을 선택하거나 동기화 일정을 해제합니다. 1분마다 데이터를 동기화하도록 관계를 예약할 수 있습니다.</block>
+  <block id="519b4d25c8ffbf8de1ebf62fde5dc856" category="list-text">다시 시도</block>
+  <block id="919cb072b2859b8a582192dee2b97aeb" category="list-text">Cloud Sync에서 파일을 건너뛰기 전에 동기화를 재시도할 횟수를 정의합니다.</block>
+  <block id="19d4853563c9ed77d05ef542fe4b883f" category="list-text">비교 기준</block>
+  <block id="080641e325f9b374fef7b233d5c33998" category="list-text">파일 또는 디렉토리가 변경되었으며 다시 동기화되어야 하는지 여부를 결정할 때 Cloud Sync에서 특정 속성을 비교해야 하는지 여부를 선택합니다.</block>
+  <block id="bf6c2410baf65cd9c33fe767daa2d995" category="paragraph">이 속성을 선택 취소하더라도 Cloud Sync에서는 경로, 파일 크기 및 파일 이름을 확인하여 소스를 타겟과 비교합니다. 변경 사항이 있으면 해당 파일과 디렉토리를 동기화합니다.</block>
+  <block id="960717da62f7dd61ed8c908d54ae49af" category="paragraph">Cloud Sync에서 다음 특성을 비교하도록 선택하거나 사용하지 않도록 설정할 수 있습니다.</block>
+  <block id="2e1fe502d1987faae1302741ffc3e3e2" category="list-text">* mtime *: 파일의 마지막 수정 시간입니다. 이 속성은 디렉토리에 대해 유효하지 않습니다.</block>
+  <block id="8737e5c894db64c8d3f66e89106dec75" category="list-text">* uid *, * gid * 및 * 모드 *: Linux용 권한 플래그</block>
+  <block id="f74b1a14b7639ecef72e594fe96eb745" category="list-text">개체 복사</block>
+  <block id="d2280a978447122c6ab7b62ac99c6588" category="list-text">오브젝트 스토리지 메타데이터 및 태그를 복사하려면 이 옵션을 활성화하십시오. 사용자가 소스의 메타데이터를 변경하면 Cloud Sync는 다음 동기화 시 이 개체를 복제하지만 사용자가 데이터 자체가 아닌 소스의 태그를 변경하면 Cloud Sync는 다음 동기화 시 개체를 복사하지 않습니다.</block>
+  <block id="e998b72bf009ad1c34dfd7fbf7e26388" category="paragraph">관계를 만든 후에는 이 옵션을 편집할 수 없습니다.</block>
+  <block id="87108e54d2a298427a5c439efc86720f" category="paragraph">태그 복사는 S3 호환 엔드포인트(S3, StorageGRID 또는 IBM 클라우드 오브젝트 스토리지)가 포함된 동기화 관계에서 지원됩니다.</block>
+  <block id="06902a5661d713ae255404d1b76c3108" category="paragraph">메타데이터 복사는 다음 엔드포인트 간의 '클라우드 간' 관계에서 지원됩니다.</block>
+  <block id="128edc3ff8c2d69c9c76b866643314ec" category="list-text">설치하고</block>
+  <block id="52745271323ee9ea30e3a37d0338d118" category="list-text">Azure Blob</block>
+  <block id="833c2c211a541e50ad94433664e4b5c1" category="list-text">Google 클라우드 스토리지</block>
+  <block id="5446a6bee3301e1f52824fc0affa6299" category="list-text">IBM 클라우드 오브젝트 스토리지</block>
+  <block id="392d70ca39f31f10bd637936769788df" category="list-text">StorageGRID</block>
+  <block id="2405489f130dba582973225d635d03f5" category="list-text">최근에 수정된 파일</block>
+  <block id="e437c8d40c8e4dfb442691ee8235c3fb" category="list-text">예약된 동기화 전에 최근에 수정된 파일을 제외하도록 선택합니다.</block>
+  <block id="80928702087cf089e5758d017f6ad82a" category="list-text">소스에서 파일 삭제</block>
+  <block id="91a2ec9af7bd4335c2766054d8aabc63" category="list-text">Cloud Sync가 파일을 타겟 위치에 복사한 후 소스 위치에서 파일을 삭제하도록 선택합니다. 이 옵션에는 원본 파일이 복사된 후 삭제되므로 데이터가 손실될 위험이 포함됩니다.</block>
+  <block id="4c65918743e5b7ce37949d486fd0545e" category="paragraph">이 옵션을 활성화하면 데이터 브로커에서 local.json 파일의 매개 변수도 변경해야 합니다. 파일을 열고 다음과 같이 업데이트합니다.</block>
+  <block id="edcca5513dd10c8731bb212da10adaca" category="list-text">대상에서 파일 삭제</block>
+  <block id="1c3e0d66ceb2ba1955fa5d6c931788cd" category="list-text">파일이 소스에서 삭제된 경우 대상 위치에서 파일을 삭제하도록 선택합니다. 기본값은 대상 위치에서 파일을 삭제하지 않는 것입니다.</block>
+  <block id="f12b42eece54a56ffab836a42eb37488" category="list-text">파일 형식</block>
+  <block id="5fdd04411ca447ba46cb4f395b6144e5" category="list-text">파일, 디렉토리 및 심볼 링크 등 각 동기화에 포함할 파일 유형을 정의합니다.</block>
+  <block id="ab02bb0c1a43b674af1de544e1af3831" category="list-text">파일 확장명 제외</block>
+  <block id="3ac7c94d925c145faa4e821d6da327ac" category="list-text">파일 확장명을 입력하고 * Enter * 를 눌러 동기화에서 제외할 파일 확장명을 지정합니다. 예를 들어, *.log 파일을 제외하려면 _log_또는 _.log_를 입력합니다. 여러 확장자에 대해 구분 기호가 필요하지 않습니다. 다음 비디오는 짧은 데모를 제공합니다.</block>
+  <block id="a00fe904aecabd4bff74d8776e6da2c5" category="list-text">파일 크기</block>
+  <block id="9c8cecb2075d9547b74e5e71bf16ab79" category="list-text">파일 크기나 특정 크기 범위에 있는 파일에 관계없이 모든 파일을 동기화하도록 선택합니다.</block>
+  <block id="80ccccd39ce6134340fccbf76eb379ae" category="list-text">수정한 날짜</block>
+  <block id="4e719b35b44214612a4323da75ce85f7" category="list-text">마지막으로 수정한 날짜, 특정 날짜 이후 수정된 파일, 특정 날짜 이전 또는 시간 범위 사이에 관계없이 모든 파일을 선택합니다.</block>
+  <block id="ba989292c988a2d8cc2131b51e13de72" category="list-text">만든 날짜</block>
+  <block id="cb19fb587c8b8441e4715d093c6ff8a9" category="list-text">SMB 서버가 소스인 경우 이 설정을 사용하면 특정 날짜 이후, 특정 날짜 이전 또는 특정 시간 범위 간에 생성된 파일을 동기화할 수 있습니다.</block>
+  <block id="b92f5c644d05d58f54475c2fe1234f54" category="list-text">ACL - 액세스 제어 목록</block>
+  <block id="f0b2b375230c7994fae3ffa2ea1c641e" category="list-text">SMB 서버에서 ACL 복사 - 관계를 생성할 때 또는 관계를 생성한 후에 설정을 사용합니다.</block>
+  <block id="5cf4f5ebbbfbb213dc901510fbf08a80" category="list-text">태그/메타데이터 * 페이지에서 S3 버킷으로 전송된 모든 파일에 키 값 쌍을 태그로 저장할지 또는 모든 파일에 메타데이터 키 값 쌍을 할당할지 여부를 선택합니다.</block>
+  <block id="96eb50fa77567b33546d85a4d6adc2f4" category="inline-image-macro">Amazon S3에 대한 동기화 관계를 생성할 때 태그/메타데이터 페이지를 보여 주는 스크린샷</block>
+  <block id="72786dbf28b6222cb6b90ef1853e64d5" category="paragraph"><block ref="72786dbf28b6222cb6b90ef1853e64d5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3b2c91269ae0c67c26fe59bbb10eb6a2" category="admonition">StorageGRID 및 IBM 클라우드 오브젝트 스토리지로 데이터를 동기화할 때도 동일한 기능을 사용할 수 있습니다. Azure 및 Google Cloud Storage의 경우 메타데이터 옵션만 사용할 수 있습니다.</block>
+  <block id="abf843ce80b23a0209755d1e397c8333" category="list-text">동기화 관계에 대한 세부 정보를 검토한 다음 * 관계 생성 * 을 클릭합니다.</block>
+  <block id="600901e70afccc50e18676048766ba78" category="paragraph">결과 *</block>
+  <block id="4fd833eb5d1da558428c830d107dff22" category="paragraph">Cloud Sync가 소스와 타겟 간의 데이터 동기화를 시작합니다.</block>
+  <block id="991900a0204b24a05efe45e0b0b3bb96" category="section-title">클라우드 데이터 센스에서 동기화 관계를 생성합니다</block>
+  <block id="2eef1a1e9df928ffdc88071624647e40" category="paragraph">Cloud Sync는 클라우드 데이터 센스에 통합되어 있습니다. 데이터 감지 내에서 Cloud Sync를 사용하여 타겟 위치에 동기화할 소스 파일을 선택할 수 있습니다.</block>
+  <block id="0a3762f065e87e761291235c3f42e8d4" category="paragraph">Cloud Data Sense에서 데이터 동기화를 시작한 후에는 모든 소스 정보가 한 번에 포함되고 몇 가지 키 세부 정보만 입력하면 됩니다. 그런 다음 새 동기화 관계의 타겟 위치를 선택합니다.</block>
+  <block id="f3b62c43bc969f6b5b30d96b8171a06d" category="inline-image-macro">클라우드 데이터 센스에서 직접 새 동기화를 시작한 후 나타나는 데이터 감지 통합 페이지를 보여주는 스크린샷.</block>
+  <block id="c52509e09917e0e29ac603ef598d3f69" category="paragraph"><block ref="c52509e09917e0e29ac603ef598d3f69" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="20718255a13eb2f29be8b068228e69bc" category="inline-link">클라우드 데이터 센스에서 동기식 관계를 시작하는 방법을 알아보십시오</block>
+  <block id="0f091e70c984324fefd750bc86f06c98" category="paragraph"><block ref="92384a764db045ca9031e6f4bfce712d" category="inline-link-rx"></block>.</block>
+  <block id="5e4e330a68fd5b85b32d86b44717f091" category="summary">Amazon S3, Azure 또는 Google Cloud 자격 증명이 필요한 동기화 관계를 생성하는 경우 Cloud Sync 사용자 인터페이스 또는 API를 통해 이러한 자격 증명을 지정해야 합니다. 또는 데이터 브로커를 설정하여 외부 HashashCorp 볼트에서 직접 자격 증명에 액세스하는 방법도 있습니다.</block>
+  <block id="34a36f0a41c390743b7c28311304c570" category="doc">외부 HashCorp Vault를 사용하도록 데이터 브로커 그룹을 설정합니다</block>
+  <block id="9e65ec8942093c6a71fdf631e8dfb695" category="paragraph">Amazon S3, Azure 또는 Google Cloud 자격 증명이 필요한 동기화 관계를 생성하는 경우 Cloud Sync 사용자 인터페이스 또는 API를 통해 이러한 자격 증명을 지정해야 합니다. 또는 데이터 브로커 그룹을 설정하여 외부 HashiCorp 볼트에서 직접 자격 증명(또는 _비밀_)에 액세스할 수도 있습니다.</block>
+  <block id="758f234fc2670f5c7096009448598490" category="paragraph">이 기능은 Amazon S3, Azure 또는 Google Cloud 자격 증명이 필요한 동기화 관계가 있는 Cloud Sync API를 통해 지원됩니다.</block>
+  <block id="2428fdd39f5ab3cbda5b5bac12ab8f84" category="paragraph">URL을 설정하여 데이터 브로커 그룹에 자격 증명을 제공할 볼트를 준비합니다. 볼트의 비밀에 대한 URL은 _creds_로 끝나야 합니다.</block>
+  <block id="e0e88dfcd253d5d5ea89a9985f2101cf" category="paragraph">그룹의 각 데이터 브로커에 대한 로컬 구성 파일을 수정하여 외부 볼트에서 자격 증명을 가져오도록 데이터 브로커 그룹을 준비합니다.</block>
+  <block id="f3a79eb1d3d4b75537affb3a4efa8775" category="paragraph">이제 모든 것이 설정되었으므로 API 호출을 전송하여 볼트를 사용하는 동기화 관계를 만들어 비밀을 가져올 수 있습니다.</block>
+  <block id="7fe706ca34bea852c8a7b5a01aac8705" category="section-title">볼트 준비 중</block>
+  <block id="2d7eff2eea48f45f6cec54a305b1ceb0" category="paragraph">볼트의 비밀에 대한 URL을 Cloud Sync에 제공해야 합니다. 이러한 URL을 설정하여 볼트를 준비합니다. 만들려는 동기화 관계의 각 소스 및 타겟의 자격 증명에 대한 URL을 설정해야 합니다.</block>
+  <block id="b97d94a4af6f2da3a68d05d4577e517f" category="paragraph">URL은 다음과 같이 설정해야 합니다.</block>
+  <block id="011dd3c441f07d89289a23db496f2046" category="paragraph">'/&lt;path&gt;/&lt;requested&gt;/&lt;endpoint-protocol&gt;creds'</block>
+  <block id="ac70412e939d72a9234cdebb1af5867b" category="list-text">경로</block>
+  <block id="313e62477123369d7e356ac065215877" category="list-text">비밀에 대한 접두사 경로입니다. 이는 귀하에게 고유한 모든 가치가 될 수 있습니다.</block>
+  <block id="c331be104c581b2f6aa0058a3b02f82a" category="list-text">요청 ID입니다</block>
+  <block id="da448bd011c3c55e33d594093baaad38" category="list-text">생성해야 하는 요청 ID입니다. 동기화 관계를 생성할 때 API POST 요청의 헤더 중 하나에 ID를 제공해야 합니다.</block>
+  <block id="6ac6099ba929278408d63cac3dcf594d" category="list-text">엔드포인트 프로토콜</block>
+  <block id="ba68179f2fdc70db5eeb052d4f679a30" category="inline-link">사후 관계 v2 문서에서</block>
+  <block id="d91bc2ab5a9791b5fe05cd1de22ca3a8" category="list-text">정의된 대로 다음 프로토콜 중 하나입니다<block ref="f4591ce4d6e01839b28a59ff533d1c05" category="inline-link-rx"></block>S3, Azure 또는 GCP(각각 대문자여야 함).</block>
+  <block id="66e3724487a9b90acbca54669c05387d" category="list-text">크레드</block>
+  <block id="874783a56368af5ae951b36039463632" category="list-text">URL은 _creds_로 끝나야 합니다.</block>
+  <block id="ff7c0fcd6a31e735a61c001f75426961" category="section-title">예</block>
+  <block id="a5a29de8ab27a7b43330a9154b29d95f" category="paragraph">다음 예제에서는 비밀에 대한 URL을 보여 줍니다.</block>
+  <block id="fa6019bcc727b2056cef21234aa81322" category="list-text">소스 자격 증명의 전체 URL 및 경로 예</block>
+  <block id="bc9e1d85e0c97c60678931cc02fd8d35" category="list-text">http://example.vault.com:8200/my-path/all-secrets/hb312vdasr2/S3Creds 으로 문의하십시오</block>
+  <block id="572f79411e84e364b3f191f88076f86c" category="paragraph">예제에서 볼 수 있듯이 접두사 경로는 _/my-path/all-sids/_이고 요청 ID는 _hb312vdasr2_이며 소스 끝점은 S3입니다.</block>
+  <block id="01bcd05b36ee78f5e7558380e1c441c1" category="list-text">대상 자격 증명의 전체 URL 및 경로 예</block>
+  <block id="2af8dca9bc89c0d31fe796e59b5f370e" category="list-text">http://example.vault.com:8200/my-path/all-secrets/n32hcbnejk2/AZURECreds 으로 문의하십시오</block>
+  <block id="3aefad44bc64b2ff412966cd4518c970" category="paragraph">접두사 경로는 _/my-path/all-sats/_이고, 요청 ID는 _n32hcbnejk2_이며, 대상 끝점은 Azure입니다.</block>
+  <block id="6bdc241f7d9a3a1b035cb0ebe9d563d1" category="section-title">데이터 브로커 그룹을 준비하는 중입니다</block>
+  <block id="e53c4e755ce10f21750aef31f9cb474c" category="list-text">그룹의 데이터 브로커에 SSH를 연결합니다.</block>
+  <block id="57e9628679cc186593a986def13cfc2b" category="list-text">/opt/netapp/databroker/config에 있는 local.json 파일을 편집합니다.</block>
+  <block id="d04d9c6e802e9e399fbf311275a4e180" category="list-text">enable을 * true * 로 설정하고 다음과 같이 _external-통합.hashicorp_에서 config 매개 변수 필드를 설정합니다.</block>
+  <block id="a10311459433adf322f2590a4987c423" category="list-text">활성화됨</block>
+  <block id="17aa83fadf7aab46472cebbce47dd8e0" category="list-text">유효한 값: TRUE/FALSE</block>
+  <block id="4643d92af9b11b396c6905bdce0b84d3" category="list-text">Type:Boolean 을 입력합니다</block>
+  <block id="f5bc3dd03e74d901d9881dce9db3327e" category="list-text">기본값: false</block>
+  <block id="01193036ef2f58af5fcbe971b0b9372a" category="list-text">참: 데이터 브로커는 외부의 HashashCorp Vault에서 비밀을 얻습니다</block>
+  <block id="491fa8bff244e7e5c70407a964aae6df" category="list-text">거짓: 데이터 브로커는 로컬 볼트에 자격 증명을 저장합니다</block>
+  <block id="572d4e421e5e6b9bc11d815e8a027112" category="list-text">URL</block>
+  <block id="06dca6d022132c648a848f9b39007d59" category="list-text">유형: string</block>
+  <block id="1870b94fb3d4b94215208abc3e3dc5d3" category="list-text">값: 외부 볼트의 URL</block>
+  <block id="d6fe1d0be6347b8ef2427fa629c04485" category="list-text">경로</block>
+  <block id="1dafbed3927f2aa45d8a28216663e466" category="list-text">값: 자격 증명을 사용하여 비밀번호에 대한 접두사 경로입니다</block>
+  <block id="ed7e6a6e8e12e36799729719ef5f8925" category="list-text">거부 - 승인되지 않음</block>
+  <block id="33a1baa841eb2e8e1fa6879c030fce18" category="list-text">데이터 브로커가 승인되지 않은 외부 볼트를 거부하도록 할지 여부를 결정합니다</block>
+  <block id="63a3168661b8fec46d2e90c9e0569cad" category="list-text">기본값: false</block>
+  <block id="8bdf6159bd97913f7168d0203573d2ce" category="list-text">인증 방법</block>
+  <block id="1800fe6dffb47255c52134118e691558" category="list-text">데이터 브로커가 외부 볼트에서 자격 증명에 액세스하기 위해 사용해야 하는 인증 방법입니다</block>
+  <block id="0fcf3cc77a6a0f689e36c3a9774d1df8" category="list-text">유효한 값: “AWS-IAM”/“ROLE-APP”/"GCP-IAM"</block>
+  <block id="53eb18e51b16fcf37dc9ef717365fd1e" category="list-text">역할 이름</block>
+  <block id="489de6b162f125b986e36027625fb8e3" category="list-text">역할 이름(AWS-IAM 또는 GCP-IAM을 사용하는 경우)</block>
+  <block id="baa5f03cbb91a2cd7657699fcddc97c5" category="list-text">정전동맥(&amp;R)</block>
+  <block id="6aadc27d631c3f5f2ca67cd8708387a3" category="list-text">유형: 문자열(APP-ROLE 사용 시)</block>
+  <block id="b3ba0fe968ce39dcfc6fe8cc0f1b02da" category="list-text">네임스페이스</block>
+  <block id="cf44b4165baccb3bf3e80daa9840aaf8" category="list-text">네임스페이스(필요한 경우 X-Vault-Namespace 헤더)</block>
+  <block id="1151673efbf1139445cf28b9c2a5e870" category="list-text">그룹의 다른 데이터 브로커에 대해 이 단계를 반복합니다.</block>
+  <block id="df538d67a969b99ad10c96736d0e3de8" category="section-title">AWS 역할 인증의 예</block>
+  <block id="7464ab636ff7b666832693357d2dae63" category="section-title">GCP-IAM 인증의 예</block>
+  <block id="c4e8f9bc954572562912e03c9f2fbe19" category="section-title">GCP-IAM 인증 사용 시 권한 설정</block>
+  <block id="e32a252e42df40beaff7e5a1ce821572" category="paragraph">_GCP-IAM_인증 방법을 사용하는 경우 데이터 브로커에 다음과 같은 GCP 권한이 있어야 합니다.</block>
+  <block id="b872e6417139366489f4ec46ed47e57d" category="inline-link-macro">데이터 브로커의 GCP 권한 요구 사항에 대해 자세히 알아보십시오</block>
+  <block id="6c6f477f7b70d038eaa27d83b51ba533" category="paragraph"><block ref="e85dc3fc664e427ab39e5c87730a03a3" category="inline-link-macro-rx"></block>.</block>
+  <block id="2551f9b8e10e8b9a8eaf44b595104527" category="section-title">볼트의 비밀을 사용하여 새 동기화 관계를 작성합니다</block>
+  <block id="aea6bdca8526169a7ce9163bff6fd0c5" category="paragraph">Cloud Sync REST API를 사용하여 관계를 게시합니다.</block>
+  <block id="f04d1ca5db491ee5c350c88febbfd65c" category="inline-link-macro">설명서의 이 페이지를 참조하십시오</block>
+  <block id="5163ecef56728492961efaeb09c79383" category="list-text">사용자 토큰 및 Cloud Central 계정 ID를 얻으려면 <block ref="9916106685c90c7f11bef1136b0391ad" category="inline-link-macro-rx"></block>.</block>
+  <block id="89bd30152e49ad6c1d8ab907487684a6" category="inline-link">관계 - v2 API 호출을 참조하십시오</block>
+  <block id="5f70a33cfe5bc333821c2a9b0beb2648" category="list-text">사후 관계를 위한 본문을 구축하려면<block ref="e9795bb60ff464250f91f2bcfd35fc3d" category="inline-link-rx"></block>.</block>
+  <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="section-title">예</block>
+  <block id="b8786298cd3539afe2429695af111104" category="paragraph">POST 요청의 예:</block>
+  <block id="3bc12ac4ccda30e017ee64118137b471" category="summary">NetApp Cloud Sync 서비스는 데이터를 클라우드 또는 온프레미스의 모든 타겟으로 간단하고 안전하며 자동화된 방법으로 마이그레이션합니다.</block>
+  <block id="f0b3616a53463d7f6e692bfaedbd45cb" category="doc">Cloud Sync 개요</block>
+  <block id="19c52e0abe390e48716e36aa4946a960" category="paragraph">NetApp Cloud Sync 서비스는 데이터를 클라우드 또는 온프레미스의 모든 타겟으로 간단하고 안전하며 자동화된 방법으로 마이그레이션합니다. StorageGRID는 파일 기반 NAS 데이터 세트(NFS 또는 SMB), Amazon S3(Simple Storage Service) 오브젝트 형식, NetApp Cloud Sync ® 어플라이언스 또는 기타 클라우드 공급자 오브젝트 저장소 등 그 어떤 형태이든 변환 및 이동할 수 있습니다.</block>
+  <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">피처</block>
+  <block id="9d51810a93f734113b2ee23bcbcae0db" category="paragraph">Cloud Sync에 대한 개요는 다음 비디오에서 확인할 수 있습니다.</block>
+  <block id="808b8ba2e29d66a77782f04c60c5e362" category="section-title">Cloud Sync의 작동 방식</block>
+  <block id="b1ef10218f2bd62a0852959b9d1b05ee" category="paragraph">Cloud Sync는 데이터 브로커 그룹, Cloud Manager를 통해 사용 가능한 클라우드 기반 인터페이스, 소스 및 타겟으로 구성된 서비스형 소프트웨어(SaaS) 플랫폼입니다.</block>
+  <block id="eb65cb8db3d8268189ee205c95054d1c" category="paragraph">다음 이미지는 Cloud Sync 구성 요소 간의 관계를 보여줍니다.</block>
+  <block id="4c27f85e0364ce6c943ba00317c839d2" category="inline-image-macro">소스에서 타겟으로 데이터가 흐르는 개념적 이미지. 데이터 브로커 소프트웨어는 중재자의 역할을 수행하고 작업을 위해 Cloud Sync 서비스를 폴링합니다.</block>
+  <block id="7f016e96b503a03744c95b6baa254cbc" category="paragraph"><block ref="7f016e96b503a03744c95b6baa254cbc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6017ce99c5912b4ba9156abe2407b50a" category="paragraph">NetApp 데이터 브로커 소프트웨어는 소스에서 타겟으로 데이터를 동기화합니다(일명 A_SYNC Relationship _). AWS, Azure, Google Cloud Platform 또는 온프레미스에서 데이터 브로커를 실행할 수 있습니다. 하나 이상의 데이터 브로커로 구성된 데이터 브로커 그룹은 포트 443을 통한 아웃바운드 인터넷 연결이 있어야 Cloud Sync 서비스와 통신하고 몇 가지 다른 서비스 및 리포지토리에 연결할 수 있습니다. <block ref="30f0c8255e1737101681cabde5abb03f" category="inline-link-macro-rx"></block>.</block>
+  <block id="6feaac5d2cd08d5ab829c5ed5fa29f46" category="paragraph">초기 복사 후 서비스는 사용자가 설정한 일정에 따라 변경된 데이터를 동기화합니다.</block>
+  <block id="745f3917a074ad2d3a63f913855d07bd" category="section-title">지원되는 스토리지 유형입니다</block>
+  <block id="9408d5be48531af0cf3eb5c7a9a8eaf3" category="paragraph">Cloud Sync는 다음과 같은 스토리지 유형을 지원합니다.</block>
+  <block id="d7cfb05f007bf8f6cbe169672a8657bf" category="list-text">모든 NFS 서버</block>
+  <block id="569f332e20704093477ef6369dab8242" category="list-text">모든 SMB 서버</block>
+  <block id="f7b96044a16becafecad63df1725e9c8" category="list-text">Amazon EFS</block>
+  <block id="270fcb785810d0206945029bb05f4e97" category="list-text">Amazon S3</block>
+  <block id="ad1b29fd112650803371dd1a913315af" category="list-text">상자(미리 보기로 사용 가능)</block>
+  <block id="200b74de2e12f861dad63aa0de84ec6c" category="list-text">Cloud Volumes Service</block>
+  <block id="0ef90fde5440e5fbd859cb4d59f76f2c" category="list-text">사내 ONTAP 클러스터</block>
+  <block id="a68d8b6ae92fdf98aa74ce8cfe41a27f" category="list-text">ONTAP S3 스토리지</block>
+  <block id="f24618724fdf35af4baff29a5d306a3f" category="list-text">SFTP(API만 사용)</block>
+  <block id="628566b01515971d62d0db6607212aa2" category="inline-link-macro">지원되는 동기화 관계를 봅니다</block>
+  <block id="5878d5499bc15bd90cc857073f0f7fc3" category="paragraph"><block ref="41a2675f78a645fe47a210df4886e0ba" category="inline-link-macro-rx"></block>.</block>
+  <block id="66096c22a6220952b7aef731ef78c167" category="section-title">비용</block>
+  <block id="2d2011472e828a6c03a0d03a6eefb1e0" category="paragraph">Cloud Sync 사용과 관련된 비용에는 리소스 비용 및 서비스 비용이라는 두 가지 유형이 있습니다.</block>
+  <block id="fb0fa008eff995c2ab3bdbedb2b9753f" category="list-text">리소스 비용</block>
+  <block id="7beb8e284e9f02cad179a28a39109df7" category="list-text">리소스 요금은 클라우드에서 하나 이상의 데이터 브로커를 실행하는 데 필요한 컴퓨팅 및 스토리지 비용과 관련이 있습니다.</block>
+  <block id="7b134b802c9d8174603567006b38e1c0" category="list-text">서비스 요금</block>
+  <block id="749494a6a57fee4861972147c825dd5a" category="list-text">14일 무료 평가판이 종료된 후 동기화 관계에 대한 비용을 지불할 수 있는 두 가지 방법이 있습니다. 첫 번째 옵션은 AWS 또는 Azure에서 가입하는 것입니다. 가입 서비스를 이용하면 시간 또는 연간 요금을 지불할 수 있습니다. 두 번째 옵션은 NetApp에서 직접 라이센스를 구매하는 것입니다.</block>
+  <block id="6b130e03ee8c8d322a6174a591d2b774" category="inline-link-macro">라이선스 작동 방식에 대해 알아보십시오</block>
+  <block id="3b1417e2cc8a651004ff0099ad870a73" category="paragraph"><block ref="e8ff8b95d6e71d0badc3862de8130ad6" category="inline-link-macro-rx"></block>.</block>
+  <block id="3d4a1e312061c2a0e1171d137dc166dd" category="summary">필요한 경우 제거 스크립트를 실행하여 데이터 브로커가 설치될 때 생성된 데이터 브로커와 패키지 및 디렉토리를 제거합니다.</block>
+  <block id="e6f506127d5f6704ecc31da23c753df9" category="doc">데이터 브로커를 제거하는 중입니다</block>
+  <block id="dd8a8a39c3cdcebc155728bf563bc1e1" category="paragraph">필요한 경우 제거 스크립트를 실행하여 데이터 브로커가 설치되었을 때 생성된 데이터 브로커와 패키지 및 디렉토리를 제거합니다.</block>
+  <block id="1216bef3d5a3c80340882e3c0b1b21f1" category="list-text">데이터 브로커 호스트에 로그인합니다.</block>
+  <block id="c3007d2919ca918bead8275d47f7541a" category="list-text">데이터 브로커 디렉터리 '/opt/netapp/databroker'로 변경합니다</block>
+  <block id="62e3899fe2adfc651dc44b617edd0895" category="list-text">다음 명령을 실행합니다.</block>
+  <block id="3b06e3c95384b14b7af959fa5c562aff" category="paragraph">chmod+x uninstaller-DataBroker.sh../uninstaller-DataBroker.sh</block>
+  <block id="7af2a6b72c67250458118d65cec3d103" category="list-text">'y'를 눌러 제거를 확인합니다.</block>
+  <block id="e3d4ba055c2fed02290d0d5839286227" category="summary">새 데이터 브로커를 생성하는 경우 AWS Data Broker 옵션을 선택하여 VPC의 새 EC2 인스턴스에 데이터 브로커 소프트웨어를 구축할 수 있습니다. Cloud Sync는 설치 프로세스를 안내하지만 설치 준비에 도움이 되도록 이 페이지에서 요구 사항과 단계를 반복합니다.</block>
+  <block id="8268a9d045ec667e304233d6a99374e0" category="doc">AWS에서 새 데이터 브로커 생성</block>
+  <block id="f1678bc5431614d754ecd85d62316105" category="paragraph">새 데이터 브로커 그룹을 생성하는 경우 Amazon Web Services 를 선택하여 VPC의 새 EC2 인스턴스에 데이터 브로커 소프트웨어를 배포합니다. Cloud Sync는 설치 프로세스를 안내하지만 설치 준비에 도움이 되도록 이 페이지에서 요구 사항과 단계를 반복합니다.</block>
+  <block id="c43a6988e9fb943699097296d5eabba0" category="paragraph">클라우드 또는 사내에 있는 기존 Linux 호스트에 데이터 브로커를 설치할 수도 있습니다. <block ref="556c1c240ec0090f5d153e6b793bb5bc" category="inline-link-macro-rx"></block>.</block>
+  <block id="af7680d24e7ce67fad6006c6fc467b53" category="section-title">지원되는 AWS 영역</block>
+  <block id="f94a220e5e098d02bd2706d4a8e698bd" category="paragraph">중국 지역을 제외한 모든 지역이 지원됩니다.</block>
+  <block id="9251700e586dc1a410f2e755a8643751" category="section-title">네트워킹 요구 사항</block>
+  <block id="dd0891b98c2f0c6e43bf8873e49de0c6" category="list-text">데이터 브로커는 포트 443을 통해 Cloud Sync 서비스를 폴링할 수 있도록 아웃바운드 인터넷 연결이 필요합니다.</block>
+  <block id="857d38f6bd6b3bbb110e6060d997e168" category="paragraph">Cloud Sync는 AWS에 데이터 브로커를 구축할 때 필요한 아웃바운드 통신을 지원하는 보안 그룹을 생성합니다. 설치 프로세스 중에 프록시 서버를 사용하도록 데이터 브로커를 구성할 수 있습니다.</block>
+  <block id="a0bda8e6f5ea7fd3e543f2595ac6fd22" category="inline-link-macro">데이터 브로커가 연락하는 끝점 목록입니다</block>
+  <block id="595b41b390f8657db09f1747005bcced" category="paragraph">아웃바운드 연결을 제한해야 하는 경우 를 참조하십시오 <block ref="e15f11c981342cac61e677727c9cff92" category="inline-link-macro-rx"></block>.</block>
+  <block id="7592d848e21d5d836df48cb913e15f68" category="list-text">소스, 타겟 및 데이터 브로커가 NTP(Network Time Protocol) 서비스를 사용하도록 구성하는 것이 좋습니다. 세 구성 요소 간의 시간 차이는 5분을 초과해서는 안 됩니다.</block>
+  <block id="572539efea3b8fc37d4d9f01097ce1b1" category="section-title">AWS에서 데이터 브로커를 구축하는 데 필요한 권한입니다</block>
+  <block id="0c976b99165500ae45a3c855e25dcab9" category="inline-link">NetApp에서 제공하는 정책입니다</block>
+  <block id="e07a5562f4316c82f42f0cceadb85346" category="paragraph">데이터 브로커를 구축하는 데 사용하는 AWS 사용자 계정에 에 포함된 권한이 있어야 합니다<block ref="7a75c423e60de35145dc973b82d7b871" category="inline-link-rx"></block>.</block>
+  <block id="9b99759f27fdd4623c9ea015c92207fd" category="section-title">AWS 데이터 브로커와 함께 IAM 역할을 사용해야 합니다</block>
+  <block id="da5c81a4026a6c0e492776683df14992" category="paragraph">Cloud Sync는 데이터 브로커를 배포할 때 데이터 브로커 인스턴스에 대해 IAM 역할을 생성합니다. 원할 경우 자체 IAM 역할을 사용하여 데이터 브로커를 배포할 수 있습니다. 조직에 엄격한 보안 정책이 있는 경우 이 옵션을 사용할 수 있습니다.</block>
+  <block id="b8e7ab2062cb997e59199b1b7597c950" category="paragraph">IAM 역할은 다음 요구 사항을 충족해야 합니다.</block>
+  <block id="187f2d3a34ab7f9d7fce1966c39206fe" category="list-text">IAM 역할을 신뢰할 수 있는 엔터티로 사용하려면 EC2 서비스가 허용되어야 합니다.</block>
+  <block id="ea85396da38480bdcd66e09456ac3fd4" category="inline-link-macro">이 JSON 파일에 정의된 권한</block>
+  <block id="8e4350880011b411db7b27aa380a60d0" category="list-text"><block ref="1a8d8995001884ca8ca83a93f0897f4a" category="inline-link-macro-rx"></block> 데이터 브로커가 올바르게 작동할 수 있도록 IAM 역할에 연결해야 합니다.</block>
+  <block id="63430717bb1e3b33a858e3661c1627a0" category="paragraph">데이터 브로커를 배포할 때 IAM 역할을 지정하려면 아래 단계를 따르십시오.</block>
+  <block id="9727c41167b4d3a89168d9e2a6bf1fbe" category="section-title">데이터 브로커 생성</block>
+  <block id="c371ecc54445590f3e356493638d02db" category="paragraph">새로운 데이터 브로커를 생성하는 방법은 몇 가지가 있습니다. 다음 단계에서는 동기화 관계를 생성할 때 AWS에서 데이터 브로커를 설치하는 방법을 설명합니다.</block>
+  <block id="05b03110970a5e69bee8654fc24ccf0b" category="list-text">새 동기화 만들기 * 를 클릭합니다.</block>
+  <block id="699986c3a8b1dd3a3143973b450c229d" category="list-text">동기화 관계 정의 * 페이지에서 소스 및 대상을 선택하고 * 계속 * 을 클릭합니다.</block>
+  <block id="f0fff4676c779987735fc7ee633da03c" category="paragraph">데이터 브로커 그룹 * 페이지가 나타날 때까지 단계를 완료합니다.</block>
+  <block id="c26c6fab489734aee5276f7e590f8b18" category="list-text">데이터 브로커 그룹 * 페이지에서 * 데이터 브로커 * 생성 을 클릭한 다음 * Amazon Web Services * 를 선택합니다.</block>
+  <block id="0fc6ea2f37f8948c8630ffb60d5e0265" category="inline-image-macro">AWS, Azure, Google Cloud 및 온프레미스 데이터 브로커 중에서 선택할 수 있는 Data Broker 페이지의 스크린샷</block>
+  <block id="7af53fb4b55f3887a3b7d59e2a119aa2" category="paragraph"><block ref="7af53fb4b55f3887a3b7d59e2a119aa2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8d5f3c11505e061fa1ae30de2766106b" category="list-text">데이터 브로커의 이름을 입력하고 * 계속 * 을 클릭합니다.</block>
+  <block id="4511e4c890506a8c296778e7afcb557f" category="list-text">AWS 액세스 키를 입력하여 Cloud Sync에서 대신 AWS에서 데이터 브로커를 생성할 수 있습니다.</block>
+  <block id="5c06da7ffcfe27fbe1ca6a288b6d46c8" category="paragraph">키는 다른 용도로 저장되거나 사용되지 않습니다.</block>
+  <block id="ea274abab109d43436d6d4dd8e13bab8" category="paragraph">액세스 키를 제공하지 않고 싶은 경우 페이지 하단에 있는 링크를 클릭하여 CloudFormation 템플릿을 대신 사용하십시오. 이 옵션을 사용할 경우 AWS에 직접 로그인하므로 자격 증명을 제공할 필요가 없습니다.</block>
+  <block id="fac489f42d32a183751d7250d0d6ddf8" category="paragraph">[[CFT]] 다음 비디오에서는 CloudFormation 템플릿을 사용하여 데이터 브로커 인스턴스를 시작하는 방법을 설명합니다.</block>
+  <block id="98efc09f21efc2de339cf9c7bac93457" category="list-text">AWS 액세스 키를 입력한 경우, 인스턴스에 대한 위치를 선택하고 키 쌍을 선택한 다음 공용 IP 주소 활성화 여부를 선택한 다음 기존 IAM 역할을 선택하거나 필드를 비워 Cloud Sync에서 역할을 생성합니다.</block>
+  <block id="17cc78aee78be2a54a8cc1a5a2172559" category="inline-xref">필요한 권한을 제공해야 합니다</block>
+  <block id="115b5af8cfd138d39f5b56bb5b1b53d7" category="paragraph">IAM 역할을 직접 선택할 경우 <block ref="1faadad7a4ef01b0a8464fdda070fd6f" category="inline-xref-macro-rx"></block>.</block>
+  <block id="48ddfca14a59f67e3a3c2c0c1ad80745" category="inline-image-macro">AWS에서 데이터 브로커를 구축할 때 제공해야 하는 정보의 스크린샷</block>
+  <block id="7e081dd574325a6acacaf1ef4a402f07" category="paragraph"><block ref="7e081dd574325a6acacaf1ef4a402f07" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bc9746b5abda5cdfdb7d182e1d430612" category="list-text">VPC의 인터넷 액세스에 프록시가 필요한 경우 프록시 구성을 지정합니다.</block>
+  <block id="7c0dcba2aad8829f00ca473d5eefd359" category="list-text">데이터 브로커를 사용할 수 있게 되면 Cloud Sync에서 * 계속 * 을 클릭합니다.</block>
+  <block id="fec1c8b71689bb3080955da982e9fed4" category="paragraph">다음 이미지는 AWS에 성공적으로 구축된 인스턴스를 보여줍니다.</block>
+  <block id="1e7762f618855774465cdffd1012f4f3" category="paragraph"><block ref="1e7762f618855774465cdffd1012f4f3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d78ea8d5b2348d428c520d98d26204f1" category="list-text">마법사의 페이지를 완료하여 새 동기화 관계를 생성합니다.</block>
+  <block id="87854cda9a6aa5db9821b38a96478990" category="paragraph">AWS에 데이터 브로커를 구축하고 새로운 동기화 관계를 생성했습니다. 이 데이터 브로커 그룹을 추가 동기화 관계에 사용할 수 있습니다.</block>
+  <block id="8c571dbe3b98ef448c2a8eb8518af80b" category="section-title">데이터 브로커 인스턴스에 대한 세부 정보</block>
+  <block id="e120f1042f4cca5c2b32a07322e35332" category="paragraph">Cloud Sync은 다음 구성을 사용하여 AWS에서 데이터 브로커를 생성합니다.</block>
+  <block id="1e4f0991fe8c17eeb30a08a567b6faeb" category="list-text">인스턴스 유형</block>
+  <block id="305844c9f0d8d39ccc49abc28fe261cc" category="list-text">m5n.xlarge(m5n.xlarge)(해당 지역에서 사용할 수 있는 경우), 그렇지 않은 경우 m5.xlarge</block>
+  <block id="ce3dfaedf282c19c5710c3e4b7302a4e" category="list-text">vCPU</block>
+  <block id="a87ff679a2f3e71d9181a67b7542122c" category="list-text">4</block>
+  <block id="e53619c1fe611a51eeeb8d148ba6e532" category="list-text">RAM</block>
+  <block id="752a423b7896d2c8176434adcd527e26" category="list-text">16GB</block>
+  <block id="696c660ff8d9323e55146a6dbd4e4088" category="list-text">운영 체제</block>
+  <block id="734bdc8fcba7f190d8a2571163d24971" category="list-text">Amazon Linux 2</block>
+  <block id="c03f3cc8275a0a87d7784cf12a264c0b" category="list-text">디스크 크기 및 유형입니다</block>
+  <block id="c5a333964ee323aaba5e5b42ff247d6b" category="list-text">10GB GP2 SSD</block>
+  <block id="71904eaffc2ec470e49ce1a710f5e878" category="summary">회사에 엄격한 보안 정책이 있는 경우 전송 중 데이터 암호화를 사용하여 서로 다른 네트워크에 있는 NFS 서버 간에 데이터를 동기화합니다.</block>
+  <block id="8df3b832ae4d464c11ed34e0c6f3da2f" category="doc">전송 중 데이터 암호화를 사용하여 NFS 데이터 동기화</block>
+  <block id="72bf4a1584bf5735615bab52725bb4a4" category="paragraph">회사에 엄격한 보안 정책이 있는 경우 전송 중인 데이터 암호화를 사용하여 NFS 데이터를 동기화할 수 있습니다. 이 기능은 NFS 서버에서 다른 NFS 서버로, Azure NetApp Files에서 Azure NetApp Files로 지원됩니다.</block>
+  <block id="81c917d52736001d7efd43b0f0ddc92c" category="paragraph">예를 들어, 서로 다른 네트워크에 있는 두 NFS 서버 간에 데이터를 동기화할 수 있습니다. 또는 서브넷 또는 영역 간에 Azure NetApp Files의 데이터를 안전하게 전송해야 할 수 있습니다.</block>
+  <block id="d6dc650d0d220e29e9345f6a653d7ec3" category="section-title">전송 중 데이터 암호화 작동 방식</block>
+  <block id="4410982c406bf5a035f04b32a2af7542" category="paragraph">전송 중인 데이터 암호화는 두 데이터 브로커 간에 네트워크를 통해 전송되는 NFS 데이터를 암호화합니다. 다음 이미지는 두 NFS 서버와 두 데이터 브로커 간의 관계를 보여 줍니다.</block>
+  <block id="f0f93c0766dec0a6ebe5e8543295bd56" category="inline-image-macro">NFS 서버 2개와 데이터 브로커 2개를 보여 주는 다이어그램 데이터는 소스 NFS 서버에서 소스 데이터 브로커로 전송됩니다. 이때 데이터는 암호화됩니다. 그런 다음 데이터를 타겟 데이터 브로커로 전송한 다음 타겟 NFS 서버로 전송합니다.</block>
+  <block id="3b2dfba4f9b8dee183d076db1f8e55c5" category="paragraph"><block ref="3b2dfba4f9b8dee183d076db1f8e55c5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1a340cd662277e301294b308269abca7" category="paragraph">하나의 데이터 브로커가 _initiator_로 작동합니다. 데이터를 동기화할 시간이 되면 다른 데이터 브로커, 즉 _listener_로 연결 요청을 보냅니다. 이 데이터 브로커는 포트 443에서 요청을 수신합니다. 필요한 경우 다른 포트를 사용할 수 있지만 포트가 다른 서비스에서 사용되고 있지 않은지 확인해야 합니다.</block>
+  <block id="4d136f469c427be75862b40fe2196b00" category="paragraph">예를 들어, 온프레미스 NFS 서버의 데이터를 클라우드 기반 NFS 서버로 동기화하는 경우 연결 요청을 수신 대기하는 데이터 브로커를 선택할 수 있습니다.</block>
+  <block id="d3d45769c1b7ad248c3b1ffc9fdb6c9c" category="paragraph">전송 중 암호화 방식은 다음과 같습니다.</block>
+  <block id="e984087a280321cb74ee626f4655709c" category="list-text">동기화 관계를 생성한 후 이니시에이터는 다른 데이터 브로커와 암호화된 연결을 시작합니다.</block>
+  <block id="4aa2849bf33cd6ab9219abbe45a73f61" category="list-text">소스 데이터 브로커는 TLS 1.3을 사용하여 소스에서 데이터를 암호화합니다.</block>
+  <block id="6dbcb543a8a1d1bcb9de13024096de5a" category="list-text">그런 다음 데이터를 네트워크를 통해 타겟 데이터 브로커로 전송합니다.</block>
+  <block id="9ebc239fb878b360de7460c36e393e15" category="list-text">대상 데이터 브로커는 데이터를 타겟으로 전송하기 전에 해독합니다.</block>
+  <block id="09cf96cd35454a72d72eda24f5a5324a" category="list-text">초기 복사 후, 서비스는 24시간마다 변경된 데이터를 동기화합니다. 동기화할 데이터가 있는 경우 이니시에이터에서 다른 데이터 브로커와 암호화된 연결을 여는 것으로 프로세스가 시작됩니다.</block>
+  <block id="aaf881bd7230ab8408f75fc7a5701e2e" category="inline-link-macro">관계를 만든 후에는 일정을 변경할 수 있습니다</block>
+  <block id="06a32f9c3008d75facbe41d9e59fdb13" category="paragraph">데이터를 더 자주 동기화하려는 경우 <block ref="8047278fff8ae1b9eca053a56dd7adfd" category="inline-link-macro-rx"></block>.</block>
+  <block id="4f6582928260ec95d5382830f415104b" category="section-title">지원되는 NFS 버전입니다</block>
+  <block id="30fe527571ab3736d66f7bc649438aab" category="list-text">NFS 서버의 경우 NFS 버전 3, 4.0, 4.1 및 4.2에서 전송 중인 데이터 암호화가 지원됩니다.</block>
+  <block id="e58f770a9e62d5d72c5f922745500d31" category="list-text">Azure NetApp Files의 경우, NFS 버전 3 및 4.1에서 전송 중인 데이터 암호화가 지원됩니다.</block>
+  <block id="0b123f39b709b7664db5449b62f3e847" category="section-title">프록시 서버 제한</block>
+  <block id="7f65de7d732e9f627011b93375d92172" category="paragraph">암호화된 동기화 관계를 만들면 암호화된 데이터가 HTTPS를 통해 전송되며 프록시 서버를 통해 라우팅할 수 없습니다.</block>
+  <block id="5dd0043a7a3026397ee9f077316f20ec" category="section-title">시작하는 데 필요한 사항</block>
+  <block id="361bdd51b5ace70652d40497007eff5d" category="paragraph">다음 사항을 확인하십시오.</block>
+  <block id="174c6b9a002fb36254a3e4a0f2937473" category="inline-link-macro">소스 및 타겟 요구 사항</block>
+  <block id="85b0bd2b86eecac049a53720ee53a048" category="list-text">충족하는 NFS 서버 2대 <block ref="df81703b3d345da908175850df49bcc3" category="inline-link-macro-rx"></block> 또는 두 개의 서브넷 또는 영역의 Azure NetApp Files.</block>
+  <block id="ca2500bcae712d3764d73c0e6d60b15c" category="list-text">서버의 IP 주소 또는 정규화된 도메인 이름입니다.</block>
+  <block id="6225457c597cd1df01f764dcaa3fd96f" category="list-text">2개의 데이터 브로커를 위한 네트워크 위치.</block>
+  <block id="47ef9e5ee45dd149934e3e6565699b70" category="paragraph">기존 데이터 브로커를 선택할 수 있지만 이니시에이터로 작동해야 합니다. 수신기 데이터 브로커는 _new_data 브로커여야 합니다.</block>
+  <block id="710c0a447724b8c5501ee6050ad71c9c" category="paragraph">기존 데이터 브로커 그룹을 사용하려면 그룹에 데이터 브로커가 하나만 있어야 합니다. 암호화된 동기화 관계를 사용하면 한 그룹의 여러 데이터 브로커가 지원되지 않습니다.</block>
+  <block id="ff6327e1b481495e07967f855a1716bc" category="inline-link-macro">인터넷 엔드포인트</block>
+  <block id="366863c53c98cd2cae0095d496487ad3" category="paragraph">데이터 브로커를 아직 구축하지 않은 경우 데이터 브로커 요구사항을 검토하십시오. 엄격한 보안 정책이 있으므로 포트 443과 의 아웃바운드 트래픽을 포함하는 네트워킹 요구 사항을 검토하십시오 <block ref="e160a91ef305e189c7429c7c49132bcb" category="inline-link-macro-rx"></block> 데이터 브로커가 연결합니다.</block>
+  <block id="1e5c2857c8f178c602b8167c980fd94e" category="paragraph">두 NFS 서버 간 또는 Azure NetApp Files 간에 새 동기화 관계를 생성하고 전송 중 암호화 옵션을 설정한 다음 화면의 지시를 따릅니다.</block>
+  <block id="ac9d1b56ae533e1f4f014f7533fd64e1" category="list-text">소스 및 타겟 위치로 * NFS 서버 * 를 끌어다 놓거나 * Azure NetApp Files * 를 소스 및 타겟 위치로 끈 후 * 예 * 를 선택하여 전송 중인 데이터 암호화를 활성화합니다.</block>
+  <block id="a8202d1c2a52860a0804d4bc8f472788" category="list-text">프롬프트에 따라 관계를 생성합니다.</block>
+  <block id="20de84484218d64bd620cc2fb01a46ab" category="list-text">* NFS Server * / * Azure NetApp Files *: NFS 버전을 선택한 다음 새 NFS 소스를 지정하거나 기존 서버를 선택합니다.</block>
+  <block id="abcd87ec3d5abb2bc4c722645482fb87" category="list-text">* 데이터 브로커 기능 정의 *: 포트에서 연결 요청을 처리하는 데이터 브로커_listen_과 연결을 시작하는 데이터 브로커를 정의합니다. 네트워킹 요구 사항에 따라 선택할 수 있습니다.</block>
+  <block id="2470150bd9a4e04a2e189d3ae6e56fe0" category="list-text">* Data Broker *: 프롬프트에 따라 새 소스 데이터 브로커를 추가하거나 기존 데이터 브로커를 선택합니다.</block>
+  <block id="39a513eb21ebe3c708dcaa6942b6d31d" category="list-text">소스 데이터 브로커가 수신기 역할을 하는 경우 새로운 데이터 브로커가 되어야 합니다.</block>
+  <block id="9e61c5d4af1de558f36f83f2ab959cfb" category="list-text">새 데이터 브로커가 필요한 경우 Cloud Sync에 설치 지침이 표시됩니다. 클라우드에 데이터 브로커를 구축하거나 자체 Linux 호스트에 대한 설치 스크립트를 다운로드할 수 있습니다.</block>
+  <block id="cdba25c9167c61c57652be77cd6bc4e2" category="list-text">* 디렉터리 *: 모든 디렉터리를 선택하거나 드릴다운 및 하위 디렉터리를 선택하여 동기화할 디렉터리를 선택합니다.</block>
+  <block id="de6d5031bb824b97bc739136ed0ca12f" category="paragraph">소스 파일 및 폴더가 대상 위치에서 동기화 및 유지 관리되는 방식을 정의하는 설정을 수정하려면 * 소스 개체 필터 * 를 클릭합니다.</block>
+  <block id="17cc825827711a2fbb35f034caf806fc" category="inline-image-macro">최상위 디렉토리를 선택하고 드릴다운한 다음 소스 객체 필터링 옵션을 선택하는 옵션을 보여 주는 스크린샷</block>
+  <block id="ec512e2862c8dda2563d8ba47436b65b" category="paragraph"><block ref="ec512e2862c8dda2563d8ba47436b65b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="60af823ef7e6a707f1ea0d358c745e23" category="list-text">* 타겟 NFS 서버 * / * 타겟 Azure NetApp Files *: NFS 버전을 선택한 다음 새 NFS 타겟을 입력하거나 기존 서버를 선택합니다.</block>
+  <block id="48466f11b0e5f6c0ec516e23a83eb4f9" category="list-text">* 대상 데이터 브로커 *: 프롬프트에 따라 새 소스 데이터 브로커를 추가하거나 기존 데이터 브로커를 선택합니다.</block>
+  <block id="76ccef3bc1ea125df0b2d7a1b3187f34" category="paragraph">대상 데이터 브로커가 수신기 역할을 하는 경우 새 데이터 브로커가 되어야 합니다.</block>
+  <block id="5671d20bda5e1ae063dc4de021aad56f" category="paragraph">다음은 대상 데이터 브로커가 수신기로 작동할 때의 프롬프트의 예입니다. 포트를 지정하는 옵션을 확인합니다.</block>
+  <block id="03edd313f9f510056d284caf22bece83" category="inline-image-macro">수신기 데이터 브로커에서 포트를 지정하는 옵션을 보여 주는 스크린샷</block>
+  <block id="d7d921b770410daba11fa5b08364a9b2" category="paragraph"><block ref="d7d921b770410daba11fa5b08364a9b2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d745b7ea2fe3a1dffe9d30c5f25e422b" category="list-text">* 대상 디렉터리 *: 최상위 디렉터리를 선택하거나 드릴다운하여 기존 하위 디렉터리를 선택하거나 내보내기 내에 새 폴더를 만듭니다.</block>
+  <block id="b1574b82988204b1ea2b4391bc2b62cc" category="list-text">* 설정 *: 원본 파일과 폴더가 대상 위치에서 동기화 및 유지되는 방식을 정의합니다.</block>
+  <block id="376588358d7683b8caa450f37e1678c1" category="list-text">* 검토 *: 동기화 관계의 세부 정보를 검토한 다음 * 관계 생성 * 을 클릭합니다.</block>
+  <block id="31b876010e591a7e8b00068dcabd80b7" category="inline-image-macro">검토 화면을 보여주는 스크린샷. NFS 서버, 데이터 브로커, 각각에 대한 네트워킹 정보가 표시됩니다.</block>
+  <block id="39cd9e3fa50eeb2b66a750a04c154460" category="paragraph"><block ref="39cd9e3fa50eeb2b66a750a04c154460" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="858b9413ffbdb9049bf9b696f0ea8392" category="paragraph">Cloud Sync에서 새 동기화 관계 생성을 시작합니다. 완료되면 * Dashboard * 에서 View를 클릭하여 새 관계에 대한 세부 정보를 봅니다.</block>
+  <block id="31e5f37358c44c0e0f7f219f24cc5f81" category="summary">Cloud Sync의 새로운 기능에 대해 알아보십시오.</block>
+  <block id="e18bd0330d937c2c7c10048bf3ce8366" category="doc">Cloud Sync의 새로운 기능</block>
+  <block id="42b5df730d6616520195746bafa566eb" category="section-title">2022년 3월 3일</block>
+  <block id="d8247e494d1e03bac9b29cc7ea4c0eca" category="section-title">대시보드에서 정렬</block>
+  <block id="32ee2f2004d5d2f19f46a8909b1df5a6" category="paragraph">이제 동기화 관계 이름을 기준으로 대시보드를 정렬합니다.</block>
+  <block id="c964823b8160043978055759ce39dd87" category="inline-image-macro">대시보드에서 사용할 수 있는 이름별 정렬 옵션을 보여 주는 스크린샷</block>
+  <block id="4c05f3b2ac911e7eb3be399ccbd6d236" category="paragraph"><block ref="4c05f3b2ac911e7eb3be399ccbd6d236" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="aabbe3d8eb6db922cc7867bbc1068867" category="section-title">데이터 센스 통합 기능 향상</block>
+  <block id="2931385a1afec19638d47ebab7744410" category="paragraph">이전 릴리즈에서는 클라우드 데이터 센스와 Cloud Sync의 통합을 소개했습니다. 이 업데이트를 통해 동기화 관계를 보다 쉽게 만들 수 있도록 통합을 개선했습니다. Cloud Data Sense에서 데이터 동기화를 시작한 후에는 모든 소스 정보가 한 번에 포함되고 몇 가지 키 세부 정보만 입력하면 됩니다.</block>
+  <block id="d40f781bdc03053a9bde791bfc977a84" category="section-title">2022년 2월 6일</block>
+  <block id="b173d47e232436d0170127aec6c62d25" category="section-title">데이터 브로커 그룹의 개선 사항</block>
+  <block id="2362e2192964b2a1132ee3c33127e6ec" category="paragraph">데이터 브로커_groups_를 강조하여 데이터 브로커와 상호 작용하는 방법을 변경했습니다.</block>
+  <block id="009030a7e855d0f36e42bdac812520b4" category="paragraph">예를 들어, 새 동기화 관계를 생성할 때 특정 데이터 브로커가 아닌 관계에 사용할 데이터 브로커_group_을 선택합니다.</block>
+  <block id="435847457b00dd1f91120adf3d0e24aa" category="inline-image-macro">데이터 브로커 그룹 선택을 보여 주는 동기화 관계 마법사 스크린샷</block>
+  <block id="e781903d5b4496684ba5bd448544c498" category="paragraph"><block ref="e781903d5b4496684ba5bd448544c498" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9eb0238485945ad5d6512b69445e72c6" category="paragraph">데이터 브로커 * 관리 탭에는 데이터 브로커 그룹이 관리하는 동기화 관계의 수도 표시됩니다.</block>
+  <block id="4f1d2e29d6b816360bccc567294cac53" category="inline-image-macro">데이터 브로커 그룹을 보여 주는 데이터 브로커 관리 페이지의 스크린 샷. 이 페이지에는 관리 관계의 수를 비롯하여 해당 그룹에 대한 세부 정보가 표시됩니다.</block>
+  <block id="005ce66517c857d10ae46724b7a65f99" category="paragraph"><block ref="005ce66517c857d10ae46724b7a65f99" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="81a424c5c67f920d35d770215956f31f" category="section-title">PDF 보고서를 다운로드합니다</block>
+  <block id="983eab96e054cfaaef2e1cc070a5ac0d" category="paragraph">이제 보고서의 PDF를 다운로드할 수 있습니다.</block>
+  <block id="30a7332ec8bb1b2ebc76a3d132b0ddff" category="inline-link-macro">보고서에 대해 자세히 알아보십시오</block>
+  <block id="de4dcb6fc7c1b34f094c79b4afa83800" category="paragraph"><block ref="22d4e0c70893ffebbef3d597df59a723" category="inline-link-macro-rx"></block>.</block>
+  <block id="be5d8939c40c8e2f992c86c6df281553" category="section-title">2022년 1월 2일</block>
+  <block id="639448a9d08cad0082353310edaa5321" category="section-title">새 Box 동기화 관계</block>
+  <block id="27225cf5b84e571fe2412826220eb977" category="paragraph">두 가지 새로운 동기화 관계가 지원됩니다.</block>
+  <block id="731506a28bbbe117bfa19db92d90ca5c" category="list-text">Box를 Azure NetApp Files로 설정합니다</block>
+  <block id="be2776988a206afed5393eec99268755" category="list-text">ONTAP용 아마존 FSx로 상자를 이동합니다</block>
+  <block id="557b7fbb966ab34b32484f8c806869ae" category="inline-link-macro">지원되는 동기화 관계 목록을 봅니다</block>
+  <block id="5d7e962256f3b412b8fa7e864448a86e" category="paragraph"><block ref="22efe00007987c46f8bce57edbae4cc7" category="inline-link-macro-rx"></block>.</block>
+  <block id="03114197924e7afbf7a52142ac388e6a" category="section-title">관계 이름</block>
+  <block id="24510de7fe8f779a967cfb491b34d72d" category="paragraph">이제 각 동기화 관계에 의미 있는 이름을 제공하여 각 관계의 목적을 보다 쉽게 파악할 수 있습니다. 관계를 만들 때 그리고 그 이후에 언제든지 이름을 추가할 수 있습니다.</block>
+  <block id="df2b9dafb0b415faf4771be365c581b7" category="inline-image-macro">관계 이름 옆에 있는 편집 단추를 보여 주는 동기화 관계의 스크린샷</block>
+  <block id="d921c72b836d8c6090b248791ba01246" category="paragraph"><block ref="d921c72b836d8c6090b248791ba01246" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bfd2b1fd9700613a7a953135c6658057" category="section-title">S3 개인 링크</block>
+  <block id="cea998e515ebb51c4aeddc7a80de939a" category="paragraph">Amazon S3와 데이터를 동기화할 때 S3 개인 링크를 사용할지 여부를 선택할 수 있습니다. 데이터 브로커가 소스에서 타겟으로 데이터를 복제하면 프라이빗 링크를 통해 전송됩니다.</block>
+  <block id="e55b6ea81c1d90312b64f93dcd0abc80" category="paragraph">이 기능을 사용하려면 데이터 브로커와 연결된 IAM 역할에 다음 권한이 필요합니다.</block>
+  <block id="897212c0c2a83998b06ded104f003ca9" category="paragraph">이 권한은 사용자가 만든 새 데이터 브로커에 자동으로 추가됩니다.</block>
+  <block id="cb6793246bf8a1d9872b2f128304ed8c" category="section-title">Glacier 빠른 검색</block>
+  <block id="8146de0bae19d2555bb63dfb154a53c8" category="paragraph">이제 Amazon S3가 동기화 관계의 타겟일 때 _Glacier Instant Retrieval_storage 클래스를 선택할 수 있습니다.</block>
+  <block id="1fb2c9f87a03f4f6e3e1e0d01a9ae47b" category="section-title">오브젝트 스토리지에서 SMB 공유까지 ACL</block>
+  <block id="30dde3ab6fefed07489a4f83ec979320" category="paragraph">이제 Cloud Sync는 오브젝트 스토리지에서 SMB 공유로 ACL을 복사할 수 있도록 지원합니다. 이전에는 SMB 공유에서 오브젝트 스토리지로의 ACL 복사만 지원했습니다.</block>
+  <block id="b0ca823b10873e7a925ef5adac883c88" category="section-title">SFTP에서 S3로</block>
+  <block id="cc7323173039fb96b345cbcfd28877b6" category="paragraph">이제 사용자 인터페이스에서 SFTP에서 Amazon S3로 동기화 관계를 생성할 수 있습니다. 이 동기화 관계는 이전에 API에서만 지원되었습니다.</block>
+  <block id="5eafde1d0f1c17904e2751e719da1538" category="section-title">테이블 뷰 개선</block>
+  <block id="dae101521243289c0a713ed367646615" category="paragraph">쉽게 사용할 수 있도록 대시보드의 테이블 보기를 다시 설계했습니다. 추가 정보 * 를 클릭하면 Cloud Sync가 대시보드를 필터링하여 해당 특정 관계에 대한 자세한 정보를 표시합니다.</block>
+  <block id="90395f713f122ec567368986af441ba7" category="inline-image-macro">대시보드의 표 보기 스크린샷</block>
+  <block id="464bce8418108e11fbc67663fc64376a" category="paragraph"><block ref="464bce8418108e11fbc67663fc64376a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="55692a3e08e518d1aa7c38db6b703907" category="section-title">Jarkarta 지역 지원</block>
+  <block id="45b9ee2b76fb4176580b8178578194d7" category="paragraph">Cloud Sync은 현재 AWS 아시아 태평양(자카르타) 지역에 데이터 브로커 구축을 지원하고 있습니다.</block>
+  <block id="e7c5ad171298e38494ee7665c2b581e3" category="section-title">2021년 11월 28일</block>
+  <block id="a6601df3ba629cfc8f5b8498c912f070" category="section-title">SMB에서 오브젝트 스토리지까지의 ACL</block>
+  <block id="1576934ad839cae6442e5711b0174c62" category="paragraph">소스 SMB 공유에서 오브젝트 스토리지(ONTAP S3 제외)로의 동기화 관계를 설정할 때 Cloud Sync에서 이제 ACL(액세스 제어 목록)을 복사할 수 있습니다.</block>
+  <block id="ae6ae72085365fbcb40301d1e9deb095" category="paragraph">Cloud Sync는 오브젝트 스토리지에서 SMB 공유로의 ACL 복제를 지원하지 않습니다.</block>
+  <block id="01d5a2cf3bd067dfee478cb0fc7ef873" category="inline-link-macro">SMB 공유에서 ACL을 복사하는 방법에 대해 알아봅니다</block>
+  <block id="51883c0dcc781e78baf7d74594d8f582" category="paragraph"><block ref="471c146022ec2c68753fd8ce757c6cb7" category="inline-link-macro-rx"></block>.</block>
+  <block id="6db3f80a9971d02c7f7a92fb4ee1324a" category="section-title">라이센스를 업데이트합니다</block>
+  <block id="ba898f89df5c39db3aedca30b0dd9585" category="paragraph">이제 확장된 Cloud Sync 라이센스를 업데이트할 수 있습니다.</block>
+  <block id="9c36a4a5f20a34725e3200409f20a65a" category="paragraph">NetApp에서 구매한 Cloud Sync 라이센스를 연장한 경우 라이센스를 다시 추가하여 만료일을 업데이트할 수 있습니다.</block>
+  <block id="e8b8928cc2b3188c3209a7c67ffeb87a" category="inline-link-macro">라이센스를 업데이트하는 방법을 알아보십시오</block>
+  <block id="38e00e64912a31a6e9ba56d502615fce" category="paragraph"><block ref="c554cb9dd2842cfffcc3e3678513553a" category="inline-link-macro-rx"></block>.</block>
+  <block id="625212f75a40ffe67e47fee287c2f6b1" category="section-title">Box 자격 증명을 업데이트합니다</block>
+  <block id="9b441f4afbb53f4c8d5b7fc8bc6b9301" category="paragraph">이제 기존 동기화 관계에 대한 Box 자격 증명을 업데이트할 수 있습니다.</block>
+  <block id="b4ef038c5650fac60f2434cad75645e5" category="inline-link-macro">자격 증명을 업데이트하는 방법을 알아보십시오</block>
+  <block id="1430696d750a8ec1ef00c88e37adce56" category="paragraph"><block ref="c5951b046d7bb866003e61513f2ace56" category="inline-link-macro-rx"></block>.</block>
+  <block id="f113b79a4bb13850776b0f197bc567c4" category="section-title">2021년 10월 31일</block>
+  <block id="96fd4ea1dc0f0a328044f7cd301e0e96" category="section-title">박스 지지대</block>
+  <block id="13594d78d6e2f27d5702750f1460057a" category="paragraph">Box 지원은 이제 Cloud Sync 사용자 인터페이스에서 미리 보기로 제공됩니다.</block>
+  <block id="6de4b558d7125595a2a968a5719784bb" category="paragraph">Box는 여러 유형의 동기화 관계의 소스 또는 타겟이 될 수 있습니다. <block ref="22efe00007987c46f8bce57edbae4cc7" category="inline-link-macro-rx"></block>.</block>
+  <block id="afb251edd2e5eddee5afaad29edfe267" category="section-title">만든 날짜 설정</block>
+  <block id="1f6641af34885ff35179793592203ed5" category="paragraph">SMB 서버가 소스인 경우 _Date Created_라는 새로운 동기화 관계 설정을 사용하면 특정 날짜 이후, 특정 날짜 이전 또는 특정 시간 범위 간에 생성된 파일을 동기화할 수 있습니다.</block>
+  <block id="99f249829ba1a20da04c914e121c35ac" category="inline-link-macro">Cloud Sync 설정에 대해 자세히 알아보십시오</block>
+  <block id="ab6a2ca8d8806cc410e997d6fea799d6" category="paragraph"><block ref="23fc5ff6b0baeec068bf033034a47b8f" category="inline-link-macro-rx"></block>.</block>
+  <block id="4b3686191205784c468b3d8c8118c352" category="section-title">2021년 10월 4일</block>
+  <block id="938c54d632bedbd381821c5fb6fd460a" category="section-title">추가 박스 지원</block>
+  <block id="3cfce651e667ab85486dd42a8185f98a" category="inline-link">상자에 입력합니다</block>
+  <block id="6ff04a667e19dcffdc5a82df04e78cf8" category="paragraph">Cloud Sync는 이제 에 대한 추가 동기화 관계를 지원합니다<block ref="1d1338d7e0be4d47b97d1993db9c1c26" category="inline-link-rx"></block> Cloud Sync API를 사용하는 경우:</block>
+  <block id="f8e6c71d7ad4d24de15ff395a4411975" category="list-text">Amazon S3를 상자로 이동합니다</block>
+  <block id="e0d51ad600b944a211130c0fd7eb793c" category="list-text">IBM Cloud Object Storage to Box를 참조하십시오</block>
+  <block id="864ce2fa9fec9a212a15ce24412a8320" category="list-text">StorageGRID에서 Box로</block>
+  <block id="8c782c7eae8139100825ba3cacb09701" category="list-text">Box를 NFS 서버에 전송합니다</block>
+  <block id="f7a5d58ce3c80a0c2db11edc4c378b40" category="list-text">Box를 SMB 서버로 전송합니다</block>
+  <block id="c6c1348054cc2894310a3e5b8f54ee8b" category="inline-link-macro">API를 사용하여 동기화 관계를 설정하는 방법에 대해 알아봅니다</block>
+  <block id="48df1cddcec34cfc11af0ee567de90e6" category="paragraph"><block ref="c9e42668b2975f6143b22d1cc317621e" category="inline-link-macro-rx"></block>.</block>
+  <block id="6c8b30b65f91400bf1fb8a0756ebcdf9" category="section-title">SFTP 경로 보고서</block>
+  <block id="2bb6ea77ea0a96907eed898beae35936" category="inline-link-macro">보고서를 만듭니다</block>
+  <block id="525458a4a32a835db6e691248c00176f" category="list-text">이제 가능합니다 <block ref="b9f66aa7863826e8b10a53e044cd803f" category="inline-link-macro-rx"></block> SFTP 경로.</block>
+  <block id="50121596f417c9051d2198082fb7350d" category="section-title">2021년 9월 2일</block>
+  <block id="0c69dd608d3bb18f6d88caa7ab56df36" category="section-title">ONTAP용 FSx 지원</block>
+  <block id="548eba8d98d9c7383a12d30e135e8723" category="paragraph">이제 Amazon FSx for ONTAP 파일 시스템과 데이터를 동기화할 수 있습니다.</block>
+  <block id="43ece0944414298a29b4d72bc56373f1" category="inline-link">ONTAP용 Amazon FSx에 대해 자세히 알아보십시오</block>
+  <block id="86e93a99b4981a73cc48ec525e4d4b43" category="list-text"><block ref="86e93a99b4981a73cc48ec525e4d4b43" category="inline-link-rx"></block></block>
+  <block id="3d9c61bbb0656b8a470cbe7bd67859f7" category="inline-link-macro">지원되는 동기화 관계를 봅니다</block>
+  <block id="6b816f21b0dbce67e44499fa4246a4b1" category="list-text"><block ref="6b816f21b0dbce67e44499fa4246a4b1" category="inline-link-macro-rx"></block></block>
+  <block id="de0f377f70e8f82779d4f2819fe79524" category="inline-link-macro">ONTAP용 Amazon FSx에 대한 동기화 관계를 생성하는 방법을 알아보십시오</block>
+  <block id="6eeb7613e7dd358cd7d64171aefffacb" category="list-text"><block ref="6eeb7613e7dd358cd7d64171aefffacb" category="inline-link-macro-rx"></block></block>
+  <block id="1d78ed65443f56c002fecbf279ec5bda" category="section-title">2021년 8월 1일</block>
+  <block id="ee2ee700615c2258dc72b2287ee4ebea" category="section-title">자격 증명을 업데이트합니다</block>
+  <block id="10916fe90fddba40f307b87455df0d43" category="paragraph">이제 Cloud Sync를 사용하여 기존 동기화 관계에서 소스 또는 타겟의 최신 자격 증명으로 데이터 브로커를 업데이트할 수 있습니다.</block>
+  <block id="9029933217c98ee4428382d350c27dc1" category="paragraph">이 향상된 기능은 보안 정책에 따라 자격 증명을 정기적으로 업데이트해야 하는 경우에 도움이 될 수 있습니다. <block ref="c5951b046d7bb866003e61513f2ace56" category="inline-link-macro-rx"></block>.</block>
+  <block id="1c92b262b640f4dcb403b78b346e9f7b" category="inline-image-macro">원본 또는 대상 이름 바로 아래에 있는 관계 동기화 페이지의 자격 증명 업데이트 옵션을 보여 주는 스크린샷</block>
+  <block id="72b0391bb04b72b58541516235c5cb94" category="paragraph"><block ref="72b0391bb04b72b58541516235c5cb94" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0f86b942dedc986b93375dd35b5d6dc2" category="section-title">오브젝트 스토리지 타겟의 태그입니다</block>
+  <block id="ffb402649abce067fbfa08bf8030523c" category="paragraph">동기화 관계를 생성할 때 이제 동기화 관계에서 개체 스토리지 대상에 태그를 추가할 수 있습니다.</block>
+  <block id="576188180d72da287566f6287e2f6a08" category="paragraph">태그 추가는 Amazon S3, Azure Blob, Google Cloud Storage, IBM Cloud Object Storage 및 StorageGRID에서 지원됩니다.</block>
+  <block id="dd990dbbe6eb9115e2b0d56a7588fcd5" category="inline-image-macro">작업 환경 마법사의 페이지를 보여 주는 스크린샷으로, 관계의 개체 스토리지 대상에 관계 태그를 추가할 수 있습니다.</block>
+  <block id="52490b96d78eed1dae034facaa97a792" category="paragraph"><block ref="52490b96d78eed1dae034facaa97a792" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3b67d632a532b9dcca531682787576fb" category="section-title">박스 지원</block>
+  <block id="292e1de5b53b734b83d81a1522e63fd3" category="paragraph">이제 Cloud Sync가 지원됩니다<block ref="1d1338d7e0be4d47b97d1993db9c1c26" category="inline-link-rx"></block> Cloud Sync API를 사용할 경우 Amazon S3, StorageGRID 및 IBM 클라우드 오브젝트 스토리지와 동기화 관계의 소스로 사용됩니다.</block>
+  <block id="6d479201e2efad56ea79b651bedb4997" category="section-title">Google Cloud의 데이터 브로커를 위한 공용 IP</block>
+  <block id="fbd24d7a968726d6f1b0c0ecdf759ced" category="paragraph">Google Cloud에서 데이터 브로커를 구축할 때 가상 머신 인스턴스에 대해 공용 IP 주소를 사용할지 여부를 선택할 수 있습니다.</block>
+  <block id="7a856fd76d8910e5ba4bc7988c42f372" category="inline-link-macro">Google Cloud에서 데이터 브로커를 구축하는 방법을 알아보십시오</block>
+  <block id="70bb29af13a454705d2eb69111e9cd4b" category="paragraph"><block ref="e1b5c734fd82a70f6e2915db4f9db388" category="inline-link-macro-rx"></block>.</block>
+  <block id="0473cc01cb7ede3e33ff790d71d46adb" category="section-title">Azure NetApp Files용 이중 프로토콜 볼륨</block>
+  <block id="f6ff20b10ee7246a6e26b7bd236d95ed" category="paragraph">Azure NetApp Files에 대해 소스 또는 타겟 볼륨을 선택하면 동기화 관계에 대해 선택한 프로토콜에 관계 없이 Cloud Sync에 이중 프로토콜 볼륨이 표시됩니다.</block>
+  <block id="4ec78699b23bbdb93ac30d4bf4a1abbb" category="section-title">2021년 7월 7일</block>
+  <block id="1b8a57ad056f64c33ae5aec3cb409ea7" category="section-title">ONTAP S3 스토리지 및 Google Cloud Storage</block>
+  <block id="4a00f3605aaf233a2a3c762f0341510d" category="paragraph">Cloud Sync은 이제 사용자 인터페이스에서 ONTAP S3 스토리지와 Google 클라우드 스토리지 버킷 간의 동기화 관계를 지원합니다.</block>
+  <block id="dab08495e7e75494d74b30ace62406bc" category="section-title">개체 메타데이터 태그</block>
+  <block id="efb9ebc8e6bd3f9f4c8c294e9a9c7bcc" category="paragraph">이제 Cloud Sync는 동기화 관계를 생성하고 설정을 활성화하면 개체 기반 스토리지 간에 개체 메타데이터와 태그를 복사할 수 있습니다.</block>
+  <block id="50bff427683e2d5b210c283e0e59e5b3" category="inline-link-macro">개체에 대한 복사 설정에 대해 자세히 알아보세요</block>
+  <block id="bbd4d01cf5ef8bc32c96bfa12686aa35" category="paragraph"><block ref="2742edf00ead27948be026372f093f56" category="inline-link-macro-rx"></block>.</block>
+  <block id="e20b5037c10b6fd239ad51bbe2a8f06a" category="section-title">하시코프 볼트 지원</block>
+  <block id="b2252c6b1f4ba4cd8d7d40b2ea865275" category="paragraph">이제 Google Cloud 서비스 계정으로 인증하여 외부 HashiCorp Vault에서 자격 증명에 액세스하도록 데이터 브로커를 설정할 수 있습니다.</block>
+  <block id="7ca02ffecf077ef859daea6fce53e5df" category="inline-link-macro">데이터 브로커가 있는 HashiCorp Vault를 사용하는 방법에 대해 자세히 알아보십시오</block>
+  <block id="56c09db4575c1470191c996164cb685c" category="paragraph"><block ref="1ae82c9d1185a70ccc5e46781ca4a0a5" category="inline-link-macro-rx"></block>.</block>
+  <block id="27617f73d731cd506fba810d9f1164db" category="section-title">S3 버킷의 태그 또는 메타데이터를 정의합니다</block>
+  <block id="0f904c09e27e9f5d37676635340cc4c2" category="paragraph">Amazon S3 버킷과의 동기화 관계를 설정할 때 이제 동기화 관계 마법사를 통해 타겟 S3 버킷의 오브젝트에 저장할 태그 또는 메타데이터를 정의할 수 있습니다.</block>
+  <block id="da88d9f1a708d9c69fa46136fc909a2f" category="paragraph">태그 지정 옵션은 이전에 동기화 관계의 설정에 포함되어 있었습니다.</block>
+  <block id="aa15625896e08f29a6c04891c5db0408" category="section-title">2021년 6월 7일</block>
+  <block id="4e2d7954a5437555e0ea565449462369" category="section-title">Google Cloud의 스토리지 클래스</block>
+  <block id="d06702d5f77f411d220f00532c68b3a2" category="paragraph">Google Cloud Storage 버킷이 동기화 관계의 타겟인 경우 이제 사용할 스토리지 클래스를 선택할 수 있습니다. Cloud Sync는 다음 스토리지 클래스를 지원합니다.</block>
+  <block id="eb6d8ae6f20283755b339c0dc273988b" category="list-text">표준</block>
+  <block id="aba972473e7cea22067fcd1e1e01bcd1" category="list-text">니어라인</block>
+  <block id="1d5397c0580f85c400887096d12c133e" category="list-text">콜드라인</block>
+  <block id="e727b00944f81e1d0a95c12886ac4641" category="list-text">아카이브</block>
+  <block id="1dcdea8288477a395a1dd25bdade55b3" category="section-title">2021년 5월 2일</block>
+  <block id="a799c3c6d3ba327c38fba0f1f65444d7" category="section-title">보고서에 오류가 있습니다</block>
+  <block id="9b4bbcf0970a413ed02cbeb6d95b2199" category="paragraph">이제 보고서에 있는 오류를 볼 수 있으며 마지막 보고서나 모든 보고서를 삭제할 수 있습니다.</block>
+  <block id="c3242f3c1f06c404c7b019a4b882d935" category="inline-link-macro">구성을 조정할 보고서를 만들고 보는 방법에 대해 자세히 알아보십시오</block>
+  <block id="94ee86234553937e0763b9e08fd4335b" category="paragraph"><block ref="bbc606bb890c7be6234d2a577f9da0c0" category="inline-link-macro-rx"></block>.</block>
+  <block id="d8ca60d2627899ef9a840f93d0a59cec" category="section-title">특성을 비교합니다</block>
+  <block id="3f31cdfbb217ec6fa9a858a46cfd3290" category="paragraph">이제 각 동기화 관계에 대해 새 * Compare by * 설정을 사용할 수 있습니다.</block>
+  <block id="dabc7e1b7880be887fd2898786c6c925" category="paragraph">이 고급 설정을 사용하면 Cloud Sync에서 파일 또는 디렉터리가 변경되었으며 다시 동기화되어야 하는지 여부를 결정할 때 특정 특성을 비교할지 여부를 선택할 수 있습니다.</block>
+  <block id="21a5968447686d2d79ece94fc6ab0653" category="inline-link-macro">동기화 관계의 설정 변경에 대해 자세히 알아보십시오</block>
+  <block id="1df5e86c2f922b55e7a126736aa3fdc8" category="paragraph"><block ref="4d121b48d2c287fff78a725ca3d42ec9" category="inline-link-macro-rx"></block>.</block>
+  <block id="13c380d451c296cda1d1289b9dc25114" category="section-title">2021년 4월 11일</block>
+  <block id="5e224a35cc2a8810465ced83c84d4a8b" category="section-title">독립 실행형 Cloud Sync 서비스가 폐기됩니다</block>
+  <block id="67c44933bf883652bedc3ae2bffc09b6" category="paragraph">독립 실행형 Cloud Sync 서비스가 폐기되었습니다. 이제 동일한 모든 기능을 사용할 수 있는 Cloud Manager에서 Cloud Sync에 직접 액세스할 수 있습니다.</block>
+  <block id="f1079bf36481e8e18d3cae43f6687b6d" category="paragraph">Cloud Manager에 로그인한 후 맨 위에 있는 동기화 탭으로 전환하고 이전과 마찬가지로 관계를 볼 수 있습니다.</block>
+  <block id="e192b538b406b93c179453039f37bbe7" category="section-title">Google Cloud 버킷 - 다양한 프로젝트</block>
+  <block id="c56f5d180b65de69019a03e5a41b3de3" category="paragraph">동기화 관계를 설정할 때 데이터 브로커의 서비스 계정에 필요한 권한을 제공하는 경우 다양한 프로젝트의 Google Cloud 버킷 중에서 선택할 수 있습니다.</block>
+  <block id="8bee474fd085c11334ab13b9c1a78d9e" category="inline-link-macro">서비스 계정 설정 방법에 대해 알아보십시오</block>
+  <block id="f76c9236af2cbf3eb2be594a528d618a" category="paragraph"><block ref="110e017e697bf43b5794969151cbc1cf" category="inline-link-macro-rx"></block>.</block>
+  <block id="81029d198411b7ee3bc534e5c6366e2f" category="section-title">Google Cloud Storage와 S3 간 메타데이터</block>
+  <block id="734f1c63b0d98e0eff69d524be554c58" category="paragraph">이제 Cloud Sync는 Google Cloud Storage와 S3 공급자(AWS S3, StorageGRID, IBM Cloud Object Storage) 간에 메타데이터를 복사합니다.</block>
+  <block id="e45c561a7eee07607a5d3693017bb100" category="section-title">데이터 브로커를 다시 시작합니다</block>
+  <block id="a262ade6d3569dd9efecf6c49fdaf5d4" category="paragraph">이제 Cloud Sync에서 데이터 브로커를 다시 시작할 수 있습니다.</block>
+  <block id="407ccaddbce71b1550bac2795d65e6f9" category="inline-image-macro">데이터 브로커 관리 페이지에서 데이터 브로커 다시 시작 작업을 보여 주는 스크린샷</block>
+  <block id="102fade9eafedd0f0f1696b9b899e916" category="paragraph"><block ref="102fade9eafedd0f0f1696b9b899e916" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e21ef83a0fb6f5df6f432bbfe5cff433" category="section-title">최신 릴리스를 실행하지 않을 때 나타나는 메시지입니다</block>
+  <block id="d5544bca7e8644a200250b7adde1bebe" category="paragraph">이제 Cloud Sync에서 데이터 브로커가 최신 소프트웨어 릴리즈를 실행하고 있지 않은 경우를 식별합니다. 이 메시지를 통해 최신 기능을 사용할 수 있습니다.</block>
+  <block id="45829fc5241b4b6d0ef08aa6c9b72758" category="inline-image-macro">대시보드에서 데이터 브로커를 볼 때 경고를 표시하는 스크린샷</block>
+  <block id="8af1e3719b0b0b728508006245dc9abb" category="paragraph"><block ref="8af1e3719b0b0b728508006245dc9abb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0e66daf8daf12f88ac9c038b10cd58c9" category="summary">새 데이터 브로커를 생성할 때 Google Cloud Data Broker 옵션을 선택하여 VPC의 새 가상 머신 인스턴스에 데이터 브로커 소프트웨어를 배포합니다. Cloud Sync는 설치 프로세스를 안내하지만 설치 준비에 도움이 되도록 이 페이지에서 요구 사항과 단계를 반복합니다.</block>
+  <block id="bc3f4614483a5cee9737e251b527f30b" category="doc">Google Cloud에서 새로운 데이터 브로커 생성</block>
+  <block id="0393b115c5edb63088ef45123fac3bfa" category="paragraph">새 데이터 브로커 그룹을 생성하는 경우 Google Cloud Platform 을 선택하여 Google Cloud VPC의 새 가상 머신 인스턴스에 데이터 브로커 소프트웨어를 배포합니다. Cloud Sync는 설치 프로세스를 안내하지만 설치 준비에 도움이 되도록 이 페이지에서 요구 사항과 단계를 반복합니다.</block>
+  <block id="bdbd44585d11046b8db390866b7172bb" category="section-title">지원되는 Google Cloud 지역</block>
+  <block id="24935d18f8d82ccfcd2bd35b5d5d7a58" category="paragraph">모든 지역이 지원됩니다.</block>
+  <block id="ccb92852772cfef5c1b9661d6a92d386" category="paragraph">Cloud Sync가 Google Cloud에 데이터 브로커를 배포할 때 필요한 아웃바운드 통신을 지원하는 보안 그룹을 만듭니다.</block>
+  <block id="23c5a36a4e18015e399e97b3a48f2255" category="section-title">Google Cloud에서 데이터 브로커를 배포하는 데 필요한 권한입니다</block>
+  <block id="cff781a09fbb395b263401d2364b6344" category="paragraph">데이터 브로커를 배포하는 Google Cloud 사용자에게 다음과 같은 권한이 있는지 확인합니다.</block>
+  <block id="d652a651f31eeae9d7d6a4f49c88eed6" category="section-title">서비스 계정에 필요한 권한입니다</block>
+  <block id="b979ccf0a630de029ca4f0949d2a4da5" category="paragraph">데이터 브로커를 배포할 때 다음과 같은 권한이 있는 서비스 계정을 선택해야 합니다.</block>
+  <block id="10c5ef3d81c591aadadb7817f4e79de0" category="admonition">"iam.serviceAccounts.signJwt" 권한은 외부 HashashCorp 볼트를 사용하도록 데이터 브로커를 설정할 계획에만 필요합니다.</block>
+  <block id="0fbb3a69ab0abf1cabee38002a3846f3" category="paragraph">새로운 데이터 브로커를 생성하는 방법은 몇 가지가 있습니다. 다음 단계에서는 동기화 관계를 생성할 때 Google Cloud에 데이터 브로커를 설치하는 방법을 설명합니다.</block>
+  <block id="01341420bc02ccee78de02f8a53bc10d" category="list-text">데이터 브로커 그룹 * 페이지에서 * 데이터 브로커 * 만들기 를 클릭한 다음 * Microsoft Azure * 를 선택합니다.</block>
+  <block id="3a22f44ed11b974b3666e987fe41b909" category="paragraph"><block ref="3a22f44ed11b974b3666e987fe41b909" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dc35ce1752664930f658f7059d7b8f9c" category="list-text">메시지가 표시되면 Google 계정으로 로그인합니다.</block>
+  <block id="29b28ad1793cec26548948fbe79ebfd5" category="paragraph">이 양식은 Google에서 소유하고 호스팅됩니다. 자격 증명이 NetApp에 제공되지 않습니다.</block>
+  <block id="6a1b17968bb626f25ede549dffaa13e2" category="list-text">프로젝트 및 서비스 계정을 선택한 다음 공용 IP 주소 활성화 또는 비활성화 여부를 포함하여 데이터 브로커의 위치를 선택합니다.</block>
+  <block id="e1bc69ced3df10535cc788db04acedd5" category="paragraph">공용 IP 주소를 사용하지 않는 경우 다음 단계에서 프록시 서버를 정의해야 합니다.</block>
+  <block id="0cbd6997458c08d325b5359db2d6b231" category="inline-image-macro">Google Cloud에서 데이터 브로커를 구축하는 데 필요한 정보를 보여주는 스크린샷</block>
+  <block id="dde6927c09ef26c282cb0cbb7b055953" category="paragraph"><block ref="dde6927c09ef26c282cb0cbb7b055953" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2a38666aae985ff4945ff1199551e9d0" category="paragraph">인터넷 액세스에 프록시가 필요한 경우 프록시는 Google Cloud에 있어야 하며 데이터 브로커와 동일한 서비스 계정을 사용해야 합니다.</block>
+  <block id="9c009eb622794f4514ba1853e1ce00dd" category="list-text">데이터 브로커를 사용할 수 있게 되면 Cloud Sync에서 * 계속 * 을 클릭합니다.</block>
+  <block id="754f44e5568224983fac09222a6e960e" category="paragraph">인스턴스를 구축하는 데 약 5~10분이 소요됩니다. Cloud Sync 서비스에서 진행 상황을 모니터링할 수 있으며, 이 경우 인스턴스를 사용할 수 있을 때 자동으로 새로 고쳐집니다.</block>
+  <block id="ed7160396fcfefca3c1997b02ccbe37c" category="paragraph">Google Cloud에 데이터 브로커를 구축하고 새로운 동기화 관계를 구축했습니다. 이 데이터 브로커를 추가 동기화 관계에 사용할 수 있습니다.</block>
+  <block id="8743cf4fd5bd75723f626be1d4af6bb5" category="section-title">다른 Google Cloud 프로젝트에 버킷을 사용할 수 있는 권한 제공</block>
+  <block id="ee1b3c076d1c663d9cd9e59e763e0d48" category="paragraph">동기화 관계를 생성하고 Google 클라우드 스토리지를 소스 또는 타겟으로 선택할 때, Cloud Sync을 사용하면 데이터 브로커의 서비스 계정에 사용할 수 있는 버킷 중에서 선택할 수 있습니다. 기본적으로 여기에는 데이터 브로커 서비스 계정과 _Same_PROJECT 에 있는 버킷이 포함됩니다. 그러나 필요한 권한을 제공하는 경우 _other_projects 에서 버킷을 선택할 수 있습니다.</block>
+  <block id="6ab8649cc222312c90daa98ef292a592" category="list-text">Google Cloud Platform 콘솔을 열고 클라우드 스토리지 서비스를 로드합니다.</block>
+  <block id="a0f456d59c57c1111f650c11ad24fa5d" category="list-text">동기화 관계에서 소스 또는 타겟으로 사용할 버킷의 이름을 클릭합니다.</block>
+  <block id="715460ccdde6385d4b2f9b34475e2704" category="list-text">사용 권한 * 을 클릭합니다.</block>
+  <block id="7dee7e783d13b6d5d415926ce0bfc306" category="list-text">추가 * 를 클릭합니다.</block>
+  <block id="75d2935b39ceeb13d10ba4ced792a75b" category="list-text">데이터 브로커의 서비스 계정 이름을 입력합니다.</block>
+  <block id="bee41d170929fb7fc4e79dde87e71a86" category="inline-xref">위와 동일한 권한</block>
+  <block id="babe42abe7decc70b98a517bfcc466aa" category="list-text">에서 제공하는 역할을 선택합니다 <block ref="bcb4c6e7b3e58289927e5f4cf9be10af" category="inline-xref-macro-rx"></block>.</block>
+  <block id="4cc186df234138a57b2e8c5d8e5f7f8d" category="list-text">저장 * 을 클릭합니다.</block>
+  <block id="18e32f4b46f7365779a3d1fe9eb08721" category="paragraph">동기화 관계를 설정하면 이제 해당 버킷을 동기화 관계의 소스 또는 타겟으로 선택할 수 있습니다.</block>
+  <block id="9177317d32a41a0982be70109425240b" category="section-title">데이터 브로커 VM 인스턴스에 대한 세부 정보</block>
+  <block id="c233ea2db8aa00ac96e4e0317d97f7ed" category="paragraph">Cloud Sync은 다음 구성을 사용하여 Google Cloud에서 데이터 브로커를 생성합니다.</block>
+  <block id="3ea4bf9da7622edeeae1bf80e9c5cded" category="list-text">기계 유형</block>
+  <block id="cc5a0182c13643bf47b7fb87ac22c232" category="list-text">N1-표준-4</block>
+  <block id="9f101c0e6e5929a04c9e7663fdf91eda" category="list-text">15GB</block>
+  <block id="935b9daeec310c8e2291d043d3e14f44" category="list-text">Red Hat Enterprise Linux 7.7</block>
+  <block id="f3796c63e27caa7881ad0844ee9e9544" category="list-text">20GB HDD PD 표준</block>
+  <block id="b7313c752ca12081edfba2212c0cc2e4" category="summary">데이터를 즉시 동기화하고 일정을 변경하는 등 동기화 관계를 언제든지 관리할 수 있습니다.</block>
+  <block id="d45779d5d4d94ce3569ba04a2f510bdc" category="doc">동기화 관계 관리</block>
+  <block id="aa015c7ce7c37e507df5b27ca80bb605" category="section-title">즉각적인 데이터 동기화 수행</block>
+  <block id="01db9e7829acc4899b2e0742925feea9" category="paragraph">예약된 다음 동기화를 기다리지 않고 버튼을 눌러 소스와 타겟 간에 데이터를 즉시 동기화할 수 있습니다.</block>
+  <block id="0f5f1ed19e5f92c9f1aad34019c5c065" category="inline-image-macro">동기화 관계에 대한 작업을 수행할 수 있는 단추 스크린샷</block>
+  <block id="781a4e1aefac4f9409210de2df0f2992" category="list-text">Dashboard * 에서 동기화 관계로 이동하고 를 클릭합니다 <block ref="1452da4272733702009675a0aac63ae1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="90881819e96a317a0b9cbd8a17bea734" category="list-text">지금 동기화 * 를 클릭한 다음 * 동기화 * 를 클릭하여 확인합니다.</block>
+  <block id="43918ea25bc0ae48918a0220c50ba563" category="paragraph">Cloud Sync는 관계에 대한 데이터 동기화 프로세스를 시작합니다.</block>
+  <block id="0577fc2a0170ddd124f45dc5bb44f0da" category="section-title">동기화 성능을 가속화합니다</block>
+  <block id="9011e4e296b23e35e2729606b1923581" category="paragraph">관계를 관리하는 그룹에 추가 데이터 브로커를 추가하여 동기화 관계의 성능을 가속화합니다. 추가 데이터 브로커는 _new_data 브로커여야 합니다.</block>
+  <block id="30da1c6cc964eebe723aacff25362055" category="paragraph">데이터 브로커 그룹이 다른 동기화 관계를 관리하는 경우 그룹에 추가한 새 데이터 브로커가 동기화 관계의 성능을 가속화합니다.</block>
+  <block id="77835e3bdea4c9060a1ddb296840c2f2" category="list-text">관계에 있는 기존 데이터 브로커 중 하나 이상이 온라인 상태인지 확인합니다.</block>
+  <block id="f0f405cf23a3551636665b7b031e8fac" category="list-text">Accelerate * 를 클릭합니다.</block>
+  <block id="bef7c0526a136d74698b8d535b65bafd" category="list-text">프롬프트에 따라 새 데이터 브로커를 생성합니다.</block>
+  <block id="13876536c38e010f6b49948c92cdd5a9" category="paragraph">Cloud Sync는 새 데이터 브로커를 그룹에 추가합니다. 다음 데이터 동기화의 성능을 가속해야 합니다.</block>
+  <block id="a28c4492bc6f10da847edad58fb33acc" category="section-title">자격 증명을 업데이트하는 중입니다</block>
+  <block id="b9d30d436a8a56d3713a2ec699c1b4b4" category="paragraph">기존 동기화 관계에서 소스 또는 타겟의 최신 자격 증명으로 데이터 브로커를 업데이트할 수 있습니다. 보안 정책에 따라 자격 증명을 정기적으로 업데이트해야 하는 경우 자격 증명을 업데이트하는 것이 도움이 될 수 있습니다.</block>
+  <block id="5c3e96018b6e2b746cbb26607f7d85b4" category="paragraph">Cloud Sync에서 Azure Blob, Box, IBM Cloud Object Storage, StorageGRID, ONTAP S3 Storage, SFTP 및 SMB 서버에 대한 자격 증명이 필요한 소스 또는 대상에서 자격 증명 업데이트가 지원됩니다.</block>
+  <block id="bd815be6d32df77592fb5fe811a33258" category="list-text">동기화 대시보드 * 에서 자격 증명이 필요한 동기화 관계로 이동한 다음 * 자격 증명 업데이트 * 를 클릭합니다.</block>
+  <block id="78529df6bbf68e1bc56a7c5921101ba9" category="list-text">자격 증명을 입력하고 * 업데이트 * 를 클릭합니다.</block>
+  <block id="023dd20b31e9240e9be755e28a211310" category="paragraph">SMB 서버에 대한 참고 사항: 도메인이 새로운 경우 자격 증명을 업데이트할 때 지정해야 합니다. 도메인이 변경되지 않은 경우 다시 입력할 필요가 없습니다.</block>
+  <block id="7c88a343780aceedcb0315428b9ca8c3" category="paragraph">동기화 관계를 만들 때 도메인을 입력했지만 자격 증명을 업데이트할 때 새 도메인을 입력하지 않은 경우 Cloud Sync는 사용자가 제공한 원래 도메인을 계속 사용합니다.</block>
+  <block id="9954eea3786bddf9d851fa233a5167fd" category="paragraph">Cloud Sync는 데이터 브로커에서 자격 증명을 업데이트합니다. 데이터 브로커가 데이터 동기화를 위해 업데이트된 자격 증명을 사용하기 전까지 10분 정도 걸릴 수 있습니다.</block>
+  <block id="aa34fbc2c40679419a7f1063c5c292ff" category="section-title">동기화 관계에 대한 설정을 변경합니다</block>
+  <block id="374e9d4e51accd7075f4287b4b793c1b" category="paragraph">원본 파일 및 폴더가 대상 위치에서 동기화 및 유지되는 방식을 정의하는 설정을 수정합니다.</block>
+  <block id="bdcd619e6df173b859ed2a1a86e17328" category="list-text">설정 * 을 클릭합니다.</block>
+  <block id="822ae51936517f095a62c2446cee4c00" category="list-text">설정을 수정합니다.</block>
+  <block id="81619d38a88bd76ccf0c4ffa8f70f298" category="inline-image-macro">동기화 관계에 대한 설정을 보여 주는 스크린샷</block>
+  <block id="ebc3c303231e5e786f0078a52c4d81c7" category="paragraph"><block ref="ebc3c303231e5e786f0078a52c4d81c7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b849337d97139a6f11fd0de2bdfe63ed" category="paragraph">[[deleteonsource]] 다음은 각 설정에 대한 간단한 설명입니다.</block>
+  <block id="358b02ae4c5737f45e3823c255aeb87e" category="list-text">파일이 소스에서 삭제된 경우 대상 위치에서 파일을 삭제하도록 선택합니다. 기본값은 대상 위치에서 파일을 삭제하지 않는 것입니다.</block>
+  <block id="14242c99845a0bf338d45c648e061643" category="list-text">설정 저장 * 을 클릭합니다.</block>
+  <block id="654bbfde33590b041bdb6621586a9dee" category="paragraph">Cloud Sync는 새 설정과 동기화 관계를 수정합니다.</block>
+  <block id="4df1b0120e33fda011d371e1ed722bab" category="section-title">관계를 삭제하는 중입니다</block>
+  <block id="f493e490805f4eb86f124bae3d9da833" category="paragraph">소스와 타겟 간에 데이터를 더 이상 동기화할 필요가 없는 경우 동기화 관계를 삭제할 수 있습니다. 이 작업으로 데이터 브로커 그룹(또는 개별 데이터 브로커 인스턴스)은 삭제되지 않으며, 대상에서 데이터가 삭제되지 않습니다.</block>
+  <block id="68771d6d7b1536e9127a6d046d30c825" category="list-text">삭제 * 를 클릭한 다음 * 삭제 * 를 다시 클릭하여 확인합니다.</block>
+  <block id="617af2cdfb752608ce05d6a7b95c4aae" category="paragraph">Cloud Sync 동기화 관계를 삭제합니다.</block>
+  <block id="f68b92ee815675ae3018eca060b553b7" category="summary">NetApp 직원의 도움을 받아 데이터 브로커 구성을 조정하고 성능을 개선하는 데 사용할 수 있는 정보를 얻을 수 있는 보고서를 만들고 볼 수 있습니다.</block>
+  <block id="66a57cf55e06ad77b01c27e38766b83a" category="doc">구성을 조정하기 위해 보고서 작성 및 보기</block>
+  <block id="428c9ca45dc8f0b8e1eda231aef5b08f" category="paragraph">NetApp 직원의 도움을 받아 데이터 브로커 구성을 조정하고 성능을 개선하는 데 사용할 수 있는 정보를 보고서를 생성하고 확인합니다.</block>
+  <block id="d065612e0b27393ca9ed8b8e18bc869f" category="paragraph">각 보고서는 동기화 관계의 경로에 대한 세부 정보를 제공합니다. 예를 들어, 파일 시스템에 대한 보고서는 디렉토리 및 파일 수, 파일 크기 분포, 디렉토리의 전체 및 깊이 등을 보여 줍니다.</block>
+  <block id="0389649d1c6e65625a57cd6c84149999" category="section-title">보고서 작성</block>
+  <block id="475f89b9d3aace2ed4232c3db7231e26" category="paragraph">보고서를 만들 때마다 Cloud Sync는 경로를 검색한 다음 세부 정보를 보고서로 컴파일합니다.</block>
+  <block id="f538684aa236fdad4b93e1b71f94526f" category="list-text">동기화 &gt; 보고서 * 를 클릭합니다.</block>
+  <block id="26126443d44ba2723fb7a7ede8dda75c" category="paragraph">각 동기화 관계의 경로(원본 또는 대상)가 테이블에 표시됩니다.</block>
+  <block id="1c64df2a4dcd75c3fa3f6d99a5843437" category="list-text">보고서 작업 * 열에서 특정 경로로 이동하여 * 생성 * 을 클릭하거나 작업 메뉴를 클릭하고 * 새로 만들기 * 를 선택합니다.</block>
+  <block id="575833de1768effbb8d15904d2822d68" category="list-text">보고서가 준비되면 작업 메뉴를 클릭하고 * 보기 * 를 선택합니다.</block>
+  <block id="94954fba60bab7206fb4f66c4a7750cb" category="paragraph">다음은 파일 시스템 경로에 대한 샘플 보고서입니다.</block>
+  <block id="3cd71212de067629b841a10ceaf4f32f" category="inline-image-macro">동기화 항목 수, 파일 크기, 최대, 액세스 시간, 변경 시간, 시간을 수정합니다.</block>
+  <block id="a95d57514b72e95aeaca84b9f5d7e43a" category="paragraph"><block ref="a95d57514b72e95aeaca84b9f5d7e43a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="92e47f2f14756e088762306ae29dfb31" category="paragraph">다음은 오브젝트 스토리지에 대한 샘플 보고서입니다.</block>
+  <block id="321073ad07dd4a09f0eaadfb4561181a" category="inline-image-macro">경로 항목 수, 객체 크기, 수정 시간 및 스토리지 클래스를 표시하는 보고서입니다.</block>
+  <block id="a9c50da4c27210dd95cbf6916b6c3b34" category="paragraph"><block ref="a9c50da4c27210dd95cbf6916b6c3b34" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="03901baec19e5e2a784f13acaa06127a" category="section-title">보고서를 다운로드하는 중입니다</block>
+  <block id="f0d2e62b1c7572c743aab0d7c9b969c5" category="paragraph">보고서를 오프라인으로 보거나 공유할 수 있도록 PDF로 보고서를 다운로드할 수 있습니다.</block>
+  <block id="4f1a7b585eef080503c8e5f586b7673e" category="list-text">보고서 작업 * 열에서 작업 메뉴를 클릭하고 * 보기 * 를 선택합니다.</block>
+  <block id="17b8d7c4db9e21e8c01f1b793f8bf325" category="list-text">보고서 오른쪽 상단에서 작업 메뉴를 클릭하고 * PDF 다운로드 * 를 선택합니다.</block>
+  <block id="e45fcd91afd8b29019f92fa0f919f6d2" category="inline-image-macro">보고서에서 작업 메뉴를 클릭하면 나타나는 PDF 다운로드 옵션의 스크린샷</block>
+  <block id="ef3e79a56ff208de546ac0714ccae4eb" category="paragraph"><block ref="ef3e79a56ff208de546ac0714ccae4eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="90e1319509db72baceccb5d8f4c2c472" category="section-title">보고서 오류를 보는 중입니다</block>
+  <block id="c7c1e65692845e74726f70aef9e15699" category="paragraph">경로 테이블은 가장 최근 보고서에 오류가 있는지 여부를 식별합니다. 오류는 Cloud Sync가 경로를 스캔할 때 발생한 문제를 나타냅니다.</block>
+  <block id="60f1113b3a7c334a4ee293a5c193162a" category="paragraph">예를 들어 보고서에 권한 거부 오류가 있을 수 있습니다. 이 유형의 오류는 Cloud Sync가 전체 파일 및 디렉토리 세트를 스캔하는 기능에 영향을 미칠 수 있습니다.</block>
+  <block id="d86cb2fe66402168c1c894043151d228" category="paragraph">오류 목록을 확인한 후 문제를 해결하고 보고서를 다시 실행할 수 있습니다.</block>
+  <block id="57ba4added426d6aea423b1e70f1b94c" category="list-text">Errors * 열에서 보고서에 오류가 있는지 여부를 확인합니다.</block>
+  <block id="10a0d9a4ad96880fef72d02fd9dcd2c5" category="list-text">오류가 있는 경우 오류 수 옆에 있는 화살표를 클릭합니다.</block>
+  <block id="d029ebc8f7b2e2aa789dc0e27797846f" category="inline-image-macro">오류 열의 오류 수와 클릭 가능한 작은 화살표를 보여 주는 경로 테이블 스크린샷</block>
+  <block id="e01f862fe61f1c44179e61c69a18938d" category="paragraph"><block ref="e01f862fe61f1c44179e61c69a18938d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="591d860278697b4e6dbce26639961630" category="list-text">오류 정보를 사용하여 문제를 해결하십시오.</block>
+  <block id="aa8765cc437da97ac36fcf5b9e8bd67c" category="paragraph">문제를 해결한 후에는 다음에 보고서를 실행할 때 오류가 나타나지 않습니다.</block>
+  <block id="1b3463b3026822e4c8d6ad54c16a507a" category="section-title">보고서를 삭제하는 중입니다</block>
+  <block id="37100a26242d4deb28feac7db8d366de" category="paragraph">수정한 오류가 포함되어 있거나 보고서가 제거된 동기화 관계에 연결되어 있는 경우 해당 보고서를 삭제할 수 있습니다.</block>
+  <block id="6d084eaa09a94fecc5582a104b0053da" category="list-text">보고서 작업 * 열에서 경로에 대한 작업 메뉴를 클릭하고 * 마지막 보고서 삭제 * 또는 * 모든 보고서 삭제 * 를 선택합니다.</block>
+  <block id="4051a60e091a5882a67c28985f8c22c7" category="list-text">보고서 또는 보고서를 삭제할 것인지 확인합니다.</block>
+  <block id="ce21e7ae4271271294ccbf54c8fd6864" category="summary">NetApp은 다양한 방법으로 Cloud Manager를 지원합니다. 기술 자료(KB) 기사 및 커뮤니티 포럼과 같은 광범위한 무료 셀프 지원 옵션이 24x7 제공됩니다. 지원 등록에는 웹 티켓팅을 통한 원격 기술 지원이 포함됩니다.</block>
+  <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">도움을 받으십시오</block>
+  <block id="7ccaf84febc0ed633fbdbadb8d488a7e" category="paragraph"><block ref="7ccaf84febc0ed633fbdbadb8d488a7e" category="inline-link-macro-rx"></block></block>
+  <block id="8bd85d664f4ededdb700f025ffa0151e" category="summary">Cloud Sync를 사용하면 소스에서 타겟으로 데이터를 동기화할 수 있습니다. 이를 동기화 관계라고 합니다. 시작하기 전에 지원되는 관계를 이해해야 합니다.</block>
+  <block id="ac317451221f9a760b0fb4d93a8bec9c" category="doc">지원되는 동기화 관계</block>
+  <block id="e04fc3e1324c1d3a92fff01ec5d66290" category="cell">소스 위치</block>
+  <block id="650fcf6688b77acd2c46fd3270ff8134" category="cell">지원되는 타겟 위치</block>
+  <block id="e83e5674ab295a6613b60f5e12d1bfe3" category="list-text">NFS 서버</block>
+  <block id="876d9b7b1c11a792f25a0e1e9dbf31dd" category="list-text">SMB 서버</block>
+  <block id="f83bcb8e69c5f1d1eb29cddacb8374b0" category="list-text">SMB 서버</block>
+  <block id="05fc5760e6773a5e87f7fe0bb48c29ed" category="list-text">상자 ^2,3^</block>
+  <block id="34b98f7ba53befc78287d863ace2c006" category="cell">상자 ^2^</block>
+  <block id="c17ce6a7cdcb97581c6d5603ec7d447a" category="cell">온프레미스 ONTAP 클러스터</block>
+  <block id="55d5b6dbf906d2bf27a6569938b053e5" category="cell">SFTP^1^</block>
+  <block id="e2ab7c65b21ed8cc1c3b642b5e36429e" category="cell">S3</block>
+  <block id="2a01d572b1447155c310cabafac3fae9" category="paragraph">참고:</block>
+  <block id="6b851b2682356f2e929b17451db9ba27" category="list-text">이 소스/타겟과의 관계 동기화는 Cloud Sync API만 사용하여 지원됩니다.</block>
+  <block id="520ec1c5a501051f1a5ba82433368fa8" category="list-text">Box 지원은 미리 보기로 제공됩니다.</block>
+  <block id="75b4b5ad6fd92fc21c3b5d6221f3b075" category="list-text">Blob 컨테이너가 타겟인 경우 특정 Azure Blob 저장소 계층을 선택할 수 있습니다.</block>
+  <block id="4cfb52c3dbfbd734f89fa71211c2858a" category="list-text">핫 스토리지</block>
+  <block id="9dde883d4be59ba1c52575f72a1a7dcf" category="list-text">멋진 보관</block>
+  <block id="7d847e6bda48d46c1766fec4c5a94bcb" category="list-text">[[storage-classes]] Amazon S3가 타겟일 때 특정 S3 스토리지 클래스를 선택할 수 있습니다.</block>
+  <block id="f9e7d2057481d825e36ef458b1f20ead" category="list-text">표준(기본 클래스)</block>
+  <block id="50abff7eab122064034a22ce7ec10c49" category="list-text">지능형 계층화</block>
+  <block id="7a1255ccd32375deedb79fe52eed93f5" category="list-text">표준 - 낮은 액세스 빈도</block>
+  <block id="e2b0c2a0a664cef2184b3d17808db4ce" category="list-text">단일 영역 - 낮은 액세스 빈도</block>
+  <block id="4def2a084469f97f6372bfaf0823941b" category="list-text">빙하</block>
+  <block id="d2f79b4db321be04fd1439394fb99d3c" category="list-text">Glacier 딥 아카이브</block>
+  <block id="95e5c9b9a242ae01ebbab296e59e2a68" category="list-text">Google Cloud Storage 버킷이 타겟인 경우 특정 스토리지 클래스를 선택할 수 있습니다.</block>
+  <block id="ffaf5cab0f09c40c02f73eeea249b6ce" category="summary">NetApp은 Cloud Sync 서비스를 사용하면서 제공한 자격 증명에 대한 액세스 권한을 가지고 있지 않습니다. 자격 증명은 네트워크에 상주하는 데이터 브로커 컴퓨터에 직접 저장됩니다.</block>
+  <block id="1a5af1b0ee081fd2c600d9dd03b7c1d1" category="doc">데이터 개인 정보 보호</block>
+  <block id="58c92536e705fbcdd57641d385acc74e" category="paragraph">선택한 구성에 따라 새 관계를 만들 때 Cloud Sync에서 자격 증명을 묻는 메시지가 나타날 수 있습니다. 예를 들어, SMB 서버를 포함하는 관계를 설정하거나 AWS에서 데이터 브로커를 구축할 때</block>
+  <block id="ca4c3bf9d403da9e2d60487daa5822a4" category="paragraph">이러한 자격 증명은 항상 데이터 브로커 자체에 직접 저장됩니다. 데이터 브로커는 온프레미스 또는 클라우드 계정 등 네트워크 내 시스템에 상주합니다. 자격 증명은 NetApp에서 사용할 수 없습니다.</block>
+  <block id="91d94bcb5137ebeaee0b1824fb283f72" category="paragraph">자격 증명은 HashiCorp Vault를 사용하여 데이터 브로커 컴퓨터에서 로컬로 암호화됩니다.</block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">법적 고지</block>
+  <block id="c59ae8d7beeb519a23478ab048af482c" category="paragraph"><block ref="c59ae8d7beeb519a23478ab048af482c" category="inline-link-macro-rx"></block></block>
+  <block id="6f2ac1cf1da8ec34232c651d4bba0149" category="paragraph"><block ref="6f2ac1cf1da8ec34232c651d4bba0149" category="inline-link-macro-rx"></block></block>
+  <block id="bf6a36d1f8c7b0ef48e5a5b01357f720" category="inline-link-macro">Cloud Sync에 대한 고지 사항</block>
+  <block id="c9c82aba1257ee6c6ebbade2353f0b0d" category="paragraph"><block ref="c9c82aba1257ee6c6ebbade2353f0b0d" category="inline-link-macro-rx"></block></block>
+  <block id="1eba71d64e6c5e410e558530711e835b" category="summary">알려진 제한 사항은 이 제품 릴리스에서 지원하지 않거나 올바르게 상호 운용되지 않는 플랫폼, 장치 또는 기능을 식별합니다. 이러한 제한 사항을 주의 깊게 검토하십시오.</block>
+  <block id="e646e16bee8b32e6ea29e30d01970a6c" category="doc">제한 사항</block>
+  <block id="d00599d1e32bdf0c309c42b0ff1535ba" category="list-text">Cloud Sync는 중국에서 지원되지 않습니다.</block>
+  <block id="bbfde100f15ce21347e3f27b98fa179d" category="list-text">중국 외에 다음 지역에서는 Cloud Sync 데이터 브로커가 지원되지 않습니다.</block>
+  <block id="28973d06f414ecd2b8aadf8888439345" category="list-text">Azure 미국 정부</block>
+  <block id="f216d6b6f01f8c6bb55a0365652582d1" category="list-text">Azure US DoD를 참조하십시오</block>
+  <block id="0f3ab1e6e87b1df0d7ec0b58658fb4dd" category="summary">Cloud Sync에 대한 도움말을 얻고 포럼, 채팅 서비스, 비디오 등 다양한 리소스를 통해 자세한 정보를 찾을 수 있습니다.</block>
+  <block id="c05cf44a39f617084e8016772fe65923" category="doc">Cloud Sync 기술 FAQ</block>
+  <block id="a0d932b5085e493a71dbcdcc11a705b4" category="paragraph">이 FAQ는 질문에 대한 간단한 답변을 찾는 경우에 도움이 될 수 있습니다.</block>
+  <block id="8d1852cff01a4a842ccc91189043cd22" category="paragraph">다음 질문은 Cloud Sync를 시작하는 것과 관련이 있습니다.</block>
+  <block id="bbbff57674783e5c934d8a30abce48d4" category="section-title">Cloud Sync의 작동 방식</block>
+  <block id="f6bee1ea15a8932db9ba8590d77d0cdd" category="paragraph">Cloud Sync는 NetApp 데이터 브로커 소프트웨어를 사용하여 소스 데이터를 타겟(이것을 _sync 관계 _ 라고 함)으로 동기화합니다.</block>
+  <block id="5040a4a4048a0ec90cdf8842d496f55b" category="paragraph">데이터 브로커 그룹은 소스와 타겟 간의 동기화 관계를 제어합니다. 동기화 관계를 설정한 후 Cloud Sync는 소스 시스템을 분석하고 이를 여러 복제 스트림으로 분해하여 선택한 타겟 데이터를 푸시합니다.</block>
+  <block id="c3ba51c588ef6caa42018879816a40f8" category="section-title">14일 무료 평가판은 어떻게 작동합니까?</block>
+  <block id="0798b81b41f824877e8e54a5324276ba" category="paragraph">14일 무료 평가판은 Cloud Sync 서비스에 등록할 때 시작됩니다. 14일 동안 생성한 Cloud Sync 관계에는 NetApp 비용이 적용되지 않습니다. 하지만 구축하는 데이터 브로커에 대한 모든 리소스 비용이 계속 적용됩니다.</block>
+  <block id="299ce6cb25b0100e9cf0efef3abbfa8f" category="section-title">Cloud Sync 비용은 얼마입니까?</block>
+  <block id="ec016f2339ceb48c4e2fafe96c706f0f" category="paragraph">Cloud Sync 사용과 관련된 비용에는 서비스 요금과 리소스 요금이라는 두 가지 유형이 있습니다.</block>
+  <block id="e1b4a0ddcd3124f71fd5c65649282433" category="paragraph">* 서비스 요금 *</block>
+  <block id="df1d8998e5ddaa5a8ab68d0fe62a7d3d" category="paragraph">용량제 가격으로, 생성한 동기화 관계 수를 기준으로 Cloud Sync 서비스 요금은 시간당 부과됩니다.</block>
+  <block id="73189487251f675abefc873d66be56c8" category="inline-link">AWS에서 용량제 가격 보기</block>
+  <block id="3182c76edbfaccbb226fb7edbbed2a6c" category="list-text"><block ref="3182c76edbfaccbb226fb7edbbed2a6c" category="inline-link-rx"></block></block>
+  <block id="6e00574910392767e2030f6e03b0bfcd" category="inline-link">AWS에서 연간 가격 보기</block>
+  <block id="34e4ce64ecec76bbb1e0b4ec5bd22c0e" category="list-text"><block ref="34e4ce64ecec76bbb1e0b4ec5bd22c0e" category="inline-link-rx"></block></block>
+  <block id="e53772633222585cf7f7f86f263b2b8d" category="inline-link">Azure에서 가격을 확인할 수 있습니다</block>
+  <block id="2bf96dc1e3fe5b0a112ce7a25c14af74" category="list-text"><block ref="2bf96dc1e3fe5b0a112ce7a25c14af74" category="inline-link-rx"></block></block>
+  <block id="4bdffe12b0b4989b8090f00a831956de" category="paragraph">Cloud Sync 라이센스는 NetApp 담당자를 통해서도 제공됩니다. 각 라이센스로 12개월간 20개의 동기화 관계를 사용할 수 있습니다.</block>
+  <block id="9cc30b3e9afbdb901b838020c4f35584" category="inline-link-macro">라이센스에 대해 자세히 알아보십시오</block>
+  <block id="326db01706ec74f8dfe188207959e516" category="paragraph"><block ref="c8493ffe20fa12122d5f8e9b98cc5b4b" category="inline-link-macro-rx"></block>.</block>
+  <block id="28e72eb89ddfdb4da0dd6569b502b074" category="admonition">Cloud Sync 관계는 Cloud Volumes Service 및 Azure NetApp Files에서 무료로 제공됩니다.</block>
+  <block id="d14d70754e8322b819c6bc86af6beefd" category="paragraph">* 리소스 비용 *</block>
+  <block id="bdf9c0b5a2bb19426e68000000a0fa8e" category="paragraph">리소스 요금은 클라우드에서 데이터 브로커를 실행하는 데 필요한 컴퓨팅 및 스토리지 비용과 관련이 있습니다.</block>
+  <block id="f901b2d4ea8e5a7abc863a0eea4b5b27" category="section-title">Cloud Sync는 어떻게 청구됩니까?</block>
+  <block id="5ef87a5af222d72dd5dd2554039e1baf" category="paragraph">14일 무료 평가판이 종료된 후 동기화 관계에 대한 비용을 지불할 수 있는 두 가지 방법이 있습니다. 첫 번째 옵션은 AWS 또는 Azure에서 가입하는 것입니다. 가입 시 사용한 만큼만 지불하거나 연간 비용을 지불할 수 있습니다. 두 번째 옵션은 NetApp에서 직접 라이센스를 구매하는 것입니다.</block>
+  <block id="d48011c59919ad7d6dbbbfd7b93b8a1d" category="section-title">클라우드 외부에서 Cloud Sync를 사용할 수 있습니까?</block>
+  <block id="21257847b1628900e37090da9e642da2" category="paragraph">예, 비클라우드 아키텍처에서 Cloud Sync를 사용할 수 있습니다. 소스와 타겟이 사내에 있을 수 있으므로 데이터 브로커 소프트웨어도 사용할 수 있습니다.</block>
+  <block id="cf2134fa111a18f1f2949af03a0b455d" category="paragraph">클라우드 외부에서 Cloud Sync를 사용하는 방법은 다음과 같습니다.</block>
+  <block id="4cf11257ca11f0b945f9be6ea331b17b" category="list-text">사내 동기화의 경우 NetApp StorageGRID를 통해 프라이빗 Amazon S3 버킷을 사용할 수 있습니다.</block>
+  <block id="3339dd709817535785aeeda3c3be6158" category="list-text">데이터 브로커 그룹은 Cloud Sync 서비스와 통신하기 위해 인터넷 연결이 필요합니다.</block>
+  <block id="ad12207f179d2ca16295cab50ab877b3" category="list-text">NetApp에서 직접 라이센스를 구입하지 않을 경우 PAYGO Cloud Sync 서비스 청구를 위해 AWS 또는 Azure 계정이 필요합니다.</block>
+  <block id="17381273051e35ee8b1f3c5cec92c55a" category="section-title">데이터 브로커 그룹이란 무엇입니까?</block>
+  <block id="3d1942c5e5711c0a537a097d10414548" category="paragraph">각 데이터 브로커는 데이터 브로커 그룹에 속해 있습니다. 데이터 브로커를 함께 그룹화하면 동기화 관계의 성능을 향상시킬 수 있습니다.</block>
+  <block id="df266df003e70d370ab8d285c9cb2c42" category="section-title">Cloud Sync에 어떻게 액세스합니까?</block>
+  <block id="a4169a7e5b143d6ed1f60c39369aebb8" category="paragraph">Cloud Sync는 Cloud Manager의 * 동기화 * 탭에서 사용할 수 있습니다.</block>
+  <block id="c5ceea2392b0487f5aa63438b3bdcdbe" category="section-title">지원되는 소스 및 타겟</block>
+  <block id="ad09709a92b0cfa4413e68816daeddca" category="paragraph">동기화 관계에서 지원되는 소스 및 타겟과 관련된 다음 질문</block>
+  <block id="57e7b2d375cda0a41d244e4b01feac43" category="section-title">Cloud Sync가 지원하는 소스와 대상은 무엇입니까?</block>
+  <block id="0c281ec8b4dba4bb8eef0bb4f7d76b71" category="inline-link-macro">전체 목록을 봅니다</block>
+  <block id="9ff0baf861cb40dac090480a2d754191" category="paragraph">Cloud Sync는 다양한 유형의 동기화 관계를 지원합니다. <block ref="a9d58e8a204176701e4d49fab6d7be58" category="inline-link-macro-rx"></block>.</block>
+  <block id="9fe8394718f98a4507351102be77e00d" category="section-title">Cloud Sync는 어떤 버전의 NFS 및 SMB를 지원합니까?</block>
+  <block id="acb37b6e124df94c1b50f8b40ae994b4" category="paragraph">Cloud Sync는 NFS 버전 3 이상과 SMB 버전 1 이상을 지원합니다.</block>
+  <block id="2df8f049ebc55b651e92a9b3d09c2355" category="inline-link-macro">동기화 요구 사항에 대해 자세히 알아보십시오</block>
+  <block id="bba798df17d74e9abb6bd439df00d34a" category="paragraph"><block ref="e3943d09fe298b45dcc7aff6497c3f3f" category="inline-link-macro-rx"></block>.</block>
+  <block id="35e952871c0ac0df7b8cf6ca95ce1e7c" category="section-title">Amazon S3가 타겟일 때 데이터는 특정 S3 스토리지 클래스로 계층화할 수 있습니까?</block>
+  <block id="9328dc7cb3bda74b79a915615065c02b" category="paragraph">예. AWS S3가 타겟인 경우 특정 S3 스토리지 클래스를 선택할 수 있습니다.</block>
+  <block id="a44034b6c6e0a86d59dbbbf82fa53625" category="section-title">Azure Blob 스토리지의 스토리지 계층에는 어떻습니까?</block>
+  <block id="3fd623ad234c0b2f226d2ff4a22ae947" category="section-title">Google Cloud 스토리지 계층을 지원합니까?</block>
+  <block id="b38a2bdc58532821724287189003639d" category="paragraph">예, Google Cloud Storage 버킷이 타겟인 경우 특정 스토리지 클래스를 선택할 수 있습니다.</block>
+  <block id="a5fa5746370b608090b994a97b49e98b" category="section-title">네트워킹</block>
+  <block id="606a56a328e26d541dc48a8d7e051850" category="paragraph">다음 질문은 Cloud Sync의 네트워킹 요구 사항과 관련이 있습니다.</block>
+  <block id="218383acf998bf0d87f77fa056dbcbbd" category="section-title">Cloud Sync의 네트워킹 요구 사항은 무엇입니까?</block>
+  <block id="e90fd31f78e9c7468421e3db7ef84028" category="paragraph">Cloud Sync 환경에서는 데이터 브로커 그룹이 선택한 프로토콜 또는 오브젝트 스토리지 API(Amazon S3, Azure Blob, IBM 클라우드 오브젝트 스토리지)를 통해 소스 및 타겟에 연결되어 있어야 합니다.</block>
+  <block id="c5d1f49531de5a765d8d4dd362934efb" category="paragraph">또한 데이터 브로커 그룹은 포트 443을 통해 아웃바운드 인터넷 연결을 필요로 하므로 Cloud Sync 서비스와 통신하고 몇 가지 다른 서비스 및 리포지토리에 연결할 수 있습니다.</block>
+  <block id="341f8a8c34be5b85729b169698cc0c09" category="inline-link-macro">네트워킹 요구 사항을 검토합니다</block>
+  <block id="72727db4f9828a4364006ca75db7d13e" category="paragraph">자세한 내용을 보려면 <block ref="a739a1e0583f249754c6a03b43a5f664" category="inline-link-macro-rx"></block>.</block>
+  <block id="742a8096e1141cec49b0b879f6041a6e" category="section-title">데이터 브로커와 함께 프록시 서버를 사용할 수 있습니까?</block>
+  <block id="b127099c71415d532da3a26ed73eb041" category="paragraph">예.</block>
+  <block id="573d97bf8b8dc3735e94ad7bf8455fdc" category="paragraph">Cloud Sync는 기본 인증을 사용하거나 사용하지 않는 프록시 서버를 지원합니다. 데이터 브로커를 배포할 때 프록시 서버를 지정하면 데이터 브로커의 모든 HTTP 및 HTTPS 트래픽이 프록시를 통해 라우팅됩니다. NFS 또는 SMB와 같은 비 HTTP 트래픽은 프록시 서버를 통해 라우팅할 수 없습니다.</block>
+  <block id="096bfdaa8c9270b7bee83a66ebc65832" category="paragraph">프록시 서버의 유일한 제한 사항은 NFS 또는 Azure NetApp Files 동기화 관계를 사용하여 전송 중 데이터 암호화를 사용하는 것입니다. 암호화된 데이터는 HTTPS를 통해 전송되며 프록시 서버를 통해 라우팅할 수 없습니다.</block>
+  <block id="37919085801d8c313b9ebc19de73b2b5" category="section-title">데이터 동기화</block>
+  <block id="e6d7eaa590f8af5cd3af146fbb41b78d" category="paragraph">다음 질문은 데이터 동기화 작동 방식과 관련이 있습니다.</block>
+  <block id="1e612702669cad5995e8d2ea4fbfa309" category="section-title">동기화가 얼마나 자주 발생합니까?</block>
+  <block id="7bf852afaaa7622cee2481f5912ef232" category="paragraph">기본 스케줄은 일별 동기화에 대해 설정됩니다. 초기 동기화 후 다음을 수행할 수 있습니다.</block>
+  <block id="e82fafc4a6d398fd1883e17dd5bb9831" category="list-text">원하는 일 수, 시간 또는 분으로 동기화 일정을 수정합니다</block>
+  <block id="f1af7c260e3be3909f1970ce8c8cc3f6" category="list-text">동기화 일정을 비활성화합니다</block>
+  <block id="eec7fa57062ff1ea2a4f9dae42f15abd" category="list-text">동기화 일정 삭제(데이터가 손실되지 않음. 동기화 관계만 제거됨)</block>
+  <block id="bad34e5be4f16d99c41cd639221313f8" category="section-title">최소 동기화 일정은 무엇입니까?</block>
+  <block id="3660023bf7da71c95a44726bc678e3d2" category="paragraph">1분마다 데이터를 동기화하도록 관계를 예약할 수 있습니다.</block>
+  <block id="bdc71bda13a615bcc29169c368c82126" category="section-title">데이터 브로커 그룹이 파일 동기화 실패 시 재시도합니까? 아니면 시간 초과입니까?</block>
+  <block id="486538f3b2cf30dbac185ae48dbcd398" category="paragraph">데이터 브로커 그룹은 단일 파일이 전송되지 않을 때 시간 초과되지 않습니다. 대신 데이터 브로커 그룹은 파일을 건너뛰기 전에 3번 재시도합니다. 재시도 값은 동기화 관계에 대한 설정에서 구성할 수 있습니다.</block>
+  <block id="16577fe9b5ad3fc74ec2a37327b4f98f" category="inline-link-macro">동기화 관계의 설정을 변경하는 방법에 대해 알아봅니다</block>
+  <block id="13b1f6a5b87aad329fe4a0f0b0a24671" category="paragraph"><block ref="4b47cfecc7a5fed36fcab91191b9686f" category="inline-link-macro-rx"></block>.</block>
+  <block id="e7fc2a48e6896c10c00e2e0d0f42df0a" category="section-title">매우 큰 데이터 세트가 있는 경우 어떻게 해야 합니까?</block>
+  <block id="1a76a33306f63cd222193be36e2aab28" category="paragraph">단일 디렉토리에 600,000개 이상의 파일이 있는 경우 페이로드를 처리하도록 데이터 브로커 그룹을 구성할 수 있도록 mailto:ng-cloudsync-support@netapp.com [contact us] 를 사용합니다. 데이터 브로커 그룹에 메모리를 추가해야 할 수도 있습니다.</block>
+  <block id="5272c1335a923889fee61138f9c644e0" category="paragraph">마운트 지점의 총 파일 수에는 제한이 없습니다. 계층 구조(최상위 디렉토리 또는 하위 디렉토리)의 레벨에 관계없이 60만 개 이상의 파일이 있는 대규모 디렉토리에 대해서는 추가 메모리가 필요합니다.</block>
+  <block id="2fae32629d4ef4fc6341f1751b405e45" category="section-title">보안</block>
+  <block id="961ac1bba4fae7c023a039958d1c8be6" category="paragraph">보안과 관련된 다음 질문입니다.</block>
+  <block id="39c0da912cbf1f199fdf2faba685c39f" category="section-title">Cloud Sync는 안전합니까?</block>
+  <block id="64fdb9de34f1179f1b0a667717e6fba3" category="inline-link">아마존 단순 대기열 서비스(SQS)</block>
+  <block id="646df425214d44d94ffd79fd151940c7" category="paragraph">예. 모든 Cloud Sync 서비스 네트워킹 연결은 을 사용하여 수행됩니다<block ref="1986d6dad6812d3eb616527e09d2c381" category="inline-link-rx"></block>.</block>
+  <block id="fd5d12fbab5ffa84ed9d2eed756e6a60" category="paragraph">데이터 브로커 그룹과 Amazon S3, Azure Blob, Google Cloud Storage 및 IBM Cloud Object Storage 간의 모든 통신은 HTTPS 프로토콜을 통해 수행됩니다.</block>
+  <block id="f696a8066fb9a52d0c2ca1a16cec0f3e" category="paragraph">사내(소스 또는 타겟) 시스템에서 Cloud Sync를 사용하는 경우 다음과 같은 몇 가지 권장 연결 옵션을 활용할 수 있습니다.</block>
+  <block id="e8afb7efd3e850a48fe5a92145f3b8eb" category="list-text">인터넷에 연결되지 않은 AWS Direct Connect, Azure ExpressRoute 또는 Google Cloud Interconnect 연결(지정한 클라우드 네트워크와만 통신할 수 있음)</block>
+  <block id="8a6524c1ef0549ff2ea627990a1d61b9" category="list-text">온-프레미스 게이트웨이 장치와 클라우드 네트워크 간의 VPN 연결</block>
+  <block id="d8ce7e985925e8a126f84ae0517e518b" category="list-text">S3 버킷, Azure Blob 스토리지 또는 Google Cloud Storage를 통한 추가 보안 데이터 전송을 위해 Amazon Private S3 Endpoint, Azure Virtual Network 서비스 끝점 또는 Private Google Access를 설정할 수 있습니다.</block>
+  <block id="2c436eb0e68fa84c66a33bfcf5cdbf0d" category="paragraph">이러한 방법 중 하나라도 있으면 사내 NAS 서버와 Cloud Sync 데이터 브로커 그룹 간에 보안 연결이 설정됩니다.</block>
+  <block id="fb4ee33a15eb32957eb79f0290b0d6b5" category="section-title">Cloud Sync에서 데이터를 암호화합니까?</block>
+  <block id="2b0b4b722b7bc0fcaf5fd50225309bdc" category="list-text">Cloud Sync는 소스 및 타겟 NFS 서버 간에 전송 중 데이터 암호화를 지원합니다. <block ref="da7c2a9579c0b8ce1c44234fdbc0633a" category="inline-link-macro-rx"></block>.</block>
+  <block id="9c61b5f65d083eca3b24957d57f51e56" category="list-text">SMB의 경우 Cloud Sync는 서버 측에서 암호화한 SMB 3.0 및 3.11 데이터를 지원합니다. Cloud Sync는 암호화된 데이터를 소스에서 데이터가 암호화된 상태로 유지되는 타겟으로 복사합니다.</block>
+  <block id="bbb728628fa82dd756f3291e79cfb471" category="paragraph">Cloud Sync는 SMB 데이터 자체를 암호화할 수 없습니다.</block>
+  <block id="2387a423149f416d3c3ea2a1e2d91f7d" category="list-text">Amazon S3 버킷이 동기화 관계의 타겟인 경우 AWS KMS 암호화 또는 AES-256 암호화를 사용하여 데이터 암호화를 사용할지 여부를 선택할 수 있습니다.</block>
+  <block id="d08ccf52b4cdd08e41cfb99ec42e0b29" category="section-title">권한</block>
+  <block id="ff9b02471f1cae1b057dc8e67a58f10d" category="paragraph">다음 질문은 데이터 권한과 관련이 있습니다.</block>
+  <block id="5b76a741c4e5697d94b938d43ef01cd4" category="section-title">SMB 데이터 권한이 타겟 위치에 동기화됩니까?</block>
+  <block id="765b064201559c2be1a0968f6fc23bca" category="paragraph">소스 SMB 공유와 타겟 SMB 공유 간, 소스 SMB 공유에서 오브젝트 스토리지(ONTAP S3 제외) 간에 액세스 제어 목록(ACL)을 보존하도록 Cloud Sync을 설정할 수 있습니다.</block>
+  <block id="11350a74dc1542f7d88d202ef8de2a80" category="inline-link-macro">SMB 공유 간에 ACL을 복사하는 방법에 대해 알아봅니다</block>
+  <block id="0f5dbb999d73d8bbb410c87fcc7697b1" category="paragraph"><block ref="8e7d0d6a08f1d98ec64bcfc73c9f9b56" category="inline-link-macro-rx"></block>.</block>
+  <block id="2bf52c135da8e1b0df2e802b34f926d2" category="section-title">NFS 데이터 권한이 타겟 위치에 동기화됩니까?</block>
+  <block id="3031c0055528d332aad2693430c51b5c" category="paragraph">Cloud Sync는 다음과 같이 NFS 서버 간에 NFS 권한을 자동으로 복제합니다.</block>
+  <block id="6809bf3a8657fbf422b7eb84d6649081" category="list-text">NFS 버전 3: Cloud Sync는 사용 권한과 사용자 그룹 소유자를 복사합니다.</block>
+  <block id="25fe7529cf89fb6edc566c92e65c154f" category="list-text">NFS 버전 4: Cloud Sync는 ACL을 복제합니다.</block>
+  <block id="e22cc91dc3170fbcb0b9ab0ce5cbfa50" category="section-title">오브젝트 스토리지 메타데이터</block>
+  <block id="b9b177c8edd7eb2c6ba657a9855f7aa0" category="paragraph">Cloud Sync는 다음과 같은 유형의 동기화 관계를 위해 소스에서 타겟으로 오브젝트 스토리지 메타데이터를 복제합니다.</block>
+  <block id="19227829194d09ab15a10015437ef02a" category="list-text">Amazon S3 -&gt; Amazon S3 ^1^</block>
+  <block id="d85bfe1b588472d6beeaa23dff1c1294" category="list-text">Amazon S3 -&gt; StorageGRID 를 선택합니다</block>
+  <block id="4b6c9d89551036d9e49bf2a8e7026343" category="list-text">StorageGRID -&gt; Amazon S3</block>
+  <block id="590d02024b7f1c2ed71545f3e89bebd4" category="list-text">StorageGRID -&gt; StorageGRID</block>
+  <block id="0c22b827a98153c6816dea4e6d72f8e8" category="list-text">StorageGRID -&gt; Google 클라우드 스토리지</block>
+  <block id="1c097248e66f26e62b5f8f95e7ae9b85" category="list-text">Google 클라우드 스토리지 -&gt; StorageGRID^1^</block>
+  <block id="d8f08b3919ac0da1b6baf914f964b8b7" category="list-text">Google Cloud Storage -&gt; IBM Cloud Object Storage ^1^</block>
+  <block id="cf500e644795543ac10b4f486ea21ce6" category="list-text">Google Cloud Storage -&gt; Amazon S3 ^1^</block>
+  <block id="175310ede3810a1d38f4079aba5bd31a" category="list-text">Amazon S3 -&gt; Google Cloud Storage 를 클릭합니다</block>
+  <block id="13b80657656937d8105997bfcc0671cd" category="list-text">IBM Cloud Object Storage -&gt; Google Cloud Storage</block>
+  <block id="e9d1cd1913b22fd9324ade51470e79fb" category="list-text">StorageGRID -&gt; IBM 클라우드 오브젝트 스토리지</block>
+  <block id="d5467cdf0f31f137fc693f242bb4f9ed" category="list-text">IBM 클라우드 오브젝트 스토리지 -&gt; StorageGRID</block>
+  <block id="4ead6076cd3ac3f5021ec4c7be28c427" category="list-text">IBM 클라우드 오브젝트 스토리지 -&gt; IBM 클라우드 오브젝트 스토리지</block>
+  <block id="cf92849b844c61464026b83534370159" category="inline-link-macro">동기화 관계를 생성할 때 설정을 활성화합니다</block>
+  <block id="1e6c7a42798986bf930479decdfb6353" category="paragraph">^1^ 이러한 동기화 관계의 경우 해야 합니다 <block ref="03984181b8f01cdbd96b3f54d00056a4" category="inline-link-macro-rx"></block>.</block>
+  <block id="9446a98ad14416153cc4d45ab8b531bf" category="section-title">성능</block>
+  <block id="d1ac9671b7bcf06bf5d1080fe70853b0" category="paragraph">다음 질문은 Cloud Sync 성능과 관련이 있습니다.</block>
+  <block id="678b59fd02ed47602217c203bce0f237" category="section-title">동기화 관계의 진행률 표시기는 무엇을 나타냅니까?</block>
+  <block id="b41bc6e5da0a5cad4d5bfa701428c3e0" category="paragraph">동기화 관계는 데이터 브로커 그룹의 네트워크 어댑터의 처리량을 보여 줍니다. 여러 데이터 브로커를 사용하여 동기화 성능을 가속화하면 처리량은 모든 트래픽의 합계입니다. 이 처리량은 20초마다 새로 고쳐집니다.</block>
+  <block id="d2e5af98d120641c3665f862d5107d9e" category="section-title">성능 문제가 발생했습니다. 동시 전송 수를 제한할 수 있습니까?</block>
+  <block id="8d15ff4ba9a03adef433f8aaa3d53c02" category="paragraph">용량이 매우 큰 파일(각 BB가 여러 개 있는 경우)이 있으면 전송 프로세스를 완료하는 데 시간이 오래 걸릴 수 있으며 성능에 영향을 줄 수 있습니다.</block>
+  <block id="753322bfc209704e3ab17c5cfe5d42d0" category="paragraph">동시 전송 수를 제한하는 것은 도움이 될 수 있습니다. mailto:ng-cloudsync-support@netapp.com [문의처].</block>
+  <block id="161df7898613d68dd3106bed369ab957" category="section-title">Azure NetApp Files에서 성능이 낮은 이유는 무엇입니까?</block>
+  <block id="a92bf49aada81ee55543aa6bf897787c" category="paragraph">Azure NetApp Files 간에 데이터를 동기화할 때 디스크 서비스 수준이 Standard인 경우 장애 및 성능 문제가 발생할 수 있습니다.</block>
+  <block id="9812e4bcf0263cfa80fdd8c8a789a255" category="paragraph">동기화 성능을 향상시키려면 서비스 수준을 Premium 또는 Ultra로 변경합니다.</block>
+  <block id="94e12c4a58e36c62d41d5c7ea1f166f7" category="inline-link">Azure NetApp Files 서비스 수준 및 처리량 에 대해 자세히 알아보십시오</block>
+  <block id="8c7b3ed9d7207fdbe57540ab6cd5e1e7" category="paragraph"><block ref="bc692a932f7211cd1ab661879beac160" category="inline-link-rx"></block>.</block>
+  <block id="06dd90f0736ba00a0e3050c043c11683" category="section-title">AWS용 Cloud Volumes Service의 성능이 낮은 이유는 무엇입니까?</block>
+  <block id="37bbffa966391c253fd64fcdf3509afa" category="paragraph">클라우드 볼륨과 데이터를 동기화할 때 클라우드 볼륨의 성능 수준이 Standard인 경우 장애 및 성능 문제가 발생할 수 있습니다.</block>
+  <block id="305fa2f993292af4e7b31404440f0f2e" category="paragraph">동기화 성능을 향상시키려면 서비스 수준을 Premium 또는 Extreme으로 변경하십시오.</block>
+  <block id="a74feaca0228e843c01e1cc6a5a7a4da" category="section-title">그룹에 필요한 데이터 브로커는 몇 개입니까?</block>
+  <block id="6d0c6fb653b3e1d2a836e0b86dabea25" category="paragraph">새 관계를 만들 때는 가속화된 동기화 관계에 속하는 기존 데이터 브로커를 선택하지 않는 한 그룹의 단일 데이터 브로커로 시작합니다. 대부분의 경우 단일 데이터 브로커가 동기화 관계에 대한 성능 요구사항을 충족할 수 있습니다. 그렇지 않으면 그룹에 추가 데이터 브로커를 추가하여 동기화 성능을 가속화할 수 있습니다. 하지만 먼저 동기화 성능에 영향을 줄 수 있는 다른 요소를 확인해야 합니다.</block>
+  <block id="c6bdda7b88c4f51edb4d0ca671f8c528" category="paragraph">여러 요소가 데이터 전송 성능에 영향을 줄 수 있습니다. 네트워크 대역폭, 지연 시간, 네트워크 토폴로지, 데이터 브로커 VM 사양 및 스토리지 시스템 성능 때문에 전반적인 동기화 성능이 영향을 받을 수 있습니다. 예를 들어, 그룹의 단일 데이터 브로커는 100MB/s에 도달할 수 있지만 타겟의 디스크 처리량은 64MB/s만 허용할 수 있습니다 따라서 데이터 브로커 그룹은 데이터를 복사하려고 계속 노력하고 있지만 타겟 고객은 데이터 브로커 그룹의 성능을 충족할 수 없습니다.</block>
+  <block id="7d222e095bb95fdb1e26be04106ab252" category="paragraph">따라서 대상의 네트워킹 성능과 디스크 처리량을 확인해야 합니다.</block>
+  <block id="6f22195a8ef8575adc498fb44d8a075c" category="inline-link-macro">동기화 성능을 가속화하는 방법에 대해 알아보십시오</block>
+  <block id="0154df452f9453f942ba55a04f2fdbee" category="paragraph">그런 다음 그룹에 추가 데이터 브로커를 추가하여 해당 관계의 로드를 공유함으로써 동기화 성능을 높일 수 있습니다. <block ref="355055ed36bda4d96dcf1f665e0d51c2" category="inline-link-macro-rx"></block>.</block>
+  <block id="e5fbd5081321543a8bad7a8d1fea419c" category="section-title">항목을 삭제하는 중입니다</block>
+  <block id="1d341849ed5b4388c424bd97c39d9c07" category="paragraph">다음 질문은 원본 및 대상에서 동기화 관계 및 데이터를 삭제하는 것과 관련이 있습니다.</block>
+  <block id="b0aee40470009aab6c689b1ba27f9b66" category="section-title">Cloud Sync 관계를 삭제하면 어떻게 됩니까?</block>
+  <block id="0ddb89dbe2d4246b5b4b6dca2aa8a808" category="paragraph">관계를 삭제하면 이후의 모든 데이터 동기화가 중지되고 결제가 종료됩니다. 대상에 동기화된 데이터는 그대로 유지됩니다.</block>
+  <block id="640a8a2fe61a3376c90e4c1cc4749ff3" category="section-title">소스 서버에서 항목을 삭제하면 어떻게 됩니까? 대상에서도 제거됩니까?</block>
+  <block id="92728fe28212efc24f1f309f3ab2474f" category="paragraph">기본적으로 활성 동기화 관계가 있는 경우 소스 서버에서 삭제된 항목은 다음 동기화 중에 대상에서 삭제되지 않습니다. 그러나 각 관계의 동기화 설정에는 Cloud Sync가 소스에서 삭제된 경우 대상 위치의 파일을 삭제하도록 정의할 수 있는 옵션이 있습니다.</block>
+  <block id="48f890a6194cca659c8cee2603b5cdd4" category="section-title">대상에서 항목을 삭제하면 어떻게 됩니까? 소스에서도 제거됩니까?</block>
+  <block id="656f26b32b00e059c6d385bc96ca6903" category="paragraph">대상에서 삭제된 항목은 원본에서 제거되지 않습니다. 관계는 소스에서 타겟으로 한 방향입니다. 다음 동기화 주기에서 Cloud Sync는 소스를 타겟과 비교하여 항목이 누락되었음을 확인하고 Cloud Sync 소스에서 타겟으로 다시 복사합니다.</block>
+  <block id="231cf4c70d866b616c21baddaeed0696" category="section-title">문제 해결</block>
+  <block id="0cdf3fc74076f0565fbdf98ac171a7f5" category="inline-link">NetApp 기술 자료: Cloud Sync FAQ: 지원 및 문제 해결</block>
+  <block id="fa700cde89fee5bd065baac6c68ab66a" category="paragraph"><block ref="fa700cde89fee5bd065baac6c68ab66a" category="inline-link-rx"></block></block>
+  <block id="d08190c38b8a6a8bf793f2e2f0e6521a" category="section-title">데이터 브로커 딥 다이브</block>
+  <block id="e34399a43915207e2206bc67552c7039" category="paragraph">다음 질문은 데이터 브로커와 관련이 있습니다.</block>
+  <block id="c6eb873c9ed0d668d02f38d4daf1a34b" category="section-title">데이터 브로커의 아키텍처를 설명해 줄 수 있습니까?</block>
+  <block id="1ca6c37679dcd0af3b57d20327d8473f" category="paragraph">물론입니다. 다음은 가장 중요한 사항입니다.</block>
+  <block id="7d62f6be4e9c7774d2b73176c325e64d" category="list-text">데이터 브로커는 Linux 호스트에서 실행되는 node.js 애플리케이션입니다.</block>
+  <block id="0c10146afd736c7a95aa91a7106843f3" category="list-text">Cloud Sync는 다음과 같이 데이터 브로커를 배포합니다.</block>
+  <block id="cb145b584a87928ce906b62577654344" category="list-text">AWS: AWS CloudFormation 템플릿에서</block>
+  <block id="f55adeff83c37357e7d901a5326b9d09" category="list-text">Azure: Azure Resource Manager에서</block>
+  <block id="5732a35f14cac1a276ff53b27d14688a" category="list-text">Google: Google Cloud Deployment Manager에서</block>
+  <block id="0ac14df25047b39197ac5c012852f86e" category="list-text">고유한 Linux 호스트를 사용하는 경우 소프트웨어를 수동으로 설치해야 합니다</block>
+  <block id="56eeabb4a00fbcd2e27e55831df62209" category="list-text">데이터 브로커 소프트웨어는 자동으로 최신 버전으로 업그레이드합니다.</block>
+  <block id="da5fad1df140da3fbc300e41e0a200d4" category="list-text">데이터 브로커는 AWS SQS를 안정적이고 안전한 통신 채널과 제어 및 모니터링용으로 사용합니다. 또한 SQS는 지속성 계층을 제공합니다.</block>
+  <block id="836d2627946ada039a9486c82ce99884" category="list-text">그룹에 추가 데이터 브로커를 추가하여 전송 속도를 높이고 고가용성을 추가할 수 있습니다. 하나의 데이터 브로커가 실패하는 경우 서비스 복원력을 제공합니다.</block>
+  <block id="01062fd55445881e9cab2a0f2002354e" category="summary">Cloud Sync는 소스 SMB 공유와 타겟 SMB 공유 간, 소스 SMB 공유에서 오브젝트 스토리지(ONTAP S3 제외) 간에 ACL(액세스 제어 목록)을 복사할 수 있습니다.</block>
+  <block id="64d7746bed65d4dc86191fc514e7ebbf" category="doc">SMB 공유에서 ACL 복사</block>
+  <block id="8ada841761f04a4721b34ecbe2c45238" category="paragraph">Cloud Sync는 소스 SMB 공유와 타겟 SMB 공유 간에 또는 소스 SMB 공유에서 오브젝트 스토리지(ONTAP S3 제외)로 액세스 제어 목록(ACL)을 복사할 수 있습니다. 필요한 경우 Robo-Copy를 사용하여 SMB 공유 간의 ACL을 수동으로 보존할 수도 있습니다.</block>
+  <block id="9e5d195e748b7be2b67b65383520b9c8" category="admonition">Cloud Sync는 오브젝트 스토리지에서 SMB 공유로 ACL을 다시 복사할 수 없습니다.</block>
+  <block id="6ef697f11922be2e4de0971f7d70997f" category="list-title">선택</block>
+  <block id="83825bf2a8cf8a243b90ac22457061a7" category="inline-xref">ACL을 자동으로 복제하도록 Cloud Sync를 설정합니다</block>
+  <block id="56c33c546473d2b20852f902e9a12937" category="list-text"><block ref="345ef5432df62d56e38ab4a8c30bb73d" category="inline-xref-macro-rx"></block></block>
+  <block id="3ac19332a9012b7586dca2b8b7c57b58" category="inline-xref">SMB 공유 간에 ACL을 수동으로 복사합니다</block>
+  <block id="6690de55a41e5eebc0f748de2f508fb2" category="list-text"><block ref="677048ca203ed360a1f7fefc6961b7a3" category="inline-xref-macro-rx"></block></block>
+  <block id="6131cbbf5fb65087672aad644f23b2df" category="section-title">SMB 서버에서 ACL을 복제하도록 Cloud Sync 설정</block>
+  <block id="e9e23d944b5ba04f7bd10800f3536393" category="inline-link-macro">지원되는 모든 운영 체제</block>
+  <block id="b82aab2ce8ba96a1adcef93a4d0f2e7a" category="paragraph">이 기능은 AWS, Azure, Google Cloud Platform 또는 온프레미스 데이터 브로커 등 _any_유형의 데이터 브로커와 연동됩니다. 온프레미스 데이터 브로커를 실행할 수 있습니다 <block ref="21c422ddfc59d696be9e90956009904f" category="inline-link-macro-rx"></block>.</block>
+  <block id="38ab7ff3062aba8e3cff5bda4cd76234" category="list-title">새로운 관계를 위한 단계</block>
+  <block id="73d7a48e279dc464fce948513b87f375" category="list-text">Cloud Sync에서 * 새 동기화 생성 * 을 클릭합니다.</block>
+  <block id="709364c16b058a96212ef798fc1215f2" category="list-text">SMB 서버 * 를 소스에 끌어다 놓고 타겟으로 SMB 서버 또는 오브젝트 스토리지를 선택한 다음 * 계속 * 을 클릭합니다.</block>
+  <block id="078c5213fa0cb4e4d041374224a30418" category="list-text">SMB 서버 * 페이지에서 다음을 수행합니다.</block>
+  <block id="cd6a06ca56665938800223e22f7a2e1a" category="list-text">새 SMB 서버를 입력하거나 기존 서버를 선택하고 * 계속 * 을 클릭합니다.</block>
+  <block id="446dd08d6403fc4cd86bff2687c49fac" category="list-text">SMB 서버의 자격 증명을 입력합니다.</block>
+  <block id="e4a32528a4b54e0550c293e3b333a91b" category="list-text">대상에 대한 액세스 제어 목록 복사 * 를 선택하고 * 계속 * 을 클릭합니다.</block>
+  <block id="fb45eb06d7031a4458942ff295e2b322" category="inline-image-macro">대상에 대한 액세스 제어 목록 복사를 활성화하는 옵션을 보여 주는 스크린샷</block>
+  <block id="8430cacad015ab20dbfdfe2a52e66c25" category="paragraph"><block ref="8430cacad015ab20dbfdfe2a52e66c25" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6e6a4d248486a16fb2ddfb3e73fae457" category="list-text">나머지 프롬프트에 따라 동기화 관계를 생성합니다.</block>
+  <block id="da63a18d0db73de768c761794d778825" category="paragraph">SMB에서 오브젝트 스토리지로 ACL을 복사할 때 대상에 따라 ACL을 오브젝트의 태그 또는 오브젝트의 메타데이터에 복사하도록 선택할 수 있습니다. Azure 및 Google Cloud Storage의 경우 메타데이터 옵션만 사용할 수 있습니다.</block>
+  <block id="3bfa4a2697c3b4f6c66ec5e91be02be6" category="paragraph">다음 스크린샷에서는 이 옵션을 선택할 수 있는 단계의 예를 보여 줍니다.</block>
+  <block id="70ebe11ca97b687790441cba3fee58d1" category="inline-image-macro">오브젝트 스토리지에 복사할 때 동기화 관계 마법사의 여섯 번째 단계 스크린샷 ACL을 개체의 태그 또는 메타데이터에 저장하도록 선택할 수 있습니다.</block>
+  <block id="c5b5f241a9177e265d584f0d7e7eb47f" category="paragraph"><block ref="c5b5f241a9177e265d584f0d7e7eb47f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="713b689d8504ac385f256ca9887e16b1" category="list-title">기존 관계에 대한 단계</block>
+  <block id="0c31a291f95e633da467dc857cc5e520" category="list-text">동기화 관계 위로 마우스를 이동하고 작업 메뉴를 클릭합니다.</block>
+  <block id="c8976ecf7db6e203ae29ff9831475dab" category="list-text">대상에 대한 액세스 제어 목록 복사 * 를 선택합니다.</block>
+  <block id="f59a821231d8b347630af9bcdbab60de" category="paragraph">데이터를 동기화할 때 Cloud Sync는 소스 및 타겟 SMB 공유 간 또는 소스 SMB 공유에서 오브젝트 스토리지까지의 ACL을 보존합니다.</block>
+  <block id="670e838489cdd7c7044571ff2bb8b3be" category="section-title">SMB 공유 간에 ACL을 수동으로 복제합니다</block>
+  <block id="d7acee2f148a20ab4d4e346ddcb75a00" category="paragraph">Windows Robo-copy 명령을 사용하여 SMB 공유 간의 ACL을 수동으로 보존할 수 있습니다.</block>
+  <block id="41c1f5322f48eb3e6207394ffc0589d0" category="list-text">두 SMB 공유에 대한 모든 액세스 권한이 있는 Windows 호스트를 식별합니다.</block>
+  <block id="df2a188ed56fd7a6dc654c44c2bf4472" category="list-text">두 끝점 중 하나에 인증이 필요한 경우 * net use * 명령을 사용하여 Windows 호스트의 끝점에 연결합니다.</block>
+  <block id="25bc7106e122d2dee80cfa16c129a7d9" category="paragraph">로봇 복사를 사용하기 전에 이 단계를 수행해야 합니다.</block>
+  <block id="d96987d775fc8e22d4c2904204915334" category="list-text">Cloud Sync에서 소스 및 타겟 SMB 공유 간에 새 관계를 생성하거나 기존 관계를 동기화합니다.</block>
+  <block id="29782a7cdc379434f26838597333ae74" category="list-text">데이터 동기화가 완료되면 Windows 호스트에서 다음 명령을 실행하여 ACL 및 소유권을 동기화합니다.</block>
+  <block id="2c8aa0381ca983c5abd77cdd7bb11922" category="paragraph">UNC 형식을 사용하여 _source_와 _target_을 모두 지정해야 합니다. 예: \\&lt;server&gt;\&lt;share&gt;\&lt;path&gt;</block>
+  <block id="b5f6fe078d5d86ae717e8ada0b56f164" category="summary">Cloud Sync용 네트워킹에는 데이터 브로커 그룹과 소스 및 대상 위치 간의 연결과 포트 443을 통한 데이터 브로커로부터의 아웃바운드 인터넷 연결이 포함됩니다.</block>
+  <block id="bbde915ed3e4624aadf69312a3427e32" category="doc">Cloud Sync의 네트워킹 개요</block>
+  <block id="1ccbb3a00a8670ff34e71787c69058b9" category="section-title">데이터 브로커 위치</block>
+  <block id="42c5f165329383a0397894e0d024ef6c" category="paragraph">데이터 브로커 그룹은 클라우드 또는 사내에 설치되는 하나 이상의 데이터 브로커로 구성됩니다.</block>
+  <block id="f3e76ce6c2086bf4e3334c3b429897f4" category="section-title">클라우드 내 데이터 브로커</block>
+  <block id="366287d8bff9a50edd814f549d78e050" category="paragraph">다음 이미지는 AWS, Google Cloud 또는 Azure에서 클라우드에서 실행 중인 데이터 브로커를 보여줍니다. 데이터 브로커에 대한 연결이 있는 한 소스와 타겟이 모든 위치에 있을 수 있습니다. 예를 들어, 데이터 센터와 클라우드 공급자에 VPN 연결을 설정할 수 있습니다.</block>
+  <block id="366618d2fbfa9ee1c63e25e5221df4a8" category="admonition">Cloud Sync은 AWS, Azure 또는 Google Cloud에 데이터 브로커를 구축할 경우 필요한 아웃바운드 통신을 지원하는 보안 그룹을 생성합니다.</block>
+  <block id="cd37d860bf3bdd74aa2c466431f054e2" category="inline-image-macro">다이어그램에서는 Cloud Sync 서비스, 클라우드에서 실행되는 데이터 브로커, 소스 및 타겟 연결 등을 보여 줍니다.</block>
+  <block id="2311710ad49f353cb938f5106d3b63ce" category="paragraph"><block ref="2311710ad49f353cb938f5106d3b63ce" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="62821e0d946d5604b4fa8474885285bb" category="section-title">사내 데이터 브로커</block>
+  <block id="99c7c1595414f2c0ac8a3ae8e89653a8" category="paragraph">다음 이미지는 사내 데이터 센터에서 실행되는 데이터 브로커를 보여줍니다. 다시 한 번 말씀드리지만, 데이터 브로커에 대한 연결이 있는 한 소스 및 타겟이 모든 위치에 있을 수 있습니다.</block>
+  <block id="9c85e71aba3702f92cfb21a1c13393e6" category="inline-image-macro">Cloud Sync 서비스, 온-프레미스를 실행하는 데이터 브로커, 소스 및 대상에 대한 연결을 보여 주는 다이어그램입니다.</block>
+  <block id="474247dc2d78e1fa3bb862ed3e6013cd" category="paragraph"><block ref="474247dc2d78e1fa3bb862ed3e6013cd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ef8444f92f93e6b7d8446c8c33d0a0d5" category="list-text">소스와 타겟이 데이터 브로커 그룹에 네트워크로 연결되어 있어야 합니다.</block>
+  <block id="b1f37c411b519d94e73cc25a437b0e37" category="paragraph">예를 들어, NFS 서버가 데이터 센터에 있고 데이터 브로커가 AWS에 있는 경우 네트워크에서 VPC로 네트워크 연결(VPN 또는 Direct Connect)이 필요합니다.</block>
+  <block id="9b363aeab52bbd2fecb36df6134c20dc" category="list-text">데이터 브로커는 포트 443을 통해 Cloud Sync 서비스를 폴링할 수 있도록 아웃바운드 인터넷 연결이 필요합니다.</block>
+  <block id="a5332b643d8f9e8e4ce45fe2ce3b9770" category="list-text">소스, 타겟 및 데이터 브로커가 NTP(Network Time Protocol) 서비스를 사용하도록 구성하는 것이 좋습니다. 세 구성 요소 간의 시간 차이는 5분을 초과해서는 안 됩니다.</block>
+  <block id="33726a97647bf11cb01c0eba2bd8c51f" category="section-title">네트워킹 엔드포인트</block>
+  <block id="479c12f9ceb41399239da5a8ed8c8adc" category="paragraph">NetApp 데이터 브로커는 포트 443을 통한 아웃바운드 인터넷 액세스를 통해 Cloud Sync 서비스와 통신하고 몇 가지 다른 서비스 및 리포지토리에 연락해야 합니다. 로컬 웹 브라우저에서도 특정 작업을 수행하려면 끝점에 액세스해야 합니다. 아웃바운드 연결을 제한해야 하는 경우 아웃바운드 트래픽에 대해 방화벽을 구성할 때 다음 엔드포인트 목록을 참조하십시오.</block>
+  <block id="f7120929ce938945b90ce2837f757366" category="section-title">데이터 브로커 엔드포인트</block>
+  <block id="ebb1912b5d11201347e85314ce70deeb" category="paragraph">데이터 브로커가 다음 엔드포인트에 연결합니다.</block>
+  <block id="b8724da75fb917e992576b17378e66b3" category="cell">엔드포인트</block>
+  <block id="261addf78c7b2c961032b3dd08ba0b1f" category="cell">목적</block>
+  <block id="fa54e438c4d74f33c02f681dce64672e" category="cell">https://olcentgbl.trafficmanager.net 으로 문의하십시오</block>
+  <block id="c2371623c2002f67e365ad71ee570e2f" category="cell">데이터 브로커 호스트의 CentOS 패키지를 업데이트하기 위해 리포지토리에 접속하려면 이 엔드포인트는 CentOS 호스트에 데이터 브로커를 수동으로 설치하는 경우에만 연결됩니다.</block>
+  <block id="dbd8da096f133aef172432b871dd1aba" category="cell">https://rpm.nodesource.com \https://registry.npmjs.org \https://nodejs.org: 를 참조하십시오</block>
+  <block id="8fbe419425aaded056f20b4a7bc1e0f8" category="cell">개발에 사용되는 Node.js, NPM 및 기타 타사 패키지를 업데이트하기 위한 리포지토리에 접촉합니다.</block>
+  <block id="7f7f367294bb120f7085de58e5714100" category="cell">https://tgz.pm2.io 으로 문의하십시오</block>
+  <block id="0ce1ace8a293d0ee77d36be5f6f67f5b" category="cell">Cloud Sync를 모니터링하는 데 사용되는 타사 패키지인 PM2를 업데이트하기 위한 리포지토리에 액세스합니다.</block>
+  <block id="b4efab6fea81c6acbf85da7d4650c52f" category="cell">https://sqs.us-east-1.amazonaws.com \https://kinesis.us-east-1.amazonaws.com 으로 문의하십시오</block>
+  <block id="0e2bdc4bce6f6a52254979ce27916c73" category="cell">Cloud Sync에서 운영에 사용하는 AWS 서비스(파일 대기열 처리, 작업 등록, 데이터 브로커에 업데이트 제공)에 연락하려면</block>
+  <block id="45edaabb1caa8cd386fc00e4913729ca" category="inline-link">S3 엔드포인트 목록은 AWS 설명서를 참조하십시오</block>
+  <block id="9f63373541da1493d909ee0e1ec22846" category="cell">https://s3._region_.amazonaws.com 예: s3.us-east-2.amazonaws.com:443<block ref="d8eaf9479c9110a7b925275e0e7c77be" category="inline-link-rx"></block></block>
+  <block id="1331ac21e3550225dbf1a2a59e8e5854" category="cell">동기화 관계에 S3 버킷이 포함된 경우 Amazon S3에 연락하려면</block>
+  <block id="e539bdc84a7ad2c400eb37a683413da0" category="cell">https://s3.us-east-1.amazonaws.com 으로 문의하십시오</block>
+  <block id="aa3f7e10351bf8715f83a7b981f0d036" category="cell">Cloud Sync에서 데이터 브로커 로그를 다운로드하면 데이터 브로커가 로그 디렉토리를 지퍼하고 로그를 us-east-1 지역의 미리 정의된 S3 버킷으로 업로드합니다.</block>
+  <block id="af9cee3d0b730812cc44778c77dac990" category="cell">https://cf.cloudsync.netapp.com \https://repo.cloudsync.netapp.com 으로 문의하십시오</block>
+  <block id="0085c0d222fb9e00710dfd4737377552" category="cell">Cloud Sync 서비스에 문의하십시오.</block>
+  <block id="8963387394e2ee3e2a5a9ba160566a58" category="cell">https://support.netapp.com 으로 문의하십시오</block>
+  <block id="c825d05ceebe5978107395d2dffdbcff" category="cell">BYOL 라이센스를 사용하여 동기화 관계에 대한 NetApp 지원 팀에 문의</block>
+  <block id="cabe1b04cc3c96ae849f8fd810dfecdb" category="cell">https://fedoraproject.org 으로 문의하십시오</block>
+  <block id="ebd974875888e4cb1567f55e3466cda1" category="cell">설치 및 업데이트 중에 데이터 브로커 가상 머신에 7z를 설치하려면 다음을 수행합니다. 7z는 NetApp 기술 지원 팀에 AutoSupport 메시지 전송 기능이 필요합니다.</block>
+  <block id="6af6c652626660023ec712f6c15bbc0a" category="cell">https://sts.amazonaws.com 으로 문의하십시오</block>
+  <block id="89100474e7faee0c34727c4b2b471007" category="cell">데이터 브로커가 AWS에 구축되거나 사내 구축 시에 AWS 자격 증명이 제공되고 AWS 자격 증명이 제공됩니다. 데이터 브로커가 배포, 업데이트 및 재시작 중에 이 엔드포인트에 연결합니다.</block>
+  <block id="6f47e3c3a8d9335c299efee22582068c" category="cell">https://cloudmanager.cloud.netapp.com \https://netapp-cloud-account.auth0.com 으로 문의하십시오</block>
+  <block id="7f13eefefc02d429e3f594cb6d48d10e" category="cell">데이터 센스를 사용하여 새 동기화 관계를 위한 소스 파일을 선택할 때 클라우드 데이터 센스에 문의하려면</block>
+  <block id="6a3cdc9a7bccf7b319d4cd575bb3b01f" category="section-title">웹 브라우저 끝점</block>
+  <block id="fd0cb271f0ac093ecb033a2bfea34fbd" category="paragraph">문제 해결을 위해 로그를 다운로드하려면 웹 브라우저에서 다음 끝점에 액세스해야 합니다.</block>
+  <block id="c964e3aec545a38db906e6bb0b6a705f" category="paragraph">logs.cloudsync.netapp.com:443</block>
+  <block id="060e70cf1909d6e2f55f9fe5d5471a21" category="summary">새 데이터 브로커를 생성할 때 Azure Data Broker 옵션을 선택하여 VNET의 새 가상 머신에 데이터 브로커 소프트웨어를 배포합니다. Cloud Sync는 설치 프로세스를 안내하지만 설치 준비에 도움이 되도록 이 페이지에서 요구 사항과 단계를 반복합니다.</block>
+  <block id="540d36f51d945cde427519036203dde6" category="doc">Azure에서 새 데이터 브로커 생성</block>
+  <block id="18294ecf8c5dedf0dce094f053e9773a" category="paragraph">새 데이터 브로커 그룹을 생성할 때 Microsoft Azure를 선택하여 VNET의 새 가상 머신에 데이터 브로커 소프트웨어를 배포합니다. Cloud Sync는 설치 프로세스를 안내하지만 설치 준비에 도움이 되도록 이 페이지에서 요구 사항과 단계를 반복합니다.</block>
+  <block id="455aadf3bd22f71973763b3cdc7db550" category="section-title">지원되는 Azure 지역</block>
+  <block id="df8514e24a07bfd81c667163f17fbec0" category="paragraph">중국, 미국 정부 및 미국 국방부 지역을 제외한 모든 지역이 지원됩니다.</block>
+  <block id="a1e31a9251ce00d752f2ef3d40f3fa3a" category="paragraph">Cloud Sync는 Azure에 데이터 브로커를 배포할 때 필요한 아웃바운드 통신을 지원하는 보안 그룹을 생성합니다.</block>
+  <block id="38354aeafcfd5993a9d65d97514a8e3d" category="section-title">인증 방법</block>
+  <block id="5f01cb10cf737db33ea0f9db4e40cc94" category="paragraph">데이터 브로커를 구축할 때는 암호 또는 SSH 공개-개인 키 쌍과 같은 인증 방법을 선택해야 합니다.</block>
+  <block id="0be7700ba4689baa197ac3c2b94928a5" category="inline-link">Azure 설명서: Azure에서 Linux VM용 SSH 공개-개인 키 쌍을 생성하고 사용합니다</block>
+  <block id="4e2153a19cb9d86adf7b5ba332e78a45" category="paragraph">키 쌍 생성에 대한 도움말은 을 참조하십시오<block ref="3bfff4aa3d3a3eae965cce9b3b615a4a" category="inline-link-rx"></block>.</block>
+  <block id="896293b91a375c72889dc16e1c816e72" category="paragraph">새로운 데이터 브로커를 생성하는 방법은 몇 가지가 있습니다. 다음 단계에서는 동기화 관계를 만들 때 Azure에서 데이터 브로커를 설치하는 방법을 설명합니다.</block>
+  <block id="ff7156dc72b8081c2a9c6e0150647ace" category="paragraph"><block ref="ff7156dc72b8081c2a9c6e0150647ace" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="75dce0fc68d0351230bf9f9d8de2431c" category="list-text">메시지가 표시되면 Microsoft 계정에 로그인합니다. 메시지가 표시되지 않으면 * Azure에 로그인 * 을 클릭합니다.</block>
+  <block id="e0f74d06e87b3ad6fc9f3b3cfc573c38" category="paragraph">이 양식은 Microsoft에서 소유하고 호스팅됩니다. 자격 증명이 NetApp에 제공되지 않습니다.</block>
+  <block id="eb326e1f884a5d84e7b70887f7874b42" category="list-text">데이터 브로커의 위치를 선택하고 가상 시스템에 대한 기본 세부 정보를 입력합니다.</block>
+  <block id="4e150fdd87e97e0d1398184219062d41" category="inline-image-macro">가입, Azure 지역, VNET, 서브넷, VM 이름, 사용자 이름, 인증 방법 및 리소스 그룹</block>
+  <block id="f38f2fdb5d5d38ec31dd9074ee28e224" category="paragraph"><block ref="f38f2fdb5d5d38ec31dd9074ee28e224" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2eabf7b67b6c5e6d78b08dd754db7951" category="list-text">VNET에서 인터넷 액세스에 프록시가 필요한 경우 프록시 구성을 지정합니다.</block>
+  <block id="9a7c0eeeaa34923c384afd6768155386" category="list-text">계속 * 을 클릭하고 배포가 완료될 때까지 페이지를 열어 둡니다.</block>
+  <block id="d053334dcf5dac4968bf6d994e4ed7ec" category="paragraph">이 프로세스는 최대 7분 정도 소요될 수 있습니다.</block>
+  <block id="f23ab761979185af746005ea396d9a40" category="list-text">Cloud Sync에서 데이터 브로커를 사용할 수 있게 되면 * 계속 * 을 클릭합니다.</block>
+  <block id="affdd8fc6be1e86de36efaee713f54e2" category="paragraph">Azure에서 데이터 브로커를 구축하고 새로운 동기화 관계를 생성했습니다. 이 데이터 브로커를 추가 동기화 관계에 사용할 수 있습니다.</block>
+  <block id="3ce174ce4b84d9bb24dbad7ede08fc56" category="sidebar-title">관리자 동의가 필요하다는 메시지를 받았습니까?</block>
+  <block id="b0ff4160ed2aeabe7b695c86df0bb8a4" category="paragraph">Cloud Sync에서 사용자 대신 조직의 리소스에 액세스할 수 있는 권한이 필요하므로 관리자 승인이 필요하다는 메시지가 나타나면 다음 두 가지 옵션을 사용할 수 있습니다.</block>
+  <block id="d87fd12530d28842f66f10a1d633d859" category="list-text">AD 관리자에게 다음 권한을 제공하도록 요청하십시오.</block>
+  <block id="6e38950952f2f90ced9024c57341d29c" category="paragraph">Azure에서 * 관리 센터 &gt; Azure AD &gt; 사용자 및 그룹 &gt; 사용자 설정 * 으로 이동하여 * 사용자가 회사 데이터에 액세스하는 앱에 대신 * 사용자 동의를 할 수 있습니다 *.</block>
+  <block id="214b839a1e92308862eda35cf3962c8e" category="list-text">AD 관리자에게 다음 URL(관리자 동의 엔드포인트)을 사용하여 * CloudSync-AzureDataBrokerCreator * 에 대해 사용자 대신 동의하도록 요청하십시오.</block>
+  <block id="a18bd9074e862da51cb736fe7399f462" category="paragraph">\https://login.microsoftonline.com/{FILL 여기서 귀하의 테넌트 ID} /v2.0/adminConsent?client_id=8ee4ca3a-bafa-4831-97cc-5a38923cab85 &amp; redirect_Uri=https://cloudsync.netapp.com&amp;scope=https://management.azure.com/user_impersonationhttps://graph.microsoft.com/User.Read</block>
+  <block id="e00fd8a69d0aa8766ae786df172832dd" category="paragraph">URL에 표시된 것처럼 앱 URL은 \https://cloudsync.netapp.com 이고 응용 프로그램 클라이언트 ID는 8ee4ca3a-bafa-4831-97cc-5a38923cab85입니다.</block>
+  <block id="636f46a5f178491edd241fa5106ea7b5" category="section-title">데이터 브로커 VM에 대한 세부 정보</block>
+  <block id="b2744820afa6816f7d484d9546e6fdd7" category="paragraph">Cloud Sync는 다음 구성을 사용하여 Azure에서 데이터 브로커를 생성합니다.</block>
+  <block id="d54092cc3c2c2778d416f1225b37f056" category="list-text">VM 유형입니다</block>
+  <block id="de66cb8e421123abb772a3664a897531" category="list-text">표준 DS4 v2</block>
+  <block id="c9f0f895fb98ab9159f51fd0297e236d" category="list-text">8</block>
+  <block id="472d573b9b96b332aa4fd565b8a78c68" category="list-text">28GB</block>
+  <block id="b0a4a3d9e04daf57d04de7ad03004279" category="list-text">CentOS 7.7</block>
+  <block id="d6856312a90199668ecb7d8f4a9f1322" category="list-text">64GB 프리미엄 SSD</block>
+  <block id="f549fa5a7b8a70265d3f6f6fc5ae1943" category="summary">소스와 타겟이 다음 요구 사항을 충족하는지 확인합니다.</block>
+  <block id="91271a9aaf4442f8d73b827c3ba05c53" category="doc">소스와 타겟을 준비합니다</block>
+  <block id="41413218d6e0e0f3841260f7834a57b2" category="list-text">소스, 타겟 및 데이터 브로커가 NTP(Network Time Protocol) 서비스를 사용하도록 구성하는 것이 좋습니다. 세 구성 요소 간의 시간 차이는 5분을 초과해서는 안 됩니다.</block>
+  <block id="48803a619ce06c74ae2204113ce8b389" category="section-title">대상 디렉토리</block>
+  <block id="b02c6de2906d15e3ef40415f6043a826" category="paragraph">동기화 관계를 생성할 때 Cloud Sync를 사용하면 기존 타겟 디렉토리를 선택한 다음 필요에 따라 해당 디렉토리 내에 새 폴더를 생성할 수 있습니다. 따라서 선호하는 타겟 디렉토리가 이미 있는지 확인하십시오.</block>
+  <block id="58851d32c98ba7c70e9af78cf1766019" category="section-title">디렉토리를 읽을 수 있는 권한</block>
+  <block id="bd83e2d94f5db7a0d8509ea23da3d53c" category="paragraph">소스 또는 타겟의 모든 디렉토리 또는 폴더를 표시하려면 Cloud Sync에서 디렉토리 또는 폴더에 대한 읽기 권한이 필요합니다.</block>
+  <block id="1d1a594959ec615f56516f5d0f5e8ddb" category="list-text">NFS 를 참조하십시오</block>
+  <block id="a804bf8c1eee89c2ef8ed6f8f60fbb55" category="list-text">파일 및 디렉토리에 uid/gid가 있는 소스/대상에서 사용 권한을 정의해야 합니다.</block>
+  <block id="670aaecb1a526fbed439dad3ec353a96" category="list-text">오브젝트 스토리지</block>
+  <block id="1af425561b33aba04539ee89c103d60a" category="list-text">AWS 및 Google Cloud의 경우 데이터 브로커에 목록 개체 권한이 있어야 합니다. 이러한 권한은 데이터 브로커 설치 단계를 수행하는 경우 기본적으로 제공됩니다.</block>
+  <block id="73771d91cd67909c3f065657d215f1cb" category="list-text">Azure, StorageGRID 및 IBM의 경우 동기화 관계를 설정할 때 입력하는 자격 증명에는 목록 개체 권한이 있어야 합니다.</block>
+  <block id="b4fdd997b1f33e0d4c6964444c2bf399" category="list-text">중소기업</block>
+  <block id="95387edff7a8c3170c954eeffcccac3b" category="list-text">동기화 관계를 설정할 때 입력하는 SMB 자격 증명에는 목록 폴더 권한이 있어야 합니다.</block>
+  <block id="3f160e89fc203d49d262346e29d1f342" category="admonition">데이터 브로커에서는 기본적으로 .snapshot,~snapshot,.copy-offload 디렉토리를 무시합니다</block>
+  <block id="61bd0410c9f3215bec19c56dc6c08706" category="section-title">Amazon S3 버킷 요구 사항</block>
+  <block id="3e23a787ea23ed5a89e94097efaf30e6" category="paragraph">Amazon S3 버킷이 다음 요구사항을 충족하는지 확인하십시오.</block>
+  <block id="1226cba9918df356eea29ae071de3551" category="section-title">Amazon S3에 대해 지원되는 데이터 브로커 위치</block>
+  <block id="8b10287f56fdcb032a0d3824c6e3f4d2" category="paragraph">S3 스토리지를 포함하는 동기화 관계는 AWS 또는 사내에 데이터 브로커가 배포되어야 합니다. 두 경우 모두 설치하는 동안 Cloud Sync에서 데이터 브로커를 AWS 계정에 연결하라는 메시지를 표시합니다.</block>
+  <block id="58cff9534f32712149ceaee454d5c680" category="inline-link-macro">AWS 데이터 브로커를 구축하는 방법을 알아보십시오</block>
+  <block id="205766383a6cd2fd7ec7c367e585e362" category="list-text"><block ref="205766383a6cd2fd7ec7c367e585e362" category="inline-link-macro-rx"></block></block>
+  <block id="203ce0db0994bd92d14537069fa76f6c" category="inline-link-macro">Linux 호스트에 데이터 브로커를 설치하는 방법에 대해 알아보십시오</block>
+  <block id="b908d07a42585e42d290c3e67d5a0226" category="list-text"><block ref="b908d07a42585e42d290c3e67d5a0226" category="inline-link-macro-rx"></block></block>
+  <block id="e73d387fbb34fd030854f8106af1b363" category="section-title">다른 AWS 계정의 S3 버킷에 필요한 권한</block>
+  <block id="2a81733fa6bb48a933f9558f304342cf" category="paragraph">동기화 관계를 설정할 때 데이터 브로커와 연결되지 않은 AWS 계정에 상주하는 S3 버킷을 지정할 수 있습니다.</block>
+  <block id="acefffa744fc9006e4bccce06ab304dc" category="inline-link-macro">이 JSON 파일에 포함된 권한</block>
+  <block id="f77c29502fb1d5f6bf43ee323b41c294" category="paragraph"><block ref="5eee5648b5ac29723d1afe78510ea978" category="inline-link-macro-rx"></block> 데이터 브로커가 액세스할 수 있도록 이 S3 버킷에 적용해야 합니다. 이러한 사용 권한을 통해 데이터 브로커가 데이터를 버킷과 복사하거나 버킷의 오브젝트를 나열할 수 있습니다.</block>
+  <block id="084d0a76efaa57cf7d99a39414538d57" category="paragraph">JSON 파일에 포함된 권한에 대해서는 다음을 참조하십시오.</block>
+  <block id="89911d228a8d7e0c589c31642273f1c4" category="list-text">_&lt;BucketName&gt;_은(는) 데이터 브로커와 연결되지 않은 AWS 계정에 상주하는 버킷의 이름입니다.</block>
+  <block id="2feeb126323f3368d5b67555099e8c26" category="list-text">_&lt;RoleARN&gt;_은(는) 다음 중 하나로 교체해야 합니다.</block>
+  <block id="64382286854eaefaa762d894a81fc3ff" category="list-text">데이터 브로커가 Linux 호스트에 수동으로 설치된 경우, _RoleARN_은 데이터 브로커를 배포할 때 AWS 자격 증명을 제공한 AWS 사용자의 ARN 이어야 합니다.</block>
+  <block id="e2fd71d5e0089aec445e3585846600a5" category="list-text">CloudFormation 템플릿을 사용하여 AWS에 데이터 브로커가 배포된 경우, _RoleARN_은 템플릿에 의해 생성된 IAM 역할의 ARN 이어야 합니다.</block>
+  <block id="e12f2cb93ea8b0df53b39ccf052346cd" category="paragraph">EC2 콘솔로 이동하여 데이터 브로커 인스턴스를 선택하고 설명 탭에서 IAM 역할을 클릭하여 역할 ARN을 찾을 수 있습니다. 그런 다음 IAM 콘솔에서 역할 ARN이 포함된 요약 페이지를 볼 수 있습니다.</block>
+  <block id="27b29b1148f0a8d10712b93a6b2f07c0" category="inline-image-macro">역할 ARN을 보여 주는 AWS IAM 콘솔 스크린샷</block>
+  <block id="5413d4eaee8e3ec886af67b45688f61a" category="paragraph"><block ref="5413d4eaee8e3ec886af67b45688f61a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="35db9398dd8bb61e970e384239370f98" category="section-title">Azure Blob 스토리지 요구 사항</block>
+  <block id="7e2fc8b47c3caa089d5e9782e7d982d2" category="paragraph">Azure Blob 저장소가 다음 요구사항을 충족하는지 확인합니다.</block>
+  <block id="47a68bd0994db3020f105c7c17c88fc6" category="section-title">Azure Blob에 지원되는 데이터 브로커 위치</block>
+  <block id="8ae4a8919ff640cac901c5170789725b" category="paragraph">동기화 관계에 Azure Blob 스토리지가 포함된 경우 데이터 브로커가 모든 위치에 상주할 수 있습니다.</block>
+  <block id="cd0559cbb36e8ae61712a5e3085023f0" category="section-title">Azure Blob 및 NFS/SMB를 포함하는 관계의 연결 문자열</block>
+  <block id="51b56ea4c180b6587f80dadb5d9a9791" category="paragraph">Azure Blob 컨테이너와 NFS 또는 SMB 서버 간에 동기화 관계를 생성할 때 Cloud Sync에 스토리지 계정 연결 문자열을 제공해야 합니다.</block>
+  <block id="1e9af9bf420c920c526a831d6d40e038" category="inline-image-macro">저장소 계정을 선택한 다음 액세스 키를 클릭하여 Azure 포털에서 사용할 수 있는 연결 문자열을 표시합니다.</block>
+  <block id="0898c993025b0ff5f0e5ec87ebf5842d" category="paragraph"><block ref="0898c993025b0ff5f0e5ec87ebf5842d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4b353a92f9cd802272f6be2754b692e1" category="inline-link">공유 액세스 서명입니다</block>
+  <block id="4910e65af2eedc6fa7ed53c1aebddd87" category="paragraph">두 Azure Blob 컨테이너 간에 데이터를 동기화하려면 연결 문자열에 가 포함되어야 합니다<block ref="1b83926908223c09ad8189ca7e78f06a" category="inline-link-rx"></block> (SAS) Blob 컨테이너와 NFS 또는 SMB 서버 간에 동기화할 때 SAS를 사용할 수도 있습니다.</block>
+  <block id="f59a16e82b8115f2b51037c416a69a67" category="paragraph">SAS는 Blob 서비스 및 모든 리소스 유형(서비스, 컨테이너 및 개체)에 대한 액세스를 허용해야 합니다. 또한 SAS에는 다음과 같은 사용 권한이 포함되어야 합니다.</block>
+  <block id="eca1274468926e041a10a4b1a84c2e53" category="list-text">소스 Blob 컨테이너의 경우 Read 및 List 입니다</block>
+  <block id="4f3d02d4ca2c2acd501754f1c7f092b8" category="list-text">대상 Blob 컨테이너의 경우 읽기, 쓰기, 목록, 추가 및 만들기 가 있습니다</block>
+  <block id="6d984d40359970bc3ca298e54c9c10ee" category="inline-image-macro">스토리지 계정을 선택한 다음 공유 액세스 서명을 클릭하여 Azure 포털에서 사용할 수 있는 공유 액세스 서명을 표시합니다.</block>
+  <block id="9e1406ab3768b6fdb53c46936555e01f" category="paragraph"><block ref="9e1406ab3768b6fdb53c46936555e01f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="93751358816dca5a6ae146bcd1bed8e1" category="section-title">Azure NetApp Files 요구 사항</block>
+  <block id="ad9729abd442965a4f73f30b0b517cf1" category="paragraph">Azure NetApp Files와 데이터를 동기화하거나에서 데이터를 동기화할 때 프리미엄 또는 울트라 서비스 수준을 사용합니다. 디스크 서비스 수준이 Standard인 경우 장애 및 성능 문제가 발생할 수 있습니다.</block>
+  <block id="e9b40df30266f5af9c5798c022c86f33" category="admonition">적합한 서비스 수준을 결정하는 데 도움이 필요한 경우 솔루션 설계자와 상의하십시오. 볼륨 크기와 볼륨 계층에 따라 처리량을 결정합니다.</block>
+  <block id="234264f440c1593e72a7664085f8472c" category="section-title">박스 요건</block>
+  <block id="7ff9bb3626c8b4ddd38300ed21490f2d" category="list-text">Box를 포함하는 동기화 관계를 생성하려면 다음 자격 증명을 제공해야 합니다.</block>
+  <block id="76525f0f34b48475e5ca33f71d296f3b" category="list-text">클라이언트 ID입니다</block>
+  <block id="1b4739e491387ef5d8a546854308e5fe" category="list-text">클라이언트 암호</block>
+  <block id="6eb9040e470e8018db394832a528f56a" category="list-text">개인 키</block>
+  <block id="6f47175a43d139e9fb31642e0f994354" category="list-text">공개 키 ID입니다</block>
+  <block id="7d9a6d091a1ac8739e205280f092db99" category="list-text">암호 구문</block>
+  <block id="5d736ecd42b4ed6de76553de0638230d" category="list-text">엔터프라이즈 ID입니다</block>
+  <block id="912cf6a780b5eeea83928c4125207e85" category="list-text">Amazon S3에서 Box로 동기화 관계를 생성하는 경우 다음 설정이 1로 설정된 통합 구성이 있는 데이터 브로커 그룹을 사용해야 합니다.</block>
+  <block id="97305dba7e61544adaf4f4861b21e7f7" category="list-text">스캐너 동시 사용</block>
+  <block id="b0c94b3f4093d878376606a5734082fe" category="list-text">스캐너 프로세스 제한</block>
+  <block id="9ecbc2d9f6b6ab0392906cca0b95b920" category="list-text">운송 업체 위탁 통화</block>
+  <block id="ac0fac9f0c454d2eb07769d1359bbe40" category="list-text">수송 프로세스 제한</block>
+  <block id="ec7e38030033a02298c5a717c0397281" category="inline-link-macro">데이터 브로커 그룹에 대한 통합 구성을 정의하는 방법에 대해 알아봅니다</block>
+  <block id="f34ca0a61f713db3f7223ea730746e00" category="paragraph"><block ref="76b1d1355d80ad25cf7c1c2af9610053" category="inline-link-macro-rx"></block>.</block>
+  <block id="bb4238ba0ea72d0bab9cefbef1898b2a" category="section-title">Google Cloud Storage 버킷 요구 사항</block>
+  <block id="017c5900c1d43fddb24f60e2fcc3f6fc" category="paragraph">Google Cloud Storage 버킷이 다음 요구사항을 충족하는지 확인하십시오.</block>
+  <block id="e649787bac6e0b31cc56d488858d8e89" category="section-title">Google Cloud Storage에 대한 지원 데이터 브로커 위치</block>
+  <block id="68c71e6388aa4ef0955b152df5622fae" category="paragraph">Google Cloud Storage를 포함한 동기화 관계에는 Google Cloud 또는 사내에 구축된 데이터 브로커가 필요합니다. Cloud Sync는 동기화 관계를 생성할 때 데이터 브로커 설치 프로세스를 안내합니다.</block>
+  <block id="31891805e49d1c8e637b40a3a036d1cd" category="inline-link-macro">Google Cloud 데이터 브로커를 구축하는 방법을 알아보십시오</block>
+  <block id="673fc4c136759e22b53e67650e656c6f" category="list-text"><block ref="673fc4c136759e22b53e67650e656c6f" category="inline-link-macro-rx"></block></block>
+  <block id="494d8b9ce3c39000841f07730481add9" category="section-title">다른 Google Cloud 프로젝트의 버킷에 대한 권한</block>
+  <block id="5422e7486c809182ec3e8ca22572cabe" category="paragraph">동기화 관계를 설정할 때 데이터 브로커의 서비스 계정에 필요한 권한을 제공하는 경우 다양한 프로젝트의 Google Cloud 버킷 중에서 선택할 수 있습니다. <block ref="110e017e697bf43b5794969151cbc1cf" category="inline-link-macro-rx"></block>.</block>
+  <block id="610288d4ecd9473c8fc957bccd3fbcfb" category="section-title">SnapMirror 대상에 대한 권한입니다</block>
+  <block id="52e561223aa4d60195ec48c81021c098" category="paragraph">동기화 관계의 소스가 SnapMirror 대상(읽기 전용)인 경우 "읽기/목록" 사용 권한으로 소스의 데이터를 타겟으로 동기화할 수 있습니다.</block>
+  <block id="096c99dcba4f443f3faf0add6cd69220" category="section-title">NFS 서버 요구 사항</block>
+  <block id="5cc2d35f0ee4edef8750c640e1b018c1" category="list-text">NFS 서버는 NetApp 시스템이거나 NetApp이 아닌 시스템이 될 수 있습니다.</block>
+  <block id="3a29221f42b8cb307e588a8ca61bbec2" category="list-text">파일 서버는 데이터 브로커 호스트가 내보내기를 액세스할 수 있도록 허용해야 합니다.</block>
+  <block id="e07694fd13f56a99d495063f6ca17334" category="list-text">NFS 버전 3, 4.0, 4.1 및 4.2가 지원됩니다.</block>
+  <block id="dadb092f6add17b9a5eb4af5c4505c14" category="paragraph">서버에서 원하는 버전을 활성화해야 합니다.</block>
+  <block id="036a01e342cbcc1e478008b78551a134" category="list-text">ONTAP 시스템에서 NFS 데이터를 동기화하려면 SVM을 위한 NFS 내보내기 목록에 대한 액세스가 활성화되어 있는지 확인하십시오(vserver NFS modify -vserver_svm_name_-showmount 설정).</block>
+  <block id="891a99b92faa2410b355f6cbc6ec870e" category="admonition">showmount의 기본 설정은 ONTAP 9.2부터 _enabled_입니다.</block>
+  <block id="1b6bc3125f482fcbcf029c833aea1290" category="section-title">ONTAP 요구 사항</block>
+  <block id="fbe7f1f2a53e6412b986ca952dd0b839" category="paragraph">동기화 관계에 Cloud Volumes ONTAP 또는 온프레미스 ONTAP 클러스터가 포함되어 있고 NFSv4 이상을 선택한 경우 ONTAP 시스템에서 NFSv4 ACL을 설정해야 합니다. ACL을 복제하려면 이 작업이 필요합니다.</block>
+  <block id="f3689e2a069f8d7a6cd964a1ad3e1af0" category="section-title">ONTAP S3 스토리지 요구 사항</block>
+  <block id="2bd2962a314e8608486b9f974c48d2c8" category="paragraph">을 포함하는 동기화 관계를 설정할 때<block ref="c262e27f58247788c6091bf0445c62d3" category="inline-link-rx"></block>다음을 제공해야 합니다.</block>
+  <block id="5db9adf55ba84e1a4d857db670575de3" category="list-text">ONTAP S3에 연결된 LIF의 IP 주소입니다</block>
+  <block id="105e27af4bc6344a08f94305aa5e0fff" category="list-text">ONTAP에서 사용하도록 구성된 액세스 키 및 암호 키입니다</block>
+  <block id="b872b315cdbd31fa7a2ac89642690e2c" category="section-title">SMB 서버 요구 사항</block>
+  <block id="96dd4121704c84cabcf5c6e24980dbd6" category="list-text">SMB 서버는 NetApp 시스템 또는 NetApp이 아닌 시스템일 수 있습니다.</block>
+  <block id="830f82f43b0ebb71473f00dcc872a51b" category="list-text">SMB 서버에 대한 권한이 있는 자격 증명을 Cloud Sync에 제공해야 합니다.</block>
+  <block id="afcae066c61b0f78c29c0c4201cf311b" category="list-text">소스 SMB 서버의 경우 목록 및 읽기 권한이 필요합니다.</block>
+  <block id="93ba6131738768cb0b0bfc191699dac4" category="paragraph">Backup Operators 그룹의 구성원은 소스 SMB 서버에서 지원됩니다.</block>
+  <block id="606c3f5cdb22e3a0afa31139491e2272" category="list-text">대상 SMB 서버의 경우 목록, 읽기 및 쓰기의 권한이 필요합니다.</block>
+  <block id="27cb19ec594f6bc0f879e805983f8fd8" category="list-text">SMB 버전 1.0, 2.0, 2.1, 3.0 및 3.11이 지원됩니다.</block>
+  <block id="4d6fcdb80c82b1f22a09657038accca4" category="list-text">"Administrators" 그룹에 소스 및 대상 폴더에 "모든 권한" 권한을 부여합니다.</block>
+  <block id="c0bcdd37660e13cca9ea88507ba1d7ca" category="paragraph">이 권한을 부여하지 않으면 데이터 브로커에 파일 또는 디렉터리에 대한 ACL을 가져올 수 있는 권한이 충분하지 않을 수 있습니다. 이 경우 "getxattr error 95" 오류가 발생합니다.</block>
+  <block id="d517697d5d97d9ab39f37499e076c5e8" category="section-title">숨겨진 디렉토리 및 파일에 대한 SMB 제한</block>
+  <block id="8a0ca0a24396b8b3401f558bb45e38e8" category="paragraph">SMB 제한은 SMB 서버 간에 데이터를 동기화할 때 숨겨진 디렉터리 및 파일에 영향을 줍니다. 소스 SMB 서버의 디렉토리 또는 파일이 Windows를 통해 숨겨진 경우 숨겨진 속성은 타겟 SMB 서버로 복제되지 않습니다.</block>
+  <block id="64d8ab254b8c0c66dd7ca663050c72b3" category="section-title">대소문자 구분 제한 때문에 SMB 동기화 동작이 발생합니다</block>
+  <block id="7d0d519a2a4ad86b14a09198798c4071" category="paragraph">SMB 프로토콜은 대/소문자를 구분하지 않으므로 대문자와 소문자가 동일하게 처리됩니다. 이 동작은 동기화 관계에 SMB 서버가 포함되어 있고 데이터가 이미 타겟에 존재하는 경우 덮어쓴 파일 및 디렉토리 복사 오류를 발생시킬 수 있습니다.</block>
+  <block id="991ab92d9c8883ae1badb20b26973f14" category="paragraph">예를 들어, 소스에 "A"라는 파일이 있고 대상에 "A"라는 이름의 파일이 있다고 가정해 보겠습니다. Cloud Sync가 "A"라는 파일을 대상에 복사하면 파일 "A"가 소스의 파일 "A"에 의해 덮어쓰여집니다.</block>
+  <block id="1d3702061357694248394f82394b0250" category="paragraph">디렉토리의 경우 소스에 "b"라는 디렉토리가 있고 타겟에 "B"라는 디렉토리가 있다고 가정해 보겠습니다. Cloud Sync가 "b"라는 디렉토리를 타겟으로 복제하려고 하면 Cloud Sync에서 디렉토리가 이미 존재함을 나타냅니다. 따라서 Cloud Sync는 항상 "b"라는 이름의 디렉토리를 복사하지 못합니다.</block>
+  <block id="aefc5b01ad425705415e50284fa4b07f" category="paragraph">이 제한을 피하는 가장 좋은 방법은 데이터를 빈 디렉토리에 동기화하는 것입니다.</block>
+  <block id="97ff8a17f533b6d33b6dd9059ff062e9" category="summary">14일 무료 평가판이 종료된 후 동기화 관계에 대한 비용을 지불할 수 있는 두 가지 방법이 있습니다. 첫 번째 옵션은 AWS 또는 Azure에서 용량제 또는 연간 결제를 구독하는 것입니다. 두 번째 옵션은 NetApp에서 직접 라이센스를 구매하는 것입니다.</block>
+  <block id="8efc36afc2e7202a9c9bda00b8e8a75d" category="doc">라이센스 개요</block>
+  <block id="f856f3b97c80815883c23bfe0ce6d8c2" category="section-title">마켓플레이스 구독</block>
+  <block id="89630329851b5245d4f57e1a8b8f1aa6" category="inline-link-macro">AWS 또는 Azure를 통해 가입할 수 있습니다</block>
+  <block id="abe723e3a70c0483b54392a4f37ddf5f" category="paragraph">AWS 또는 Azure에서 Cloud Sync 서비스를 구독하면 시간 단위로 지불하거나 연간 비용을 지불할 수 있습니다. <block ref="5b1da104dad8f5a36ba9cf23dc6afee4" category="inline-link-macro-rx"></block>를 선택합니다.</block>
+  <block id="d40e22e44527f36f21104bcda56dff9b" category="section-title">시간별 구독</block>
+  <block id="5bfcbf39a4da86c538d49a75ca94b869" category="paragraph">시간 단위 용량제 구독을 통해 생성하는 동기화 관계 수에 따라 시간 단위로 비용이 청구됩니다.</block>
+  <block id="9595062433880226b71cec95a1cc654e" category="section-title">연간 구독</block>
+  <block id="fdb9bdf5e42e9d0d57a32d087a551fd0" category="paragraph">연간 구독은 사전에 지불하는 20개의 동기화 관계에 대한 라이센스를 제공합니다. 동기화 관계가 20개를 초과하고 AWS를 통해 구독한 경우 추가 관계에 대한 비용은 시간당 지불합니다.</block>
+  <block id="94b5aeb9b594cd952ab6cf378c590c02" category="section-title">NetApp이 라이센스를 구입해야 합니다</block>
+  <block id="9f3a183e74b4486726d8fb7734a76d24" category="paragraph">동기화 관계를 맺는 데 필요한 또 다른 방법은 NetApp에서 라이센스를 직접 구매하는 것입니다. 각 라이센스를 통해 최대 20개의 동기화 관계를 생성할 수 있습니다.</block>
+  <block id="37f85bcc8c366d583d2e45b5cd9cc9db" category="paragraph">AWS 또는 Azure 구독에서 이러한 라이센스를 사용할 수 있습니다. 예를 들어, 동기화 관계가 25개 있는 경우 라이센스를 사용하여 처음 20개 동기화 관계에 대한 비용을 지불하고 나머지 5개 동기화 관계를 사용하여 AWS 또는 Azure에서 사용한 만큼만 비용을 지불할 수 있습니다.</block>
+  <block id="56561b0dbbcca5545f63b20c63058b88" category="inline-link-macro">라이센스를 구매하여 Cloud Sync에 추가하는 방법에 대해 알아보십시오</block>
+  <block id="5a547290749d070f311f74a17cac9eab" category="paragraph"><block ref="69d897f3c7d50cdb97c30fd927aafd74" category="inline-link-macro-rx"></block>.</block>
+  <block id="5314fb6b185d63c872f907a174dbe292" category="section-title">사용권 조항</block>
+  <block id="2e5e7960afa4429a4997b142d3778192" category="paragraph">BYOL(Bring Your Own License)을 Cloud Sync 서비스로 구매하는 고객은 라이센스 소유 권한과 관련된 제한 사항을 숙지해야 합니다.</block>
+  <block id="815b29523903f3b832f05f5fbbb221b1" category="list-text">고객은 BYOL 라이센스를 제공 날짜로부터 1년을 초과하지 않는 기간 동안 활용할 수 있습니다.</block>
+  <block id="ad375a9612a6b62204da454a8bce5008" category="list-text">고객은 BYOL 라이센스를 활용하여 소스와 타겟(각각 "동기화 관계") 간에 총 20개의 개별 연결을 설정할 수 있습니다.</block>
+  <block id="3926a9a20aef3d7c5c5d541fc8c0801a" category="list-text">고객의 사용 권한은 고객이 20개의 동기화 관계 제한에 도달했는지 여부에 관계없이 1년 라이센스 기간이 종료될 때 만료됩니다.</block>
+  <block id="b199de846be581f6169592674966fad4" category="list-text">고객이 라이센스를 갱신하기로 선택한 경우 이전 라이센스 부여에서 연결된 사용되지 않은 동기화 관계가 라이센스 갱신으로 롤오버되지 않습니다.</block>
+  <block id="44efbfb45e36530fb912bd582c66d8ea" category="summary">새 데이터 브로커를 생성할 때 사내 Linux 호스트 또는 클라우드의 기존 Linux 호스트에 데이터 브로커 소프트웨어를 설치하려면 온프레미스 데이터 브로커 옵션을 선택합니다. Cloud Sync는 설치 프로세스를 안내하지만 설치 준비에 도움이 되도록 이 페이지에서 요구 사항과 단계를 반복합니다.</block>
+  <block id="e9b07c7994659b124430d0e4daaeabba" category="paragraph">새 데이터 브로커 그룹을 생성할 때 사내 Linux 호스트 또는 클라우드의 기존 Linux 호스트에 데이터 브로커 소프트웨어를 설치하려면 온프레미스 데이터 브로커 옵션을 선택합니다. Cloud Sync는 설치 프로세스를 안내하지만 설치 준비에 도움이 되도록 이 페이지에서 요구 사항과 단계를 반복합니다.</block>
+  <block id="ace028fe1c5dc8fb39091440d89fd9fd" category="section-title">Linux 호스트 요구 사항</block>
+  <block id="17308c76959fcb971603b7274a57c128" category="list-text">* 운영 체제 *:</block>
+  <block id="1a2698aea8c50e468148bb22c28bf853" category="list-text">CentOS 7.0, 7.7 및 8.0</block>
+  <block id="735736a0904d4dd4641f1c0b6e93ac7a" category="paragraph">CentOS 스트림은 지원되지 않습니다.</block>
+  <block id="438c134de8e5d04ae91ce2fc1f48f114" category="list-text">Red Hat Enterprise Linux 7.7 및 8.0</block>
+  <block id="083265255bba92c059791cd3a9803274" category="list-text">Ubuntu 서버 20.04 LTS</block>
+  <block id="473733802c02f67f489689f787461e62" category="list-text">SUSE Linux Enterprise Server 15 SP1</block>
+  <block id="ba21a73e643ef93cb57c384740c98f3c" category="paragraph">데이터 브로커를 설치하기 전에 호스트에서 'yum update all' 명령을 실행해야 합니다.</block>
+  <block id="35ec85020897e56acfca830003a03e8c" category="paragraph">Red Hat Enterprise Linux 시스템은 Red Hat 서브스크립션 관리 에 등록되어 있어야 합니다. 등록되지 않은 경우, 시스템은 설치 중에 필요한 타사 소프트웨어를 업데이트하기 위해 리포지토리에 액세스할 수 없습니다.</block>
+  <block id="b4951d06315b1f9ffb6d04ceb4346101" category="list-text">RAM *: 16GB</block>
+  <block id="53a3e84f8dd7775216fa9eaac8d2ba6d" category="list-text">* CPU *: 4코어</block>
+  <block id="1187c6e89712492c48d5d9a1e68f3b42" category="list-text">* 여유 디스크 공간 *: 10GB</block>
+  <block id="1a3d8802d280d4ec910f54042cd62998" category="inline-link">SELinux</block>
+  <block id="6388693da9b6d4d4012711303b71d780" category="list-text">* SELinux *: 을 사용하지 않는 것이 좋습니다<block ref="59f91e142e660e7d393df4005d7488a3" category="inline-link-rx"></block> 호스트.</block>
+  <block id="3d64791fb8102a78b642b754f758f4b9" category="paragraph">SELinux는 데이터 브로커 소프트웨어 업데이트를 차단하는 정책을 적용하고 데이터 브로커가 정상 작동에 필요한 엔드포인트에 접속하는 것을 차단할 수 있습니다.</block>
+  <block id="a43f5cf69d6af0c6e17bed7ff726625e" category="list-text">Linux 호스트에 소스와 타겟에 대한 접속이 있어야 합니다.</block>
+  <block id="e7b55bccb60334ca631527b050553022" category="list-text">파일 서버는 Linux 호스트가 내보내기에 액세스할 수 있도록 허용해야 합니다.</block>
+  <block id="7bea0411e1c1d113bc62197206637112" category="list-text">AWS로 나가는 트래픽을 위해 Linux 호스트에서 포트 443이 열려 있어야 합니다(데이터 브로커가 Amazon SQS 서비스와 지속적으로 통신).</block>
+  <block id="c9e33dfa8b5904f2c5eeefbab35a3d9b" category="section-title">AWS에 대한 액세스 설정</block>
+  <block id="21182c7c99920ebad46cc371d317499a" category="paragraph">S3 버킷을 포함하는 동기화 관계에 데이터 브로커를 사용할 계획이라면, AWS 액세스를 위한 Linux 호스트를 준비해야 합니다. 데이터 브로커를 설치할 때는 프로그래밍 방식의 액세스와 특정 권한이 있는 AWS 사용자에게 AWS 키를 제공해야 합니다.</block>
+  <block id="8668bc285e00b6f9e578112045a4865d" category="list-text">을 사용하여 IAM 정책을 생성합니다<block ref="6d7c79584b67fdfc254e7699a61c1e8d" category="inline-link-rx"></block></block>
+  <block id="f9b866c4ff602b4a3215745c79cfe7e4" category="inline-link">AWS 지침을 확인하십시오</block>
+  <block id="1b19877137513d03da052bf37cafba69" category="paragraph"><block ref="1b19877137513d03da052bf37cafba69" category="inline-link-rx"></block></block>
+  <block id="b3c98a582bb953058ccaf9a71307fa93" category="list-text">프로그래밍 방식으로 액세스할 수 있는 IAM 사용자를 생성합니다.</block>
+  <block id="dd9d9810864a1e7938f32b3eaa8dd049" category="paragraph"><block ref="dd9d9810864a1e7938f32b3eaa8dd049" category="inline-link-rx"></block></block>
+  <block id="564482440eb08d11894ec114af427f21" category="paragraph">데이터 브로커 소프트웨어를 설치할 때는 AWS 키를 지정해야 하므로 AWS 키를 반드시 복사해야 합니다.</block>
+  <block id="71921838fce69c9d045aeb2ad30c1eb5" category="section-title">Google Cloud에 대한 액세스를 활성화합니다</block>
+  <block id="9bb2d547aba26d64f54ee705473214d6" category="paragraph">Google Cloud Storage 버킷을 포함하여 동기화 관계에 데이터 브로커를 사용할 계획이라면, Google Cloud 액세스를 위한 Linux 호스트를 준비해야 합니다. 데이터 브로커를 설치할 때 특정 권한이 있는 서비스 계정에 대한 키를 제공해야 합니다.</block>
+  <block id="3c5f750427f50f4edf7cb574473c42a8" category="list-text">스토리지 관리자 권한이 없는 경우 Google Cloud 서비스 계정을 생성합니다.</block>
+  <block id="6cb9b02ae49aa68f97de615d923b228a" category="list-text">JSON 형식으로 저장된 서비스 계정 키를 생성합니다.</block>
+  <block id="421439dfe2bf102a48e21ae7897ac0a5" category="inline-link">Google Cloud 지침을 봅니다</block>
+  <block id="84283971b71a2f12b39cf6e7b7da9605" category="paragraph"><block ref="84283971b71a2f12b39cf6e7b7da9605" category="inline-link-rx"></block></block>
+  <block id="902d86db753e123639feaba47a0e34ff" category="paragraph">파일에는 최소한 "project_id", "private_key" 및 "client_email" 속성이 포함되어야 합니다.</block>
+  <block id="a6c2835cfd7f21086d62be199ba39d44" category="admonition">키를 만들면 파일이 생성되어 컴퓨터에 다운로드됩니다.</block>
+  <block id="be2c33a07b84816f411d04d45ac1e4a3" category="list-text">JSON 파일을 Linux 호스트에 저장합니다.</block>
+  <block id="8269fd6e9d75dd954301e8ba35641805" category="section-title">Microsoft Azure에 대한 액세스 설정</block>
+  <block id="7af7eb8440af6bb7f9ffd64569367b5b" category="paragraph">Azure에 대한 액세스는 관계 동기화 마법사에서 스토리지 계정 및 연결 문자열을 제공하여 관계에 따라 정의됩니다.</block>
+  <block id="b6e5e048443785c8f424048cf1b9e40e" category="section-title">데이터 브로커 설치</block>
+  <block id="1944006c73d02c718c69408861e1307c" category="paragraph">동기화 관계를 생성할 때 Linux 호스트에 데이터 브로커를 설치할 수 있습니다.</block>
+  <block id="20bdbeece7707eb8c81d92234512a38d" category="list-text">데이터 브로커 그룹 * 페이지에서 * 데이터 브로커 생성 * 을 클릭한 다음 * 온프레미스 데이터 브로커 * 를 선택합니다.</block>
+  <block id="df89dda1d1c7ea3cd71a127402ea04d7" category="paragraph"><block ref="df89dda1d1c7ea3cd71a127402ea04d7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8020038698547625e7abf1eda36c8877" category="admonition">옵션에 *_On-Premise_Data Broker * 라는 레이블이 표시되어 있지만 이 옵션은 온프레미스 또는 클라우드의 Linux 호스트에 적용됩니다.</block>
+  <block id="023c2e07bedf559d5fb81f1e623f1b6f" category="paragraph">지침 페이지가 곧 로드됩니다. 설치 프로그램을 다운로드할 수 있는 고유 링크가 포함된 다음 지침을 따라야 합니다.</block>
+  <block id="85b186137a154778928917ee83dc3e5a" category="list-text">지침 페이지에서 다음을 수행합니다.</block>
+  <block id="104cb193c6d09dc15eb76f25ec29609a" category="list-text">AWS *, * Google Cloud * 또는 둘 모두에 대한 액세스를 활성화할지 여부를 선택합니다.</block>
+  <block id="44eb9ba03c7d9855883bd4ca00384b79" category="list-text">설치 옵션 * 프록시 없음 *, * 프록시 서버 사용 * 또는 * 인증 프록시 서버 사용 * 을 선택합니다.</block>
+  <block id="3ffb05d0d75933ee792a4e57196ceaa9" category="list-text">명령을 사용하여 데이터 브로커를 다운로드하고 설치하십시오.</block>
+  <block id="40c571f76c05b04e5f9ab011e4ee854d" category="paragraph">다음 단계에서는 가능한 각 설치 옵션에 대한 세부 정보를 제공합니다. 지침 페이지에 따라 설치 옵션에 따라 정확한 명령을 가져옵니다.</block>
+  <block id="6e0d576ae8bbf75d73e973b43765c149" category="list-text">설치 프로그램 다운로드:</block>
+  <block id="1c625300681738012721784c874a093c" category="list-text">프록시 없음:</block>
+  <block id="cb6f8bea3a6a84fe77f000a7f5900149" category="paragraph">'&lt;URI&gt;-o data_broker_installer.sh'라는 문구입니다</block>
+  <block id="5614378ddae786512a46e0fb6d5b5049" category="list-text">프록시 서버 사용:</block>
+  <block id="a13c88b0947ecaadfcc9f85309ad298c" category="paragraph">'&lt;URI&gt;-o data_broker_installer.sh -x &lt;proxy_host&gt;:&lt;proxy_port&gt;'</block>
+  <block id="47c3b64a51b87be034a8912ac555b867" category="list-text">인증 시 프록시 서버 사용:</block>
+  <block id="d23756d0938d8a0d5fe2458da8764d29" category="paragraph">'&lt;URI&gt;-o data_broker_installer.sh -x &lt;proxy_username&gt;:&lt;proxy_password&gt;@&lt;proxy_host&gt;:&lt;proxy_port&gt;'</block>
+  <block id="8447306210a0972ac94b7d774799df1a" category="list-text">URI입니다</block>
+  <block id="e9f4beb329ba42ff63ef620a4863fe43" category="inline-xref">다음 단계에 따라 Cloud Sync에서 URI를 가져옵니다</block>
+  <block id="7d06bf276430bb3100208eb4734953dd" category="list-text">Cloud Sync 설치 파일의 URI가 지침 페이지에 표시됩니다. 이 내용은 화면의 지시에 따라 온-프렘 데이터 브로커를 배포할 때 로드됩니다. 이 URI는 링크가 동적으로 생성되고 한 번만 사용할 수 있으므로 여기서 반복되지 않습니다. <block ref="184e3498ffb7fdbff7196fcca94d48fb" category="inline-xref-macro-rx"></block>.</block>
+  <block id="dd1f3e7a0e13a53a0d39dc15cd7aaadb" category="list-text">슈퍼유저로 전환하고 설치 프로그램을 실행 가능하게 만든 후 소프트웨어를 설치합니다.</block>
+  <block id="9f758ef6cf58bc19a4e4cc3d238fd812" category="admonition">아래 나열된 각 명령에는 AWS 액세스 및 Google Cloud 액세스에 대한 매개 변수가 포함되어 있습니다. 지침 페이지에 따라 설치 옵션에 따라 정확한 명령을 가져옵니다.</block>
+  <block id="49dc0392ba36ada3c1af45ba75b28797" category="list-text">프록시 구성 없음:</block>
+  <block id="50787797b3a89bd769bc294c9a389f14" category="paragraph">'sudo -s chmod + x data_broker_installer.sh./data_broker_installer.sh -a &lt;AWS_access_key&gt; -s &lt;AWS_secret_key&gt; -g &lt;absolute_path_to_the_json_file&gt;'</block>
+  <block id="c602985cad889e300601c010f311bba0" category="list-text">프록시 구성:</block>
+  <block id="e1582e39bae4c79dd10dbe773b5b902b" category="paragraph">sudo -s chmod + x data_broker_installer.sh. /data_broker_installer.sh -a &lt;AWS_access_key&gt; -s &lt;AWS_secret_key&gt; -g &lt;absolute_path_to_the_json_file&gt; -h &lt;proxy_host&gt; -p &lt;proxy_port&gt;</block>
+  <block id="7cfc67179e2ebdb7267590eed949467c" category="list-text">인증이 있는 프록시 구성:</block>
+  <block id="2d9b81de771115c9968d6eabf73e8b3f" category="paragraph">sudo -s chmod + x data_broker_installer.sh. /data_broker_installer.sh -a &lt;AWS_access_key&gt; -s &lt;AWS_secret_key&gt; -g &lt;absolute_path_to_the_json_file&gt; -h &lt;proxy_host&gt; -p &lt;proxy_username&gt; -w &lt;proxy_password&gt;</block>
+  <block id="e656cb1ebc2e559e3bcc2002585434ed" category="list-text">AWS 키</block>
+  <block id="18bbccaaba098ea1a676d4d7e5810ac9" category="inline-xref">다음 단계를 따릅니다</block>
+  <block id="d60ded7a040145d82fa326559c4753bf" category="list-text">사용자가 준비해야 하는 키입니다 <block ref="a969db4de6d1a440b2352a74869c6d78" category="inline-xref-macro-rx"></block>. AWS 키는 데이터 브로커에 저장되며 사내 또는 클라우드 네트워크에서 실행됩니다. NetApp은 데이터 브로커 외에 다른 키는 사용하지 않습니다.</block>
+  <block id="a6c9e3a7671c1fd9d7328c3be5d107b5" category="list-text">JSON 파일</block>
+  <block id="40a402e2af1a2cefda63b0a1c268470d" category="list-text">미리 준비해야 하는 서비스 계정 키가 포함된 JSON 파일입니다 <block ref="7d6ea8fc5746e04de57c4e2ea5f20d13" category="inline-xref-macro-rx"></block>.</block>
+  <block id="d5ca9cde56246aa6b86169e0939388c5" category="summary">Cloud Sync는 온프레미스 및 클라우드 오브젝트 저장소 간에 NAS 데이터를 전송하기 위한 클라우드 복제 및 동기화 서비스입니다.</block>
+  <block id="815e6b3583bbc9969fd306b9391ed0cb" category="doc">Cloud Sync 설명서</block>
+  <block id="febdb5376a041b31f655e631de8dd5d8" category="summary">14일 무료 평가판이 종료된 후 동기화 관계에 대한 비용을 지불할 수 있는 두 가지 방법이 있습니다. 첫 번째 옵션은 사용한 만큼만 지불하는 것입니다. 두 번째 옵션은 NetApp에서 직접 라이센스를 구매하는 것입니다.</block>
+  <block id="4ecb33900aad1706afbc34f19bd2f2e9" category="doc">무료 평가판이 종료된 후 동기화 관계에 대한 비용을 지불합니다</block>
+  <block id="97a214da03586723b3eda5c2057276c9" category="paragraph">AWS Marketplace 또는 Azure Marketplace에서 구독할 수 있습니다. 두 경우 모두 구독할 수 없습니다.</block>
+  <block id="55430fccd9c75a6ec1bc44bb1d637619" category="paragraph">Marketplace 구독에서 NetApp의 라이센스를 사용할 수 있습니다. 예를 들어, 동기화 관계가 25개 있는 경우 라이센스를 사용하여 처음 20개 동기화 관계에 대한 비용을 지불하고 나머지 5개 동기화 관계를 사용하여 AWS 또는 Azure에서 사용한 만큼만 비용을 지불할 수 있습니다.</block>
+  <block id="eee2650e10b32734e3b3f1bc627337f5" category="inline-link-macro">라이센스 작동 방식에 대해 자세히 알아보십시오</block>
+  <block id="f65ca7baf45cc92aec55770c0b36841f" category="paragraph"><block ref="7cfabb5964e9e36c902fe67d3082ea34" category="inline-link-macro-rx"></block>.</block>
+  <block id="d04dfaa744331ac37502cd7e1da7e4cb" category="sidebar-title">무료 평가판이 끝난 후 즉시 결제하지 않으면 어떻게 합니까?</block>
+  <block id="06396044ae8f00acb30bd57de4d6bf59" category="paragraph">추가 관계를 만들 수 없습니다. 기존 관계는 삭제되지 않지만 라이선스를 구독하거나 입력할 때까지 관계를 변경할 수 없습니다.</block>
+  <block id="6f3effbced02bf6278e3a16bc56601b0" category="section-title">AWS 구독</block>
+  <block id="7f1e5fcf21192da891eea1c1f4f6e6f0" category="paragraph">AWS를 사용하면 사용한 만큼만 지불하거나 연간 단위로 비용을 지불할 수 있습니다.</block>
+  <block id="f06e94914580a228484d54783ffeb2bb" category="list-title">선불 종량제 단계</block>
+  <block id="f4e86f9d0f6800384c773bd03834297d" category="list-text">동기화 &gt; 라이선스 * 를 클릭합니다.</block>
+  <block id="af3298973678fbb2b80974a8030f07ac" category="list-text">AWS * 를 선택합니다</block>
+  <block id="01849158eeeec12ef2f893c8efd6c0e3" category="list-text">구독 * 을 클릭한 다음 * 계속 * 을 클릭합니다.</block>
+  <block id="099050991d4fc1ea47f727b6ad9a41b3" category="list-text">AWS Marketplace에서 구독한 다음 Cloud Sync 서비스에 다시 로그인하여 등록을 완료합니다.</block>
+  <block id="03909f0465e674709c33e446a2657166" category="paragraph">다음 비디오는 프로세스를 보여 줍니다.</block>
+  <block id="d95d2545b9702aaa44811f90fd798b70" category="list-title">연간 지불 절차</block>
+  <block id="b857da0ad28712a25e73c0907a2b3740" category="inline-link">AWS 마켓플레이스 페이지로 이동합니다</block>
+  <block id="b84483eacee20411f642e9b32a1532d3" category="list-text"><block ref="9a55e6c904391172078e71a0186ef751" category="inline-link-rx"></block>.</block>
+  <block id="6ce481dcdc8134b6b4c81db0911f0267" category="list-text">구독 * 으로 계속 * 을 클릭합니다.</block>
+  <block id="1ee9033888539de2e81ddb29d255c405" category="list-text">계약 옵션을 선택하고 * 계약 작성 * 을 클릭합니다.</block>
+  <block id="52f71b65e8b2575ecbdcd630dd568078" category="section-title">Azure에서 구독</block>
+  <block id="5b708f827f75588e652438e8d2977fb4" category="paragraph">Azure를 사용하면 사용한 만큼만 지불하거나 연간 단위로 비용을 지불할 수 있습니다.</block>
+  <block id="251910634a1b47d0359b6171382f3f9a" category="paragraph">관련 구독에 참가자 또는 소유자 권한이 있는 Azure 사용자 계정입니다.</block>
+  <block id="2164db8f01d0c0a0dc250abc3b9556f5" category="list-text">Azure * 를 선택합니다.</block>
+  <block id="e70ccb5a825dd2a0a3daf679b5f23567" category="list-text">Azure 포털에서 * 생성 * 을 클릭하고 옵션을 선택한 다음 * 구독 * 을 클릭합니다.</block>
+  <block id="981e7253aa8df6872dfd3d544c12ef23" category="paragraph">월간 * 을 선택하여 시간당 결제하거나, * Yearly * 를 선택하여 1년 단위로 선불로 결제합니다.</block>
+  <block id="23a902dd0c4b97b70f0c79f7c46ed483" category="list-text">배포가 완료되면 알림 팝업에서 SaaS 리소스의 이름을 클릭합니다.</block>
+  <block id="04175f98fb77c715f35a84f3004d8ed5" category="list-text">Cloud Sync로 돌아가려면 * 계정 구성 * 을 클릭합니다.</block>
+  <block id="01cc9c7cd06e97ce20ebea964dc79244" category="section-title">NetApp에서 라이센스를 구매하여 Cloud Sync에 추가</block>
+  <block id="6dabde8f330be16cbc68c6ed11cd0dcb" category="paragraph">동기화 관계를 사전에 결제하려면 하나 이상의 라이센스를 구입하여 Cloud Sync 서비스에 추가해야 합니다.</block>
+  <block id="97e3031ee8bcd0a19765ddc808e71590" category="paragraph">라이센스에 대한 일련 번호 및 라이센스가 연결된 NetApp Support 사이트 계정의 사용자 이름과 암호가 필요합니다.</block>
+  <block id="0f5161c9e18f97b653442fef34de1024" category="list-text">라이센스를 mailto:ng-cloudsync-contact@netapp.com?subject=Cloud%20Sync%20Service%20-%20BYOL%20License%20Purchase%20Request[NetApp 문의]까지 구입하십시오.</block>
+  <block id="47073df9c54bc93012bf8231b4da55fe" category="list-text">Cloud Manager에서 * 동기화 &gt; 라이선스 * 를 클릭합니다.</block>
+  <block id="c705d1b4b3b9a5ab7a62cfb882e27612" category="list-text">라이센스 추가 * 를 클릭하고 필요한 정보를 추가합니다.</block>
+  <block id="a7a65c558a31a52f3a2570581f5170c2" category="list-text">일련 번호를 입력합니다.</block>
+  <block id="441eaafe617acae90fac942cbac1d2a0" category="list-text">추가하는 라이센스와 연관된 NetApp Support 사이트 계정을 선택합니다.</block>
+  <block id="cc2908241ba4f3504f13000142ad3e48" category="list-text">계정이 이미 Cloud Manager에 추가된 경우 드롭다운 목록에서 해당 계정을 선택합니다.</block>
+  <block id="93bad0f0398a452d035b9d52ba2724f5" category="list-text">계정이 아직 추가되지 않은 경우 * NSS 자격 증명 추가 * 를 클릭하고 사용자 이름 및 암호를 입력한 다음 * 등록 * 을 클릭하고 드롭다운 목록에서 선택합니다.</block>
+  <block id="e0fd71ec05fc637037be9da3ff2103b0" category="section-title">라이센스를 업데이트하는 중입니다</block>
+  <block id="621d7bdf797506a6b1724c30c6f72e88" category="paragraph">NetApp에서 구매한 Cloud Sync 라이센스를 연장한 경우, 새 만료 날짜는 Cloud Sync에서 자동으로 업데이트되지 않습니다. 만료 날짜를 새로 고치려면 라이센스를 다시 추가해야 합니다.</block>
+  <block id="83893211fb004302e2b1216eda1eb1f8" category="list-text">추가하고 있는 라이센스와 관련된 NetApp Support 사이트 계정을 선택합니다.</block>
+  <block id="172d12b0279cc8a60f5a9ab00242df4e" category="paragraph">Cloud Sync는 기존 라이센스를 새 만료일로 업데이트합니다.</block>
+  <block id="3c10116b37b407ac79092a38ffb292e4" category="summary">NetApp 기술 지원으로 지원 케이스를 생성하기 전에 NetApp Support 사이트 계정을 Cloud Manager에 추가한 다음 지원을 위해 등록해야 합니다.</block>
+  <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">지원을 위해 등록하십시오</block>
+  <block id="d53e2559d6ace0e907fc57192bf286b6" category="paragraph"><block ref="d53e2559d6ace0e907fc57192bf286b6" category="inline-link-macro-rx"></block></block>
+  <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">모든 Cloud Manager 설명서</block>
+  <block id="eab057480b500e5181f47e393918143e" category="sidebar">Cloud Sync 문서</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">릴리스 정보</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">새로운 소식</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">시작하십시오</block>
+  <block id="cfdb38bc0a8a1d54369b58fb2cefce44" category="sidebar">Cloud Sync에 대해 자세히 알아보십시오</block>
+  <block id="06ad314b340900d226b1196e1fe289e9" category="sidebar">빠른 시작</block>
+  <block id="75dbd7f878d584e6e9f033b3806519ac" category="sidebar">네트워킹을 준비합니다</block>
+  <block id="24ecd355ed2f7882b92b2b283a55a08c" category="sidebar">데이터 브로커를 설치합니다</block>
+  <block id="91f104a737b6b03dbe4bb7cfdac93427" category="sidebar">AWS에 설치</block>
+  <block id="30514ef3aea4155640076b48cc55bcf1" category="sidebar">Azure에 설치합니다</block>
+  <block id="78e59442e4fbd0955336d73a83865871" category="sidebar">Google Cloud에 설치합니다</block>
+  <block id="3425fda3f401ac4e986356571e7c0b39" category="sidebar">Linux 호스트에 설치합니다</block>
+  <block id="b45fd7f2a5d2fabff3d88b7f7a60d1ee" category="sidebar">Cloud Sync를 사용합니다</block>
+  <block id="dac97d30f2f3f8a38a388e9e21f5a9a0" category="sidebar">소스와 타겟 간에 데이터를 동기화합니다</block>
+  <block id="3a039db0514b7bf645b4647d180e7c36" category="sidebar">동기화 관계를 생성합니다</block>
+  <block id="05bac3d5af19547146e32cabd35df27b" category="sidebar">SMB 공유에서 ACL 복사</block>
+  <block id="7611eac98b8f210de2cb01c50b495c91" category="sidebar">사용 중인 NFS 데이터를 암호화합니다</block>
+  <block id="6a78c407b3d8a93c15e90044dd914ed7" category="sidebar">하시코프 자료실 비밀 사용</block>
+  <block id="e907b41f5f3d7332bee5a43fbbf78a08" category="sidebar">라이센스를 설정합니다</block>
+  <block id="bf090db1b4c3962ecfacd0b7350dd796" category="sidebar">동기화 관계를 관리합니다</block>
+  <block id="ab855d792392a5725881c4bb252905d7" category="sidebar">데이터 브로커 관리</block>
+  <block id="b447b3f9113cbc8786f31082c1014d2b" category="sidebar">보고서를 보고 구성을 조정합니다</block>
+  <block id="c80858d98befa70d097763821d6c8dc2" category="sidebar">데이터 브로커를 제거합니다</block>
+  <block id="68b1e52936c426875b2780e91e195546" category="sidebar">REST API를 사용하여 자동화</block>
+  <block id="0460583622f03a52d7693094d6fa2452" category="sidebar">개념</block>
+  <block id="0b9c6eef4e3d3a222eb04e910d252339" category="sidebar">라이센싱</block>
+  <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">FAQ 를 참조하십시오</block>
+  <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">지식 및 지원</block>
+  <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">블로그 커뮤니티</block>
+  <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp 커뮤니티</block>
+  <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Cloud Central 블로그</block>
+  <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">클라우드 웨비나</block>
+</blocks>

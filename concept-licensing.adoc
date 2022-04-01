@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: concept-licensing.html 
+keywords: licenses, licensing, subscriptions, annual subscription, paygo, hourly subscription 
+summary: 14일 무료 평가판이 종료된 후 동기화 관계에 대한 비용을 지불할 수 있는 두 가지 방법이 있습니다. 첫 번째 옵션은 AWS 또는 Azure에서 용량제 또는 연간 결제를 구독하는 것입니다. 두 번째 옵션은 NetApp에서 직접 라이센스를 구매하는 것입니다. 
+---
+= 라이센스 개요
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+14일 무료 평가판이 종료된 후 동기화 관계에 대한 비용을 지불할 수 있는 두 가지 방법이 있습니다. 첫 번째 옵션은 AWS 또는 Azure에서 용량제 또는 연간 결제를 구독하는 것입니다. 두 번째 옵션은 NetApp에서 직접 라이센스를 구매하는 것입니다.
+
+
+
+== 마켓플레이스 구독
+
+AWS 또는 Azure에서 Cloud Sync 서비스를 구독하면 시간 단위로 지불하거나 연간 비용을 지불할 수 있습니다. link:task-licensing.html["AWS 또는 Azure를 통해 가입할 수 있습니다"]를 선택합니다.
+
+
+
+=== 시간별 구독
+
+시간 단위 용량제 구독을 통해 생성하는 동기화 관계 수에 따라 시간 단위로 비용이 청구됩니다.
+
+* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice["Azure에서 가격을 확인할 수 있습니다"^]
+* https://aws.amazon.com/marketplace/pp/B01LZV5DUJ["AWS에서 용량제 가격 보기"^]
+
+
+
+
+=== 연간 구독
+
+연간 구독은 사전에 지불하는 20개의 동기화 관계에 대한 라이센스를 제공합니다. 동기화 관계가 20개를 초과하고 AWS를 통해 구독한 경우 추가 관계에 대한 비용은 시간당 지불합니다.
+
+https://aws.amazon.com/marketplace/pp/B06XX5V3M2["AWS에서 연간 가격 보기"^]
+
+
+
+== NetApp이 라이센스를 구입해야 합니다
+
+동기화 관계를 맺는 데 필요한 또 다른 방법은 NetApp에서 라이센스를 직접 구매하는 것입니다. 각 라이센스를 통해 최대 20개의 동기화 관계를 생성할 수 있습니다.
+
+AWS 또는 Azure 구독에서 이러한 라이센스를 사용할 수 있습니다. 예를 들어, 동기화 관계가 25개 있는 경우 라이센스를 사용하여 처음 20개 동기화 관계에 대한 비용을 지불하고 나머지 5개 동기화 관계를 사용하여 AWS 또는 Azure에서 사용한 만큼만 비용을 지불할 수 있습니다.
+
+link:task-licensing.html["라이센스를 구매하여 Cloud Sync에 추가하는 방법에 대해 알아보십시오"].
+
+
+
+=== 사용권 조항
+
+BYOL(Bring Your Own License)을 Cloud Sync 서비스로 구매하는 고객은 라이센스 소유 권한과 관련된 제한 사항을 숙지해야 합니다.
+
+* 고객은 BYOL 라이센스를 제공 날짜로부터 1년을 초과하지 않는 기간 동안 활용할 수 있습니다.
+* 고객은 BYOL 라이센스를 활용하여 소스와 타겟(각각 "동기화 관계") 간에 총 20개의 개별 연결을 설정할 수 있습니다.
+* 고객의 사용 권한은 고객이 20개의 동기화 관계 제한에 도달했는지 여부에 관계없이 1년 라이센스 기간이 종료될 때 만료됩니다.
+* 고객이 라이센스를 갱신하기로 선택한 경우 이전 라이센스 부여에서 연결된 사용되지 않은 동기화 관계가 라이센스 갱신으로 롤오버되지 않습니다.
+

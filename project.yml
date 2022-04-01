@@ -1,0 +1,111 @@
+---
+settings:
+  name: Cloud Sync
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: ko-kr,us-en,ja-jp,zh-cn
+sidebar:
+  entries:
+  - title: 모든 Cloud Manager 설명서
+    url: https://docs.netapp.com/us-en/cloud-manager-family
+  - title: Cloud Sync 문서
+    url: "/index.html"
+  - title: 릴리스 정보
+    entries:
+    - title: 새로운 소식
+      url: "/whats-new.html"
+    - title: 제한 사항
+      url: "/reference-limitations.html"
+  - title: 시작하십시오
+    entries:
+    - title: Cloud Sync에 대해 자세히 알아보십시오
+      url: "/concept-cloud-sync.html"
+    - title: 빠른 시작
+      url: "/task-quick-start.html"
+    - title: 지원되는 동기화 관계를 봅니다
+      url: "/reference-supported-relationships.html"
+    - title: 소스와 타겟을 준비합니다
+      url: "/reference-requirements.html"
+    - title: 네트워킹을 준비합니다
+      url: "/reference-networking.html"
+    - title: 데이터 브로커를 설치합니다
+      entries:
+      - title: AWS에 설치
+        url: "/task-installing-aws.html"
+      - title: Azure에 설치합니다
+        url: "/task-installing-azure.html"
+      - title: Google Cloud에 설치합니다
+        url: "/task-installing-gcp.html"
+      - title: Linux 호스트에 설치합니다
+        url: "/task-installing-linux.html"
+  - title: Cloud Sync를 사용합니다
+    entries:
+    - title: 소스와 타겟 간에 데이터를 동기화합니다
+      entries:
+      - title: 동기화 관계를 생성합니다
+        url: "/task-creating-relationships.html"
+      - title: SMB 공유에서 ACL 복사
+        url: "/task-copying-acls.html"
+      - title: 사용 중인 NFS 데이터를 암호화합니다
+        url: "/task-nfs-encryption.html"
+      - title: 하시코프 자료실 비밀 사용
+        url: "/task-external-vault.html"
+    - title: 라이센스를 설정합니다
+      url: "/task-licensing.html"
+    - title: 동기화 관계를 관리합니다
+      url: "/task-managing-relationships.html"
+    - title: 데이터 브로커 관리
+      url: "/task-managing-data-brokers.html"
+    - title: 보고서를 보고 구성을 조정합니다
+      url: "/task-managing-reports.html"
+    - title: 데이터 브로커를 제거합니다
+      url: "/task-uninstalling.html"
+  - title: REST API를 사용하여 자동화
+    url: "/api-sync.html"
+  - title: 개념
+    entries:
+    - title: 라이센싱
+      url: "/concept-licensing.html"
+    - title: 데이터 개인 정보 보호
+      url: "/concept-privacy.html"
+    - title: FAQ 를 참조하십시오
+      url: "/faq-sync.html"
+  - title: 지식 및 지원
+    entries:
+    - title: 지원을 위해 등록하십시오
+      url: "/task-support-registration.html"
+    - title: 도움을 받으십시오
+      url: "/task-get-help.html"
+  - title: 법적 고지
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: 시작하십시오
+    links:
+    - title: Cloud Sync 개요
+      url: concept-cloud-sync.html
+    - title: 빠른 시작
+      url: task-quick-start.html
+    - title: FAQ 를 참조하십시오
+      url: faq.html
+  - title: Cloud Sync를 사용합니다
+    links:
+    - title: 동기화 관계를 생성합니다
+      url: task-creating-relationships.html
+    - title: 라이센스를 설정합니다
+      url: task-licensing.html
+    - title: 데이터 브로커 그룹을 관리합니다
+      url: task-managing-data-brokers.html
+  - title: 블로그 커뮤니티
+    links:
+    - title: NetApp 커뮤니티
+      url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
+    - title: Cloud Central 블로그
+      url: https://cloud.netapp.com/blog
+    - title: 클라우드 웨비나
+      url: https://cloud.netapp.com/events
+product-family: {}

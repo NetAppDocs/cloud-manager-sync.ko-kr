@@ -1,0 +1,387 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, enhancements, fixes' 
+summary: Cloud Sync의 새로운 기능에 대해 알아보십시오. 
+---
+= Cloud Sync의 새로운 기능
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Sync의 새로운 기능에 대해 알아보십시오.
+
+
+
+== 2022년 3월 3일
+
+
+
+=== 대시보드에서 정렬
+
+이제 동기화 관계 이름을 기준으로 대시보드를 정렬합니다.
+
+image:screenshot-sync-sort.png["대시보드에서 사용할 수 있는 이름별 정렬 옵션을 보여 주는 스크린샷"]
+
+
+
+=== 데이터 센스 통합 기능 향상
+
+이전 릴리즈에서는 클라우드 데이터 센스와 Cloud Sync의 통합을 소개했습니다. 이 업데이트를 통해 동기화 관계를 보다 쉽게 만들 수 있도록 통합을 개선했습니다. Cloud Data Sense에서 데이터 동기화를 시작한 후에는 모든 소스 정보가 한 번에 포함되고 몇 가지 키 세부 정보만 입력하면 됩니다.
+
+image:screenshot-sync-data-sense.png["클라우드 데이터 센스에서 직접 새 동기화를 시작한 후 나타나는 데이터 감지 통합 페이지를 보여주는 스크린샷."]
+
+
+
+== 2022년 2월 6일
+
+
+
+=== 데이터 브로커 그룹의 개선 사항
+
+데이터 브로커_groups_를 강조하여 데이터 브로커와 상호 작용하는 방법을 변경했습니다.
+
+예를 들어, 새 동기화 관계를 생성할 때 특정 데이터 브로커가 아닌 관계에 사용할 데이터 브로커_group_을 선택합니다.
+
+image:screenshot-sync-select-data-broker-group.png["데이터 브로커 그룹 선택을 보여 주는 동기화 관계 마법사 스크린샷"]
+
+데이터 브로커 * 관리 탭에는 데이터 브로커 그룹이 관리하는 동기화 관계의 수도 표시됩니다.
+
+image:screenshot-sync-group-relationships.png["데이터 브로커 그룹을 보여 주는 데이터 브로커 관리 페이지의 스크린 샷. 이 페이지에는 관리 관계의 수를 비롯하여 해당 그룹에 대한 세부 정보가 표시됩니다."]
+
+
+
+=== PDF 보고서를 다운로드합니다
+
+이제 보고서의 PDF를 다운로드할 수 있습니다.
+
+link:task-managing-reports.html["보고서에 대해 자세히 알아보십시오"].
+
+
+
+== 2022년 1월 2일
+
+
+
+=== 새 Box 동기화 관계
+
+두 가지 새로운 동기화 관계가 지원됩니다.
+
+* Box를 Azure NetApp Files로 설정합니다
+* ONTAP용 아마존 FSx로 상자를 이동합니다
+
+
+link:reference-supported-relationships.html["지원되는 동기화 관계 목록을 봅니다"].
+
+
+
+=== 관계 이름
+
+이제 각 동기화 관계에 의미 있는 이름을 제공하여 각 관계의 목적을 보다 쉽게 파악할 수 있습니다. 관계를 만들 때 그리고 그 이후에 언제든지 이름을 추가할 수 있습니다.
+
+image:screenshot-sync-relationship-edit-name.png["관계 이름 옆에 있는 편집 단추를 보여 주는 동기화 관계의 스크린샷"]
+
+
+
+=== S3 개인 링크
+
+Amazon S3와 데이터를 동기화할 때 S3 개인 링크를 사용할지 여부를 선택할 수 있습니다. 데이터 브로커가 소스에서 타겟으로 데이터를 복제하면 프라이빗 링크를 통해 전송됩니다.
+
+이 기능을 사용하려면 데이터 브로커와 연결된 IAM 역할에 다음 권한이 필요합니다.
+
+[source, json]
+----
+"ec2:DescribeVpcEndpoints"
+----
+이 권한은 사용자가 만든 새 데이터 브로커에 자동으로 추가됩니다.
+
+
+
+=== Glacier 빠른 검색
+
+이제 Amazon S3가 동기화 관계의 타겟일 때 _Glacier Instant Retrieval_storage 클래스를 선택할 수 있습니다.
+
+
+
+=== 오브젝트 스토리지에서 SMB 공유까지 ACL
+
+이제 Cloud Sync는 오브젝트 스토리지에서 SMB 공유로 ACL을 복사할 수 있도록 지원합니다. 이전에는 SMB 공유에서 오브젝트 스토리지로의 ACL 복사만 지원했습니다.
+
+
+
+=== SFTP에서 S3로
+
+이제 사용자 인터페이스에서 SFTP에서 Amazon S3로 동기화 관계를 생성할 수 있습니다. 이 동기화 관계는 이전에 API에서만 지원되었습니다.
+
+
+
+=== 테이블 뷰 개선
+
+쉽게 사용할 수 있도록 대시보드의 테이블 보기를 다시 설계했습니다. 추가 정보 * 를 클릭하면 Cloud Sync가 대시보드를 필터링하여 해당 특정 관계에 대한 자세한 정보를 표시합니다.
+
+image:screenshot-sync-table.png["대시보드의 표 보기 스크린샷"]
+
+
+
+=== Jarkarta 지역 지원
+
+Cloud Sync은 현재 AWS 아시아 태평양(자카르타) 지역에 데이터 브로커 구축을 지원하고 있습니다.
+
+
+
+== 2021년 11월 28일
+
+
+
+=== SMB에서 오브젝트 스토리지까지의 ACL
+
+소스 SMB 공유에서 오브젝트 스토리지(ONTAP S3 제외)로의 동기화 관계를 설정할 때 Cloud Sync에서 이제 ACL(액세스 제어 목록)을 복사할 수 있습니다.
+
+Cloud Sync는 오브젝트 스토리지에서 SMB 공유로의 ACL 복제를 지원하지 않습니다.
+
+link:task-copying-acls.html["SMB 공유에서 ACL을 복사하는 방법에 대해 알아봅니다"].
+
+
+
+=== 라이센스를 업데이트합니다
+
+이제 확장된 Cloud Sync 라이센스를 업데이트할 수 있습니다.
+
+NetApp에서 구매한 Cloud Sync 라이센스를 연장한 경우 라이센스를 다시 추가하여 만료일을 업데이트할 수 있습니다.
+
+link:task-licensing.html#update-a-license["라이센스를 업데이트하는 방법을 알아보십시오"].
+
+
+
+=== Box 자격 증명을 업데이트합니다
+
+이제 기존 동기화 관계에 대한 Box 자격 증명을 업데이트할 수 있습니다.
+
+link:task-managing-relationships.html["자격 증명을 업데이트하는 방법을 알아보십시오"].
+
+
+
+== 2021년 10월 31일
+
+
+
+=== 박스 지지대
+
+Box 지원은 이제 Cloud Sync 사용자 인터페이스에서 미리 보기로 제공됩니다.
+
+Box는 여러 유형의 동기화 관계의 소스 또는 타겟이 될 수 있습니다. link:reference-supported-relationships.html["지원되는 동기화 관계 목록을 봅니다"].
+
+
+
+=== 만든 날짜 설정
+
+SMB 서버가 소스인 경우 _Date Created_라는 새로운 동기화 관계 설정을 사용하면 특정 날짜 이후, 특정 날짜 이전 또는 특정 시간 범위 간에 생성된 파일을 동기화할 수 있습니다.
+
+link:task-managing-relationships.html["Cloud Sync 설정에 대해 자세히 알아보십시오"].
+
+
+
+== 2021년 10월 4일
+
+
+
+=== 추가 박스 지원
+
+Cloud Sync는 이제 에 대한 추가 동기화 관계를 지원합니다 https://www.box.com/home["상자에 입력합니다"^] Cloud Sync API를 사용하는 경우:
+
+* Amazon S3를 상자로 이동합니다
+* IBM Cloud Object Storage to Box를 참조하십시오
+* StorageGRID에서 Box로
+* Box를 NFS 서버에 전송합니다
+* Box를 SMB 서버로 전송합니다
+
+
+link:api-sync.html["API를 사용하여 동기화 관계를 설정하는 방법에 대해 알아봅니다"].
+
+
+
+=== SFTP 경로 보고서
+
+* 이제 가능합니다 link:task-managing-reports.html["보고서를 만듭니다"] SFTP 경로.
+
+
+
+
+== 2021년 9월 2일
+
+
+
+=== ONTAP용 FSx 지원
+
+이제 Amazon FSx for ONTAP 파일 시스템과 데이터를 동기화할 수 있습니다.
+
+* https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/concept-fsx-aws.html["ONTAP용 Amazon FSx에 대해 자세히 알아보십시오"^]
+* link:reference-requirements.html["지원되는 동기화 관계를 봅니다"]
+* link:task-creating-relationships.html["ONTAP용 Amazon FSx에 대한 동기화 관계를 생성하는 방법을 알아보십시오"]
+
+
+
+
+== 2021년 8월 1일
+
+
+
+=== 자격 증명을 업데이트합니다
+
+이제 Cloud Sync를 사용하여 기존 동기화 관계에서 소스 또는 타겟의 최신 자격 증명으로 데이터 브로커를 업데이트할 수 있습니다.
+
+이 향상된 기능은 보안 정책에 따라 자격 증명을 정기적으로 업데이트해야 하는 경우에 도움이 될 수 있습니다. link:task-managing-relationships.html["자격 증명을 업데이트하는 방법을 알아보십시오"].
+
+image:screenshot_sync_update_credentials.png["원본 또는 대상 이름 바로 아래에 있는 관계 동기화 페이지의 자격 증명 업데이트 옵션을 보여 주는 스크린샷"]
+
+
+
+=== 오브젝트 스토리지 타겟의 태그입니다
+
+동기화 관계를 생성할 때 이제 동기화 관계에서 개체 스토리지 대상에 태그를 추가할 수 있습니다.
+
+태그 추가는 Amazon S3, Azure Blob, Google Cloud Storage, IBM Cloud Object Storage 및 StorageGRID에서 지원됩니다.
+
+image:screenshot_sync_tags.png["작업 환경 마법사의 페이지를 보여 주는 스크린샷으로, 관계의 개체 스토리지 대상에 관계 태그를 추가할 수 있습니다."]
+
+
+
+=== 박스 지원
+
+이제 Cloud Sync가 지원됩니다 https://www.box.com/home["상자에 입력합니다"^] Cloud Sync API를 사용할 경우 Amazon S3, StorageGRID 및 IBM 클라우드 오브젝트 스토리지와 동기화 관계의 소스로 사용됩니다.
+
+link:api-sync.html["API를 사용하여 동기화 관계를 설정하는 방법에 대해 알아봅니다"].
+
+
+
+=== Google Cloud의 데이터 브로커를 위한 공용 IP
+
+Google Cloud에서 데이터 브로커를 구축할 때 가상 머신 인스턴스에 대해 공용 IP 주소를 사용할지 여부를 선택할 수 있습니다.
+
+link:task-installing-gcp.html["Google Cloud에서 데이터 브로커를 구축하는 방법을 알아보십시오"].
+
+
+
+=== Azure NetApp Files용 이중 프로토콜 볼륨
+
+Azure NetApp Files에 대해 소스 또는 타겟 볼륨을 선택하면 동기화 관계에 대해 선택한 프로토콜에 관계 없이 Cloud Sync에 이중 프로토콜 볼륨이 표시됩니다.
+
+
+
+== 2021년 7월 7일
+
+
+
+=== ONTAP S3 스토리지 및 Google Cloud Storage
+
+Cloud Sync은 이제 사용자 인터페이스에서 ONTAP S3 스토리지와 Google 클라우드 스토리지 버킷 간의 동기화 관계를 지원합니다.
+
+link:reference-supported-relationships.html["지원되는 동기화 관계 목록을 봅니다"].
+
+
+
+=== 개체 메타데이터 태그
+
+이제 Cloud Sync는 동기화 관계를 생성하고 설정을 활성화하면 개체 기반 스토리지 간에 개체 메타데이터와 태그를 복사할 수 있습니다.
+
+link:task-creating-relationships.html#settings["개체에 대한 복사 설정에 대해 자세히 알아보세요"].
+
+
+
+=== 하시코프 볼트 지원
+
+이제 Google Cloud 서비스 계정으로 인증하여 외부 HashiCorp Vault에서 자격 증명에 액세스하도록 데이터 브로커를 설정할 수 있습니다.
+
+link:task-external-vault.html["데이터 브로커가 있는 HashiCorp Vault를 사용하는 방법에 대해 자세히 알아보십시오"].
+
+
+
+=== S3 버킷의 태그 또는 메타데이터를 정의합니다
+
+Amazon S3 버킷과의 동기화 관계를 설정할 때 이제 동기화 관계 마법사를 통해 타겟 S3 버킷의 오브젝트에 저장할 태그 또는 메타데이터를 정의할 수 있습니다.
+
+태그 지정 옵션은 이전에 동기화 관계의 설정에 포함되어 있었습니다.
+
+
+
+== 2021년 6월 7일
+
+
+
+=== Google Cloud의 스토리지 클래스
+
+Google Cloud Storage 버킷이 동기화 관계의 타겟인 경우 이제 사용할 스토리지 클래스를 선택할 수 있습니다. Cloud Sync는 다음 스토리지 클래스를 지원합니다.
+
+* 표준
+* 니어라인
+* 콜드라인
+* 아카이브
+
+
+
+
+== 2021년 5월 2일
+
+
+
+=== 보고서에 오류가 있습니다
+
+이제 보고서에 있는 오류를 볼 수 있으며 마지막 보고서나 모든 보고서를 삭제할 수 있습니다.
+
+link:task-managing-reports.html["구성을 조정할 보고서를 만들고 보는 방법에 대해 자세히 알아보십시오"].
+
+
+
+=== 특성을 비교합니다
+
+이제 각 동기화 관계에 대해 새 * Compare by * 설정을 사용할 수 있습니다.
+
+이 고급 설정을 사용하면 Cloud Sync에서 파일 또는 디렉터리가 변경되었으며 다시 동기화되어야 하는지 여부를 결정할 때 특정 특성을 비교할지 여부를 선택할 수 있습니다.
+
+link:task-managing-relationships.html#changing-the-settings-for-a-sync-relationship["동기화 관계의 설정 변경에 대해 자세히 알아보십시오"].
+
+
+
+== 2021년 4월 11일
+
+
+
+=== 독립 실행형 Cloud Sync 서비스가 폐기됩니다
+
+독립 실행형 Cloud Sync 서비스가 폐기되었습니다. 이제 동일한 모든 기능을 사용할 수 있는 Cloud Manager에서 Cloud Sync에 직접 액세스할 수 있습니다.
+
+Cloud Manager에 로그인한 후 맨 위에 있는 동기화 탭으로 전환하고 이전과 마찬가지로 관계를 볼 수 있습니다.
+
+
+
+=== Google Cloud 버킷 - 다양한 프로젝트
+
+동기화 관계를 설정할 때 데이터 브로커의 서비스 계정에 필요한 권한을 제공하는 경우 다양한 프로젝트의 Google Cloud 버킷 중에서 선택할 수 있습니다.
+
+link:task-installing-gcp.html["서비스 계정 설정 방법에 대해 알아보십시오"].
+
+
+
+=== Google Cloud Storage와 S3 간 메타데이터
+
+이제 Cloud Sync는 Google Cloud Storage와 S3 공급자(AWS S3, StorageGRID, IBM Cloud Object Storage) 간에 메타데이터를 복사합니다.
+
+
+
+=== 데이터 브로커를 다시 시작합니다
+
+이제 Cloud Sync에서 데이터 브로커를 다시 시작할 수 있습니다.
+
+image:screenshot_sync_restart_data_broker.gif["데이터 브로커 관리 페이지에서 데이터 브로커 다시 시작 작업을 보여 주는 스크린샷"]
+
+
+
+=== 최신 릴리스를 실행하지 않을 때 나타나는 메시지입니다
+
+이제 Cloud Sync에서 데이터 브로커가 최신 소프트웨어 릴리즈를 실행하고 있지 않은 경우를 식별합니다. 이 메시지를 통해 최신 기능을 사용할 수 있습니다.
+
+image:screenshot_sync_warning.gif["대시보드에서 데이터 브로커를 볼 때 경고를 표시하는 스크린샷"]
