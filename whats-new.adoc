@@ -32,11 +32,13 @@ Cloud Sync의 새로운 기능에 대해 알아보십시오.
 
 https://docs.netapp.com/us-en/cloud-manager-sync/task_sync_managing_data_brokers.html["데이터 브로커 그룹을 관리하는 방법에 대해 알아보십시오"].
 
-* 이제 동기화 대시보드의 내용을 필터링하여 특정 상태와 일치하는 동기화 관계를 보다 쉽게 찾을 수 있습니다. 예를 들어 실패 상태인 동기화 관계를 필터링할 수 있습니다
-+
-image:screenshot-sync-filter.png["대시보드 위쪽에 동기화 상태별 필터링 옵션이 표시된 스크린샷"]
 
 
+=== 대시보드 필터
+
+이제 동기화 대시보드의 내용을 필터링하여 특정 상태와 일치하는 동기화 관계를 보다 쉽게 찾을 수 있습니다. 예를 들어 실패 상태인 동기화 관계를 필터링할 수 있습니다
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-sync/main/media/screenshot-sync-filter.png["대시보드 위쪽에 동기화 상태별 필터링 옵션이 표시된 스크린샷"]
 
 
 
@@ -48,7 +50,7 @@ image:screenshot-sync-filter.png["대시보드 위쪽에 동기화 상태별 필
 
 이제 동기화 관계 이름을 기준으로 대시보드를 정렬합니다.
 
-image:screenshot-sync-sort.png["대시보드에서 사용할 수 있는 이름별 정렬 옵션을 보여 주는 스크린샷"]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-sync/main/media/screenshot-sync-sort.png["대시보드에서 사용할 수 있는 이름별 정렬 옵션을 보여 주는 스크린샷"]
 
 
 
@@ -56,7 +58,7 @@ image:screenshot-sync-sort.png["대시보드에서 사용할 수 있는 이름�
 
 이전 릴리즈에서는 클라우드 데이터 센스와 Cloud Sync의 통합을 소개했습니다. 이 업데이트를 통해 동기화 관계를 보다 쉽게 만들 수 있도록 통합을 개선했습니다. Cloud Data Sense에서 데이터 동기화를 시작한 후에는 모든 소스 정보가 한 번에 포함되고 몇 가지 키 세부 정보만 입력하면 됩니다.
 
-image:screenshot-sync-data-sense.png["클라우드 데이터 센스에서 직접 새 동기화를 시작한 후 나타나는 데이터 감지 통합 페이지를 보여주는 스크린샷."]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-sync/main/media/screenshot-sync-data-sense.png["클라우드 데이터 센스에서 직접 새 동기화를 시작한 후 나타나는 데이터 감지 통합 페이지를 보여주는 스크린샷."]
 
 
 
@@ -70,11 +72,11 @@ image:screenshot-sync-data-sense.png["클라우드 데이터 센스에서 직접
 
 예를 들어, 새 동기화 관계를 생성할 때 특정 데이터 브로커가 아닌 관계에 사용할 데이터 브로커_group_을 선택합니다.
 
-image:screenshot-sync-select-data-broker-group.png["데이터 브로커 그룹 선택을 보여 주는 동기화 관계 마법사 스크린샷"]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-sync/main/media/screenshot-sync-select-data-broker-group.png["데이터 브로커 그룹 선택을 보여 주는 동기화 관계 마법사 스크린샷"]
 
 데이터 브로커 * 관리 탭에는 데이터 브로커 그룹이 관리하는 동기화 관계의 수도 표시됩니다.
 
-image:screenshot-sync-group-relationships.png["데이터 브로커 그룹을 보여 주는 데이터 브로커 관리 페이지의 스크린 샷. 이 페이지에는 관리 관계의 수를 비롯하여 해당 그룹에 대한 세부 정보가 표시됩니다."]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-sync/main/media/screenshot-sync-group-relationships.png["데이터 브로커 그룹을 보여 주는 데이터 브로커 관리 페이지의 스크린 샷. 이 페이지에는 관리 관계의 수를 비롯하여 해당 그룹에 대한 세부 정보가 표시됩니다."]
 
 
 

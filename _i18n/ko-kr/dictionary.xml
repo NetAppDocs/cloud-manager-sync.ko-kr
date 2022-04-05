@@ -485,21 +485,16 @@
   <block id="d8247e494d1e03bac9b29cc7ea4c0eca" category="section-title">대시보드에서 정렬</block>
   <block id="32ee2f2004d5d2f19f46a8909b1df5a6" category="paragraph">이제 동기화 관계 이름을 기준으로 대시보드를 정렬합니다.</block>
   <block id="c964823b8160043978055759ce39dd87" category="inline-image-macro">대시보드에서 사용할 수 있는 이름별 정렬 옵션을 보여 주는 스크린샷</block>
-  <block id="4c05f3b2ac911e7eb3be399ccbd6d236" category="paragraph"><block ref="4c05f3b2ac911e7eb3be399ccbd6d236" category="inline-image-macro-rx" type="image"></block></block>
   <block id="aabbe3d8eb6db922cc7867bbc1068867" category="section-title">데이터 센스 통합 기능 향상</block>
   <block id="2931385a1afec19638d47ebab7744410" category="paragraph">이전 릴리즈에서는 클라우드 데이터 센스와 Cloud Sync의 통합을 소개했습니다. 이 업데이트를 통해 동기화 관계를 보다 쉽게 만들 수 있도록 통합을 개선했습니다. Cloud Data Sense에서 데이터 동기화를 시작한 후에는 모든 소스 정보가 한 번에 포함되고 몇 가지 키 세부 정보만 입력하면 됩니다.</block>
-  <block id="d40f781bdc03053a9bde791bfc977a84" category="section-title">2022년 2월 6일</block>
   <block id="b173d47e232436d0170127aec6c62d25" category="section-title">데이터 브로커 그룹의 개선 사항</block>
   <block id="2362e2192964b2a1132ee3c33127e6ec" category="paragraph">데이터 브로커_groups_를 강조하여 데이터 브로커와 상호 작용하는 방법을 변경했습니다.</block>
   <block id="009030a7e855d0f36e42bdac812520b4" category="paragraph">예를 들어, 새 동기화 관계를 생성할 때 특정 데이터 브로커가 아닌 관계에 사용할 데이터 브로커_group_을 선택합니다.</block>
   <block id="435847457b00dd1f91120adf3d0e24aa" category="inline-image-macro">데이터 브로커 그룹 선택을 보여 주는 동기화 관계 마법사 스크린샷</block>
-  <block id="e781903d5b4496684ba5bd448544c498" category="paragraph"><block ref="e781903d5b4496684ba5bd448544c498" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9eb0238485945ad5d6512b69445e72c6" category="paragraph">데이터 브로커 * 관리 탭에는 데이터 브로커 그룹이 관리하는 동기화 관계의 수도 표시됩니다.</block>
   <block id="4f1d2e29d6b816360bccc567294cac53" category="inline-image-macro">데이터 브로커 그룹을 보여 주는 데이터 브로커 관리 페이지의 스크린 샷. 이 페이지에는 관리 관계의 수를 비롯하여 해당 그룹에 대한 세부 정보가 표시됩니다.</block>
-  <block id="005ce66517c857d10ae46724b7a65f99" category="paragraph"><block ref="005ce66517c857d10ae46724b7a65f99" category="inline-image-macro-rx" type="image"></block></block>
   <block id="81a424c5c67f920d35d770215956f31f" category="section-title">PDF 보고서를 다운로드합니다</block>
   <block id="983eab96e054cfaaef2e1cc070a5ac0d" category="paragraph">이제 보고서의 PDF를 다운로드할 수 있습니다.</block>
-  <block id="be5d8939c40c8e2f992c86c6df281553" category="section-title">2022년 1월 2일</block>
   <block id="639448a9d08cad0082353310edaa5321" category="section-title">새 Box 동기화 관계</block>
   <block id="27225cf5b84e571fe2412826220eb977" category="paragraph">두 가지 새로운 동기화 관계가 지원됩니다.</block>
   <block id="731506a28bbbe117bfa19db92d90ca5c" category="list-text">Box를 Azure NetApp Files로 설정합니다</block>
@@ -526,7 +521,6 @@
   <block id="464bce8418108e11fbc67663fc64376a" category="paragraph"><block ref="464bce8418108e11fbc67663fc64376a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="55692a3e08e518d1aa7c38db6b703907" category="section-title">Jarkarta 지역 지원</block>
   <block id="45b9ee2b76fb4176580b8178578194d7" category="paragraph">Cloud Sync은 현재 AWS 아시아 태평양(자카르타) 지역에 데이터 브로커 구축을 지원하고 있습니다.</block>
-  <block id="e7c5ad171298e38494ee7665c2b581e3" category="section-title">2021년 11월 28일</block>
   <block id="a6601df3ba629cfc8f5b8498c912f070" category="section-title">SMB에서 오브젝트 스토리지까지의 ACL</block>
   <block id="1576934ad839cae6442e5711b0174c62" category="paragraph">소스 SMB 공유에서 오브젝트 스토리지(ONTAP S3 제외)로의 동기화 관계를 설정할 때 Cloud Sync에서 이제 ACL(액세스 제어 목록)을 복사할 수 있습니다.</block>
   <block id="ae6ae72085365fbcb40301d1e9deb095" category="paragraph">Cloud Sync는 오브젝트 스토리지에서 SMB 공유로의 ACL 복제를 지원하지 않습니다.</block>
@@ -541,7 +535,6 @@
   <block id="9b441f4afbb53f4c8d5b7fc8bc6b9301" category="paragraph">이제 기존 동기화 관계에 대한 Box 자격 증명을 업데이트할 수 있습니다.</block>
   <block id="b4ef038c5650fac60f2434cad75645e5" category="inline-link-macro">자격 증명을 업데이트하는 방법을 알아보십시오</block>
   <block id="1430696d750a8ec1ef00c88e37adce56" category="paragraph"><block ref="c5951b046d7bb866003e61513f2ace56" category="inline-link-macro-rx"></block>.</block>
-  <block id="f113b79a4bb13850776b0f197bc567c4" category="section-title">2021년 10월 31일</block>
   <block id="96fd4ea1dc0f0a328044f7cd301e0e96" category="section-title">박스 지지대</block>
   <block id="13594d78d6e2f27d5702750f1460057a" category="paragraph">Box 지원은 이제 Cloud Sync 사용자 인터페이스에서 미리 보기로 제공됩니다.</block>
   <block id="6de4b558d7125595a2a968a5719784bb" category="paragraph">Box는 여러 유형의 동기화 관계의 소스 또는 타겟이 될 수 있습니다. <block ref="22efe00007987c46f8bce57edbae4cc7" category="inline-link-macro-rx"></block>.</block>
@@ -549,7 +542,6 @@
   <block id="1f6641af34885ff35179793592203ed5" category="paragraph">SMB 서버가 소스인 경우 _Date Created_라는 새로운 동기화 관계 설정을 사용하면 특정 날짜 이후, 특정 날짜 이전 또는 특정 시간 범위 간에 생성된 파일을 동기화할 수 있습니다.</block>
   <block id="99f249829ba1a20da04c914e121c35ac" category="inline-link-macro">Cloud Sync 설정에 대해 자세히 알아보십시오</block>
   <block id="ab6a2ca8d8806cc410e997d6fea799d6" category="paragraph"><block ref="23fc5ff6b0baeec068bf033034a47b8f" category="inline-link-macro-rx"></block>.</block>
-  <block id="4b3686191205784c468b3d8c8118c352" category="section-title">2021년 10월 4일</block>
   <block id="938c54d632bedbd381821c5fb6fd460a" category="section-title">추가 박스 지원</block>
   <block id="3cfce651e667ab85486dd42a8185f98a" category="inline-link">상자에 입력합니다</block>
   <block id="6ff04a667e19dcffdc5a82df04e78cf8" category="paragraph">Cloud Sync는 이제 에 대한 추가 동기화 관계를 지원합니다<block ref="1d1338d7e0be4d47b97d1993db9c1c26" category="inline-link-rx"></block> Cloud Sync API를 사용하는 경우:</block>
@@ -563,7 +555,6 @@
   <block id="6c8b30b65f91400bf1fb8a0756ebcdf9" category="section-title">SFTP 경로 보고서</block>
   <block id="2bb6ea77ea0a96907eed898beae35936" category="inline-link-macro">보고서를 만듭니다</block>
   <block id="525458a4a32a835db6e691248c00176f" category="list-text">이제 가능합니다 <block ref="b9f66aa7863826e8b10a53e044cd803f" category="inline-link-macro-rx"></block> SFTP 경로.</block>
-  <block id="50121596f417c9051d2198082fb7350d" category="section-title">2021년 9월 2일</block>
   <block id="0c69dd608d3bb18f6d88caa7ab56df36" category="section-title">ONTAP용 FSx 지원</block>
   <block id="548eba8d98d9c7383a12d30e135e8723" category="paragraph">이제 Amazon FSx for ONTAP 파일 시스템과 데이터를 동기화할 수 있습니다.</block>
   <block id="43ece0944414298a29b4d72bc56373f1" category="inline-link">ONTAP용 Amazon FSx에 대해 자세히 알아보십시오</block>
@@ -572,7 +563,6 @@
   <block id="6b816f21b0dbce67e44499fa4246a4b1" category="list-text"><block ref="6b816f21b0dbce67e44499fa4246a4b1" category="inline-link-macro-rx"></block></block>
   <block id="de0f377f70e8f82779d4f2819fe79524" category="inline-link-macro">ONTAP용 Amazon FSx에 대한 동기화 관계를 생성하는 방법을 알아보십시오</block>
   <block id="6eeb7613e7dd358cd7d64171aefffacb" category="list-text"><block ref="6eeb7613e7dd358cd7d64171aefffacb" category="inline-link-macro-rx"></block></block>
-  <block id="1d78ed65443f56c002fecbf279ec5bda" category="section-title">2021년 8월 1일</block>
   <block id="ee2ee700615c2258dc72b2287ee4ebea" category="section-title">자격 증명을 업데이트합니다</block>
   <block id="10916fe90fddba40f307b87455df0d43" category="paragraph">이제 Cloud Sync를 사용하여 기존 동기화 관계에서 소스 또는 타겟의 최신 자격 증명으로 데이터 브로커를 업데이트할 수 있습니다.</block>
   <block id="9029933217c98ee4428382d350c27dc1" category="paragraph">이 향상된 기능은 보안 정책에 따라 자격 증명을 정기적으로 업데이트해야 하는 경우에 도움이 될 수 있습니다. <block ref="c5951b046d7bb866003e61513f2ace56" category="inline-link-macro-rx"></block>.</block>
@@ -591,7 +581,6 @@
   <block id="70bb29af13a454705d2eb69111e9cd4b" category="paragraph"><block ref="e1b5c734fd82a70f6e2915db4f9db388" category="inline-link-macro-rx"></block>.</block>
   <block id="0473cc01cb7ede3e33ff790d71d46adb" category="section-title">Azure NetApp Files용 이중 프로토콜 볼륨</block>
   <block id="f6ff20b10ee7246a6e26b7bd236d95ed" category="paragraph">Azure NetApp Files에 대해 소스 또는 타겟 볼륨을 선택하면 동기화 관계에 대해 선택한 프로토콜에 관계 없이 Cloud Sync에 이중 프로토콜 볼륨이 표시됩니다.</block>
-  <block id="4ec78699b23bbdb93ac30d4bf4a1abbb" category="section-title">2021년 7월 7일</block>
   <block id="1b8a57ad056f64c33ae5aec3cb409ea7" category="section-title">ONTAP S3 스토리지 및 Google Cloud Storage</block>
   <block id="4a00f3605aaf233a2a3c762f0341510d" category="paragraph">Cloud Sync은 이제 사용자 인터페이스에서 ONTAP S3 스토리지와 Google 클라우드 스토리지 버킷 간의 동기화 관계를 지원합니다.</block>
   <block id="dab08495e7e75494d74b30ace62406bc" category="section-title">개체 메타데이터 태그</block>
@@ -605,14 +594,12 @@
   <block id="27617f73d731cd506fba810d9f1164db" category="section-title">S3 버킷의 태그 또는 메타데이터를 정의합니다</block>
   <block id="0f904c09e27e9f5d37676635340cc4c2" category="paragraph">Amazon S3 버킷과의 동기화 관계를 설정할 때 이제 동기화 관계 마법사를 통해 타겟 S3 버킷의 오브젝트에 저장할 태그 또는 메타데이터를 정의할 수 있습니다.</block>
   <block id="da88d9f1a708d9c69fa46136fc909a2f" category="paragraph">태그 지정 옵션은 이전에 동기화 관계의 설정에 포함되어 있었습니다.</block>
-  <block id="aa15625896e08f29a6c04891c5db0408" category="section-title">2021년 6월 7일</block>
   <block id="4e2d7954a5437555e0ea565449462369" category="section-title">Google Cloud의 스토리지 클래스</block>
   <block id="d06702d5f77f411d220f00532c68b3a2" category="paragraph">Google Cloud Storage 버킷이 동기화 관계의 타겟인 경우 이제 사용할 스토리지 클래스를 선택할 수 있습니다. Cloud Sync는 다음 스토리지 클래스를 지원합니다.</block>
   <block id="eb6d8ae6f20283755b339c0dc273988b" category="list-text">표준</block>
   <block id="aba972473e7cea22067fcd1e1e01bcd1" category="list-text">니어라인</block>
   <block id="1d5397c0580f85c400887096d12c133e" category="list-text">콜드라인</block>
   <block id="e727b00944f81e1d0a95c12886ac4641" category="list-text">아카이브</block>
-  <block id="1dcdea8288477a395a1dd25bdade55b3" category="section-title">2021년 5월 2일</block>
   <block id="a799c3c6d3ba327c38fba0f1f65444d7" category="section-title">보고서에 오류가 있습니다</block>
   <block id="9b4bbcf0970a413ed02cbeb6d95b2199" category="paragraph">이제 보고서에 있는 오류를 볼 수 있으며 마지막 보고서나 모든 보고서를 삭제할 수 있습니다.</block>
   <block id="c3242f3c1f06c404c7b019a4b882d935" category="inline-link-macro">구성을 조정할 보고서를 만들고 보는 방법에 대해 자세히 알아보십시오</block>
@@ -1400,7 +1387,6 @@
   <block id="4caa7a774039d94c9779b6e68946536b" category="list-text">작업 메뉴를 클릭하고 * 그룹 삭제 * 를 선택합니다.</block>
   <block id="a6f5a3bf619c49f582460d312e4f123a" category="list-text">확인하려면 그룹 이름을 입력하고 * 그룹 삭제 * 를 클릭합니다.</block>
   <block id="33c715478bea68511b75dc844219e343" category="paragraph">Cloud Sync는 데이터 브로커를 제거하고 그룹을 삭제합니다.</block>
-  <block id="5de04ab2445218da916465ab33983c22" category="section-title">2022년 4월 3일</block>
   <block id="33c34b75ae4154295ed3cdeeccb3fd6a" category="section-title">데이터 브로커 그룹의 기능이 향상되었습니다</block>
   <block id="9e85c5ace2120c3600ae07824bd6d1a9" category="paragraph">데이터 브로커 그룹을 개선한 사항은 다음과 같습니다.</block>
   <block id="d1dcf627a81e370076956675cf99d2b9" category="list-text">이제 데이터 브로커를 신규 또는 기존 그룹으로 이동할 수 있습니다.</block>
@@ -1410,8 +1396,6 @@
   <block id="d7d0bf852f1595f61d55c11980f7910f" category="paragraph"><block ref="0c28ef170c985c7b9baf79aa516f5e52" category="inline-link-rx"></block>.</block>
   <block id="c81f80b5e3a2c8dfe8c2f908cbbfc2fa" category="list-text">이제 동기화 대시보드의 내용을 필터링하여 특정 상태와 일치하는 동기화 관계를 보다 쉽게 찾을 수 있습니다. 예를 들어 실패 상태인 동기화 관계를 필터링할 수 있습니다</block>
   <block id="ab31e38babe6f59fc89d1a7f8d3ea2c9" category="inline-image-macro">대시보드 위쪽에 동기화 상태별 필터링 옵션이 표시된 스크린샷</block>
-  <block id="b5f5f707aed7c770f3699444b445aaa3" category="paragraph"><block ref="b5f5f707aed7c770f3699444b445aaa3" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="acc0c89d65623eb8cc3f21faae13aa5c" category="section-title">2022년 3월 3일</block>
   <block id="b8573b8d6cb0195fa946927c3aa36397" category="inline-link">보고서에 대해 자세히 알아보십시오</block>
   <block id="913d3279d6ca39c6bd290fac85314961" category="paragraph"><block ref="9ba5aa88e2b271505b32ed12efb1883e" category="inline-link-rx"></block>.</block>
   <block id="a274f268e46a9fcc5130af66046ef57b" category="list-text">파일 서버는 데이터 브로커 호스트가 필요한 포트를 통해 내보내기에 액세스할 수 있도록 허용해야 합니다.</block>
@@ -1421,4 +1405,22 @@
   <block id="fb25385dee5b2553b1a83a1854995508" category="list-text">139 TCP 를 참조하십시오</block>
   <block id="40f52eda7c4d926e57d399fdaa36e568" category="list-text">445 TCP</block>
   <block id="e52eaa6f5efc038192dc18339c053ab3" category="list-text">137-138 UDP</block>
+  <block id="5e16db4c47abe8cb1c5bd746df2fd94a" category="section-title">2022년 4월 3일</block>
+  <block id="16f353b4ac76ea7e1a66509c3863e0f9" category="section-title">대시보드 필터</block>
+  <block id="9a086a6121a0ffa4e8986b7ce540eece" category="paragraph"><block ref="9a086a6121a0ffa4e8986b7ce540eece" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="983a4e7f5913304ec713a249baf7be47" category="section-title">2022년 3월 3일</block>
+  <block id="ce7541e1d7efdf7278fdc4d1fc9736b1" category="paragraph"><block ref="ce7541e1d7efdf7278fdc4d1fc9736b1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b7415479c879eb3f5804ebd25ea733e7" category="paragraph"><block ref="b7415479c879eb3f5804ebd25ea733e7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5c46bd67ae4b5c23f9c243b5f396c088" category="section-title">2022년 2월 6일</block>
+  <block id="1010f6ebb8a63e17d664e622c2299691" category="paragraph"><block ref="1010f6ebb8a63e17d664e622c2299691" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b5012dcabc22fc10384141ed3b715897" category="paragraph"><block ref="b5012dcabc22fc10384141ed3b715897" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f8cd23c769793fc26c0573678e2a2d07" category="section-title">2022년 1월 2일</block>
+  <block id="f61163b681442ac500a8018c87241770" category="section-title">2021년 11월 28일</block>
+  <block id="784044bd2af30d58bbb0dbcea3adbad6" category="section-title">2021년 10월 31일</block>
+  <block id="d1c47d8bf748c203ff983262e6c108cb" category="section-title">2021년 10월 4일</block>
+  <block id="d798cbf5a08fbeb9fdd3652e5b00bb4c" category="section-title">2021년 9월 2일</block>
+  <block id="9e27c4a53794e4f6cfc9949de58e5091" category="section-title">2021년 8월 1일</block>
+  <block id="916678dfdf53de83f6afdf8fca563fb3" category="section-title">2021년 7월 7일</block>
+  <block id="945fb8f32f58d1cc36cb9f1e9e4c6fe5" category="section-title">2021년 6월 7일</block>
+  <block id="824b76af9549cb14fd2443aa485afb15" category="section-title">2021년 5월 2일</block>
 </blocks>
