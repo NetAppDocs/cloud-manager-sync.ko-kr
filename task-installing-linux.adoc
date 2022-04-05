@@ -6,6 +6,7 @@ summary: 새 데이터 브로커를 생성할 때 사내 Linux 호스트 또는 
 ---
 = Linux 호스트에 데이터 브로커 설치
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

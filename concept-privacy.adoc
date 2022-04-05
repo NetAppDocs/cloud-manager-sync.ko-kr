@@ -6,6 +6,7 @@ summary: NetApp은 Cloud Sync 서비스를 사용하면서 제공한 자격 증�
 ---
 = 데이터 개인 정보 보호
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

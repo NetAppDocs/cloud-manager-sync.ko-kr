@@ -6,6 +6,7 @@ summary: Cloud Sync를 사용하면 소스에서 타겟으로 데이터를 동�
 ---
 = 지원되는 동기화 관계
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

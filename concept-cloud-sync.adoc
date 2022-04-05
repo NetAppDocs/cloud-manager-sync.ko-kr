@@ -6,6 +6,7 @@ summary: NetApp Cloud Sync 서비스는 데이터를 클라우드 또는 온프�
 ---
 = Cloud Sync 개요
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

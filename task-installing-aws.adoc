@@ -6,6 +6,7 @@ summary: 새 데이터 브로커를 생성하는 경우 AWS Data Broker 옵션�
 ---
 = AWS에서 새 데이터 브로커 생성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

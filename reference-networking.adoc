@@ -6,6 +6,7 @@ summary: Cloud Sync용 네트워킹에는 데이터 브로커 그룹과 소스 �
 ---
 = Cloud Sync의 네트워킹 개요
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

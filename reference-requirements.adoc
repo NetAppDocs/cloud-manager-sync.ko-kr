@@ -6,6 +6,7 @@ summary: 소스와 타겟이 다음 요구 사항을 충족하는지 확인합�
 ---
 = 소스와 타겟을 준비합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

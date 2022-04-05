@@ -7,6 +7,7 @@ summary: 데이터 브로커는 소스 위치에서 타겟 위치로 데이터�
 = 데이터 브로커 그룹을 관리합니다
 :toc: macro
 :hardbreaks:
+:allow-uri-read: 
 :toc: 
 :nofooter: 
 :icons: font

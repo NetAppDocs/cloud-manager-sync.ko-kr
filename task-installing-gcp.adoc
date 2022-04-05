@@ -6,6 +6,7 @@ summary: 새 데이터 브로커를 생성할 때 Google Cloud Data Broker 옵�
 ---
 = Google Cloud에서 새로운 데이터 브로커 생성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -7,6 +7,7 @@ summary: 데이터를 즉시 동기화하고 일정을 변경하는 등 동기�
 = 동기화 관계 관리
 :toc: macro
 :hardbreaks:
+:allow-uri-read: 
 :toc: 
 :nofooter: 
 :icons: font

@@ -6,6 +6,7 @@ summary: Amazon S3, Azure 또는 Google Cloud 자격 증명이 필요한 동기�
 ---
 = 외부 HashCorp Vault를 사용하도록 데이터 브로커 그룹을 설정합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

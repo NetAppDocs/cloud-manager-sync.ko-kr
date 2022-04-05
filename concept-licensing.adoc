@@ -6,6 +6,7 @@ summary: 14일 무료 평가판이 종료된 후 동기화 관계에 대한 비�
 ---
 = 라이센스 개요
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

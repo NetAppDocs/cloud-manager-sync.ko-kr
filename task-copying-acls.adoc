@@ -6,6 +6,7 @@ summary: 'Cloud Sync는 소스 SMB 공유와 타겟 SMB 공유 간, 소스 SMB �
 ---
 = SMB 공유에서 ACL 복사
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

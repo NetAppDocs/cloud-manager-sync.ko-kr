@@ -6,6 +6,7 @@ summary: 동기화 관계를 생성하면 Cloud Sync 서비스는 소스에서 �
 ---
 = 동기화 관계를 생성합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
