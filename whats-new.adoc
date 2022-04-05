@@ -30,7 +30,7 @@ Cloud Sync의 새로운 기능에 대해 알아보십시오.
 * 마지막으로 데이터 브로커 그룹을 삭제할 수도 있습니다.
 
 
-https://docs.netapp.com/us-en/cloud-manager-sync/task_sync_managing_data_brokers.html["데이터 브로커 그룹을 관리하는 방법에 대해 알아보십시오"].
+https://docs.netapp.com/us-en/cloud-manager-sync/task-managing-data-brokers.html["데이터 브로커 그룹을 관리하는 방법에 대해 알아보십시오"].
 
 
 
@@ -231,8 +231,7 @@ link:api-sync.html["API를 사용하여 동기화 관계를 설정하는 방법�
 
 === SFTP 경로 보고서
 
-* 이제 가능합니다 link:task-managing-reports.html["보고서를 만듭니다"] SFTP 경로.
-
+이제 가능합니다 link:task-managing-reports.html["보고서를 만듭니다"] SFTP 경로.
 
 
 
@@ -244,7 +243,7 @@ link:api-sync.html["API를 사용하여 동기화 관계를 설정하는 방법�
 
 이제 Amazon FSx for ONTAP 파일 시스템과 데이터를 동기화할 수 있습니다.
 
-* https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/concept-fsx-aws.html["ONTAP용 Amazon FSx에 대해 자세히 알아보십시오"^]
+* https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/start/concept-fsx-aws.html["ONTAP용 Amazon FSx에 대해 자세히 알아보십시오"^]
 * link:reference-requirements.html["지원되는 동기화 관계를 봅니다"]
 * link:task-creating-relationships.html["ONTAP용 Amazon FSx에 대한 동기화 관계를 생성하는 방법을 알아보십시오"]
 
