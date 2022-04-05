@@ -17,6 +17,29 @@ Cloud Sync의 새로운 기능에 대해 알아보십시오.
 
 
 
+== 2022년 4월 3일
+
+
+
+=== 데이터 브로커 그룹의 기능이 향상되었습니다
+
+데이터 브로커 그룹을 개선한 사항은 다음과 같습니다.
+
+* 이제 데이터 브로커를 신규 또는 기존 그룹으로 이동할 수 있습니다.
+* 이제 데이터 브로커에 대한 프록시 구성을 업데이트할 수 있습니다.
+* 마지막으로 데이터 브로커 그룹을 삭제할 수도 있습니다.
+
+
+https://docs.netapp.com/us-en/cloud-manager-sync/task_sync_managing_data_brokers.html["데이터 브로커 그룹을 관리하는 방법에 대해 알아보십시오"].
+
+* 이제 동기화 대시보드의 내용을 필터링하여 특정 상태와 일치하는 동기화 관계를 보다 쉽게 찾을 수 있습니다. 예를 들어 실패 상태인 동기화 관계를 필터링할 수 있습니다
++
+image:screenshot-sync-filter.png["대시보드 위쪽에 동기화 상태별 필터링 옵션이 표시된 스크린샷"]
+
+
+
+
+
 == 2022년 3월 3일
 
 
@@ -59,7 +82,7 @@ image:screenshot-sync-group-relationships.png["데이터 브로커 그룹을 보
 
 이제 보고서의 PDF를 다운로드할 수 있습니다.
 
-link:task-managing-reports.html["보고서에 대해 자세히 알아보십시오"].
+https://docs.netapp.com/us-en/cloud-manager-sync/task-managing-reports.html["보고서에 대해 자세히 알아보십시오"].
 
 
 

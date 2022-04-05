@@ -21,9 +21,6 @@
   <block id="4e475c34f329c78e3aa3ab2a63cb63db" category="summary">데이터 브로커는 소스 위치에서 타겟 위치로 데이터를 동기화합니다. 생성하는 각 동기화 관계에는 데이터 브로커가 필요합니다. 그룹에 새 데이터 브로커를 추가하고, 데이터 브로커에 대한 정보를 확인하는 등 데이터 브로커를 관리할 수 있습니다.</block>
   <block id="efdd49f1066bc795a31111d98cfa5ddf" category="doc">데이터 브로커 그룹을 관리합니다</block>
   <block id="e1191d25bbec84b8a1ba37471b41611f" category="paragraph">데이터 브로커 그룹은 소스 위치의 데이터를 타겟 위치로 동기화합니다. 생성하는 각 동기화 관계에 대해 그룹에 하나 이상의 데이터 브로커가 필요합니다. 그룹에 새 데이터 브로커를 추가하거나, 그룹에 대한 정보를 보는 등 데이터 브로커 그룹을 관리할 수 있습니다.</block>
-  <block id="46a5597bf1d0bb6131699943c8eb538a" category="section-title">데이터 브로커 그룹</block>
-  <block id="0e1c5ff9805bc11c4b7d6e87af0fa93e" category="paragraph">데이터 브로커를 함께 그룹화하면 동기화 관계의 성능을 향상시킬 수 있습니다.</block>
-  <block id="ca1c342e097dd2b8e437080a7f458f9f" category="section-title">그룹에 있는 데이터 브로커 수 결정</block>
   <block id="31361c8d27e70295df2bfa32fdeeb659" category="inline-link-macro">여러 데이터 브로커가 필요한 시기를 결정하는 방법에 대해 자세히 알아보십시오</block>
   <block id="0a134fa70f4699a5c8408ed138b7162b" category="paragraph">대부분의 경우 단일 데이터 브로커가 동기화 관계에 대한 성능 요구사항을 충족할 수 있습니다. 그렇지 않으면 그룹에 추가 데이터 브로커를 추가하여 동기화 성능을 가속화할 수 있습니다. 하지만 먼저 동기화 성능에 영향을 줄 수 있는 다른 요소를 확인해야 합니다. <block ref="871c8177954bc9fc0961cd3c58102f39" category="inline-link-macro-rx"></block>.</block>
   <block id="0a7fa5ebd880718dbd4c644fda59fb38" category="section-title">그룹은 여러 관계를 관리할 수 있습니다</block>
@@ -33,9 +30,6 @@
   <block id="2da4190bfc656abd88eb058d61341d99" category="list-text">관계 2는 데이터 브로커 그룹 B에 의해 관리됩니다</block>
   <block id="1204be74d45a4ac703dc67fd6864e991" category="list-text">관계 3은 데이터 브로커 그룹 A에서 관리합니다</block>
   <block id="2002e7315a54bdc5f69ae33f895b3361" category="paragraph">관계 1의 성능을 가속화하여 데이터 브로커 그룹 A에 새로운 데이터 브로커를 추가하고 싶을 것입니다 그룹 A도 동기화 관계 3 을 관리하므로 관계의 동기화 성능도 자동으로 빨라집니다.</block>
-  <block id="4d1b0dd2ac6040283149ee4593c99dda" category="section-title">새로운 데이터 브로커만 해당</block>
-  <block id="6f94d3194bf6ce158093332092d916d9" category="paragraph">그룹에 새 데이터 브로커만 추가할 수 있습니다. 그룹에 기존 데이터 브로커를 추가할 수 없습니다.</block>
-  <block id="ecc57856a780d684b0fe0d4f158af18e" category="section-title">새 데이터 브로커를 추가합니다</block>
   <block id="8b0de93ef762269210bc193874b3d679" category="paragraph">다음과 같은 여러 가지 방법으로 새 데이터 브로커를 생성할 수 있습니다.</block>
   <block id="3a3d1b7e5044442dcfbd5cd464cc3e74" category="list-text">새 동기화 관계를 생성할 때</block>
   <block id="d55c5ae4dbd0da4961b63d579f9712fd" category="inline-link-macro">동기화 관계를 생성할 때 새 데이터 브로커를 생성하는 방법에 대해 알아봅니다</block>
@@ -62,7 +56,6 @@
   <block id="b20c8730a010d433fedb7241d0a0335a" category="list-title">기존 그룹에서 데이터 브로커를 생성하는 단계</block>
   <block id="9c129f9a970d427b507541a4c3a7e53a" category="list-text">작업 메뉴를 클릭하고 * 데이터 브로커 추가 * 를 선택합니다.</block>
   <block id="b65b4c1a581a43f257ad99ae84281816" category="inline-image-macro">그룹의 각 개별 데이터 브로커에 사용할 수 있는 작업 메뉴 스크린샷</block>
-  <block id="849e308ca762ea472ddd09c38adfbd1d" category="paragraph"><block ref="849e308ca762ea472ddd09c38adfbd1d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b86abc18838bbcc96f4aba5f9e7400b2" category="list-text">프롬프트에 따라 그룹에 데이터 브로커를 생성합니다.</block>
   <block id="301ebdf8067a213d5a55c65fbb488290" category="section-title">보안 권장 사항</block>
   <block id="cbf7ac8dbbee47678fd563919556b802" category="paragraph">데이터 브로커 시스템의 보안을 유지하려면 다음 사항을 따르는 것이 좋습니다.</block>
@@ -110,7 +103,6 @@
   <block id="7bab02d802b38084f68f9bb810f1ca53" category="list-text">에 마우스를 올려 놓습니다 <block ref="a74720392297d66ac1ab9a90296912c9" category="inline-image-macro-rx" type="image"></block> 아이콘을 클릭하여 실패 원인을 확인합니다.</block>
   <block id="cb1293ddc33121613d8b44ddf7bddebc" category="list-text">문제를 해결하십시오.</block>
   <block id="4c23f2743e95cade04a6991678e7c813" category="paragraph">예를 들어, 데이터 브로커가 오프라인인 경우 다시 시작하기만 하면 되고, 초기 구축에 실패한 경우 데이터 브로커를 제거해야 할 수 있습니다.</block>
-  <block id="637cba6455e9f6fc12a3c205c16f44fc" category="section-title">데이터 브로커 그룹에 대한 통합 구성을 정의합니다</block>
   <block id="b913043c4767c72e8bbb3ed88c33dd15" category="paragraph">동기화 프로세스 중에 동기화 관계에 오류가 발생하면 데이터 브로커 그룹의 동시성을 통합하면 동기화 오류 수를 줄일 수 있습니다. 그룹 구성을 변경하면 전송 속도가 느려져 성능에 영향을 줄 수 있습니다.</block>
   <block id="e0341128a5853714165581951816b70b" category="paragraph">직접 구성을 변경하지 않는 것이 좋습니다. 구성을 변경할 시기와 변경 방법을 알아보려면 NetApp에 문의해야 합니다.</block>
   <block id="6fea4f8d81c041ddb786f1edf604f6b0" category="list-text">데이터 브로커 관리 * 를 클릭합니다.</block>
@@ -490,7 +482,6 @@
   <block id="858b9413ffbdb9049bf9b696f0ea8392" category="paragraph">Cloud Sync에서 새 동기화 관계 생성을 시작합니다. 완료되면 * Dashboard * 에서 View를 클릭하여 새 관계에 대한 세부 정보를 봅니다.</block>
   <block id="31e5f37358c44c0e0f7f219f24cc5f81" category="summary">Cloud Sync의 새로운 기능에 대해 알아보십시오.</block>
   <block id="e18bd0330d937c2c7c10048bf3ce8366" category="doc">Cloud Sync의 새로운 기능</block>
-  <block id="42b5df730d6616520195746bafa566eb" category="section-title">2022년 3월 3일</block>
   <block id="d8247e494d1e03bac9b29cc7ea4c0eca" category="section-title">대시보드에서 정렬</block>
   <block id="32ee2f2004d5d2f19f46a8909b1df5a6" category="paragraph">이제 동기화 관계 이름을 기준으로 대시보드를 정렬합니다.</block>
   <block id="c964823b8160043978055759ce39dd87" category="inline-image-macro">대시보드에서 사용할 수 있는 이름별 정렬 옵션을 보여 주는 스크린샷</block>
@@ -508,8 +499,6 @@
   <block id="005ce66517c857d10ae46724b7a65f99" category="paragraph"><block ref="005ce66517c857d10ae46724b7a65f99" category="inline-image-macro-rx" type="image"></block></block>
   <block id="81a424c5c67f920d35d770215956f31f" category="section-title">PDF 보고서를 다운로드합니다</block>
   <block id="983eab96e054cfaaef2e1cc070a5ac0d" category="paragraph">이제 보고서의 PDF를 다운로드할 수 있습니다.</block>
-  <block id="30a7332ec8bb1b2ebc76a3d132b0ddff" category="inline-link-macro">보고서에 대해 자세히 알아보십시오</block>
-  <block id="de4dcb6fc7c1b34f094c79b4afa83800" category="paragraph"><block ref="22d4e0c70893ffebbef3d597df59a723" category="inline-link-macro-rx"></block>.</block>
   <block id="be5d8939c40c8e2f992c86c6df281553" category="section-title">2022년 1월 2일</block>
   <block id="639448a9d08cad0082353310edaa5321" category="section-title">새 Box 동기화 관계</block>
   <block id="27225cf5b84e571fe2412826220eb977" category="paragraph">두 가지 새로운 동기화 관계가 지원됩니다.</block>
@@ -1181,7 +1170,6 @@
   <block id="52e561223aa4d60195ec48c81021c098" category="paragraph">동기화 관계의 소스가 SnapMirror 대상(읽기 전용)인 경우 "읽기/목록" 사용 권한으로 소스의 데이터를 타겟으로 동기화할 수 있습니다.</block>
   <block id="096c99dcba4f443f3faf0add6cd69220" category="section-title">NFS 서버 요구 사항</block>
   <block id="5cc2d35f0ee4edef8750c640e1b018c1" category="list-text">NFS 서버는 NetApp 시스템이거나 NetApp이 아닌 시스템이 될 수 있습니다.</block>
-  <block id="3a29221f42b8cb307e588a8ca61bbec2" category="list-text">파일 서버는 데이터 브로커 호스트가 내보내기를 액세스할 수 있도록 허용해야 합니다.</block>
   <block id="e07694fd13f56a99d495063f6ca17334" category="list-text">NFS 버전 3, 4.0, 4.1 및 4.2가 지원됩니다.</block>
   <block id="dadb092f6add17b9a5eb4af5c4505c14" category="paragraph">서버에서 원하는 버전을 활성화해야 합니다.</block>
   <block id="036a01e342cbcc1e478008b78551a134" category="list-text">ONTAP 시스템에서 NFS 데이터를 동기화하려면 SVM을 위한 NFS 내보내기 목록에 대한 액세스가 활성화되어 있는지 확인하십시오(vserver NFS modify -vserver_svm_name_-showmount 설정).</block>
@@ -1382,4 +1370,55 @@
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp 커뮤니티</block>
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Cloud Central 블로그</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">클라우드 웨비나</block>
+  <block id="ca08c96498d9894503ce9e420ef6d436" category="section-title">데이터 브로커 그룹의 작동 방식</block>
+  <block id="247ec76f61baa3930d7923ec714c899c" category="paragraph">데이터 브로커 그룹에는 하나 이상의 데이터 브로커가 포함될 수 있습니다. 데이터 브로커를 함께 그룹화하면 동기화 관계의 성능을 향상시킬 수 있습니다.</block>
+  <block id="c73532751f2f234c7f0d9ca93cb4b15b" category="section-title">그룹의 데이터 브로커 수입니다</block>
+  <block id="e0efdad08a998dee7544ebf8d6b3b89e" category="section-title">그룹에 새 데이터 브로커를 추가합니다</block>
+  <block id="8fece025a1a8fef7018449bf104a2527" category="list-title">시작하기 전에</block>
+  <block id="2de4e7eeead88f538b8cd1733c76e3a6" category="paragraph"><block ref="2de4e7eeead88f538b8cd1733c76e3a6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="895f6ee3fb48280aa9fdce9f1c30aa6d" category="section-title">통합 구성을 설정합니다</block>
+  <block id="811611d56e45c2c5ad32ef90181ce8a8" category="section-title">그룹 간에 데이터 브로커 이동</block>
+  <block id="ce906694cadabac093e4c5fe069bcb4c" category="paragraph">대상 데이터 브로커 그룹의 성능을 높여야 하는 경우 그룹 간에 데이터 브로커를 이동할 수 있습니다.</block>
+  <block id="cc3da3df5b4ab9b2be7d5806e4025606" category="paragraph">예를 들어, 데이터 브로커에서 동기화 관계를 더 이상 관리하지 않는 경우 동기화 관계를 관리하는 다른 그룹으로 쉽게 이동할 수 있습니다.</block>
+  <block id="41b2fa65bd2051073cfc172ed6d944a7" category="list-text">데이터 브로커 그룹이 동기화 관계를 관리하고 있고 그룹에 데이터 브로커가 하나만 있는 경우에는 해당 데이터 브로커를 다른 그룹으로 이동할 수 없습니다.</block>
+  <block id="3e0e9fccf9e35eb1a06e1c36bf885a2f" category="list-text">암호화된 동기화 관계를 관리하는 그룹으로 데이터 브로커를 이동하거나 그룹에서 데이터 브로커를 이동할 수 없습니다.</block>
+  <block id="db90b652da494a61a1c01e5e5aef4315" category="list-text">현재 구축 중인 데이터 브로커는 이동할 수 없습니다.</block>
+  <block id="dda0c1f183c1fccf92fffcd171b23e21" category="list-text">데이터 브로커에 대한 작업 메뉴를 클릭하고 * 데이터 브로커 이동 * 을 선택합니다.</block>
+  <block id="89c00533408de9d6ad1e44640394b315" category="paragraph"><block ref="89c00533408de9d6ad1e44640394b315" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cfd516ad37b4df608c16efb09914e1fc" category="list-text">새 데이터 브로커 그룹을 만들거나 기존 데이터 브로커 그룹을 선택합니다.</block>
+  <block id="55d7c27d3127f4494c358b638f4fc6ff" category="list-text">이동 * 을 클릭합니다.</block>
+  <block id="2daf9e8be8307f8316675b55ccbe21d9" category="paragraph">Cloud Sync는 데이터 브로커를 신규 또는 기존 데이터 브로커 그룹으로 옮깁니다. 이전 그룹에 다른 데이터 브로커가 없으면 Cloud Sync에서 삭제합니다.</block>
+  <block id="dbe6fde8cda66c70d52ac330a93b530e" category="section-title">프록시 구성을 업데이트합니다</block>
+  <block id="f646f203e1dead2c4f220dc5943aa058" category="paragraph">새 프록시 구성에 대한 세부 정보를 추가하거나 기존 프록시 구성을 편집하여 데이터 브로커의 프록시 구성을 업데이트합니다.</block>
+  <block id="550a2db189a4eb50771eeb91357d19cd" category="list-text">데이터 브로커에 대한 작업 메뉴를 클릭하고 * 프록시 구성 편집 * 을 선택합니다.</block>
+  <block id="85a4803f127edd3390d65e41d8aaad98" category="list-text">프록시에 대한 세부 정보(호스트 이름, 포트 번호, 사용자 이름 및 암호)를 지정합니다.</block>
+  <block id="04252e4e5460971d7f33943bd841f366" category="list-text">Update * 를 클릭합니다.</block>
+  <block id="dc7ca5465298da0988fdbdf96a6140c1" category="paragraph">Cloud Sync는 데이터 브로커를 업데이트하여 인터넷 액세스에 프록시 구성을 사용합니다.</block>
+  <block id="2bbd7c4d9d525b0e8675bf3663179545" category="section-title">데이터 브로커 그룹을 삭제합니다</block>
+  <block id="5b0d2474104e897ec00992476cc0328c" category="paragraph">데이터 브로커 그룹이 더 이상 동기화 관계를 관리하지 않으면 그룹을 삭제할 수 있습니다. 그러면 Cloud Sync에서 모든 데이터 브로커가 제거됩니다.</block>
+  <block id="ebdb7bb51a167f7be93fdd2b43189d84" category="paragraph">Cloud Sync에서 제거하는 데이터 브로커는 Cloud Sync의 레코드에서만 삭제됩니다. 클라우드 공급자 및 추가 클라우드 리소스를 수동으로 데이터 브로커 인스턴스를 삭제해야 합니다.</block>
+  <block id="4caa7a774039d94c9779b6e68946536b" category="list-text">작업 메뉴를 클릭하고 * 그룹 삭제 * 를 선택합니다.</block>
+  <block id="a6f5a3bf619c49f582460d312e4f123a" category="list-text">확인하려면 그룹 이름을 입력하고 * 그룹 삭제 * 를 클릭합니다.</block>
+  <block id="33c715478bea68511b75dc844219e343" category="paragraph">Cloud Sync는 데이터 브로커를 제거하고 그룹을 삭제합니다.</block>
+  <block id="5de04ab2445218da916465ab33983c22" category="section-title">2022년 4월 3일</block>
+  <block id="33c34b75ae4154295ed3cdeeccb3fd6a" category="section-title">데이터 브로커 그룹의 기능이 향상되었습니다</block>
+  <block id="9e85c5ace2120c3600ae07824bd6d1a9" category="paragraph">데이터 브로커 그룹을 개선한 사항은 다음과 같습니다.</block>
+  <block id="d1dcf627a81e370076956675cf99d2b9" category="list-text">이제 데이터 브로커를 신규 또는 기존 그룹으로 이동할 수 있습니다.</block>
+  <block id="1a89df8c409f135e6e7efd8c0600dba6" category="list-text">이제 데이터 브로커에 대한 프록시 구성을 업데이트할 수 있습니다.</block>
+  <block id="71dba184b83141e962cb89e88563baf3" category="list-text">마지막으로 데이터 브로커 그룹을 삭제할 수도 있습니다.</block>
+  <block id="fe914f8d9b65e6214843cbd5f42cddc8" category="inline-link">데이터 브로커 그룹을 관리하는 방법에 대해 알아보십시오</block>
+  <block id="d7d0bf852f1595f61d55c11980f7910f" category="paragraph"><block ref="0c28ef170c985c7b9baf79aa516f5e52" category="inline-link-rx"></block>.</block>
+  <block id="c81f80b5e3a2c8dfe8c2f908cbbfc2fa" category="list-text">이제 동기화 대시보드의 내용을 필터링하여 특정 상태와 일치하는 동기화 관계를 보다 쉽게 찾을 수 있습니다. 예를 들어 실패 상태인 동기화 관계를 필터링할 수 있습니다</block>
+  <block id="ab31e38babe6f59fc89d1a7f8d3ea2c9" category="inline-image-macro">대시보드 위쪽에 동기화 상태별 필터링 옵션이 표시된 스크린샷</block>
+  <block id="b5f5f707aed7c770f3699444b445aaa3" category="paragraph"><block ref="b5f5f707aed7c770f3699444b445aaa3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="acc0c89d65623eb8cc3f21faae13aa5c" category="section-title">2022년 3월 3일</block>
+  <block id="b8573b8d6cb0195fa946927c3aa36397" category="inline-link">보고서에 대해 자세히 알아보십시오</block>
+  <block id="913d3279d6ca39c6bd290fac85314961" category="paragraph"><block ref="9ba5aa88e2b271505b32ed12efb1883e" category="inline-link-rx"></block>.</block>
+  <block id="a274f268e46a9fcc5130af66046ef57b" category="list-text">파일 서버는 데이터 브로커 호스트가 필요한 포트를 통해 내보내기에 액세스할 수 있도록 허용해야 합니다.</block>
+  <block id="9ea2f732b81b5cda8d4d5edea63e6877" category="list-text">111 TCP/UDP</block>
+  <block id="1b1cd21da8907e21f7b884f90e6cbed4" category="list-text">2049 TCP/UDP</block>
+  <block id="a67c199c0fc4d687a53739e1d60b9add" category="list-text">5555 TCP/UDP</block>
+  <block id="fb25385dee5b2553b1a83a1854995508" category="list-text">139 TCP 를 참조하십시오</block>
+  <block id="40f52eda7c4d926e57d399fdaa36e568" category="list-text">445 TCP</block>
+  <block id="e52eaa6f5efc038192dc18339c053ab3" category="list-text">137-138 UDP</block>
 </blocks>
