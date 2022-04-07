@@ -45,31 +45,61 @@
   <link rel="stylesheet" href='/ko-kr/cloud-manager-sync/css/na-utility.css' type='text/css'>
   <link rel="stylesheet" href='/ko-kr/cloud-manager-sync/css/na-sidebar.css' type='text/css'>
   <link rel='stylesheet' href='/ko-kr/cloud-manager-sync/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/cloud-manager-sync/css/custom-dropdown.css' type='text/css'>
   <link rel='stylesheet' href='/ko-kr/cloud-manager-sync/css/na-pagenav.css' type='text/css'>
 
   
   <link rel="stylesheet" href="/ko-kr/cloud-manager-sync/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/ko-kr/cloud-manager-sync/css/tabbed-blocks.css" type="text/css">
-  <link rel='stylesheet' href='/ko-kr/cloud-manager-sync/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/ko-kr/cloud-manager-sync/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
-  <!-- Used for Product Family Page Sidebar Visibility --><link rel="stylesheet" href='/ko-kr/cloud-manager-sync/css/product-family.css' type="text/css">
-  <script src='/ko-kr/cloud-manager-sync/js/product-family.js'></script><!-- Used to import Promise for IE. Required for SearchKit -->
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ko-kr/cloud-manager-sync/js/na-search.js'></script><script src='/ko-kr/cloud-manager-sync/js/na-pagenav.js'></script><link rel='stylesheet' href='/ko-kr/cloud-manager-sync/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/ko-kr/cloud-manager-sync/css/prism-netapp.css' type='text/css'>
 
 
   <script src='/ko-kr/cloud-manager-sync/js/na-utility.js'></script>
   <script src='/ko-kr/cloud-manager-sync/js/clouddocs.js'></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    var head = document.getElementsByTagName('head')[0];
-    var adobe = document.createElement("script");
-    adobe.type = "text/javascript";
-    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
-    head.appendChild(adobe);
-  }
-  </script>
   <script src='/ko-kr/cloud-manager-sync/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/ko-kr/cloud-manager-sync/js/toc.js'></script>
@@ -122,16 +152,8 @@
               $("#tg-sb-icon").toggleClass('fa-toggle-off');
           });
       });
-  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-81697994-3');
-  }
   </script>
-  <script src='/ko-kr/cloud-manager-sync/js/version-dropdown.js'></script>
+  <script src='/ko-kr/cloud-manager-sync/js/custom-dropdown.js'></script>
   <script src='/ko-kr/cloud-manager-sync/js/FileSaver.min.js'></script>
   <script src='/ko-kr/cloud-manager-sync/js/jszip-utils.min.js'></script>
   <script src='/ko-kr/cloud-manager-sync/js/jszip.min.js'></script>
@@ -139,20 +161,15 @@
 </head>
 
 
-  <body class role="document">
+  <body class role="document" data-flavor="">
     <div id="page" class="n-off-canvas-menu">
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
   
   <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-sync/issues/new?body=Page%3A%20[데이터 브로커 그룹을 관리합니다](https://docs.netapp.com/ko-kr/cloud-manager-sync/task-managing-data-brokers.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-sync/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-sync/blob/main/task-managing-data-brokers.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-sync/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-sync/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a>
-    </div>
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-sync/issues/new?body=Page%3A%20[데이터 브로커 그룹을 관리합니다](https://docs.netapp.com/ko-kr/cloud-manager-sync/task-managing-data-brokers.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-sync/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-sync/blob/main/task-managing-data-brokers.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-sync/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-sync/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -162,6 +179,7 @@
       </nav>
     </div>
   </div>
+  
   
   <!-- Start top_hat -->
   <div class="n-top-hat">
@@ -245,7 +263,8 @@
           data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
           data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
           data-results-found="{hitCount}개의 결과를 찾음"  
-          data-sk-es-pf-indexes=""></div>
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
@@ -334,6 +353,9 @@
 </div>
 <div class="n-pdf-body-container">
   <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
         <a target="_blank" href="/ko-kr/cloud-manager-sync/pdfs/fullsite-sidebar/Cloud_Sync_설명서.pdf" >
           <img src="/ko-kr/cloud-manager-sync/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
 
@@ -344,6 +366,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/cloud-manager-sync/pdfs/sidebar/릴리스_정보.pdf" 
@@ -370,6 +395,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/cloud-manager-sync/pdfs/sidebar/시작하십시오.pdf" 
@@ -393,6 +421,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/cloud-manager-sync/pdfs/sidebar/데이터_브로커를_설치합니다.pdf" 
@@ -432,6 +463,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/cloud-manager-sync/pdfs/sidebar/Cloud_Sync를_사용합니다.pdf" 
@@ -445,6 +479,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/cloud-manager-sync/pdfs/sidebar/소스와_타겟_간에_데이터를_동기화합니다.pdf" 
@@ -505,6 +542,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/cloud-manager-sync/pdfs/sidebar/개념.pdf" 
@@ -533,6 +573,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/cloud-manager-sync/pdfs/sidebar/지식_및_지원.pdf" 
@@ -662,7 +705,7 @@
         라이센싱
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-sync/concept-privacy.html">
         데이터 개인 정보 보호
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-sync/faq-sync.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-sync/faq.html">
         FAQ 를 참조하십시오
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 지식 및 지원</div>
@@ -684,6 +727,7 @@
 </script>
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
+
 
   </div>
   
@@ -737,7 +781,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-01 19:21:25 +0000">04/01/2022</time>
+    <time datetime="2022-04-05 02:38:42 +0000">04/05/2022</time>
     
   
 
@@ -747,20 +791,22 @@
 <div id="toc" class="toc">
 <div id="toctitle">목차</div>
 <ul class="sectlevel1">
-<li><a href="#데이터-브로커-그룹">데이터 브로커 그룹</a>
+<li><a href="#데이터-브로커-그룹의-작동-방식">데이터 브로커 그룹의 작동 방식</a>
 <ul class="sectlevel2">
-<li><a href="#그룹에-있는-데이터-브로커-수-결정">그룹에 있는 데이터 브로커 수 결정</a></li>
 <li><a href="#그룹은-여러-관계를-관리할-수-있습니다">그룹은 여러 관계를 관리할 수 있습니다</a></li>
-<li><a href="#새로운-데이터-브로커만-해당">새로운 데이터 브로커만 해당</a></li>
+<li><a href="#그룹의-데이터-브로커-수입니다">그룹의 데이터 브로커 수입니다</a></li>
 </ul>
 </li>
-<li><a href="#새-데이터-브로커를-추가합니다">새 데이터 브로커를 추가합니다</a></li>
 <li><a href="#보안-권장-사항">보안 권장 사항</a></li>
-<li><a href="#데이터-브로커의-구성을-봅니다">데이터 브로커의 구성을 봅니다</a></li>
-<li><a href="#그룹에서-데이터-브로커를-제거합니다">그룹에서 데이터 브로커를 제거합니다</a></li>
+<li><a href="#그룹에-새-데이터-브로커를-추가합니다">그룹에 새 데이터 브로커를 추가합니다</a></li>
 <li><a href="#그룹-이름을-편집합니다">그룹 이름을 편집합니다</a></li>
+<li><a href="#통합-구성을-설정합니다">통합 구성을 설정합니다</a></li>
+<li><a href="#그룹-간에-데이터-브로커-이동">그룹 간에 데이터 브로커 이동</a></li>
+<li><a href="#프록시-구성을-업데이트합니다">프록시 구성을 업데이트합니다</a></li>
+<li><a href="#데이터-브로커의-구성을-봅니다">데이터 브로커의 구성을 봅니다</a></li>
 <li><a href="#데이터-브로커로-문제를-해결합니다">데이터 브로커로 문제를 해결합니다</a></li>
-<li><a href="#데이터-브로커-그룹에-대한-통합-구성을-정의합니다">데이터 브로커 그룹에 대한 통합 구성을 정의합니다</a></li>
+<li><a href="#그룹에서-데이터-브로커를-제거합니다">그룹에서 데이터 브로커를 제거합니다</a></li>
+<li><a href="#데이터-브로커-그룹을-삭제합니다">데이터 브로커 그룹을 삭제합니다</a></li>
 </ul>
 </div>
 <div id="preamble">
@@ -771,16 +817,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="데이터-브로커-그룹">데이터 브로커 그룹</h2>
+<h2 id="데이터-브로커-그룹의-작동-방식">데이터 브로커 그룹의 작동 방식</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>데이터 브로커를 함께 그룹화하면 동기화 관계의 성능을 향상시킬 수 있습니다.</p>
-</div>
-<div class="sect2">
-<h3 id="그룹에-있는-데이터-브로커-수-결정">그룹에 있는 데이터 브로커 수 결정</h3>
-<div class="paragraph">
-<p>대부분의 경우 단일 데이터 브로커가 동기화 관계에 대한 성능 요구사항을 충족할 수 있습니다. 그렇지 않으면 그룹에 추가 데이터 브로커를 추가하여 동기화 성능을 가속화할 수 있습니다. 하지만 먼저 동기화 성능에 영향을 줄 수 있는 다른 요소를 확인해야 합니다. <a href="faq.html#how-many-data-brokers-are-required-in-a-group">"여러 데이터 브로커가 필요한 시기를 결정하는 방법에 대해 자세히 알아보십시오"</a>.</p>
-</div>
+<p>데이터 브로커 그룹에는 하나 이상의 데이터 브로커가 포함될 수 있습니다. 데이터 브로커를 함께 그룹화하면 동기화 관계의 성능을 향상시킬 수 있습니다.</p>
 </div>
 <div class="sect2">
 <h3 id="그룹은-여러-관계를-관리할-수-있습니다">그룹은 여러 관계를 관리할 수 있습니다</h3>
@@ -808,15 +848,42 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="새로운-데이터-브로커만-해당">새로운 데이터 브로커만 해당</h3>
+<h3 id="그룹의-데이터-브로커-수입니다">그룹의 데이터 브로커 수입니다</h3>
 <div class="paragraph">
-<p>그룹에 새 데이터 브로커만 추가할 수 있습니다. 그룹에 기존 데이터 브로커를 추가할 수 없습니다.</p>
+<p>대부분의 경우 단일 데이터 브로커가 동기화 관계에 대한 성능 요구사항을 충족할 수 있습니다. 그렇지 않으면 그룹에 추가 데이터 브로커를 추가하여 동기화 성능을 가속화할 수 있습니다. 하지만 먼저 동기화 성능에 영향을 줄 수 있는 다른 요소를 확인해야 합니다. <a href="faq.html#how-many-data-brokers-are-required-in-a-group">"여러 데이터 브로커가 필요한 시기를 결정하는 방법에 대해 자세히 알아보십시오"</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="새-데이터-브로커를-추가합니다">새 데이터 브로커를 추가합니다</h2>
+<h2 id="보안-권장-사항">보안 권장 사항</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>데이터 브로커 시스템의 보안을 유지하려면 다음 사항을 따르는 것이 좋습니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SSH는 X11 전달을 허용하지 않아야 합니다</p>
+</li>
+<li>
+<p>SSH는 TCP 연결 전달을 허용하지 않아야 합니다</p>
+</li>
+<li>
+<p>SSH는 터널을 허용하지 않아야 합니다</p>
+</li>
+<li>
+<p>SSH는 클라이언트 환경 변수를 수용해서는 안 됩니다</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>이러한 보안 권장 사항은 데이터 브로커 시스템에 대한 무단 연결을 방지하는 데 도움이 될 수 있습니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="그룹에-새-데이터-브로커를-추가합니다">그룹에 새 데이터 브로커를 추가합니다</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>다음과 같은 여러 가지 방법으로 새 데이터 브로커를 생성할 수 있습니다.</p>
@@ -838,7 +905,7 @@
 </ul>
 </div>
 <div class="ulist">
-<div class="title">알아야 할 사항</div>
+<div class="title">시작하기 전에</div>
 <ul>
 <li>
 <p>암호화된 동기화 관계를 관리하는 그룹에 데이터 브로커를 추가할 수 없습니다.</p>
@@ -893,7 +960,7 @@
 <li>
 <p>작업 메뉴를 클릭하고 * 데이터 브로커 추가 * 를 선택합니다.</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_sync_group_add.gif" alt="그룹의 각 개별 데이터 브로커에 사용할 수 있는 작업 메뉴 스크린샷"></span></p>
+<p><span class="image"><img src="./media/screenshot_sync_group_add.png" alt="그룹의 각 개별 데이터 브로커에 사용할 수 있는 작업 메뉴 스크린샷"></span></p>
 </div>
 </li>
 <li>
@@ -923,29 +990,162 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="보안-권장-사항">보안 권장 사항</h2>
+<h2 id="그룹-이름을-편집합니다">그룹 이름을 편집합니다</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>데이터 브로커 시스템의 보안을 유지하려면 다음 사항을 따르는 것이 좋습니다.</p>
+<p>언제든지 데이터 브로커 그룹의 이름을 변경합니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>동기화 &gt; 데이터 브로커 관리 * 를 클릭합니다.</p>
+</li>
+<li>
+<p>작업 메뉴를 클릭하고 * 그룹 이름 편집 * 을 선택합니다.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_sync_group_edit.gif" alt="그룹의 각 개별 데이터 브로커에 사용할 수 있는 작업 메뉴 스크린샷"></span></p>
+</div>
+</li>
+<li>
+<p>새 이름을 입력하고 * 저장 * 을 클릭합니다.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Cloud Sync가 데이터 브로커 그룹의 이름을 업데이트합니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="통합-구성을-설정합니다">통합 구성을 설정합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>동기화 프로세스 중에 동기화 관계에 오류가 발생하면 데이터 브로커 그룹의 동시성을 통합하면 동기화 오류 수를 줄일 수 있습니다. 그룹 구성을 변경하면 전송 속도가 느려져 성능에 영향을 줄 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>직접 구성을 변경하지 않는 것이 좋습니다. 구성을 변경할 시기와 변경 방법을 알아보려면 NetApp에 문의해야 합니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>데이터 브로커 관리 * 를 클릭합니다.</p>
+</li>
+<li>
+<p>데이터 브로커 그룹의 설정 아이콘을 클릭합니다.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_sync_group_settings.png" alt="데이터 브로커 그룹의 설정 아이콘을 보여 주는 스크린샷"></span></p>
+</div>
+</li>
+<li>
+<p>필요에 따라 설정을 변경한 다음 * 구성 취소 * 를 클릭합니다.</p>
+<div class="paragraph">
+<p>다음 사항에 유의하십시오.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>SSH는 X11 전달을 허용하지 않아야 합니다</p>
+<p>변경할 설정을 선택하고 선택할 수 있습니다. 한 번에 네 가지 설정을 모두 변경할 필요는 없습니다.</p>
 </li>
 <li>
-<p>SSH는 TCP 연결 전달을 허용하지 않아야 합니다</p>
+<p>새 구성을 데이터 브로커로 보낸 후 데이터 브로커가 자동으로 다시 시작하고 새 구성을 사용합니다.</p>
 </li>
 <li>
-<p>SSH는 터널을 허용하지 않아야 합니다</p>
+<p>이 변경 사항이 발생할 때까지 1분 정도 걸릴 수 있으며 Cloud Sync 인터페이스에 표시될 수 있습니다.</p>
 </li>
 <li>
-<p>SSH는 클라이언트 환경 변수를 수용해서는 안 됩니다</p>
+<p>데이터 브로커가 실행되고 있지 않으면 Cloud Sync에서 데이터 브로커와 통신할 수 없기 때문에 구성이 변경되지 않습니다. 데이터 브로커가 다시 시작되면 구성이 변경됩니다.</p>
+</li>
+<li>
+<p>통합 구성을 설정하면 새 데이터 브로커가 자동으로 새 구성을 사용합니다.</p>
 </li>
 </ul>
 </div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="그룹-간에-데이터-브로커-이동">그룹 간에 데이터 브로커 이동</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>이러한 보안 권장 사항은 데이터 브로커 시스템에 대한 무단 연결을 방지하는 데 도움이 될 수 있습니다.</p>
+<p>대상 데이터 브로커 그룹의 성능을 높여야 하는 경우 그룹 간에 데이터 브로커를 이동할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>예를 들어, 데이터 브로커에서 동기화 관계를 더 이상 관리하지 않는 경우 동기화 관계를 관리하는 다른 그룹으로 쉽게 이동할 수 있습니다.</p>
+</div>
+<div class="ulist">
+<div class="title">제한 사항</div>
+<ul>
+<li>
+<p>데이터 브로커 그룹이 동기화 관계를 관리하고 있고 그룹에 데이터 브로커가 하나만 있는 경우에는 해당 데이터 브로커를 다른 그룹으로 이동할 수 없습니다.</p>
+</li>
+<li>
+<p>암호화된 동기화 관계를 관리하는 그룹으로 데이터 브로커를 이동하거나 그룹에서 데이터 브로커를 이동할 수 없습니다.</p>
+</li>
+<li>
+<p>현재 구축 중인 데이터 브로커는 이동할 수 없습니다.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>동기화 &gt; 데이터 브로커 관리 * 를 클릭합니다.</p>
+</li>
+<li>
+<p>을 클릭합니다 <span class="image"><img src="./media/screenshot_sync_group_expand.gif" alt="그룹의 데이터 브로커 목록을 확장할 수 있는 단추 스크린샷"></span> 그룹의 데이터 브로커 목록을 확장합니다.</p>
+</li>
+<li>
+<p>데이터 브로커에 대한 작업 메뉴를 클릭하고 * 데이터 브로커 이동 * 을 선택합니다.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_sync_group_remove.png" alt="각 개별 데이터 브로커 그룹에 사용할 수 있는 작업 메뉴의 스크린샷"></span></p>
+</div>
+</li>
+<li>
+<p>새 데이터 브로커 그룹을 만들거나 기존 데이터 브로커 그룹을 선택합니다.</p>
+</li>
+<li>
+<p>이동 * 을 클릭합니다.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Cloud Sync는 데이터 브로커를 신규 또는 기존 데이터 브로커 그룹으로 옮깁니다. 이전 그룹에 다른 데이터 브로커가 없으면 Cloud Sync에서 삭제합니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="프록시-구성을-업데이트합니다">프록시 구성을 업데이트합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>새 프록시 구성에 대한 세부 정보를 추가하거나 기존 프록시 구성을 편집하여 데이터 브로커의 프록시 구성을 업데이트합니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>동기화 &gt; 데이터 브로커 관리 * 를 클릭합니다.</p>
+</li>
+<li>
+<p>을 클릭합니다 <span class="image"><img src="./media/screenshot_sync_group_expand.gif" alt="그룹의 데이터 브로커 목록을 확장할 수 있는 단추 스크린샷"></span> 그룹의 데이터 브로커 목록을 확장합니다.</p>
+</li>
+<li>
+<p>데이터 브로커에 대한 작업 메뉴를 클릭하고 * 프록시 구성 편집 * 을 선택합니다.</p>
+</li>
+<li>
+<p>프록시에 대한 세부 정보(호스트 이름, 포트 번호, 사용자 이름 및 암호)를 지정합니다.</p>
+</li>
+<li>
+<p>Update * 를 클릭합니다.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Cloud Sync는 데이터 브로커를 업데이트하여 인터넷 액세스에 프록시 구성을 사용합니다.</p>
 </div>
 </div>
 </div>
@@ -1009,6 +1209,34 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="데이터-브로커로-문제를-해결합니다">데이터 브로커로 문제를 해결합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Sync에서는 문제를 해결하는 데 도움이 되는 각 데이터 브로커의 상태를 표시합니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>"알 수 없음" 또는 "실패" 상태의 데이터 브로커를 식별합니다.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_sync_broker_status.gif" alt=""></span></p>
+</div>
+</li>
+<li>
+<p>에 마우스를 올려 놓습니다 <span class="image"><img src="./media/screenshot_sync_status_icon.gif" alt=""></span> 아이콘을 클릭하여 실패 원인을 확인합니다.</p>
+</li>
+<li>
+<p>문제를 해결하십시오.</p>
+<div class="paragraph">
+<p>예를 들어, 데이터 브로커가 오프라인인 경우 다시 시작하기만 하면 되고, 초기 구축에 실패한 경우 데이터 브로커를 제거해야 할 수 있습니다.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="그룹에서-데이터-브로커를-제거합니다">그룹에서 데이터 브로커를 제거합니다</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -1051,10 +1279,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="그룹-이름을-편집합니다">그룹 이름을 편집합니다</h2>
+<h2 id="데이터-브로커-그룹을-삭제합니다">데이터 브로커 그룹을 삭제합니다</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>언제든지 데이터 브로커 그룹의 이름을 변경합니다.</p>
+<p>데이터 브로커 그룹이 더 이상 동기화 관계를 관리하지 않으면 그룹을 삭제할 수 있습니다. 그러면 Cloud Sync에서 모든 데이터 브로커가 제거됩니다.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Sync에서 제거하는 데이터 브로커는 Cloud Sync의 레코드에서만 삭제됩니다. 클라우드 공급자 및 추가 클라우드 리소스를 수동으로 데이터 브로커 인스턴스를 삭제해야 합니다.</p>
 </div>
 <div class="olist arabic">
 <div class="title">단계</div>
@@ -1063,96 +1294,18 @@
 <p>동기화 &gt; 데이터 브로커 관리 * 를 클릭합니다.</p>
 </li>
 <li>
-<p>작업 메뉴를 클릭하고 * 그룹 이름 편집 * 을 선택합니다.</p>
+<p>작업 메뉴를 클릭하고 * 그룹 삭제 * 를 선택합니다.</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_sync_group_edit.gif" alt="그룹의 각 개별 데이터 브로커에 사용할 수 있는 작업 메뉴 스크린샷"></span></p>
+<p><span class="image"><img src="./media/screenshot_sync_group_add.png" alt="그룹의 각 개별 데이터 브로커에 사용할 수 있는 작업 메뉴 스크린샷"></span></p>
 </div>
 </li>
 <li>
-<p>새 이름을 입력하고 * 저장 * 을 클릭합니다.</p>
+<p>확인하려면 그룹 이름을 입력하고 * 그룹 삭제 * 를 클릭합니다.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Cloud Sync가 데이터 브로커 그룹의 이름을 업데이트합니다.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="데이터-브로커로-문제를-해결합니다">데이터 브로커로 문제를 해결합니다</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Cloud Sync에서는 문제를 해결하는 데 도움이 되는 각 데이터 브로커의 상태를 표시합니다.</p>
-</div>
-<div class="olist arabic">
-<div class="title">단계</div>
-<ol class="arabic">
-<li>
-<p>"알 수 없음" 또는 "실패" 상태의 데이터 브로커를 식별합니다.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_sync_broker_status.gif" alt=""></span></p>
-</div>
-</li>
-<li>
-<p>에 마우스를 올려 놓습니다 <span class="image"><img src="./media/screenshot_sync_status_icon.gif" alt=""></span> 아이콘을 클릭하여 실패 원인을 확인합니다.</p>
-</li>
-<li>
-<p>문제를 해결하십시오.</p>
-<div class="paragraph">
-<p>예를 들어, 데이터 브로커가 오프라인인 경우 다시 시작하기만 하면 되고, 초기 구축에 실패한 경우 데이터 브로커를 제거해야 할 수 있습니다.</p>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="데이터-브로커-그룹에-대한-통합-구성을-정의합니다">데이터 브로커 그룹에 대한 통합 구성을 정의합니다</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>동기화 프로세스 중에 동기화 관계에 오류가 발생하면 데이터 브로커 그룹의 동시성을 통합하면 동기화 오류 수를 줄일 수 있습니다. 그룹 구성을 변경하면 전송 속도가 느려져 성능에 영향을 줄 수 있습니다.</p>
-</div>
-<div class="paragraph">
-<p>직접 구성을 변경하지 않는 것이 좋습니다. 구성을 변경할 시기와 변경 방법을 알아보려면 NetApp에 문의해야 합니다.</p>
-</div>
-<div class="olist arabic">
-<div class="title">단계</div>
-<ol class="arabic">
-<li>
-<p>데이터 브로커 관리 * 를 클릭합니다.</p>
-</li>
-<li>
-<p>데이터 브로커 그룹의 설정 아이콘을 클릭합니다.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_sync_group_settings.png" alt="데이터 브로커 그룹의 설정 아이콘을 보여 주는 스크린샷"></span></p>
-</div>
-</li>
-<li>
-<p>필요에 따라 설정을 변경한 다음 * 구성 취소 * 를 클릭합니다.</p>
-<div class="paragraph">
-<p>다음 사항에 유의하십시오.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>변경할 설정을 선택하고 선택할 수 있습니다. 한 번에 네 가지 설정을 모두 변경할 필요는 없습니다.</p>
-</li>
-<li>
-<p>새 구성을 데이터 브로커로 보낸 후 데이터 브로커가 자동으로 다시 시작하고 새 구성을 사용합니다.</p>
-</li>
-<li>
-<p>이 변경 사항이 발생할 때까지 1분 정도 걸릴 수 있으며 Cloud Sync 인터페이스에 표시될 수 있습니다.</p>
-</li>
-<li>
-<p>데이터 브로커가 실행되고 있지 않으면 Cloud Sync에서 데이터 브로커와 통신할 수 없기 때문에 구성이 변경되지 않습니다. 데이터 브로커가 다시 시작되면 구성이 변경됩니다.</p>
-</li>
-<li>
-<p>통합 구성을 설정하면 새 데이터 브로커가 자동으로 새 구성을 사용합니다.</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
+<p>Cloud Sync는 데이터 브로커를 제거하고 그룹을 삭제합니다.</p>
 </div>
 </div>
 </div>
@@ -1169,98 +1322,122 @@
   <div class="n-footer__bottom">
     <div class="n-container">
       <div class="n-footer__bottom-left">
-
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
-
-</ul>
-</div>
-<div class="n-footer__social-links">
-<ul class="n-footer__social-link-list">
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
-<span class="n-footer__social-link-text">blog</span>
-<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
-  <title>blog@</title>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#blog"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
-<span class="n-footer__social-link-text">community</span>
-<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
-<title>community@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#comments"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
-<span class="n-footer__social-link-text">twitter</span>
-<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
-<title>twitter@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#twitter"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
-<span class="n-footer__social-link-text">facebook</span>
-<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
-<title>facebook@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#facebook"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
-<span class="n-footer__social-link-text">linkedin</span>
-<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
-<title>linkedin@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#linkedin"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
-<span class="n-footer__social-link-text">youtube</span>
-<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
-<title>youtube@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#youtube"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
-<span class="n-footer__social-link-text">slideshare</span>
-<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
-<title>slideshare@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#slideshare"></use>
-</svg>
-
-</a>
-</li>
-</ul>
-</div>
-
-</div>
-<div class="n-footer__bottom-right">
-  <p class="n-footer__fine-print">웹 사이트에 대한 피드백이 있으십니까?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">의견을 공유해 주십시오</a>
-  <a href="https://docs.netapp.com/ko-kr/announcements/" class="n-footer__copyright">공지 사항</a>
-  </p>
-</div>
-</div>
-</div>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">이용 약관</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">개인 정보 보호 정책</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">쿠키 정책</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">쿠키 설정</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">웹 사이트에 대한 피드백이 있으십니까?</span>
+              <a target="_self" href="javascript:netapp_mailto()">의견을 공유해 주십시오</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/ko-kr/announcements/">공지 사항</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/cloud-manager-sync/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
 
       </div><!-- Elasticsearch JS -->
