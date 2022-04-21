@@ -113,8 +113,8 @@ Cloud Sync를 사용하면 소스에서 타겟으로 데이터를 동기화할 �
 
 
 | 상자 ^1^  a| 
-* Amazon S3
 * ONTAP용 Amazon FSx
+* Amazon S3
 * Azure NetApp Files
 * Cloud Volumes ONTAP
 * IBM 클라우드 오브젝트 스토리지

@@ -33,7 +33,7 @@ summary: 동기화 관계를 생성하면 Cloud Sync 서비스는 소스에서 �
 .단계
 . 작업 환경을 만들거나 검색합니다.
 +
-** https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html["ONTAP 작업 환경을 위한 Amazon FSx를 생성합니다"^]
+** https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/start/task-getting-started-fsx.html["ONTAP 작업 환경을 위한 Amazon FSx를 생성합니다"^]
 ** https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-quick-start.html["Azure NetApp Files 설정 및 검색"^]
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["AWS에서 Cloud Volumes ONTAP 실행"^]
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure에서 Cloud Volumes ONTAP 실행"^]
