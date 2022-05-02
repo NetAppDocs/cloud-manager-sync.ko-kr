@@ -1035,7 +1035,6 @@
   <block id="df8514e24a07bfd81c667163f17fbec0" category="paragraph">중국, 미국 정부 및 미국 국방부 지역을 제외한 모든 지역이 지원됩니다.</block>
   <block id="a1e31a9251ce00d752f2ef3d40f3fa3a" category="paragraph">Cloud Sync는 Azure에 데이터 브로커를 배포할 때 필요한 아웃바운드 통신을 지원하는 보안 그룹을 생성합니다.</block>
   <block id="38354aeafcfd5993a9d65d97514a8e3d" category="section-title">인증 방법</block>
-  <block id="5f01cb10cf737db33ea0f9db4e40cc94" category="paragraph">데이터 브로커를 구축할 때는 암호 또는 SSH 공개-개인 키 쌍과 같은 인증 방법을 선택해야 합니다.</block>
   <block id="0be7700ba4689baa197ac3c2b94928a5" category="inline-link">Azure 설명서: Azure에서 Linux VM용 SSH 공개-개인 키 쌍을 생성하고 사용합니다</block>
   <block id="4e2153a19cb9d86adf7b5ba332e78a45" category="paragraph">키 쌍 생성에 대한 도움말은 을 참조하십시오<block ref="3bfff4aa3d3a3eae965cce9b3b615a4a" category="inline-link-rx"></block>.</block>
   <block id="896293b91a375c72889dc16e1c816e72" category="paragraph">새로운 데이터 브로커를 생성하는 방법은 몇 가지가 있습니다. 다음 단계에서는 동기화 관계를 만들 때 Azure에서 데이터 브로커를 설치하는 방법을 설명합니다.</block>
@@ -1471,4 +1470,18 @@
   <block id="c07503bbdaf42732886b6b9f136d9eb0" category="list-text">상자 ^1^</block>
   <block id="c01bb6a5867adae467a31539eda72b37" category="cell">SFTP^2^</block>
   <block id="6cd346b36825d1f1cef046571571fce0" category="list-text"><block ref="6cd346b36825d1f1cef046571571fce0" category="inline-link-rx"></block></block>
+  <block id="81fb4d1570abd75a1e2945d1f1c9f8cc" category="section-title">2022년 5월 1일</block>
+  <block id="5cccebf55aa4da23124f776528630bf3" category="section-title">동기화 시간이 초과되었습니다</block>
+  <block id="5e4a50a7111ce8bba22cd01d07f86a3b" category="paragraph">이제 동기화 관계에 새로운 * 동기화 시간 초과 * 설정을 사용할 수 있습니다. 이 설정을 사용하면 지정된 시간 또는 일 수 동안 동기화가 완료되지 않은 경우 Cloud Sync에서 데이터 동기화를 취소할지 여부를 정의할 수 있습니다.</block>
+  <block id="5f03ed55634cfe3f169d94549e45f06c" category="paragraph"><block ref="050cf03a98debb532006e420507b54cf" category="inline-link-rx"></block>.</block>
+  <block id="a274f4d4670213a9045ce258c6c56b80" category="section-title">알림</block>
+  <block id="0a3f4ee017f808dc79fb4939a3eaf91b" category="paragraph">이제 새 * 알림 * 설정을 동기화 관계에 사용할 수 있습니다. 이 설정을 사용하면 Cloud Manager의 알림 센터에서 Cloud Sync 알림을 수신할지 여부를 선택할 수 있습니다. 성공적인 데이터 동기화, 실패한 데이터 동기화 및 취소된 데이터 동기화를 위한 알림을 활성화할 수 있습니다.</block>
+  <block id="9081c0430b4e4fcf1f0dd042e7c0ca60" category="inline-image-macro">Cloud Manager의 알림 센터를 보여 주는 스크린샷</block>
+  <block id="914b918c172fa270f423df8135932978" category="paragraph"><block ref="914b918c172fa270f423df8135932978" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="64b10e9eb890594a5a1756353aca634b" category="list-text">동기화 시간 초과</block>
+  <block id="4affab38ec04e06031b349c8bc2e8e59" category="list-text">동기화가 지정된 시간 또는 일 수에 완료되지 않은 경우 Cloud Sync에서 데이터 동기화를 취소할지 여부를 정의합니다.</block>
+  <block id="870569e17f9da6759aebc4bec6749d61" category="list-text">클라우드 관리자의 알림 센터에서 Cloud Sync 알림을 수신할지 여부를 선택할 수 있습니다. 성공적인 데이터 동기화, 실패한 데이터 동기화 및 취소된 데이터 동기화를 위한 알림을 활성화할 수 있습니다.</block>
+  <block id="c658fd4f091c10877f154fbf84fbee89" category="section-title">Azure에서 데이터 브로커를 배포하는 데 필요한 권한입니다</block>
+  <block id="180af86c5f798e1a752bebb100366ffb" category="paragraph">데이터 브로커를 배포하는 데 사용하는 Azure 사용자 계정에 다음과 같은 권한이 있는지 확인합니다.</block>
+  <block id="e507d0455db379d4826dabce8ecb97ed" category="paragraph">데이터 브로커를 구축할 때는 가상 머신의 인증 방법, 즉 암호 또는 SSH 공개-개인 키 쌍을 선택해야 합니다.</block>
 </blocks>

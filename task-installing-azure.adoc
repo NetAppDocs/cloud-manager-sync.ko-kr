@@ -40,9 +40,60 @@ Cloud Sync는 Azure에 데이터 브로커를 배포할 때 필요한 아웃바�
 
 
 
+== Azure에서 데이터 브로커를 배포하는 데 필요한 권한입니다
+
+데이터 브로커를 배포하는 데 사용하는 Azure 사용자 계정에 다음과 같은 권한이 있는지 확인합니다.
+
+[source, json]
+----
+{
+    "Name": "Azure Data Broker",
+    "Actions": [
+					"Microsoft.Resources/subscriptions/read",
+                    "Microsoft.Resources/deployments/operationstatuses/read",
+                    "Microsoft.Resources/subscriptions/locations/read",
+                    "Microsoft.Network/networkInterfaces/read",
+                    "Microsoft.Network/virtualNetworks/subnets/read",
+                    "Microsoft.Resources/subscriptions/resourceGroups/write",
+                    "Microsoft.Resources/subscriptions/resourceGroups/delete",
+                    "Microsoft.Resources/deployments/write",
+                    "Microsoft.Resources/deployments/validate/action",
+                    "Microsoft.Resources/deployments/operationStatuses/read",
+                    "Microsoft.Resources/deployments/cancel/action",
+                    "Microsoft.Compute/virtualMachines/read",
+                    "Microsoft.Compute/virtualMachines/delete",
+                    "Microsoft.Compute/disks/delete",
+                    "Microsoft.Network/networkInterfaces/delete",
+                    "Microsoft.Network/publicIPAddresses/delete",
+                    "Microsoft.Network/networkSecurityGroups/securityRules/delete",
+                    "Microsoft.Resources/subscriptions/resourceGroups/write",
+                    "Microsoft.Compute/virtualMachines/delete",
+                    "Microsoft.Network/networkSecurityGroups/write",
+                    "Microsoft.Network/networkSecurityGroups/join/action",
+                    "Microsoft.Compute/disks/write",
+                    "Microsoft.Network/networkInterfaces/write",
+                    "Microsoft.Network/virtualNetworks/read",
+                    "Microsoft.Network/publicIPAddresses/write",
+                    "Microsoft.Compute/virtualMachines/write",
+                    "Microsoft.Compute/virtualMachines/extensions/write",
+                    "Microsoft.Resources/deployments/read",
+                    "Microsoft.Network/networkSecurityGroups/read",
+                    "Microsoft.Network/publicIPAddresses/read",
+                    "Microsoft.Network/virtualNetworks/subnets/join/action",
+                    "Microsoft.Network/publicIPAddresses/join/action",
+                    "Microsoft.Network/networkInterfaces/join/action"
+    ],
+    "NotActions": [],
+    "AssignableScopes": [],
+    "Description": "Azure Data Broker",
+    "IsCustom": "true"
+}
+----
+
+
 == 인증 방법
 
-데이터 브로커를 구축할 때는 암호 또는 SSH 공개-개인 키 쌍과 같은 인증 방법을 선택해야 합니다.
+데이터 브로커를 구축할 때는 가상 머신의 인증 방법, 즉 암호 또는 SSH 공개-개인 키 쌍을 선택해야 합니다.
 
 키 쌍 생성에 대한 도움말은 을 참조하십시오 https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys["Azure 설명서: Azure에서 Linux VM용 SSH 공개-개인 키 쌍을 생성하고 사용합니다"^].
 
