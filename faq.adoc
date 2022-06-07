@@ -299,7 +299,7 @@ Cloud Sync는 다음과 같은 유형의 동기화 관계를 위해 소스에서
 * IBM 클라우드 오브젝트 스토리지 -> IBM 클라우드 오브젝트 스토리지
 
 
-^1^ 이러한 동기화 관계의 경우 해야 합니다 link:task-creating-relationships.html["동기화 관계를 생성할 때 설정을 활성화합니다"].
+^1^ 이러한 동기화 관계의 경우 해야 합니다 link:task-creating-relationships.html["동기화 관계를 만들 때 개체에 대한 복사 설정을 활성화합니다"].
 
 
 

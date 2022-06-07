@@ -210,7 +210,6 @@
   <block id="f74b1a14b7639ecef72e594fe96eb745" category="list-text">개체 복사</block>
   <block id="d2280a978447122c6ab7b62ac99c6588" category="list-text">오브젝트 스토리지 메타데이터 및 태그를 복사하려면 이 옵션을 활성화하십시오. 사용자가 소스의 메타데이터를 변경하면 Cloud Sync는 다음 동기화 시 이 개체를 복제하지만 사용자가 데이터 자체가 아닌 소스의 태그를 변경하면 Cloud Sync는 다음 동기화 시 개체를 복사하지 않습니다.</block>
   <block id="e998b72bf009ad1c34dfd7fbf7e26388" category="paragraph">관계를 만든 후에는 이 옵션을 편집할 수 없습니다.</block>
-  <block id="87108e54d2a298427a5c439efc86720f" category="paragraph">태그 복사는 S3 호환 엔드포인트(S3, StorageGRID 또는 IBM 클라우드 오브젝트 스토리지)가 포함된 동기화 관계에서 지원됩니다.</block>
   <block id="06902a5661d713ae255404d1b76c3108" category="paragraph">메타데이터 복사는 다음 엔드포인트 간의 '클라우드 간' 관계에서 지원됩니다.</block>
   <block id="128edc3ff8c2d69c9c76b866643314ec" category="list-text">설치하고</block>
   <block id="52745271323ee9ea30e3a37d0338d118" category="list-text">Azure Blob</block>
@@ -894,8 +893,6 @@
   <block id="e9d1cd1913b22fd9324ade51470e79fb" category="list-text">StorageGRID -&gt; IBM 클라우드 오브젝트 스토리지</block>
   <block id="d5467cdf0f31f137fc693f242bb4f9ed" category="list-text">IBM 클라우드 오브젝트 스토리지 -&gt; StorageGRID</block>
   <block id="4ead6076cd3ac3f5021ec4c7be28c427" category="list-text">IBM 클라우드 오브젝트 스토리지 -&gt; IBM 클라우드 오브젝트 스토리지</block>
-  <block id="cf92849b844c61464026b83534370159" category="inline-link-macro">동기화 관계를 생성할 때 설정을 활성화합니다</block>
-  <block id="1e6c7a42798986bf930479decdfb6353" category="paragraph">^1^ 이러한 동기화 관계의 경우 해야 합니다 <block ref="03984181b8f01cdbd96b3f54d00056a4" category="inline-link-macro-rx"></block>.</block>
   <block id="9446a98ad14416153cc4d45ab8b531bf" category="section-title">성능</block>
   <block id="d1ac9671b7bcf06bf5d1080fe70853b0" category="paragraph">다음 질문은 Cloud Sync 성능과 관련이 있습니다.</block>
   <block id="678b59fd02ed47602217c203bce0f237" category="section-title">동기화 관계의 진행률 표시기는 무엇을 나타냅니까?</block>
@@ -1310,7 +1307,6 @@
   <block id="172d12b0279cc8a60f5a9ab00242df4e" category="paragraph">Cloud Sync는 기존 라이센스를 새 만료일로 업데이트합니다.</block>
   <block id="3c10116b37b407ac79092a38ffb292e4" category="summary">NetApp 기술 지원으로 지원 케이스를 생성하기 전에 NetApp Support 사이트 계정을 Cloud Manager에 추가한 다음 지원을 위해 등록해야 합니다.</block>
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">지원을 위해 등록하십시오</block>
-  <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">모든 Cloud Manager 설명서</block>
   <block id="eab057480b500e5181f47e393918143e" category="sidebar">Cloud Sync 문서</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">릴리스 정보</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">새로운 소식</block>
@@ -1484,4 +1480,31 @@
   <block id="c658fd4f091c10877f154fbf84fbee89" category="section-title">Azure에서 데이터 브로커를 배포하는 데 필요한 권한입니다</block>
   <block id="180af86c5f798e1a752bebb100366ffb" category="paragraph">데이터 브로커를 배포하는 데 사용하는 Azure 사용자 계정에 다음과 같은 권한이 있는지 확인합니다.</block>
   <block id="e507d0455db379d4826dabce8ecb97ed" category="paragraph">데이터 브로커를 구축할 때는 가상 머신의 인증 방법, 즉 암호 또는 SSH 공개-개인 키 쌍을 선택해야 합니다.</block>
+  <block id="62ee9336109ed1c4538423613b856682" category="section-title">2022년 6월 6일</block>
+  <block id="c20246791a0594003975011a29aae438" category="section-title">연속 동기화</block>
+  <block id="ade9a1db23f7d605ed4e98f520c46b00" category="paragraph">새로운 설정을 사용하면 소스 S3 버킷에서 타겟으로 변경 사항을 지속적으로 동기화할 수 있습니다.</block>
+  <block id="2aaa6a5839225ec7e874d5c5c1af43df" category="paragraph">초기 데이터 동기화 후 Cloud Sync는 소스 S3 버킷의 변경 사항을 수신 대기하고 변경 사항이 발생할 때마다 타겟에 계속 동기화합니다. 예약된 간격으로 소스를 다시 검색할 필요가 없습니다. 이 설정은 S3 버킷에서 S3, Google Cloud Storage, Azure Blob Storage, StorageGRID 또는 IBM Storage로 동기화할 때만 사용할 수 있습니다.</block>
+  <block id="969431a3ee7466b53b917ad1bc5d032a" category="paragraph">이 설정을 사용하려면 데이터 브로커와 연결된 IAM 역할에 다음 권한이 필요합니다.</block>
+  <block id="8817adc7e5de41abc6dded623fbb60a9" category="paragraph">이러한 사용 권한은 사용자가 만든 새 데이터 브로커에 자동으로 추가됩니다.</block>
+  <block id="f23841b65ba519d2dd6a63a2a3e4de83" category="inline-link-macro">연속 동기화 설정에 대해 자세히 알아보십시오</block>
+  <block id="9bc62ddcbad4365043432f4afd539ab9" category="paragraph"><block ref="b78c060d9cafb1faa0c3c10254143905" category="inline-link-macro-rx"></block>.</block>
+  <block id="3d7f78f24cbebe2c601558e90c9fe15f" category="section-title">모든 ONTAP 볼륨을 표시합니다</block>
+  <block id="517d881d38e3ddd50495a5763ac986b4" category="paragraph">동기화 관계를 생성하면 Cloud Sync는 이제 소스 Cloud Volumes ONTAP 시스템, 온-프레미스 ONTAP 클러스터 또는 ONTAP 파일 시스템용 FSx의 모든 볼륨을 표시합니다.</block>
+  <block id="9de2181e94c0cd08ea8823917ee87c3f" category="paragraph">이전 버전에서는 Cloud Sync가 선택한 프로토콜과 일치하는 볼륨만 표시합니다. 이제 모든 볼륨이 표시되지만 선택한 프로토콜과 일치하지 않거나 공유 또는 내보내기가 없는 볼륨은 회색으로 표시되고 선택할 수 없습니다.</block>
+  <block id="7f5581e89068d302a142aecf7d19a771" category="section-title">Azure Blob에 태그 복사 중</block>
+  <block id="32aae8f84d3fb43aff2913dafe7d72e0" category="paragraph">Azure Blob이 타겟인 동기화 관계를 만들면 Cloud Sync에서 이제 Azure Blob 컨테이너에 태그를 복사할 수 있습니다.</block>
+  <block id="718cef647cf171d07e94f6c003056c56" category="list-text">Settings * 페이지에서 * Copy for Objects * 설정을 사용하여 소스에서 Azure Blob 컨테이너로 태그를 복사할 수 있습니다. 이는 메타데이터 복사에 추가됩니다.</block>
+  <block id="37e1492974d1c0a4febae33433a14d3f" category="list-text">태그/메타데이터 * 페이지에서 Azure Blob 컨테이너에 복사되는 개체에 설정할 Blob 인덱스 태그를 지정할 수 있습니다. 이전에는 관계 메타데이터만 지정할 수 있었습니다.</block>
+  <block id="bb775e1249cce6f8004e5212d3f37d10" category="paragraph">이러한 옵션은 Azure Blob이 타겟이고 소스가 Azure Blob 또는 S3 호환 엔드포인트(S3, StorageGRID 또는 IBM 클라우드 오브젝트 스토리지)인 경우에 지원됩니다.</block>
+  <block id="6e272326d37ff30b30c39df1796c1047" category="list-text">연속 동기화</block>
+  <block id="8ed3a39cc9f2a70ec95bb16dd2f2fb23" category="list-text">초기 데이터 동기화 후 Cloud Sync는 소스 S3 버킷의 변경 사항을 수신 대기하고 변경 사항이 발생할 때마다 타겟에 계속 동기화합니다. 예약된 간격으로 소스를 다시 검색할 필요가 없습니다.</block>
+  <block id="81e275e8d051ed5b97b6b40caeb6e335" category="paragraph">이 설정은 동기화 관계를 생성하고 S3 버킷에서 S3, Google Cloud Storage, Azure Blob Storage, StorageGRID 또는 IBM Storage로 동기화할 때만 사용할 수 있습니다.</block>
+  <block id="2be3dcdda5218111239a3d0174add0a9" category="paragraph">이 설정을 사용하면 다음과 같은 다른 기능에 영향을 줍니다.</block>
+  <block id="cf6e8568cffe2257079f8cf83e628dad" category="list-text">동기화 스케줄이 비활성화되었습니다.</block>
+  <block id="ff156b37c42c21d99850e977fcdb1ebd" category="list-text">동기화 시간 초과, 최근에 수정한 파일 및 수정한 날짜 등의 설정이 기본값으로 되돌아갑니다.</block>
+  <block id="f60a1149c02808459c5643cc5df3f925" category="list-text">크기별 필터링은 삭제 이벤트가 아닌 복사 이벤트에서만 활성화됩니다.</block>
+  <block id="06188761055a99a60d4ecac698ce5c29" category="list-text">관계가 생성된 후에는 관계를 가속화하거나 삭제할 수만 있습니다. 동기화를 중단하거나, 설정을 수정하거나, 보고서를 볼 수 없습니다.</block>
+  <block id="471d3dbea565333e7aac2e693d15e28e" category="paragraph">태그 복사는 Azure Blob 또는 S3 호환 엔드포인트(S3, StorageGRID 또는 IBM 클라우드 오브젝트 스토리지)가 타겟으로 포함된 동기화 관계에서 지원됩니다.</block>
+  <block id="19656389ea4b802da6413eff0a250187" category="inline-link-macro">동기화 관계를 만들 때 개체에 대한 복사 설정을 활성화합니다</block>
+  <block id="89176f15cb099a09a71af33d00c1d7b5" category="paragraph">^1^ 이러한 동기화 관계의 경우 해야 합니다 <block ref="a7dd81f666bee66d77494e96987d22b4" category="inline-link-macro-rx"></block>.</block>
 </blocks>
