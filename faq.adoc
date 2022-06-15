@@ -78,7 +78,6 @@ NOTE: Cloud Sync 관계는 Cloud Volumes Service 및 Azure NetApp Files에서 �
 
 클라우드 외부에서 Cloud Sync를 사용하는 방법은 다음과 같습니다.
 
-* 사내 동기화의 경우 NetApp StorageGRID를 통해 프라이빗 Amazon S3 버킷을 사용할 수 있습니다.
 * 데이터 브로커 그룹은 Cloud Sync 서비스와 통신하기 위해 인터넷 연결이 필요합니다.
 * NetApp에서 직접 라이센스를 구입하지 않을 경우 PAYGO Cloud Sync 서비스 청구를 위해 AWS 또는 Azure 계정이 필요합니다.
 
