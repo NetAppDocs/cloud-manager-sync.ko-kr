@@ -124,8 +124,9 @@ link:reference-requirements.html["동기화 요구 사항에 대해 자세히 �
 * 지능형 계층화
 * 표준 - 낮은 액세스 빈도
 * 단일 영역 - 낮은 액세스 빈도
-* 빙하
 * Glacier 딥 아카이브
+* 빙하 유동 검색
+* Glacier 빠른 검색
 
 
 

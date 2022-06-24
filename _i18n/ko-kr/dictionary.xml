@@ -757,7 +757,6 @@
   <block id="50abff7eab122064034a22ce7ec10c49" category="list-text">지능형 계층화</block>
   <block id="7a1255ccd32375deedb79fe52eed93f5" category="list-text">표준 - 낮은 액세스 빈도</block>
   <block id="e2b0c2a0a664cef2184b3d17808db4ce" category="list-text">단일 영역 - 낮은 액세스 빈도</block>
-  <block id="4def2a084469f97f6372bfaf0823941b" category="list-text">빙하</block>
   <block id="d2f79b4db321be04fd1439394fb99d3c" category="list-text">Glacier 딥 아카이브</block>
   <block id="95e5c9b9a242ae01ebbab296e59e2a68" category="list-text">Google Cloud Storage 버킷이 타겟인 경우 특정 스토리지 클래스를 선택할 수 있습니다.</block>
   <block id="ffaf5cab0f09c40c02f73eeea249b6ce" category="summary">NetApp은 Cloud Sync 서비스를 사용하면서 제공한 자격 증명에 대한 액세스 권한을 가지고 있지 않습니다. 자격 증명은 네트워크에 상주하는 데이터 브로커 컴퓨터에 직접 저장됩니다.</block>
@@ -1506,4 +1505,5 @@
   <block id="16bfbdd0b4d440a858cdccf55f911337" category="list-text">AWS 정부 지역</block>
   <block id="580e905670d084cfe8e8e4ce2cd2899b" category="list-text">Azure 정부 지역</block>
   <block id="ae54a5c026f31ada088992587d92cb3a" category="list-text">중국</block>
+  <block id="cbe97248e70516b3413b9658af8e4825" category="list-text">빙하 유동 검색</block>
 </blocks>
