@@ -204,6 +204,7 @@ Cloud Sync를 사용하면 소스에서 타겟으로 데이터를 동기화할 �
 * ONTAP용 Amazon FSx
 * Amazon S3
 * Azure Blob
+* Azure Data Lake Storage Gen2
 * Azure NetApp Files
 * Cloud Volumes ONTAP
 * Cloud Volumes Service
@@ -252,6 +253,7 @@ Cloud Sync를 사용하면 소스에서 타겟으로 데이터를 동기화할 �
 * ONTAP용 Amazon FSx
 * Amazon S3
 * Azure Blob
+* Azure Data Lake Storage Gen2
 * Azure NetApp Files
 * Cloud Volumes ONTAP
 * Cloud Volumes Service

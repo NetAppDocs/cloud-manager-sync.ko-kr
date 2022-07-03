@@ -658,7 +658,6 @@
   <block id="9177317d32a41a0982be70109425240b" category="section-title">데이터 브로커 VM 인스턴스에 대한 세부 정보</block>
   <block id="c233ea2db8aa00ac96e4e0317d97f7ed" category="paragraph">Cloud Sync은 다음 구성을 사용하여 Google Cloud에서 데이터 브로커를 생성합니다.</block>
   <block id="3ea4bf9da7622edeeae1bf80e9c5cded" category="list-text">기계 유형</block>
-  <block id="cc5a0182c13643bf47b7fb87ac22c232" category="list-text">N1-표준-4</block>
   <block id="9f101c0e6e5929a04c9e7663fdf91eda" category="list-text">15GB</block>
   <block id="935b9daeec310c8e2291d043d3e14f44" category="list-text">Red Hat Enterprise Linux 7.7</block>
   <block id="f3796c63e27caa7881ad0844ee9e9544" category="list-text">20GB HDD PD 표준</block>
@@ -1491,12 +1490,9 @@
   <block id="37e1492974d1c0a4febae33433a14d3f" category="list-text">태그/메타데이터 * 페이지에서 Azure Blob 컨테이너에 복사되는 개체에 설정할 Blob 인덱스 태그를 지정할 수 있습니다. 이전에는 관계 메타데이터만 지정할 수 있었습니다.</block>
   <block id="bb775e1249cce6f8004e5212d3f37d10" category="paragraph">이러한 옵션은 Azure Blob이 타겟이고 소스가 Azure Blob 또는 S3 호환 엔드포인트(S3, StorageGRID 또는 IBM 클라우드 오브젝트 스토리지)인 경우에 지원됩니다.</block>
   <block id="6e272326d37ff30b30c39df1796c1047" category="list-text">연속 동기화</block>
-  <block id="8ed3a39cc9f2a70ec95bb16dd2f2fb23" category="list-text">초기 데이터 동기화 후 Cloud Sync는 소스 S3 버킷의 변경 사항을 수신 대기하고 변경 사항이 발생할 때마다 타겟에 계속 동기화합니다. 예약된 간격으로 소스를 다시 검색할 필요가 없습니다.</block>
-  <block id="81e275e8d051ed5b97b6b40caeb6e335" category="paragraph">이 설정은 동기화 관계를 생성하고 S3 버킷에서 S3, Google Cloud Storage, Azure Blob Storage, StorageGRID 또는 IBM Storage로 동기화할 때만 사용할 수 있습니다.</block>
   <block id="2be3dcdda5218111239a3d0174add0a9" category="paragraph">이 설정을 사용하면 다음과 같은 다른 기능에 영향을 줍니다.</block>
   <block id="cf6e8568cffe2257079f8cf83e628dad" category="list-text">동기화 스케줄이 비활성화되었습니다.</block>
   <block id="ff156b37c42c21d99850e977fcdb1ebd" category="list-text">동기화 시간 초과, 최근에 수정한 파일 및 수정한 날짜 등의 설정이 기본값으로 되돌아갑니다.</block>
-  <block id="f60a1149c02808459c5643cc5df3f925" category="list-text">크기별 필터링은 삭제 이벤트가 아닌 복사 이벤트에서만 활성화됩니다.</block>
   <block id="06188761055a99a60d4ecac698ce5c29" category="list-text">관계가 생성된 후에는 관계를 가속화하거나 삭제할 수만 있습니다. 동기화를 중단하거나, 설정을 수정하거나, 보고서를 볼 수 없습니다.</block>
   <block id="471d3dbea565333e7aac2e693d15e28e" category="paragraph">태그 복사는 Azure Blob 또는 S3 호환 엔드포인트(S3, StorageGRID 또는 IBM 클라우드 오브젝트 스토리지)가 타겟으로 포함된 동기화 관계에서 지원됩니다.</block>
   <block id="19656389ea4b802da6413eff0a250187" category="inline-link-macro">동기화 관계를 만들 때 개체에 대한 복사 설정을 활성화합니다</block>
@@ -1506,4 +1502,28 @@
   <block id="580e905670d084cfe8e8e4ce2cd2899b" category="list-text">Azure 정부 지역</block>
   <block id="ae54a5c026f31ada088992587d92cb3a" category="list-text">중국</block>
   <block id="cbe97248e70516b3413b9658af8e4825" category="list-text">빙하 유동 검색</block>
+  <block id="1511b856d0328cfba458b8f83c2e94e3" category="section-title">2022년 7월 3일</block>
+  <block id="59db2d8d08645826b1c034be277c61d2" category="section-title">Azure Data Lake Storage Gen2 지원</block>
+  <block id="c7b46a2bde58e21272436d4c94238e15" category="paragraph">이제 NFS 서버 또는 SMB 서버에서 Azure Data Lake Storage Gen2로 데이터를 동기화할 수 있습니다.</block>
+  <block id="20a2ab980685308347c082aec3253ed9" category="paragraph">Azure Data Lake를 포함하는 동기화 관계를 생성할 때 Cloud Sync에 스토리지 계정 연결 문자열을 제공해야 합니다. SAS(공유 액세스 서명)가 아니라 일반 연결 문자열이어야 합니다.</block>
+  <block id="ebf5fe0ded517668f74c4f41da278835" category="section-title">Google Cloud Storage에서 지속적으로 동기화합니다</block>
+  <block id="6ce39114bc116067ef30366e7df90870" category="paragraph">이제 연속 동기화 설정이 소스 Google Cloud Storage 버킷에서 클라우드 스토리지 타겟까지 지원됩니다.</block>
+  <block id="fd36af2b64264c3f7fb77364a0046eb8" category="paragraph">초기 데이터 동기화 후 Cloud Sync는 소스 Google 클라우드 스토리지 버킷의 변경 사항을 수신 대기하고 변경 사항이 발생할 때마다 타겟에 대한 변경 사항을 지속적으로 동기화합니다. 이 설정은 Google 클라우드 스토리지 버킷에서 S3, Google 클라우드 스토리지, Azure Blob 스토리지, StorageGRID 또는 IBM 스토리지로 동기화할 때 사용할 수 있습니다.</block>
+  <block id="5f5f25c6813ee0b01f552cd13dcebec9" category="paragraph">데이터 브로커와 연결된 서비스 계정에 이 설정을 사용하려면 다음 권한이 필요합니다.</block>
+  <block id="81ad4f0de90ee8a7305d0fd7751df796" category="section-title">새로운 Google Cloud 지역 지원</block>
+  <block id="d38ece9df5f99d11a5e7597c6f6c34f2" category="paragraph">Cloud Sync 데이터 브로커는 현재 다음 Google 클라우드 지역에서 지원됩니다.</block>
+  <block id="db760e7471192daa123eed31bfba312d" category="list-text">콜럼버스(us-east5)</block>
+  <block id="ad6033c8e4eda00017eca167a149ced4" category="list-text">댈러스(us-south1)</block>
+  <block id="82e8338c73d6540f48f2e0cc8d035511" category="list-text">마드리드(유럽 - 남서쪽1)</block>
+  <block id="4b14bbd178377e932c7e97664c276be7" category="list-text">밀라노(유럽 - west8)</block>
+  <block id="1a1145c860165dcd96b82eb7d32cd59f" category="list-text">파리(유럽 - west9)</block>
+  <block id="66c941bf286fd505b009d484ca94a594" category="section-title">새로운 Google Cloud 컴퓨터 유형입니다</block>
+  <block id="32ddf7d830e3a5092074c4f9bb211736" category="paragraph">Google Cloud의 데이터 브로커에 대한 기본 시스템 유형은 이제 n2-standard-4입니다.</block>
+  <block id="80b8bec2e4ce95cb7a2f98a49ff8964c" category="list-text">초기 데이터 동기화 후 Cloud Sync는 소스 S3 버킷 또는 Google 클라우드 스토리지 버킷의 변경 사항을 수신 대기하고 변경 사항이 발생할 때마다 타겟에 계속 동기화합니다. 예약된 간격으로 소스를 다시 검색할 필요가 없습니다.</block>
+  <block id="f3705b49b8b44367d9a208662d64b1e0" category="paragraph">이 설정은 동기화 관계를 생성하고 S3 버킷 또는 Google 클라우드 스토리지에서 S3, Google 클라우드 스토리지, Azure Blob 스토리지, StorageGRID 또는 IBM 스토리지로 동기화할 때만 사용할 수 있습니다.</block>
+  <block id="ae067a0352a2b892590442ce8932ed20" category="list-text">S3이 소스인 경우 크기별로 필터링은 삭제 이벤트가 아닌 복사 이벤트에서만 활성화됩니다.</block>
+  <block id="218f5307b8ee8bb2d446b8572cd40e9f" category="list-text">Azure Data Lake Storage Gen2</block>
+  <block id="e83655905b13c4a3bc8d7de2a55ecea8" category="inline-link-macro">연속 동기화 옵션에 대해 자세히 알아보십시오</block>
+  <block id="3fb0e4028062069b21887e1408a76464" category="list-text">"pubsub. * " 및 "storage.pubket.update" 권한은 Google Cloud Storage에서 다른 클라우드 저장소 위치로 동기화 관계에 대해 연속 동기화 설정을 사용하려는 경우에만 필요합니다. <block ref="5354423db3737fe63814ca7ea57f2c4c" category="inline-link-macro-rx"></block>.</block>
+  <block id="88ba83f191bd27de24492d3f347d8add" category="list-text">N2-표준-4</block>
 </blocks>

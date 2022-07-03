@@ -139,6 +139,12 @@ image:screenshot_connection_string_sas.gif["스토리지 계정을 선택한 다
 
 
 
+== Azure Data Lake Storage Gen2
+
+Azure Data Lake를 포함하는 동기화 관계를 생성할 때 Cloud Sync에 스토리지 계정 연결 문자열을 제공해야 합니다. SAS(공유 액세스 서명)가 아니라 일반 연결 문자열이어야 합니다.
+
+
+
 == Azure NetApp Files 요구 사항
 
 Azure NetApp Files와 데이터를 동기화하거나에서 데이터를 동기화할 때 프리미엄 또는 울트라 서비스 수준을 사용합니다. 디스크 서비스 수준이 Standard인 경우 장애 및 성능 문제가 발생할 수 있습니다.

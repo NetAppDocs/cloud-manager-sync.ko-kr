@@ -67,9 +67,22 @@ Cloud Sync가 Google Cloud에 데이터 브로커를 배포할 때 필요한 아
 - storage.buckets.list
 - storage.objects.*
 - iam.serviceAccounts.signJwt
+- pubsub.subscriptions.consume
+- pubsub.subscriptions.create
+- pubsub.subscriptions.delete
+- pubsub.subscriptions.list
+- pubsub.topics.attachSubscription
+- pubsub.topics.create
+- pubsub.topics.delete
+- pubsub.topics.list
+- pubsub.topics.setIamPolicy
+- storage.buckets.update
 ----
+참고:
 
-NOTE: "iam.serviceAccounts.signJwt" 권한은 외부 HashashCorp 볼트를 사용하도록 데이터 브로커를 설정할 계획에만 필요합니다.
+. "iam.serviceAccounts.signJwt" 권한은 외부 HashashCorp 볼트를 사용하도록 데이터 브로커를 설정할 계획에만 필요합니다.
+. "pubsub. * " 및 "storage.pubket.update" 권한은 Google Cloud Storage에서 다른 클라우드 저장소 위치로 동기화 관계에 대해 연속 동기화 설정을 사용하려는 경우에만 필요합니다. link:task-creating-relationships.html#settings["연속 동기화 옵션에 대해 자세히 알아보십시오"].
+
 
 
 
@@ -136,7 +149,7 @@ Google Cloud에 데이터 브로커를 구축하고 새로운 동기화 관계�
 
 Cloud Sync은 다음 구성을 사용하여 Google Cloud에서 데이터 브로커를 생성합니다.
 
-기계 유형:: N1-표준-4
+기계 유형:: N2-표준-4
 vCPU:: 4
 RAM:: 15GB
 운영 체제:: Red Hat Enterprise Linux 7.7

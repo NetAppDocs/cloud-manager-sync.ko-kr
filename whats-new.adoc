@@ -18,6 +18,64 @@ Cloud Sync의 새로운 기능에 대해 알아보십시오.
 
 
 
+== 2022년 7월 3일
+
+
+
+=== Azure Data Lake Storage Gen2 지원
+
+이제 NFS 서버 또는 SMB 서버에서 Azure Data Lake Storage Gen2로 데이터를 동기화할 수 있습니다.
+
+Azure Data Lake를 포함하는 동기화 관계를 생성할 때 Cloud Sync에 스토리지 계정 연결 문자열을 제공해야 합니다. SAS(공유 액세스 서명)가 아니라 일반 연결 문자열이어야 합니다.
+
+link:reference-supported-relationships.html["지원되는 동기화 관계 목록을 봅니다"].
+
+
+
+=== Google Cloud Storage에서 지속적으로 동기화합니다
+
+이제 연속 동기화 설정이 소스 Google Cloud Storage 버킷에서 클라우드 스토리지 타겟까지 지원됩니다.
+
+초기 데이터 동기화 후 Cloud Sync는 소스 Google 클라우드 스토리지 버킷의 변경 사항을 수신 대기하고 변경 사항이 발생할 때마다 타겟에 대한 변경 사항을 지속적으로 동기화합니다. 이 설정은 Google 클라우드 스토리지 버킷에서 S3, Google 클라우드 스토리지, Azure Blob 스토리지, StorageGRID 또는 IBM 스토리지로 동기화할 때 사용할 수 있습니다.
+
+데이터 브로커와 연결된 서비스 계정에 이 설정을 사용하려면 다음 권한이 필요합니다.
+
+[source, json]
+----
+- pubsub.subscriptions.consume
+- pubsub.subscriptions.create
+- pubsub.subscriptions.delete
+- pubsub.subscriptions.list
+- pubsub.topics.attachSubscription
+- pubsub.topics.create
+- pubsub.topics.delete
+- pubsub.topics.list
+- pubsub.topics.setIamPolicy
+- storage.buckets.update
+----
+link:task-creating-relationships.html#settings["연속 동기화 설정에 대해 자세히 알아보십시오"].
+
+
+
+=== 새로운 Google Cloud 지역 지원
+
+Cloud Sync 데이터 브로커는 현재 다음 Google 클라우드 지역에서 지원됩니다.
+
+* 콜럼버스(us-east5)
+* 댈러스(us-south1)
+* 마드리드(유럽 - 남서쪽1)
+* 밀라노(유럽 - west8)
+* 파리(유럽 - west9)
+
+
+
+
+=== 새로운 Google Cloud 컴퓨터 유형입니다
+
+Google Cloud의 데이터 브로커에 대한 기본 시스템 유형은 이제 n2-standard-4입니다.
+
+
+
 == 2022년 6월 6일
 
 
