@@ -755,7 +755,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-18 08:20:12 +0000">04/18/2022</time>
+    <time datetime="2022-07-03 15:46:46 +0000">07/03/2022</time>
     
   
 
@@ -832,20 +832,31 @@
 - storage.buckets.get
 - storage.buckets.list
 - storage.objects.*
-- iam.serviceAccounts.signJwt</code></pre>
+- iam.serviceAccounts.signJwt
+- pubsub.subscriptions.consume
+- pubsub.subscriptions.create
+- pubsub.subscriptions.delete
+- pubsub.subscriptions.list
+- pubsub.topics.attachSubscription
+- pubsub.topics.create
+- pubsub.topics.delete
+- pubsub.topics.list
+- pubsub.topics.setIamPolicy
+- storage.buckets.update</code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-sync/images/note.svg" alt="참고">
-</td>
-<td class="content">
-"iam.serviceAccounts.signJwt" 권한은 외부 HashashCorp 볼트를 사용하도록 데이터 브로커를 설정할 계획에만 필요합니다.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>참고:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>"iam.serviceAccounts.signJwt" 권한은 외부 HashashCorp 볼트를 사용하도록 데이터 브로커를 설정할 계획에만 필요합니다.</p>
+</li>
+<li>
+<p>"pubsub. * " 및 "storage.pubket.update" 권한은 Google Cloud Storage에서 다른 클라우드 저장소 위치로 동기화 관계에 대해 연속 동기화 설정을 사용하려는 경우에만 필요합니다. <a href="task-creating-relationships.html#settings">"연속 동기화 옵션에 대해 자세히 알아보십시오"</a>.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -960,7 +971,7 @@
 <dl>
 <dt class="hdlist1">기계 유형</dt>
 <dd>
-<p>N1-표준-4</p>
+<p>N2-표준-4</p>
 </dd>
 <dt class="hdlist1">vCPU</dt>
 <dd>
